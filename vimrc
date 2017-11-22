@@ -1,4 +1,3 @@
-
 runtime! debian.vim
 
 " 不使用代码折叠功能
@@ -44,6 +43,14 @@ set fileencodings=utf-8,gbk,ucs-bom,cp936
 set ignorecase
 " 如果有一个大写字母，则切换到大小写敏感查找
 set smartcase
+" 当光标一段时间保持不动了，就禁用搜索高亮
+autocmd cursorhold * set nohlsearch
+" 当输入查找命令时，再启用高亮
+noremap n :set hlsearch<cr>n
+noremap N :set hlsearch<cr>N
+noremap / :set hlsearch<cr>/
+noremap ? :set hlsearch<cr>?
+noremap * *:set hlsearch<cr>
 
 if has('mouse')
 	set mouse-=a
