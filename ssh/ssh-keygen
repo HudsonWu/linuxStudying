@@ -1,0 +1,3 @@
+ssh-keygen -t rsa -C "youremail@email.com" -f ~/.ssh/second
+touch ~/.ssh/config
+chmod 600 ~/.ssh/config
