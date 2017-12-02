@@ -1,0 +1,7 @@
+关闭shell提示音
+1. linux控制台下
+setterm -blength 0
+or
+setterm -bfreq 10
+2. X11下
+xset b off

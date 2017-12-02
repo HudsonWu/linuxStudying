@@ -1,5 +1,14 @@
 runtime! debian.vim
 
+" 设置光标颜色
+highlight Cursor cterm=NONE ctermbg=black ctermfg=white
+highlight iCursor cterm=NONE ctermbg=blue ctermfg=white
+" 设置高亮行和列的显示
+  "set cursorcolumn
+set cursorline
+" 个性化配置配色,cterm为原生vim设置样式
+highlight CursorLine cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
+  "highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 " 不使用代码折叠功能
 set nofoldenable
 " 不使用swapfile

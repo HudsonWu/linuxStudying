@@ -1,0 +1,5 @@
+1. ssh -vT git@github.com
+2. ssh -i ~/.ssh/github_rsa -T git@github.com
+3. git clone github-user1:user1/project.git 
+(github-user1指的是在config文件配置中Host对应的名称)
+相当于git clone git@github.com:HudsonWu/linuxStudying.git
