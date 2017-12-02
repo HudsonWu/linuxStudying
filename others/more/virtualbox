@@ -15,13 +15,6 @@ dpkg -i
 5. 验证头文件是否成功安装
 dpkg-query -s linux-headers-$(uname -r)
 
-ssh配置并开启
-1. vi /etc/ssh/sshd_config
-PermitRootLogin yes
-PasswordAuthentication yes
-2. 启动ssh  /etc/init.d/ssh start
-查看ssh服务状态 /etc/init.d/ssh status
-
 VirtualBox增强功能
 1. 在线安装
 apt-get install -y virtualbox-guest-x11

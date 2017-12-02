@@ -1,0 +1,10 @@
+2017-11-28 0:25  Tue
+/etc/rc3.d/  "create file: dnsByMe.sh"
+/etc/rc5.d/  "ln -s dnsByMe.sh"
+/etc/  "add file: shadowsocks.json"
+2017-12-1 23:19  Fri
+/etc/init.d/  "create file: ssr -----for autolaunch"
+/etc/rc5.d/   "ln -s ssr /etc/rc5.d/S101ssr"
+2017-12-2 16:23 Sat
+/etc/init.d/  "modify file: ssr -----for systemctl enable"
+
