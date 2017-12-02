@@ -1,0 +1,14 @@
+xshell上传下载工具包：rz和sz  receive和send
+apt-get install lrzsz
+
+git设置连接方式（https或ssh）
+git remote -v
+git remote set-url origin git@github.com...
+git设置记住密码
+a. config文件
+[credential]
+    helper=store
+b. 执行命令
+git config --global credential.helper cache(默认15分钟)
+git config credential.helper 'cache --timeout=3600'(设置1小时)
+git config --global credential.helper store(长期)

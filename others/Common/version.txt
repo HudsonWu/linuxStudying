@@ -1,0 +1,6 @@
+查看linux内核版本
+1. cat /proc/version
+2. uname -a
+查看linux系统版本
+1. lsb_release -a
+2. cat /etc/issue

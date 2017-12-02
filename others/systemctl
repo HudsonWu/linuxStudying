@@ -135,4 +135,4 @@ journalctl --vacuum-size=1G
 # 指定日志保存多久
 journalctl --vacuum-time=1years
 
-
+systemctl set-default multi-user.target  相当于在/etc/inittab里面设置为init 3 level
