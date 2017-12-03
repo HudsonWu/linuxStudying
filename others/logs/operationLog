@@ -7,4 +7,4 @@
 /etc/rc5.d/   "ln -s ssr /etc/rc5.d/S101ssr"
 2017-12-2 16:23 Sat
 /etc/init.d/  "modify file: ssr -----for systemctl enable"
-
+/etc/gdm3/daemon.comf  "AutomaticLogin=root"
