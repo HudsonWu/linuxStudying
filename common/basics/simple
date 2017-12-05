@@ -1,4 +1,4 @@
-dpkg
+  dpkg
 1. 查询某个包是否安装
 dpkg -s
 或 dpkg-query -l
@@ -13,13 +13,15 @@ dpkg -i
 dpkg -r
 6. 彻底卸载软件包
 dpkg -P
-scp
+
+  scp
 windows下需要安装ssh for windows的客户端软件，如winsshd
 1. 从linux系统复制文件到windows系统(administrator为windows下用户名)
 scp /oracle/a.txt administrator@192.168.1.111:/d:/
 2. 将windows下的文件复制到linux系统中
 scp administrator@192.168.1.111:/d:/test/abc.txt /oracle
-cat
+
+  cat
 1. 一次显示整个文件 cat filename
 2. 从键盘创建一个文件 cat > filename 只能创建新文件，不能编辑已有文件
 3. 将几个文件合并为一个文件 cat file1 file2 > file
@@ -30,3 +32,7 @@ cat
 cat -n textfile1 > textfile2 把1文件内容加上行号后输入2文件里
 cat /dev/null > /etc/test.txt 把text.txt文件扔进垃圾箱，赋空值test.txt
 cat > file1 << EOF 向file1输入内容（>为创建，>>为追加），内容输入完以EOF结束
+
+  xshell上传下载工具包：rz和sz  receive和send
+apt-get install lrzsz
+

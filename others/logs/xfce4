@@ -1,0 +1,3 @@
+XFCE DESKTOP
+apt-get install kali-defaults kali-root-login desktop-base xfce4 xfce4-places-plugin xfce4-goodies
+apt-get remove xfce4 xfce4-places-plugin xfce4-goodies

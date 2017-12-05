@@ -1,0 +1,28 @@
+  查看字符集
+1. echo $LANG
+2. env | grep LANG
+3. export | grep LANG
+4. locale -a  查看本地字符集
+   locale -m  查看所有支持的字符集
+
+  set、env和export
+set  显示当前shell的变量，包括当前用户的变量
+env  显示当前用户的变量
+export  显示当前导出成用户变量的shell变量
+set用来显示本地变量  env用来显示环境变量  export用来显示和设置环境变量
+
+  修改字符集
+1. 直接设置变量
+LANG="zh_CN.UTF-8"
+LC_ALL="zh_CN.UTF-8"
+只在当前shell中生效
+2. 修改文件方式，/etc/sysconfig/i18n(centOS)
+LANG="zh_CN.UTF-8"	//当前系统的语言环境变量
+SUPPORTED="zh_CN.UTF-8:zh_CN.GB18030"	//系统预置了哪些语言支持
+SYSFONT="latarcyrheb-sun16"	//定义控制台终端字体
+修改完后，执行命令source /etc/sysconfig/i18n
+locale-gen zh_CN
+locale-gen zh_CN.UTF-8
+update-locale  （debian）
+3. 安装几个包解决kali出现字符串重叠问题
+apt-get install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy3. 安装几个包解决kali出现字符串重叠问题

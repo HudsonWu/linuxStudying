@@ -2,9 +2,15 @@
 /etc/rc3.d/  "create file: dnsByMe.sh"
 /etc/rc5.d/  "ln -s dnsByMe.sh"
 /etc/  "add file: shadowsocks.json"
-2017-12-1 23:19  Fri
+2017-12-01 23:19  Fri
 /etc/init.d/  "create file: ssr -----for autolaunch"
 /etc/rc5.d/   "ln -s ssr /etc/rc5.d/S101ssr"
-2017-12-2 16:23 Sat
+2017-12-02 16:23 Sat
 /etc/init.d/  "modify file: ssr -----for systemctl enable"
 /etc/gdm3/daemon.comf  "AutomaticLogin=root"
+2017-12-04 23:12 Mon
+apt-get install nvidia-driver nvidia-xconfig
+/etc/X11/xorg.conf
+/usr/share/gdm/greeter/autostart/optimus.desktop
+/etc/xdg/autostart/optimus.desktop
+
