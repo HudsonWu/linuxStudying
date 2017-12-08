@@ -13,4 +13,12 @@ apt-get install nvidia-driver nvidia-xconfig
 /etc/X11/xorg.conf
 /usr/share/gdm/greeter/autostart/optimus.desktop
 /etc/xdg/autostart/optimus.desktop
-
+2017-12-05 23:49 Tue
+apt-get dpkg-reconfigure lightdm
+/etc/X11/default-display-manager
+2017-12-08 00:37 Fri
+sudo apt-get install libasound2 alsa-utils alsa-oss
+alsamixer
+nvidia + clinfo
+2017-12-08 22:55 Fri
+Nvidia Optimus

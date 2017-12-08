@@ -1,0 +1,16 @@
+Installing the Required Software
+install the basic software you'll need to compile from source, like the GCC compile and other utilities
+sudo apt-get install autoconf
+sudo apt-get install build-essential build-dep
+Installing from source with build-dep
+1. uncomment the deb-src listings in /etc/apt/sources.list
+sudo apt-get update
+2. use apt to install the necessary dependencies for Audacity
+sudo apt-get build-dep audacity
+3. download the source package
+sudo apt-get source audacity
+4. ./configure && make && sudo make install
+5. if the installation fails, might have to revert to using the dpkg tool
+sudo dpkg-buildpackage -b -uc -us
+
+
