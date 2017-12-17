@@ -1,0 +1,18 @@
+Remove unwanted empty lines
+1. Use either of the following commands to delete all empty lines
+:g/^$/d
+:v/./d
+2. Delete all lines that are empty or that contain only whitespace characters(spaces,tabs),use either of the following commands
+:g/^\s*$/d
+:v/\S/d
+3. Condense multiple blank lines into a single blank line
+:v/\S/,/\S/-j
+:%s/\s\+$//e
+:%s/\n{3,}/\r\r/e
+The e substitute flag means that no error is displayed if the pattern is not found. \n in the search pattern finds newline, while \r in the replacement inserts a newline
+4. Handing IDEOGRAPHIC SPACE
+the following will delete all empty lines, or lines that comtain only combinations of space, tab or IDEOGRAPHIC SPACE(in CJK languages, the Unicode character IDEOGRAPHIC SPACE may be used. if you have 'encoding' utf-8(and do not have the 'l' flag in 'cpoptions'),you can use \u3000 in a search pattern to specify the UTF-16 hex code for IDEOGRAPHIC SPACE, :help ^])
+:g/^[ \t\u3000]*$/d
+an alternative procedure, which should work in other encoding, would be to enter the CJK space directly into the pattern. that is, you would type the following, but instead of '#' youwould enter a CJK space
+:g/^ \t#]*$/d
+

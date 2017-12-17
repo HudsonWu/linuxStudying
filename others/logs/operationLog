@@ -22,3 +22,8 @@ alsamixer
 nvidia + clinfo
 2017-12-08 22:55 Fri
 Nvidia Optimus
+2017-12-09 13:17 Sat
+back to nouveau
+sudo apt-get install nouveau-firmware
+sudo dpkg-reconfigure xserver-xorg
+

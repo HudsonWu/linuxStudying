@@ -1,0 +1,2 @@
+find / decompressed-backup-dir -uid 1000 -exec chown hudson:root {} +
+

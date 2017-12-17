@@ -31,6 +31,7 @@ groupadd -g 888 users  创建一个组users，其GID为888
 gpasswd（只有root和组管理员能够改变组成员）
 gpasswd -a user1 users  把user1加入users组
 gpasswd -d user1 users  把user1退出users组
+gpasswd --delete user1 users 把user1退出users组
 groupmod 修改组
 groupmod -n user users  修改组名user为users
 groupdel  删除组
@@ -42,3 +43,4 @@ groupdel users  删除组users
 登录shell：用户登录后，要启动一个进程，负责将用户的操作传给内核，这个进程是用户登录到系统后运行的命令解释器或某个特定的程序，即shell
 shell是用户与linux系统之间的接口，linux的shell有很多种，常见的有sh(Bourne Shell),csh(C Shell),ksh(Korn Shell),bash(Bourne Again Shell)等
 系统管理员可以根据系统情况和用户习惯为用户指定某个Shell，若不指定，系统使用sh为默认的登录shell
+
