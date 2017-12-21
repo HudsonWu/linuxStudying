@@ -1,12 +1,6 @@
-1. UNetbootin 镜像刻录工具
-2. 监视网络流量
-apt-get install netspeed
-3. preview HTML documents from the command line
-sudo apt-get install w3m
-w3m -dump askubuntu.com | less
-w3m -dump index.html | less
-w3m -dump -cols 200 file.html  (set the number of columns)
-
+UNetbootin 镜像刻录工具
+监视网络流量 netspeed
+tty支持中文：cce,zhcon或fbterm
 Wcd网络管理器
     能够在系统引导时自动连接网络，可以在静态IP地址和DHCP之间选择，在连接终止后能够自动恢复，支持加密（如WPA1/2、WEP、LEAP、TTLS、EAP、PEAP等），可以查看有关网络的信息，能够保存不同的静态IP、网关、子网掩码、DNS服务器地址等
 基础软件包：wicd-cli和wicd-curses

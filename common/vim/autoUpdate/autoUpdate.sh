@@ -1,4 +1,5 @@
 #!/bin/bash
+# Epoch 新纪元
 source="/root/.vimrc"
 gitVim="/root/myGithub/vimStudying/vimrc"
 read last_time < /root/myGithub/vimStudying/autoUpdate/mtime

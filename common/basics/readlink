@@ -1,0 +1,5 @@
+readlink是Linux系统中一个常用工具，主要用来找出符号链接所指向的位置
+print value of a symbolic link or canonical file name 输出符号链接值或者权威文件名
+-f选项：递归跟随给出文件名的所有符号链接，直到非符号链接的文件位置
+readlink /usr/bin/awk
+readlink -f /usr/bin/awk

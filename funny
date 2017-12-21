@@ -1,2 +1,9 @@
-find / decompressed-backup-dir -uid 1000 -exec chown hudson:root {} +
+https://beakerbrowser.com/docs/
+i2p
+tor
 
+
+find / decompressed-backup-dir -uid 1000 -exec chown hudson:root {} +  # 找出所有属于1000的文件并更改其属主为hudson
+
+df: report file system disk space usage
+df -h
