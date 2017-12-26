@@ -1,0 +1,38 @@
+Converting tabs to spaces
+1. To insert space characters whenever the tab key is pressed, set the 'expandtab' option
+-- :set expandtab --
+with this option set, if you want to enter a real tab character use Ctrl-V<Tab> key sequence
+2. To control the number of space characters that will be inserted when the tab key is pressed, set the 'tabstop' option.
+-- :set tabstop=4 --
+3. After the 'expandtab' option is set, all the new tab characters entered will be changed to spaces. This will not affect the existing tab characters. To change all the existing tab characters to match the current tab settings, use:
+-- :retab --   (global)
+-- :.retab --  (current line)
+4. To change the number of space characters inserted for indentation, use the 'shiftwidth' option
+-- :set shiftwidth=4 --
+
+2. Comments
+1. To turn off expandtab for editing makefiles, put the following in your vimrc
+-- autocmd FileType make setlocal noexpandtab --
+2. To use this mode only for Python add the following to your vimrc
+---------------------------------------------------------------------------
+autocmd FileType * set tabstop=2 | set shiftwidth=2 | set noexpandtab
+autocmd FileType python set tabstop=4 | set shiftwidth=4 | set expandtab
+---------------------------------------------------------------------------
+3. for Python
+autocmd BufEnter *.py set ai sw=4 ts=4 sta et fo=croql
+4. makes the spaces feel like real tabs
+-- set softtabstop=4 --
+This makes the backspace key treat the four spaces like a tab
+5. Set keystrokes bound 
+-----------------------------------------------------------------------
+" That awful mixed mode with the half-tabs-are-spaces
+map \M <Esc>:set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
+
+" Mini tabs, small "m"
+map \m <Esc>:set expandtab tabstop=2 shiftwidth=2<CR>
+
+"Think "little tabs" and "big tabs"
+map \t <Esc>:set expandtab tabstop=4 shiftwidth=4<CR>
+map \T <Esc>:set expandtab tabstop=8 shiftwidth=8<CR>
+------------------------------------------------------------------------
+

@@ -31,6 +31,8 @@ set background=dark
 set autoindent
 " 智能对齐
 set smartindent
+" tab键位用空格代替
+set expandtab
 " tab键位4个空格
 set tabstop=4
 " 当行之间交错时使用4个空格
