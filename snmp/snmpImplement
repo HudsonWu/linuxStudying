@@ -50,15 +50,15 @@ If, however, you want to define the authentication credentials for user alone, y
 -- cd ~/.snmp --
 -- vi snmp.conf --
 The commands that we are using to authenticate are in the table below:
---------------------------------------------------------------------------------------------
- Command Flag	         Description			          Translated snmp.conf directive
--u USERNAME		The SNMPv3 username to authenticate as    defSecurityName USERNAME
--l authPriv		The security level to authenticate with	  defSecurityLevel authPriv
--a MD5			The authentication protocol to use		  defAuthType MD5
--x DES			The privacy(encryption) protocol to use	  defPrivType DES
--A PASSPHRASE	The authentication passphrase			  def AuthPassphrase PASSPHRASE
--X PASSPHRASE   The privacy passphrase					  def PrivPassphrase PASSPHRASE
---------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+ Command Flag	         Description			            Translated snmp.conf directive
+-u USERNAME		 The SNMPv3 username to authenticate as       defSecurityName USERNAME
+-l authPriv		 The security level to authenticate with	  defSecurityLevel authPriv
+-a MD5			 The authentication protocol to use		      defAuthType MD5
+-x DES			 The privacy(encryption) protocol to use	  defPrivType DES
+-A PASSPHRASE	 The authentication passphrase			      def AuthPassphrase PASSPHRASE
+-X PASSPHRASE    The privacy passphrase					      def PrivPassphrase PASSPHRASE
+-------------------------------------------------------------------------------------------------
 snmp.conf:
 ----------------------------------
 defSecurityName demo
