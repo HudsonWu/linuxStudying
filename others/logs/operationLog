@@ -26,4 +26,6 @@ Nvidia Optimus
 back to nouveau
 sudo apt-get install nouveau-firmware
 sudo dpkg-reconfigure xserver-xorg
-
+2017-12-27 00:12 Wed 
+apt-get remove avahi-daemon
+apt-get install qt4-dev-tools

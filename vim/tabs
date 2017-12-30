@@ -14,10 +14,8 @@ with this option set, if you want to enter a real tab character use Ctrl-V<Tab> 
 1. To turn off expandtab for editing makefiles, put the following in your vimrc
 -- autocmd FileType make setlocal noexpandtab --
 2. To use this mode only for Python add the following to your vimrc
----------------------------------------------------------------------------
-autocmd FileType * set tabstop=2 | set shiftwidth=2 | set noexpandtab
-autocmd FileType python set tabstop=4 | set shiftwidth=4 | set expandtab
----------------------------------------------------------------------------
+-- autocmd FileType * set tabstop=2 | set shiftwidth=2 | set noexpandtab --
+-- autocmd FileType python set tabstop=4 | set shiftwidth=4 | set expandtab --
 3. for Python
 autocmd BufEnter *.py set ai sw=4 ts=4 sta et fo=croql
 4. makes the spaces feel like real tabs
