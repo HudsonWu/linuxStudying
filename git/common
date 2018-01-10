@@ -188,3 +188,5 @@ git stash pop
 10. 其他
 # 生成一个可供发布的压缩包
 git archive
+# 删除所有untracked的文件
+git clean -df
