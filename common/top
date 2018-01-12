@@ -12,13 +12,13 @@ process ID, user, priority, nice level, virtual memory used by process, resident
 
 3. Key switches for the top command
 -h  show the current version
--c  this toggles the command column between showing command and program name
+-c  this toggles the command column between showing command and program name(*)
 -d  specify the delay time between refreshing the screen
 -O  to get a list of the columns
--o  sorts by a column name
+-o  sorts by a column name(*)
 -p  only show processes with specified process IDs
 -u  show only processes by the specified user
--i  do not show idle tasks
+-i  do not show idle tasks(*)
 
 4. Adding extra columns to the top display
 1) Whilst running top you can press the 'F' key which shows the list of fields that can be displayed in the table
