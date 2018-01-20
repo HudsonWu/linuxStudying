@@ -1,0 +1,14 @@
+1. Robots协议，The Robots Exclusion(排除) Protocol
+2. Robots协议就搜索引擎抓取网站的范围作了约定，包括网站是否希望被搜索引擎抓取，哪些内容不允许被抓取，把这些内容放到一个纯文本文件robot.txt里，然后放到站点的根目录下
+3. 爬虫抓取网站内容前会先抓取robots.txt
+其目的是保护网站数据和敏感信息、确保用户个人信息和隐私不被侵犯
+4. 一个robots.txt只能控制相同协议，相同端口，相同站点的网页抓取策略
+5. robots.txt的内容
+  a. User-agent：指定对哪些爬虫生效
+爬虫抓取时会声明自己的身份，这就是User-agent，比如，google网页搜索爬虫的User-agent为Googlebot，如果想指定所有的爬虫，使用User-agent:*
+爬虫列表：http://www.robotstxt.org/db.html?spm=0.0.0.0.eY1zbr
+  b. Disallow：指定要屏蔽的网址
+Disallow行列出的是要拦截的网页，以正斜线（/）开头，可以列出特定的网址或模式
+要屏蔽整个网站，使用Disallow:/；要屏蔽某一目录及其中的所有内容，在目录名后添加正斜线，Disallow:/dirname/；要屏蔽某个具体的网页，Disallow:/web.html
+  c. Allow：制定允许爬取的网址
+
