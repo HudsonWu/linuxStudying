@@ -1,0 +1,15 @@
+1. The "docker build" command builds an image from a Dockerfile and a context(the build's context is the set of files at a specified location PATH or URL, the PATH is a directory on your local filesystem, the URL is a Git repository location)
+2. The build is run by the Docker daemon, not by the CLI, the first thing thing is a build process is send the entire context(recursively) to the daemon(in most cases, it's best to start with an empty directory as context and keep your Dockerfile in that directory)
+3. .dockerignore
+4. 
+docker build -f /path/to/a/Dockerfile .
+docker build -t shykes/myapp .
+docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .
+5. The Docker daemon runs the instructions in the Dockerfile one-by-one, committing the result of each instruction to a new image if necessary, before finally outputting the ID of your new image, the Docker daemon will automatically clean up the context you sent
+6. Format
+  # Comment
+  INSTRUCTION arguments
+Docker runs instructions in a Dockfile in order, A Dockerfile must start with a 'FROM' instruction which specifies the base image
+7. Parser directives
+Parser directives are optional, and affect the way in which subsequent lines in a Dockfile are handled, Parser directives do not add layers to the build, and will not be shown as a build step, Parser directives are written as a special type of comment in the form " # directive=value ", a single directive may only be used once
+
