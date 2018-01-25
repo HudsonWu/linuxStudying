@@ -25,6 +25,7 @@ gpg --fingerprint [用户ID]
 gpg --import [密钥文件]
 为了获得他人的公钥，可以让对方直接发给你，或者到公钥服务器上寻找
 gpg --keyserver hkp://subkeys.pgp.net --search-keys [用户ID]
+gpg --keyserver hkp://subkeys.pgp.net --recv [用户ID]
 gpg --recv-keys [用户ID]
 
 加密和解密：
@@ -55,3 +56,8 @@ local-user参数指定用发信者的私钥签名，recipient参数指定用接�
 3. 验证签名
 gpg --verify demo.txt.asc demo.txt
 
+gpg --keyserver subkeys.pgp.net --recv 4F6C1E86
+gpg --export --armor 4F6C1E86 | sudo apt-key add -
+(pgpkeys.mit.edu  keys.gnupg.net  ubuntu PPA: keyserver.ubuntu.com)
+
+wget -qO - https://mirrors.ustc.edu.cn/kali/dists/kali-rolling/Release.gpg | sudo apt-key add -
