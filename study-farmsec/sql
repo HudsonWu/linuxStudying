@@ -1,0 +1,10 @@
+mysql函数：
+1. version();
+select version();
+2. database();
+select database();
+3. user();
+select user();
+4. sleep();
+select sleep(10);,name from users;
+

@@ -8,6 +8,7 @@ docker pull docker.io/centos
 3. 进入容器
   1)新建并进入
 docker run -t -i docker.io/centos /bin/bash
+docker run --rm -it -p 80:80 vulnerables/web-dvwa
 -t选项让Docker分配一个伪终端（pseudo-tty）并绑定到容器的标准输入上
 -i则让容器的标准输入保持打开
 使用exit可以退出容器

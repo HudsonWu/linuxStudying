@@ -1,0 +1,36 @@
+https://github.com/ethicalhack3r/DVWA
+
+1. Download and install as a docker container:
+    https://hub.docker.com/r/vulnerables/web-dvwa/
+1)docker pull vulnerables/web-dvwa
+docker run --rm -it -p 80:80 vulnerables/web-dvwa
+2)localhost/setup.php     create/reset database
+login:  admin  password
+set the difficulty level: the default is impossible level, can change it in DVWA Security 
+Attention: ensure you are using aufs due to previous mysql issues, Run docker info to check storage driver
+
+2. Download and Installation
+add-apt-repository ppa:ondrej/php
+apt-get update
+apt-get install php5.6
+apt-get install php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml php5.6-gd
+locate etc/php
+php -v
+systemctl start apache2
+(a2dismod php7.0
+a2enmod php5.6)
+cd /var/www/ && wget https://github.com/ethicalhack3r/DVWA/archive/v1.9.zip
+unzip v1.9.zip -d html/
+cd html/ && mv DVWA-1.9 dvwa
+locate php.ini
+
+vi /etc/php/5.6/apache2/php.ini
+allow_url_include=On
+vi /var/www/html/dvwa/config/config.inc.php
+
+chgrp www-data /var/www/html/dvwa/hackable/uploads
+chgrp www-data /var/www/html/dvwa/external/phpids/0.6/lib/IDS/tmp/phpids_log.txt
+chmod g+w uploads
+chmod g+w log.txt
+
+http://172.17.0.2/dvwa/index.php

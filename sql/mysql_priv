@@ -8,6 +8,7 @@ select distinct concat('User:''',user,'''@''',host,''';') as query from mysql.us
   2. 给用户加权限
 grant all privileges on  *.* to 'test'@'127.0.0.1' identified by 'passwd';
 grant all on db.table to 'username'@'host' identified by 'password';
+flush privileges;
 
   3. show命令
 show create database dbname;  //查看dbname创建时用到的一些参数
