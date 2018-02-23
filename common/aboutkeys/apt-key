@@ -1,0 +1,5 @@
+1. using the apt-key utility we can display all the known keys
+apt-key list
+apt-key list | grep "expired:"  # to quickly find the expired keys
+2. update the key:
+apt-key adv --keyserver keys.gnupg.net --recv-keys [key]
