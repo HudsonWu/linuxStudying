@@ -61,3 +61,6 @@ gpg --export --armor 4F6C1E86 | sudo apt-key add -
 (pgpkeys.mit.edu  keys.gnupg.net  ubuntu PPA: keyserver.ubuntu.com)
 
 wget -qO - https://mirrors.ustc.edu.cn/kali/dists/kali-rolling/Release.gpg | sudo apt-key add -
+
+update the key:
+apt-key adv --keyserver keys.gnupg.net --recv-keys [key]
