@@ -6,7 +6,7 @@ select * from mysql.user where user='test' and host='127.0.0.1' \G;
 select distinct concat('User:''',user,'''@''',host,''';') as query from mysql.user;
 
   2. 给用户加权限
-grant all privileges on  *.* to 'test'@'127.0.0.1' identified by 'passwd';
+grant all privileges on  *.* to 'test'@'%' identified by 'passwd';
 grant all on db.table to 'username'@'host' identified by 'password';
 flush privileges;
 
