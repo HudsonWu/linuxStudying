@@ -1,9 +1,12 @@
   PostgreSQL工具：
-1. psql 命令行工具，管理postgresql的主要工具，pgAdmin是PostgreSQL的免费开源图形用户界面管理工具
+1. pgAdmin是PostgreSQL的免费开源图形用户界面管理工具
 2. phpPgAdmin 用php编写的PostgreSQL的基于Web的管理工具
 3. pgFouine 一个日志分析器，可以从PostgreSQL日志文件创建报告
-postgresql初次安装时，默认生成了一个名为postgres的数据库和一个名为postgres的数据库用户
+
+postgresql初次安装时:
+默认生成了一个名为postgres的数据库和一个名为postgres的数据库用户
 同时还生成了一个名为postgres的linux系统用户
+
   1. 添加新用户和新数据库
 a.使用PostgreSQL控制台
 sudo adduser hudson  新建一个linux新用户
