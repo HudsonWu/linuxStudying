@@ -1,0 +1,7 @@
+git跟踪或取消跟踪:
+git rm --cached readme.txt  删除readme.txt的跟踪，并保留在本地
+git rm -f readme.txt  删除readme.txt的跟踪，并且删除本地文件
+
+git add .    监控工作区的状态树，会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件
+git add -u    仅监控已经被add的文件(即tracked file)，会将被修改的文件提交到暂存区，不会提交新文件(untracked file)
+git add -A    git add --all的缩写，上面两个功能的合集

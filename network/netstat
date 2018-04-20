@@ -1,1 +1,2 @@
 netstat -pantu | grep tor
+netstat -nlt

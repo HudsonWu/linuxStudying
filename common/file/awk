@@ -1,0 +1,7 @@
+awk是一种处理文本文件的语言, 是一个强大的文本分析工具
+
+语法:
+awk [选项参数] ‘script' var=value file(s)
+或
+awk [选项参数] -f scriptfile var=value file(s)
+
