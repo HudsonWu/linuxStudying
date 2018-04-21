@@ -10,3 +10,7 @@ git config --global core autocrlf true:
 true  -->  添加文件到仓库时, git 视其为文本文件, 将crlf变成lf
 false  -->  line-endings不做转换操作, 文本文件保持原样
 input  -->  添加文件到仓库时将crlf变成lf, check代码时也是lf, 在windows系统下不使用这个设置
+
+远程覆盖本地
+git fetch --all
+git reset --hard origin/master
