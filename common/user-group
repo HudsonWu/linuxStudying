@@ -5,12 +5,12 @@ id user1  查看用户user1的UID和GID
 finger user1  查看用户user1的主目录、启动shell、用户名、地址、电话等信息
 2. 建立用户
 adduser hudson  会在home目录下添加一个帐号
-useradd hudson  仅仅是添加用户，不会再home目录添加帐号
+useradd hudson  仅仅是添加用户，不会在home目录添加帐号
 useradd 选项 用户名
 -c  指定一段注释性描述（comment）
 -d  指定用户主目录，若目录不存在，使用-m选项，可以创建主目录
 -g  指定用户所属的用户组
--G  指定用户所述的附加组
+-G  指定用户所属的附加组
 -s  指定用户的登录shell
 -u  指定用户的用户号（uid）
 useradd user1 -g 1002 -u 1003 -m
