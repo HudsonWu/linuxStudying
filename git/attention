@@ -14,3 +14,5 @@ input  -->  添加文件到仓库时将crlf变成lf, check代码时也是lf, 在
 远程覆盖本地
 git fetch --all
 git reset --hard origin/master
+
+ssh -Tv git@example.com
