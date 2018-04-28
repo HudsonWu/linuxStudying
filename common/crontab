@@ -1,0 +1,48 @@
+--install--
+yum install vixie-cron  //cron的主程序
+yum install crontabs  //用来安装, 卸载, 或列举用来驱动cron守护进程表格的程序
+--use--
+1. 新增任务
+  a. 在命令行输入crontab -e, 然后添加相应任务, wq存盘退出
+  b. 直接编辑/etc/crontab文件, 添加相应任务
+2. 查看任务
+crontab -l  //列出当前所有调度任务
+crontab -l -u root  //列出root用户的所有调度任务
+3. 删除任务
+crontab -r  //删除所有任务调度工作
+
+5      *       *           *     *     ls         指定每小时的第5分钟执行一次ls命令
+30     5       *           *     *     ls         指定每天的 5:30 执行ls命令
+30     7       8           *     *     ls         指定每月8号的7:30分执行ls命令
+30     5       8           6     *     ls         指定每年的6月8日5:30执行ls命令
+30     5       8           6     *     ls         指定每年的6月8日5:30执行ls命令
+30     6       *           *     0     ls         指定每星期日的6:30执行ls命令
+30     3     10,20         *     *     ls         每月10号及20号的3:30执行ls命令
+25     8-11    *           *     *     ls         每天8-11点的第25分钟执行ls命令
+*/15   *       *           *     *     ls         每15分钟执行一次ls命令
+30     6     */10          *     *     ls         每个月中,每隔10天6:30执行一次ls命令
+22     4       *           *     *     root     run-parts     /etc/cron.daily
+#每天4:22以root身份执行/etc/cron.daily目录中的所有可执行文件,run-parts参数表示,执行后面目录中的所有可执行文件
+
+#每晚的21:30 重启apache
+30 21 * * * /usr/local/etc/rc.d/lighttpd restart
+#每月1、10、22日的4:45重启apache
+45 4 1,10,22 * * /usr/local/etc/rc.d/lighttpd restart
+#每周六、周日的1:10重启apache
+10 1 * * 6,0 /usr/local/etc/rc.d/lighttpd restart
+#每天18:00至23:00之间每隔30分钟重启apache
+0,30 18-23 * * * /usr/local/etc/rc.d/lighttpd restart
+#每星期六的11:00 pm重启apache
+0 23 * * 6 /usr/local/etc/rc.d/lighttpd restart
+#晚上11点到早上7点之间,每隔一小时重启apache
+0 23-7/1 * * * /usr/local/etc/rc.d/lighttpd restart
+#每一小时重启apache
+0 */1 * * * /usr/local/etc/rc.d/lighttpd restart
+#每月的4号与每周一到周三的11点重启apache
+0 11 4 * mon-wed /usr/local/etc/rc.d/lighttpd restart
+#一月一号的4点重启apache
+0 4 1 jan * /usr/local/etc/rc.d/lighttpd restart
+#每半小时同步一下时间
+0/30 * * * * /usr/sbin/ntpdate 210.72.145.44
+
+
