@@ -16,6 +16,8 @@ systemctl is-active httpd.service  仅显示是否Active
 systemctl cat docker.service
 # 查看自启动服务
 systemctl list-unit-files
+# 查看依赖启动的服务
+systemctl list-dependencies sshd.service
 
 查看unit的状态
 enabled  已建立启动链接
