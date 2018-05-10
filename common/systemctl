@@ -14,6 +14,8 @@ systemctl status httpd.service  服务详细信息
 systemctl is-active httpd.service  仅显示是否Active
 # 查看unit配置文件内容
 systemctl cat docker.service
+# 查看自启动服务
+systemctl list-unit-files
 
 查看unit的状态
 enabled  已建立启动链接
