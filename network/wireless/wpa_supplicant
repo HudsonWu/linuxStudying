@@ -6,7 +6,7 @@ wpa_supplicant, 无线网络管理和配置工具
 > ip a
 2. 开启守护进程
   .conf配置文件
-> ctrl_interface=DIR=/run/wpa_supplicant GROUP=wheel
+> ctrl_interface=DIR=/run/wpa_supplicant GROUP=root
 > update_config=1
 文件可以取任意的名字, 存放在/etc/wpa_supplicant目录下
 GROUP=wheel, 允许在wheel组下的用户可以连接到守护进程, 管理无线网络
@@ -30,6 +30,8 @@ bssid / frequency / signal level / flags / ssid
 7c:4c:a5:68:25:69 2412 7 [WPA2-PSK-CCMP][WPS][ESS] SKY1DA97
 ...
 flags可以查看网络的安全模型
+  列出已配置网络
+> list_networks
   添加并连接到网络
 > add_network
 0
