@@ -24,5 +24,6 @@ SYSFONT="latarcyrheb-sun16"	//定义控制台终端字体
 locale-gen zh_CN
 locale-gen zh_CN.UTF-8
 update-locale  （debian）
+dpkg-reconfigure locales  重新配置
 3. 安装几个包解决kali出现字符串重叠问题
 apt-get install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy3. 安装几个包解决kali出现字符串重叠问题
