@@ -1,90 +1,104 @@
 #!/bin/bash
 
-cd /home/ParallelForPhp && git pull origin master
-if [ $? -ne 0 ]; then
-    echo "forphp pull failed, will change something and pull again"
-    git stash && git pull origin master
-    cp -f .env.bak .env
-    cd /home/ParallelForPhp/app/Containers/Project/Configs && cp -f project.php.bak project.php
-fi
-cd /home/ParallelForPhp && php artisan migrate
-if [ $? -ne 0 ]; then
-    composer install && php artisan migrate
-fi
-echo -e "ForPhp update success\n"
-
-
-cd /home/MemberCenterForSails && git pull
-if [ $? -ne 0 ]; then
-    echo "MemberCenter pull failed, will change something and pull again"
-    git stash && git pull
-    cd /home/MemberCenterForSails/config && cp -f params.js.bak params.js && cp -f session.js.bak session.js && cp -f cache.js.bak cache.js
-fi
-echo -e "MemberCenter pull success\n"
-
-function consulting_update() {
-    cd /home/ParallelConsultingPro && git pull origin dev
+# php代码更新
+function php_update() {
+    cd /home/$1 && git pull origin $2
     if [ $? -ne 0 ]; then
-        echo "Consulting pull failed, will change something and pull again"
-        git stash && git pull origin dev
-        cp -f server.js.bak server.js
+        echo "!!!$1($2) pull failed, will change something and pull again!!!"
+        git stash && git pull origin $2
+        cp -f .env.bak .env
+        cd app/Containers/Project/Configs && cp -f project.php.bak project.php
     fi
-    echo -e "ConsultingPro update success\n"
+    cd /home/$1 && php artisan migrate
+    if [ $? -ne 0 ]; then
+        composer install && php artisan migrate
+    fi
+    echo -e "----$1($2) update complete----\n"
 }
 
-function consultation_update() {
-    cd /home/ParallelConsultationForVue && git pull origin dev:dev
+php_update "ParallelForPhp_new" "180424"
+php_update "php_02" "master"
+
+
+# 会员中心
+function member_update() {
+    cd /home/$1 && git pull origin $2
     if [ $? -ne 0 ]; then
-        echo "Consultation pull failed, will change something and pull again"
-        git stash && git pull origin dev:dev
+        echo "!!!$1($2) pull failed, will change something and pull again!!!"
+        git stash && git pull origin $2
+        cd config/ && cp -f params.js.bak params.js && cp -f session.js.bak session.js && cp -f cache.js.bak cache.js
+    fi
+    echo -e "----$1($2) update complete----\n"
+}
+
+member_update "MemberCenterForSails" "master"
+member_update "member_02" "master"
+
+
+# 门户网站
+function portal_update() {
+    cd /home/$1 && git pull origin $2
+    if [ $? -ne 0 ]; then
+        echo "!!!$1($2) pull failed, will change something and pull again!!!"
+        git stash && git pull origin $2
+        cd config/ && cp -f local.js.bak local.js && cp -f cache.js.bak cache.js && cp -f params.js.bak params.js
+    fi
+    echo -e "----$1($2) update complete----\n"
+}
+
+portal_update "ParallelPortalForSails" "master"
+portal_update "portal_02" "master"
+
+
+# api代码更新
+function api_update() {
+    cd /home/$1 && git pull origin $2
+    if [ $? -ne 0 ]; then
+        echo "!!!$1($2) pull failed, will change something and pull again!!!"
+        git stash && git pull origin $2
+        cd config/ && cp -f connections.js.bak connections.js && cp -f local.js.bak local.js && cp -f sockets.js.bak sockets.js && cp -f cache.js.bak cache.js
+    fi
+    echo -e "----$1($2) update complete----\n"
+}
+
+api_update "ParallelApiForSails" "master"
+api_update "api_02" "master"
+
+
+# 打包环境更新
+function package_update() {
+    cd /home/$1 && git pull origin $2
+    if [ $? -ne 0 ]; then
+        echo "!!!$1($2) pull failed, will change something and pull again!!!"
+        git stash && git pull origin $2
+        cp -f server.js.bak server.js
+    fi
+    echo -e "----$1($2) update complete----\n"
+}
+
+# package_update "ParallelConsultingPro" "master"  
+# package_update "ParallelBackendPro" "master"
+# package_update "ParallelParkPro" "master"
+# package_update "ParallelExpertPro" "master"
+# package_update "ParallelOwnerPro" "master"
+
+
+
+# VUE环境更新
+function vue_update() {
+    cd /home/$1 && git pull origin $2
+    if [ $? -ne 0 ]; then
+        echo "!!!$1($2) pull failed, will change something and pull again!!!"
+        git stash && git pull origin $2
         cp -f config/index.js.bak config/index.js
         cp -f src/conf/params.js.bak src/conf/params.js
     fi
-    echo -e "Consultation update success\n"
+    echo -e "----$1($2) update complete----\n"
 }
 
-consultation_update
-consulting_update
+# vue_update "ParallelConsultationForVue"  "27L0416"
+vue_update "old_consultation" "27L0416"
+# vue_update "owner_02" "20180413"
+vue_update "new_back" "27LKnowledgeBase"
+# vue_update "park_02" "dev"
 
-cd /home/ParallelApiForSails && git pull
-if [ $? -ne 0 ]; then
-    echo "api pull failed, will change something and pull again"
-    git stash && git pull
-    cd /home/ParallelApiForSails/config && cp -f connections.js.bak connections.js && cp -f local.js.bak local.js && cp -f sockets.js.bak sockets.js && cp -f cache.js.bak cache.js
-fi
-echo -e "Api update success\n"
-cd /home/ParallelBackendPro && git pull
-if [ $? -ne 0 ]; then
-    echo "pull failed, will change something and pull again"
-    git stash && git pull
-    cp -y server.js.bak server.js
-fi
-echo -e "BackendPro update success\n"
-cd /home/ParallelPortalForSails && git pull
-if [ $? -ne 0 ]; then
-    echo "pull failed, will change something and pull again"
-    git stash && git pull
-    cd /home/ParallelPortalForSails/config && cp -f local.js.bak local.js && cp -f cache.js.bak cache.js && cp -f params.js.bak params.js
-fi
-echo -e "Portal update success\n"
-cd /home/ParallelOwnerPro && git pull
-if [ $? -ne 0 ]; then
-    echo "pull failed, will change something and pull again"
-    git stash && git pull
-    cp -f server.js.bak server.js
-fi
-echo -e "OwnerPro update success\n"
-cd /home/ParallelExpertPro && git pull
-if [ $? -ne 0 ]; then
-    echo "pull failed, will change something and pull again"
-    git stash && git pull
-    cp -f server.js.bak server.js
-fi
-echo -e "ExpertPro update success\n"
-cd /home/ParallelParkPro && git pull
-if [ $? -ne 0 ]; then
-    echo "pull failed, will change something and pull again"
-    git stash && git pull
-    cp -f server.js.bak server.js
-fi
-echo -e "ParkPro update success\n"
