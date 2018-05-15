@@ -13,9 +13,11 @@ Banner是一个你连接的服务发送给你的文本信息
 当你试图鉴别漏洞或者服务的类型和版本时, Banner信息非常有用
 但并不是所有服务都会发送Banner
 2. 正向连接
+-c string, 连接后执行一条shell命令
+-e filename, 连接后运行一个文件
 Server(A机器:172.31.100.7):
 > nc -l -p 2222 -e /bin/sh //linux
-> nc -l -p 2222 -e cmd.ext //windows
+> nc -l -p 2222 -e cmd.exe //windows
 Client(B机器:172.31.100.23):
 > nc 172.31.100.7 2222
 3. 反向连接
@@ -56,10 +58,20 @@ Server(A):
 Client(B):
 > nc -n 172.31.100.7 1567 | bzip2 -d | tar -xvf -
 7. 加密通过网络发送的数据
-Server:
-> nc loclhost 1567 | mcrypt -flush -bare -F -q -d -m ecb > file.txt
-Client:
-> mcrypt -flush -bare -F -q -m ecb < file.txt | nc -l -p 1567
+Server(A):
+> mcrypt --flush --bare -F -q -m ecb < file.txt | nc -l -p 1567
+Client(B):
+> nc 172.31.100.7 1567 | mcrypt --flush --bare -F -q -d -m ecb > file.txt
+8. 流视频
+Server(A):
+> cat video.avi | nc -l -p 1567
+Client(B):
+> nc 172.31.100.7 1567 | mplayer -vo x11 --cache 3000 -
+9. 克隆一个设备
+Server(A):
+> dd if=/dev/sda | nc -l -p 1567
+Client(B):
+> nc 172.31.100.7 1567 | dd of=/dev/sda
 ====funny====
 > nc -L -p 80 > logs.txt //开启并不停的监听80端口, 直到CTR+C, 同时把结果输出到logs.txt
 > nc -L -p 80 < files.txt //同时把files.txt文件内容送入管道中
@@ -82,3 +94,13 @@ Client:
 -v, 详细输出, 用-vv将更详细
 -w <超时秒数>, 设置等待连线的时间
 -z, 使用0输入/输出模式, 连接成功后立即关闭连接, 只在扫描通信端口时使用
+====其他用途====
+1. 使用-t选项模拟Telnet客户端
+2. HTTP客户端用于下载文件
+3. 连接邮件服务器, 使用SMTP协议检查邮件
+4. 使用ffmpeg截取屏幕并通过流式传输分享
+只要你了解协议就可以使用netcat作为网络通讯媒介, 实现各种客户端
+====Remarks====
+1. cmd编码支持utf-8, chcp命令
+> chcp  //查看当前编码, 默认为936(GB2312)
+> chcp 65001  //切换为UTF-8, 活动代码页为65001
