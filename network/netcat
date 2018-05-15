@@ -72,9 +72,39 @@ Server(A):
 > dd if=/dev/sda | nc -l -p 1567
 Client(B):
 > nc 172.31.100.7 1567 | dd of=/dev/sda
+10. 手动使用SMTP协议通信
+> nc localhost 25 << EOF
+> HELO host.example.com
+> MAIL FROM: <user@host.example.com>
+> RCPT TO: <user2@host.example.com>
+> DATA
+> Body of email.
+> .
+> QUIT
+> EOF
+11. 通过代理服务器连接
+> nc -x10.2.3.4:8080 -Xconnect host.example.com 42
+使用10.2.3.4:8080这个代理服务器, 连接到host.example.com的42端口
+12. 使用Unix Domain Socket
+> nc -lU /var/tmp/dsocket
+建立一个Unix Domain Socket, 并接收资料
 ====funny====
+1. 不停监听模式(有的nc命令是-k参数)
 > nc -L -p 80 > logs.txt //开启并不停的监听80端口, 直到CTR+C, 同时把结果输出到logs.txt
 > nc -L -p 80 < files.txt //同时把files.txt文件内容送入管道中
+2. 特殊打开shell方式
+Server(A):
+> mkfifo /tmp/tmp_fifo  //创建fifo文件
+> cat /tmp/tmp_fifo | /bin/sh -i 2>&1 | nc -l -p 1567 > /tmp/tmp_fifo
+从网络收到的输入写入到fifo文件中
+cat命令读取fifo文件并将其内容发给sh命令
+sh命令进程收到输入并把它写回到netcat
+netcat通过网络发送输出到client
+(管道命令平行执行, fifo文件用来替代正常文件, 因为fifo使读取等待,
+如果是一个普通文件, cat命令会尽快结束并开始读取空文件)
+Client(B):
+> nc -n 172.31.100.7 1567
+在客户端会有一个shell提示符
 ====arguments====
 -h, 查看帮助信息
 -d, 后台模式
@@ -94,6 +124,7 @@ Client(B):
 -v, 详细输出, 用-vv将更详细
 -w <超时秒数>, 设置等待连线的时间
 -z, 使用0输入/输出模式, 连接成功后立即关闭连接, 只在扫描通信端口时使用
+-q <秒数>, 接收到EOF后隔多长时间退出
 ====其他用途====
 1. 使用-t选项模拟Telnet客户端
 2. HTTP客户端用于下载文件
