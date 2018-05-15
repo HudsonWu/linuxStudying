@@ -8,7 +8,7 @@ redhat/fedora/centos
 > mcrypt file1  //生成file1.nc加密文件
 使用-k参数, 分别指定密码加密文件
 > mcrypt file1 file2 -k abc123 ABC123  //file1.nc, file2.nc
-====Dencryption====
+====Decryption====
 > mcrypt file1.nc  //解密出file1
 > mcrypt -k abc123 ABC123 -d file1.nc file2.nc  //file1, file2
 > md5sum file[1,2]  //验证文件完整性
