@@ -1,4 +1,0 @@
-lspci: apt-get install pciutils
-apt-get remove fglrx* && apt-get install xserver-xorg-video-ati
-nslookup: apt-get install dnsutils
-vncserver -geometry 1325x725 :1
