@@ -1,38 +1,55 @@
 #!/bin/bash
 
+# 这个shell脚本是用来自动化更新源代码的
+# 使用前需要对一些文件做个备份
+# 使用时只需要更改代码所在根目录的文件名和代码分支即可
+
+# 代码更新统一
+function update() {
+    if [ -d "/home/$2" ]; then
+        "$1" "$2" "$3"
+    else
+        echo "The $2 folder not found, please check it"
+    fi
+}
+
+# 恢复备份
+function bak() {
+    if [ -f file "$1.bak" ]; then
+        cp -f "$1.bak" "$1"
+    else
+        echo "$1.bak not found"
+    fi
+}
+
 # php代码更新
 function php_update() {
     cd /home/$1 && git pull origin $2
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
-        git stash && git pull origin $2
-        cp -f .env.bak .env
-        cd app/Containers/Project/Configs && cp -f project.php.bak project.php
+        git fetch --all && git reset --hard origin/$2
+        bak ".env"
+        cd app/Containers/Project/Configs && bak "project.php"
     fi
     cd /home/$1 && php artisan migrate
-    if [ $? -ne 0 ]; then
-        composer install && php artisan migrate
-    fi
-    echo -e "----$1($2) update complete----\n"
+    echo -e "====$1($2) update complete====\n"
 }
 
-php_update "ParallelForPhp_new" "180424"
-php_update "php_02" "master"
-
+update "php_update" "Newphp_01" "review"
 
 # 会员中心
 function member_update() {
     cd /home/$1 && git pull origin $2
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
-        git stash && git pull origin $2
-        cd config/ && cp -f params.js.bak params.js && cp -f session.js.bak session.js && cp -f cache.js.bak cache.js
+        git fetch --all && git reset --hard origin/$2
+        cd config/ && bak "params.js" && bak "session.js" && bak "cache.js"
     fi
-    echo -e "----$1($2) update complete----\n"
+    echo -e "====$1($2) update complete====\n"
 }
 
-member_update "MemberCenterForSails" "master"
-member_update "member_02" "master"
+update "member_update" "3-member" "master"
+update "member_update" "member_02" "master"
 
 
 # 门户网站
@@ -40,14 +57,14 @@ function portal_update() {
     cd /home/$1 && git pull origin $2
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
-        git stash && git pull origin $2
-        cd config/ && cp -f local.js.bak local.js && cp -f cache.js.bak cache.js && cp -f params.js.bak params.js
+        git fetch --all && git reset --hard origin/$2
+        cd config/ && bak "local.js" && bak "cache.js" && bak "params.js"
     fi
-    echo -e "----$1($2) update complete----\n"
+    echo -e "====$1($2) update complete====\n"
 }
 
-portal_update "ParallelPortalForSails" "master"
-portal_update "portal_02" "master"
+update "portal_update" "3-portal" "master"
+update "portal_update" "portal_02" "zsk111"
 
 
 # api代码更新
@@ -55,14 +72,13 @@ function api_update() {
     cd /home/$1 && git pull origin $2
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
-        git stash && git pull origin $2
-        cd config/ && cp -f connections.js.bak connections.js && cp -f local.js.bak local.js && cp -f sockets.js.bak sockets.js && cp -f cache.js.bak cache.js
+        git fetch --all && git reset --hard origin/$2
+        cd config/ && bak "connections.js" && bak "local.js" && bak "sockets.js" && "bak cache.js"
     fi
-    echo -e "----$1($2) update complete----\n"
+    echo -e "====$1($2) update complete====\n"
 }
 
-api_update "ParallelApiForSails" "master"
-api_update "api_02" "master"
+update "api_update" "Api_01" "master"
 
 
 # 打包环境更新
@@ -70,18 +86,13 @@ function package_update() {
     cd /home/$1 && git pull origin $2
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
-        git stash && git pull origin $2
-        cp -f server.js.bak server.js
+        git fetch --all && git reset --hard origin/$2
+        bak "server.js"
     fi
-    echo -e "----$1($2) update complete----\n"
+    echo -e "====$1($2) update complete====\n"
 }
 
-# package_update "ParallelConsultingPro" "master"  
-# package_update "ParallelBackendPro" "master"
-# package_update "ParallelParkPro" "master"
-# package_update "ParallelExpertPro" "master"
-# package_update "ParallelOwnerPro" "master"
-
+# update "package_update" "ParallelConsultingPro" "master"  
 
 
 # VUE环境更新
@@ -89,16 +100,10 @@ function vue_update() {
     cd /home/$1 && git pull origin $2
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
-        git stash && git pull origin $2
-        cp -f config/index.js.bak config/index.js
-        cp -f src/conf/params.js.bak src/conf/params.js
+        git fetch --all && git reset --hard origin/$2
+        bak "config/index.js" && bak "src/conf/params.js"
     fi
-    echo -e "----$1($2) update complete----\n"
+    echo -e "====$1($2) update complete====\n"
 }
 
-# vue_update "ParallelConsultationForVue"  "27L0416"
-vue_update "old_consultation" "27L0416"
-# vue_update "owner_02" "20180413"
-vue_update "new_back" "27LKnowledgeBase"
-# vue_update "park_02" "dev"
-
+update "vue_update" "3-consultation"  "27L0416"
