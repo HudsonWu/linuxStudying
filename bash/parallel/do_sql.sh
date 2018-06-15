@@ -1,10 +1,12 @@
 #!/bin/bash
 date=`date +"%Y-%m-%d %H:%m:%S"`
-echo "today is $date"
 
 mysql -uroot -pyfyunmysql << EOF
 use parallel;
 update mettings set time="$date";
 EOF
 
-echo "everything is ok"
+if [ $? -eq 0 ]; then
+    echo "today is $date"
+    echo "everything is ok"
+fi
