@@ -28,8 +28,8 @@ function php_update() {
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
         git fetch --all && git reset --hard origin/$2
-        bak ".env"
-        cd app/Containers/Project/Configs && bak "project.php"
+        bak "/home/$1/.env"
+        bak "/home/$1/app/Containers/Project/Configs/project.php"
     fi
     cd /home/$1 && php artisan migrate
     echo -e "====$1($2) update complete====\n"
@@ -43,7 +43,7 @@ function member_update() {
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
         git fetch --all && git reset --hard origin/$2
-        cd config/ && bak "params.js" && bak "session.js" && bak "cache.js"
+        bak "/home/$1/config/params.js" && bak "/home/$1/config/session.js" && bak "/home/$1/config/cache.js"
     fi
     echo -e "====$1($2) update complete====\n"
 }
@@ -58,7 +58,7 @@ function portal_update() {
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
         git fetch --all && git reset --hard origin/$2
-        cd config/ && bak "local.js" && bak "cache.js" && bak "params.js"
+        bak "/home/$1/config/local.js" && bak "/home/$1/config/cache.js" && bak "/home/$1/config/params.js"
     fi
     echo -e "====$1($2) update complete====\n"
 }
@@ -73,7 +73,7 @@ function api_update() {
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
         git fetch --all && git reset --hard origin/$2
-        cd config/ && bak "connections.js" && bak "local.js" && bak "sockets.js" && "bak cache.js"
+        bak "/home/$1/config/connections.js" && bak "/home/$1/config/local.js" && bak "/home/$1/config/sockets.js" && "/home/$1/config/bak cache.js"
     fi
     echo -e "====$1($2) update complete====\n"
 }
@@ -87,7 +87,7 @@ function package_update() {
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
         git fetch --all && git reset --hard origin/$2
-        bak "server.js"
+        bak "/home/$1/server.js"
     fi
     echo -e "====$1($2) update complete====\n"
 }
@@ -101,7 +101,7 @@ function vue_update() {
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
         git fetch --all && git reset --hard origin/$2
-        bak "config/index.js" && bak "src/conf/params.js"
+        bak "/home/$1/config/index.js" && bak "/home/$1/src/conf/params.js"
     fi
     echo -e "====$1($2) update complete====\n"
 }
