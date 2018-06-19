@@ -2,108 +2,120 @@
 
 # 这个shell脚本是用来自动化更新源代码的
 # 使用前需要对一些文件做个备份
-# 使用时只需要更改代码所在根目录的文件名和代码分支即可
+
 
 # 代码更新统一
 function update() {
-    if [ -d "/home/$2" ]; then
+    if [ -d "$2" ]; then
         "$1" "$2" "$3"
     else
         echo "The $2 folder not found, please check it"
     fi
 }
 
-# 恢复备份
-function bak() {
-    if [ -f file "$1.bak" ]; then
+# 恢复备份文件
+function getbak() {
+    if [ -f  "$1.bak" ]; then
         cp -f "$1.bak" "$1"
     else
-        echo "$1.bak not found"
+        echo "$1.bak file not found"
     fi
 }
+
+# 文件备份
+function bak() {
+    if [ ! -f "$1" ]; then
+        echo "bak file not found, will autobak"
+        cp -f "$1" "$1.bak"
+    fi
+} 
 
 # php代码更新
 function php_update() {
-    cd /home/$1 && git pull origin $2
+    bak "$1/.env"
+    bak "$1/app/Containers/Project/Configs/project.php"
+    cd $1 && git pull origin $2
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
         git fetch --all && git reset --hard origin/$2
-        bak "/home/$1/.env"
-        bak "/home/$1/app/Containers/Project/Configs/project.php"
+        getbak "$1/.env"
+        getbak "$1/app/Containers/Project/Configs/project.php"
     fi
-    cd /home/$1 && php artisan migrate
+    cd $1 && php artisan migrate
     echo -e "====$1($2) update complete====\n"
 }
 
-update "php_update" "Newphp_01" "review"
 
 # 会员中心
 function member_update() {
-    cd /home/$1 && git pull origin $2
+    bak "$1/config/params.js" && bak "$1/config/session.js" && bak "$1/config/cache.js"
+    cd $1 && git pull origin $2
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
         git fetch --all && git reset --hard origin/$2
-        bak "/home/$1/config/params.js" && bak "/home/$1/config/session.js" && bak "/home/$1/config/cache.js"
+        getbak "$1/config/params.js" && getbak "$1/config/session.js" && getbak "$1/config/cache.js"
     fi
     echo -e "====$1($2) update complete====\n"
 }
-
-update "member_update" "3-member" "master"
-update "member_update" "member_02" "master"
 
 
 # 门户网站
 function portal_update() {
-    cd /home/$1 && git pull origin $2
+    bak "$1/config/local.js" && bak "$1/config/cache.js" && bak "$1/config/params.js"
+    cd $1 && git pull origin $2
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
         git fetch --all && git reset --hard origin/$2
-        bak "/home/$1/config/local.js" && bak "/home/$1/config/cache.js" && bak "/home/$1/config/params.js"
+        getbak "$1/config/local.js" && getbak "$1/config/cache.js" && getbak "$1/config/params.js"
     fi
     echo -e "====$1($2) update complete====\n"
 }
-
-update "portal_update" "3-portal" "master"
-update "portal_update" "portal_02" "zsk111"
 
 
 # api代码更新
 function api_update() {
-    cd /home/$1 && git pull origin $2
+    bak "$1/config/connections.js" && bak "$1/config/local.js" && bak "$1/config/sockets.js" && bak "$1/config/cache.js"
+    cd $1 && git pull origin $2
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
         git fetch --all && git reset --hard origin/$2
-        bak "/home/$1/config/connections.js" && bak "/home/$1/config/local.js" && bak "/home/$1/config/sockets.js" && "/home/$1/config/bak cache.js"
+        getbak "$1/config/connections.js" && getbak "$1/config/local.js" && getbak "$1/config/sockets.js" && getbak "$1/config/cache.js"
     fi
     echo -e "====$1($2) update complete====\n"
 }
-
-update "api_update" "Api_01" "master"
 
 
 # 打包环境更新
 function package_update() {
-    cd /home/$1 && git pull origin $2
+    bak "$1/server.js"
+    cd $1 && git pull origin $2
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
         git fetch --all && git reset --hard origin/$2
-        bak "/home/$1/server.js"
+        getbak "$1/server.js"
     fi
     echo -e "====$1($2) update complete====\n"
 }
-
-# update "package_update" "ParallelConsultingPro" "master"  
 
 
 # VUE环境更新
 function vue_update() {
-    cd /home/$1 && git pull origin $2
+    bak "$1/config/index.js" && bak "$1/src/conf/params.js"
+    cd $1 && git pull origin $2
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
         git fetch --all && git reset --hard origin/$2
-        bak "/home/$1/config/index.js" && bak "/home/$1/src/conf/params.js"
+        getbak "$1/config/index.js" && getbak "$1/src/conf/params.js"
     fi
     echo -e "====$1($2) update complete====\n"
 }
 
-update "vue_update" "3-consultation"  "27L0416"
+# 使用方法
+# update [代码更新函数] [代码绝对路径] [代码分支名]
+# 一般只需更改代码分支名即可
+
+update "php_update" "/home/Newphp_01" "review"
+update "vue_update" "/home/3-consultation"  "27L0416"
+update "member_update" "/home/3-member" "master"
+update "portal_update" "/home/3-portal" "master"
+update "api_update" "/home/Api_01" "master"
