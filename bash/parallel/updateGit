@@ -17,6 +17,7 @@ function update() {
 function getbak() {
     if [ -f  "$1.bak" ]; then
         cp -f "$1.bak" "$1"
+        echo "getbak success, nothing to worried"
     else
         echo "$1.bak file not found"
     fi
