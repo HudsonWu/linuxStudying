@@ -1,7 +1,13 @@
 ssh配置并开启
 1. vi /etc/ssh/sshd_config
++ 密码验证
 PermitRootLogin yes
 PasswordAuthentication yes
++ 秘钥对验证
+RSAAuthentication yes
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+(需要在.ssh/authorized_keys加入公钥)
 2. 启动ssh  /etc/init.d/ssh start
 查看ssh服务状态 /etc/init.d/ssh status
 
