@@ -1,0 +1,13 @@
+read a b c
+
+less <&0
+
+cat -
+
+cat "${1:-/dev/stdin}" > "${2:-/dev/stdout}"
+
+while read line; do
+    echo "reading: ${line}"
+done < /dev/stdin
+
+
