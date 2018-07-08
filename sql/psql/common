@@ -44,6 +44,7 @@ INSERT INTO user_tb1(name,signup_date) VALUES('Lancy','2017-11-11');  插入数�
 SELECT * FROM user_tb1;  选择记录
 UPDATE user_tb1 set name='aqing' WHERE name='Lancy';  更新数据
 DELETE FROM user_tb1 WHERE name='Lucy';  删除记录
+ALTER DATABASE abc RENAME TO cba;  数据库重命名
 ALTER TABLE user_tb1 ADD email VARCHAR(40);  添加栏位
 ALTER TABLE user_tb1 ALTER COLUMN signup_date SET NOT NULL;  更新结构
 ALTER TABLE user_tb1 RENAME COLUMN signup_date TO signup;  更名栏位
