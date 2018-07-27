@@ -1,0 +1,13 @@
+[Unit]
+Description=shadowsocksr
+After=network.target
+Wants=network.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/shadowsocksr.pid
+ExecStart=/usr/bin/python /usr/local/shadowsocksr/shadowsocks/server.py --pid-file /var/run/shadowsocksr.pid -p 46176 -k qSlzBU -m chacha20-ietf -O auth_sha1_v4 -o tls1.2_ticket_auth -d start
+ExecStop=/usr/bin/python /usr/local/shadowsocksr/shadowsocks/server.py --pid-file /var/run/shadowsocksr.pid -p 46176 -k qSlzBU -m chacha20-ietf -O auth_sha1_v4 -o tls1.2_ticket_auth -d stop
+
+[Install]
+WantedBy=multi-user.target
