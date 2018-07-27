@@ -1,0 +1,11 @@
+[Unit]
+Description=prometheus
+After=network.target
+[Service]
+Type=simple
+User=prometheus
+ExecStart=/usr/local/prometheus/prometheus --config.file=/usr/local/prometheus/prometheus.yml --storage.tsdb.path=/var/lib/prometheus
+Restart=on-failure
+StartLimitIntervalSec=120
+[Install]
+WantedBy=multi-user.target
