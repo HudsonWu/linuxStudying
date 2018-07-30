@@ -3,6 +3,18 @@
 # 这个shell脚本是用来自动化更新源代码的
 # 使用前需要对一些文件做个备份
 
+isapi=false
+# 是否更新api文档
+if [ $# -ne 0 ]; then
+    if [ "$1"x =  "api"x ]; then
+        isapi=true
+        echo "It will update your api documents"
+    else
+        echo "The parameter isn't right, should be api"
+    fi
+else
+    echo "You could add a parameter to update api"
+fi
 
 # 代码更新统一
 function update() {
@@ -43,6 +55,9 @@ function php_update() {
         getbak "$1/app/Containers/Project/Configs/project.php"
     fi
     cd $1 && php artisan migrate
+    if [ "$isapi" = true ]; then
+        cd $1 && apidoc -i . -o public/api/
+    fi
     echo -e "====$1($2) update complete====\n"
 }
 
@@ -115,8 +130,11 @@ function vue_update() {
 # update [代码更新函数] [代码绝对路径] [代码分支名]
 # 一般只需更改代码分支名即可
 
-update "php_update" "/home/Newphp_01" "review"
-update "vue_update" "/home/3-consultation"  "27L0416"
-update "member_update" "/home/3-member" "master"
-update "portal_update" "/home/3-portal" "master"
-update "api_update" "/home/Api_01" "master"
+#update "php_update" "/home/Newphp_01" "site_survey"
+update "php_update" "/home/newphp" "majordomo_consulting"
+update "php_update" "/home/Newphp" "master"
+update "vue_update" "/home/Consultation"  "master"
+#update "vue_update" "/home/consultation_02"  "27L0416"
+#update "member_update" "/home/Member" "master"
+#update "portal_update" "/home/Portal" "master"
+#update "api_update" "/home/Api_01" "master"
