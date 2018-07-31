@@ -72,3 +72,8 @@ sed 's/<.*>//g' html.txt
 -> meant. Understand?
 sed 's/<[^>]*>//g' html.txt
 This is what I meant. Understand?
+
+Amazing:
+1. 在指定行前面或后面插入新行
+sed '/test/i\ add a new line' -i a.txt
+sed '/test/a\ a new line' -i a.txt
