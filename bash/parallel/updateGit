@@ -4,16 +4,25 @@
 # 使用前需要对一些文件做个备份
 
 isapi=false
+ismigrate=false
 # 是否更新api文档
 if [ $# -ne 0 ]; then
-    if [ "$1"x =  "api"x ]; then
+    if [ "$1"x =  "api"x -o "$2"x = "api"x ]; then
         isapi=true
         echo "It will update your api documents"
+        if [ "$1"x = "migrate"x -o "$2"x = "migrate"x ]; then
+            ismigrate=true
+            echo "It will execute php artisan migrate"
+        fi
+    elif [ "$1"x = "migrate"x -o "$2"x = "migrate"x ]; then
+        ismigrate=true
+        echo "It will execute php artisan migrate"
     else
         echo "The parameter isn't right, should be api"
     fi
 else
-    echo "You could add a parameter to update api"
+    echo "You could add 'api' to update api"
+    echo "You could add 'migrate' to execute mysql"
 fi
 
 # 代码更新统一
@@ -48,16 +57,22 @@ function php_update() {
     bak "$1/.env"
     bak "$1/app/Containers/Project/Configs/project.php"
     cd $1 && git pull origin $2
+    
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) pull failed, will change something and pull again!!!"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/.env"
         getbak "$1/app/Containers/Project/Configs/project.php"
     fi
-    cd $1 && php artisan migrate
+
+    if [ "$ismigrate" = true ]; then
+        cd $1 && php artisan migrate
+    fi
+
     if [ "$isapi" = true ]; then
         cd $1 && apidoc -i . -o public/api/
     fi
+    
     echo -e "====$1($2) update complete====\n"
 }
 
@@ -132,9 +147,9 @@ function vue_update() {
 
 #update "php_update" "/home/Newphp_01" "site_survey"
 update "php_update" "/home/newphp" "majordomo_consulting"
-update "php_update" "/home/Newphp" "master"
-update "vue_update" "/home/Consultation"  "master"
-#update "vue_update" "/home/consultation_02"  "27L0416"
+update "php_update" "/home/Newphp" "majordomo_consulting"
+update "vue_update" "/home/Consultation" "180606steward"
+#update "vue_update" "/home/consultation_02" "27L0416"
 #update "member_update" "/home/Member" "master"
 #update "portal_update" "/home/Portal" "master"
 #update "api_update" "/home/Api_01" "master"
