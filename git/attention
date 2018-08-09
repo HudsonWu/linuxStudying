@@ -15,7 +15,8 @@ input  -->  添加文件到仓库时将crlf变成lf, check代码时也是lf, 在
 git fetch --all
 git reset --hard origin/master
 
-ssh -Tv git@example.com
+测试是否ssh成功连接
+ssh -vT git@github.com
 
 查看master分支所有提交
 > git rev-list master
