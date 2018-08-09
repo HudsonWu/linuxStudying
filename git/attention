@@ -16,3 +16,17 @@ git fetch --all
 git reset --hard origin/master
 
 ssh -Tv git@example.com
+
+查看master分支所有提交
+> git rev-list master
+显示前10个
+> git rev-list master --max-count=10
+
+git clone下载内容过大解决方法(--depth):
+depth用于指定克隆深度, 为1即表示只克隆最近一次commit
+只会把默认分支clone下来, 其他远程分支并不在本地, 需要用如下方法拉取其他分支
+> git clone --depth 1 https:/github.com/someone/example.git
+> git remote set-branches origin 'remote_branch_name'
+> git fetch --depth 1 origin remote_branch_name
+> git checkout remote_branch_name
+
