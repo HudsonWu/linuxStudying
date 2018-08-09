@@ -1,11 +1,7 @@
-# github
-Host github
-	HostName github.com
-	User git
-	IdentityFile /root/.ssh/github_rsa
+Host 192.168.0.*
+IdentityFile ~/.ssh/id2_rsa
+User root
 
-# kaliLenovo
-Host hwu
-	HostName 192.168.1.110
-	User root
-	IdentityFile /root/.ssh/id_rsa
+Host github.com
+IdentityFile ~/.ssh/id_rsa
+User HudsonWu
