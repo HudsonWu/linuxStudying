@@ -1,0 +1,10 @@
+[Unit]
+Description=redis_exporter
+After=network.target
+[Service]
+Type=simple
+User=prometheus
+ExecStart=/usr/local/prometheus/redis_exporter/redis_exporter -redis.addr localhost:6379"
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=mysqld_exporter
+After=network.target
+[Service]
+Type=simple
+User=prometheus
+Environment=DATA_SOURCE_NAME=mysqld_exporter:YFyunmysql123.@tcp(127.0.0.1:3306)/?loc=Local
+ExecStart=/usr/local/prometheus/mysqld_exporter/mysqld_exporter
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
