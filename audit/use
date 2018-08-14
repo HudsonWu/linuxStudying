@@ -1,0 +1,15 @@
+步骤:
+1. 安装软件包
+> yum install audit*.* -y
+源码下载地址: http://people.redhat.com/sgrubb/audit/
+
+2. 设置配置文件, 配置常用命令
+audit安装后会生成 2 个配置文件: /etc/audit/auditd.conf 和/etc/audit/audit.rules
+/etc/audit/auditd.conf 是守护程序的默认配置文件
+/etc/audit/audit.rules 是记录审计规则的文件, 首次安装 audit 后, 审计规则文件是空的
+
+3. 添加审计规则
+
+4. 启用audit守护进程并开始进行日志记录
+
+5. 生成审计报表和搜索日志来周期性地分析数据

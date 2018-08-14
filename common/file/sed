@@ -77,3 +77,4 @@ Amazing:
 1. 在指定行前面或后面插入新行
 sed '/test/i\ add a new line' -i a.txt
 sed '/test/a\ a new line' -i a.txt
+sed -i '/allow 361way.com/iallow www.361way.com' the.conf.file
