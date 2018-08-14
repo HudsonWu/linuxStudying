@@ -1,0 +1,39 @@
+# This file contains the auditctl rules that are loaded 
+# whenever the audit daemon is started via the initscripts. 
+# The rules are simply the parameters that would be passed 
+# to auditctl.
+
+# First rule - delete all 
+-D
+
+# Increase the buffers to survive stress events. 
+# Make this bigger for busy systems 
+-b 1024
+
+# Feel free to add below this line. See auditctl man page 
+-a exit,always -F arch=b64 -S umask -S chown -S chmod 
+-a exit,always -F arch=b64 -S unlink -S rmdir 
+-a exit,always -F arch=b64 -S setrlimit 
+-a exit,always -F arch=b64 -S setuid -S setreuid 
+-a exit,always -F arch=b64 -S setgid -S setregid 
+-a exit,always -F arch=b64 -S sethostname -S setdomainname 
+-a exit,always -F arch=b64 -S adjtimex -S settimeofday 
+-a exit,always -F arch=b64 -S mount -S _sysctl
+
+-w /etc/group -p wa 
+-w /etc/passwd -p wa 
+-w /etc/shadow -p wa 
+-w /etc/sudoers -p wa
+
+-w /etc/ssh/sshd_config
+
+-w /etc/bashrc -p wa   
+-w /etc/profile -p wa   
+-w /etc/profile.d/   
+-w /etc/aliases -p wa   
+-w /etc/sysctl.conf -p wa
+
+-w /var/log/lastlog
+
+# Disable adding any additional rules - note that adding *new* rules will require a reboot   
+#-e 2

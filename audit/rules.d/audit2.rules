@@ -1,0 +1,21 @@
+# Delete all previous rules
+-D
+
+# Set buffer size
+-b 8192
+
+# Make the configuration immutable -- reboot is required to change audit rules
+-e 2
+
+# Panic when a failure occurs
+-f 2
+
+# Generate at most 100 audit messages per second
+-r 100
+
+-w /etc/passwd -p wa -k passwd_changes
+-w /etc/selinux/ -p wa -k selinux_changes
+-w /sbin/insmod -p x -k module_insertion
+
+-a always,exit -F arch=b64 -S adjtimex -S settimeofday -k time_change
+-a always,exit -S unlink -S unlinkat -S rename -S renameat -F auid>=500 -F auid!=4294967295 -k delete

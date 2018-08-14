@@ -11,5 +11,13 @@ audit安装后会生成 2 个配置文件: /etc/audit/auditd.conf 和/etc/audit/
 3. 添加审计规则
 
 4. 启用audit守护进程并开始进行日志记录
+> service auditd start  //启动
+> service auditd stop   //停止
+> service auditd restart  //重启
+> service auditd reload  //重新加载auditd.conf的配置
+> service auditd force-reload
+> service auditd retate  //旋转日志文件
+> service auditd resume  //在推迟审核事件日志后重新开始
+> service auditd status  //显示运行状态
 
 5. 生成审计报表和搜索日志来周期性地分析数据
