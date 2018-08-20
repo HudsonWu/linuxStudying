@@ -12,7 +12,11 @@ python方式:
 
 # 使用
 
-## 默认为GET方法
+## 如果不带METHOD参数, 默认为GET(没有附带请求参数)或POST(附带请求参数, 默认以json格式传输)
+> http example.org
+> http example.org hello=world
+
+## GET方法
 + 定制头部
 > http tonydeng.github.io/blog/2015/07/10/httpie-howto/ User-Agent:Xmodlo/1.0 Refer:http://tonydeng.github.io
 
