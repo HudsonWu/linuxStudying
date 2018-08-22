@@ -6,9 +6,6 @@
 > git checkout -b test
 > git push origin test  //远程仓库将新建一个test分支
 
-合并到主分支
-> git clone [gitsite]  //把源码clone到本地(master分支)
-> git checkout -b dev origin/dev  //在本地新建一个与远程dev版本相同的dev分支
-> git checkout master  //切换到主分支
-> git merge dev  //把dev分支的更改和master合并
-> git push  //提交主分支代码到远程
+查看本地和远程版本差异
+> git log -p dev..origin/dev
+
