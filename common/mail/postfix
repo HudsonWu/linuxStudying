@@ -1,7 +1,5 @@
-Linux 发邮件之mail
 
 1. 安装
-(需要sendmail或postfix服务)
 
 > //postfix
 > yum install postfix mailx cyrus-sasl-*
