@@ -44,3 +44,5 @@ groupdel users  删除组users
 shell是用户与linux系统之间的接口，linux的shell有很多种，常见的有sh(Bourne Shell),csh(C Shell),ksh(Korn Shell),bash(Bourne Again Shell)等
 系统管理员可以根据系统情况和用户习惯为用户指定某个Shell，若不指定，系统使用sh为默认的登录shell
 
+usermod -a -G groupA user1  将user1添加到用户组groupA中
+
