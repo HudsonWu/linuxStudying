@@ -4,9 +4,9 @@
 源码下载地址: http://people.redhat.com/sgrubb/audit/
 
 2. 设置配置文件, 配置常用命令
-audit安装后会生成 2 个配置文件: /etc/audit/auditd.conf 和/etc/audit/audit.rules
+audit安装后会生成 2 个配置文件: /etc/audit/auditd.conf和/etc/audit/audit.rules
 /etc/audit/auditd.conf 是守护程序的默认配置文件
-/etc/audit/audit.rules 是记录审计规则的文件, 首次安装 audit 后, 审计规则文件是空的
+/etc/audit/audit.rules 是记录审计规则的文件, 首次安装audit后, 审计规则文件是空的
 
 3. 添加审计规则
 
@@ -16,7 +16,7 @@ audit安装后会生成 2 个配置文件: /etc/audit/auditd.conf 和/etc/audit/
 > service auditd restart  //重启
 > service auditd reload  //重新加载auditd.conf的配置
 > service auditd force-reload
-> service auditd retate  //旋转日志文件
+> service auditd rotate  //旋转日志文件
 > service auditd resume  //在推迟审核事件日志后重新开始
 > service auditd status  //显示运行状态
 

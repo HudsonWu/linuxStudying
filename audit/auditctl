@@ -10,13 +10,13 @@ auditctl 命令添加的规则不是永久有效的, 为了让其在重新启动
 项目        可选参数               说明
 filter     user,exit,task,exclude  详细说明哪个内核规则应用在事件中
 action     always(是),never(否)    是否审核事件
-syscall    all,2,open等            所有的系统调用都可以在/usr/include/unistd_64.h文件中找到
+syscall    all,2,open等            所有的系统调用都可以在/usr/include/unistd_64.h文件中找到(syscallent.h)
 condition  euid=0,arch=b64         详细说明其他选项, 进一步修改规则来以特定架构、组ID、进程ID和其他内容为基础的事件相匹配
-label      任一文字                标记审核事件并检索日志
+label      任意文字                标记审核事件并检索日志
 -----------------------------------------------------
 -S 表示系统调用号或名字
 -F 表示规则域
--k 表示设置审计规则上的过滤关键
+-k 表示设置审计规则上的过滤关键词
 
 3. audit审计规则
 预配置规则文件: /usr/share/doc/audit-version/

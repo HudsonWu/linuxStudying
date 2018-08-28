@@ -1,16 +1,11 @@
-# This file contains the auditctl rules that are loaded 
-# whenever the audit daemon is started via the initscripts. 
-# The rules are simply the parameters that would be passed 
-# to auditctl.
+# Panic when a failure occurs
+-f 2
 
-# First rule - delete all 
--D
+# Generate at most 100 audit messages per second
+-r 100
 
-# Increase the buffers to survive stress events. 
-# Make this bigger for busy systems 
--b 1024
-
-# Feel free to add below this line. See auditctl man page 
+-a always,exit -F arch=b64 -S adjtimex -S settimeofday -k time_change
+-a always,exit -S unlink -S unlinkat -S rename -S renameat -F auid>=500 -F auid!=4294967295 -k delete
 -a exit,always -F arch=b64 -S umask -S chown -S chmod 
 -a exit,always -F arch=b64 -S unlink -S rmdir 
 -a exit,always -F arch=b64 -S setrlimit 
@@ -20,20 +15,17 @@
 -a exit,always -F arch=b64 -S adjtimex -S settimeofday 
 -a exit,always -F arch=b64 -S mount -S _sysctl
 
--w /etc/group -p wa 
--w /etc/passwd -p wa 
--w /etc/shadow -p wa 
--w /etc/sudoers -p wa
-
 -w /etc/ssh/sshd_config
-
 -w /etc/bashrc -p wa   
 -w /etc/profile -p wa   
 -w /etc/profile.d/   
 -w /etc/aliases -p wa   
 -w /etc/sysctl.conf -p wa
-
 -w /var/log/lastlog
 
-# Disable adding any additional rules - note that adding *new* rules will require a reboot   
-#-e 2
+-w /etc/passwd -p wa -k passwd_changes
+-w /etc/selinux/ -p wa -k selinux_changes
+-w /sbin/insmod -p x -k module_insertion
+
+-a exclude,always -F msgtype=CONFIG_CHANGE
+-a exit,always -F arch=b64 -F uid=48 -S execve -k webshell
