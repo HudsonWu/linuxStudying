@@ -12,7 +12,12 @@ docker run --rm -it -p 80:80 vulnerables/web-dvwa
 -t选项让Docker分配一个伪终端（pseudo-tty）并绑定到容器的标准输入上
 -i则让容器的标准输入保持打开
 使用exit可以退出容器
-  2）进入一个运行中的容器
+  2) 后台运行容器
+docker run -td docker.io/centos
+-d后台运行容器并返回容器ID
+-p端口映射, 主机(宿主)端口:容器端口
+--name="cetnos01", 为容器指定一个名称
+  3）进入一个运行中的容器
 docker exec -it [container-id] bash
 or
 docker attach [container-id]
