@@ -1,0 +1,31 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "inbound": {
+    "port": 1081,
+    "listen": "127.0.0.1",
+    "protocol": "socks",
+    "settings": {
+      "auth": "noauth"
+    }
+  },
+  "outbound": {
+    "protocol": "vmess",
+    "settings": {
+      "vnext": [
+        {   
+	      "address": "23.83.237.154",
+	      "port": 37525,
+	      "users": [
+	        {
+		      "id": "6aa08f80-3f2d-4dd2-b753-7b89b9addff5",
+              "level": 1,
+		      "alterId": 64
+		    }
+		  ]
+        }
+      ]  
+	}
+  }
+}
