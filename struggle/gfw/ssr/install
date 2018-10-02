@@ -1,14 +1,17 @@
 centos安装shadowsocksr服务端
 
 1. 基本库安装
-> yum install m2crypto git libsodium
 如果要使用salsa20或chacha20或chacha20-ietf算法, 请安装libsodium
-> yum -y groupinstall “Development Tools”
+> yum install m2crypto git libsodium  //redhat
+> yum -y groupinstall “Development Tools
+> apt-get install python-m2crypto libsodium-dev git  //debian
+> // source code install
 > wget https://github.com/jedisct1/libsodium/releases/download/1.0.10/libsodium-1.0.10.tar.gz
 > tar xf libsodium-1.0.10.tar.gz && cd libsodium-1.0.10
 > ./configure && make -j2 && make install
 > echo /usr/local/lib > /etc/ld.so.conf.d/usr_local_lib.conf
 > ldconfig
+
 
 2. 获取源代码
 > git clone -b manyuser https://github.com/shadowsocksr-backup/shadowsocksr.git
