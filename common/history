@@ -1,7 +1,7 @@
 history
 
 1. 使用HISTTIMEFORMAT在历史中显示TIMESTAMP
-export HISTTIMEFORMAT='%F %T'
+export HISTTIMEFORMAT='%F %T '
 
 2. history 10
 
