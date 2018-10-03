@@ -1,3 +1,7 @@
+# system monitoring tools
+
+## top
+
 1. Overview:
 The linux top command is used to show all the running processes within your linux environment
 
@@ -31,3 +35,14 @@ process ID, user, priority, nice level, virtual memory used by process, resident
 1) To toggle between the standard display and an alternate display by press the 'A' key
 2) To change colors by press the 'Z' key
 
+## Other relatively system monitoring tools
+
+### htop
+> htop -d 5
+
+### glances
+> glances
+> glances -t 2
++ Use glances on remote systems
+> glances -s
+> glances -c -P 172.16.27.56
