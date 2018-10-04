@@ -1,4 +1,0 @@
-更新系统时间:
-1. 在/usr/share/zoneinfo目录下找到需要的时区文件, 如/usr/share/zoneinfo/Asia/Shanghai
-2. copy文件到localtime文件
-cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
