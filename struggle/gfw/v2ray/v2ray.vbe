@@ -1,0 +1,2 @@
+set ws=wscript.createobject("wscript.shell")
+ws.run "E:\fq\v2ray-v3.45-windows-64\v2ray.bat /start",0
