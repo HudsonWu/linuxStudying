@@ -8,3 +8,6 @@ df -h
 2. fdisk: manipulate(操作) disk partition table
 fdisk [options] device
 -l,--list	list the partition tables for the specified devices and then exit,If no devices are given,those mentioned in /proc/partitions are used
+
+ngrok
+frps
