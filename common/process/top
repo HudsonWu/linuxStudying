@@ -45,4 +45,4 @@ process ID, user, priority, nice level, virtual memory used by process, resident
 > glances -t 2
 + Use glances on remote systems
 > glances -s
-> glances -c -P 172.16.27.56
+> glances -c 172.16.27.56
