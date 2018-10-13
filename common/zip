@@ -16,7 +16,8 @@ SIZE为分卷的大小, 4m, 4g, 4t等
 
 可以使用split给tar归档文件分卷
 > tar cvzf google.tar.gz google1.doc google2.doc  //创建归档
-> split -d -b 4m google.tar.gz  //分卷
+> split -d -b 4m google.tar.gz  //分卷, 输出文件的文件名以x开头
+> split -d -b 4m google.tar.gz google.tar.gz.  //这样可以指定输出文件的前缀
 > cat x* > new.tar.gz  //合卷
 > tar zxvf new.tar.gz  //解出文件
 
