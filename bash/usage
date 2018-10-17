@@ -1,12 +1,17 @@
 
-"bash script" 执行权限：
+## 不同执行方式对文件权限的要求
++ bash xx.sh
 1. 对脚本有r权限
 2. 对脚本所在目录有rx权限
-
-“script" 执行权限：
++ xx.sh
 1. 对脚本有rx权限
 2. 对脚本所在目录有rx权限
 
-bash -x script  执行该脚本并显示脚本执行的过程
-bash -n script  不执行脚本只检查语法错误
+## 选项
+bash -x xx.sh  执行该脚本并显示脚本执行的过程
+bash -n xx.sh  不执行脚本只检查语法错误
 
+## eval
+eval首先会扫描命令行进行所有的置换, 然后再执行该命令
+> pipe="|"
+> eval ls $pipe wc -l

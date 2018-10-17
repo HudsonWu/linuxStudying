@@ -1,19 +1,19 @@
 #!/bin/bash
 
-# 随机使用/usr/share/cowsay下的cowfile
-# 打印出fortune命令的随机文字
+# 随机使用/usr/share/cowsay/cows下的cowfile
+# 显示出fortune命令下的文字
 
-a=`ls /usr/share/cowsay`
+# IFS (Internal Field Separator), 默认为space/tab/new line, 可以指定分隔符
+# IFS=:
+# IFS=: read -r -a DIRS <<< "$PATH"
 
-OLD_IFS="$IFS" 
+# cowfiles=$(ls /usr/share/cowsay/cows)
 
-# 将字符串根据分隔符取出到数组中
-IFS=" " 
-arr=($a)
+# read -a cowfile_array <<< $cowfiles
+# echo $cowfiles | cut -d ' ' -f 2
+# echo $cowfiles | awk '{print $2}'
 
-IFS="$OLD_IFS"
-
-len=${#arr[*]}
+len=`ls /usr/share/cowsay/cows | grep cow | wc | awk '{print $1}'`
 
 # 生成随机数
 function rand(){
@@ -23,10 +23,12 @@ function rand(){
     echo $(($num%$max+$min))
 }
 
-rnd=$(rand 0 $((len-1)))
+num=$(rand 1 $len)
 
-echo $arr
-echo $len
-#fortune | cowsay -f ${arr[$rnd]}
+cowfiles=`ls /usr/share/cowsay/cows | grep cow`
+cowfile=`echo $cowfiles | cut -d ' ' -f $num` 
+
+echo "$num  $cowfile"
+fortune | cowsay -f $cowfile
 
 exit 0

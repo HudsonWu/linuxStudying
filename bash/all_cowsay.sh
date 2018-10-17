@@ -1,19 +1,12 @@
 #!/bin/bash
 
-# 使用/usr/share/cowsay下的cowfile
-# 匀速遍历打印出fortune命令的随机文字
+# /usr/share/cowsay/cows
+# cowsay -f
+# 依次使用所有的cowfile打印显示出fortune命令下的文字
 
-a=`ls /usr/share/cowsay`
+cowfiles=`ls /usr/share/cowsay/cows`
 
-OLD_IFS="$IFS" 
-
-# 将字符串根据分隔符取出到数组中
-IFS=" " 
-arr=($a)
-
-IFS="$OLD_IFS"
-
-for s in ${arr[@]} 
+for s in ${cowfiles[@]} 
 do
     # 字符串匹配 
     if echo $s | grep cow
