@@ -31,4 +31,4 @@ cowfile=`echo $cowfiles | cut -d ' ' -f $num`
 echo "$num  $cowfile"
 fortune | cowsay -f $cowfile
 
-exit 0
+# exit 0
