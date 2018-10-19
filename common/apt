@@ -1,9 +1,0 @@
-更新或禁用缓存
-sudo -i
-apt-get clean
-cd /var/lib/apt
-mv lists lists.old
-mkdir -p lists/partial
-apt-get clean
-apt-get update
-
