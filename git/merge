@@ -15,3 +15,9 @@
 > git fetch origin master  # 获取最新代码到本地
 > git log -p master..origin/master  # 查看本地master与远端origin/master版本差异
 > git merge origin/dev  # 合并远端分支origin/dev到当前本地分支
+
+4. 撤销 merge
+> git reset --hard [merge前的版本号]
+或者
+> git revert -m [要撤销的那条merge线的编号] [merge的版本号]
+(merge线编号, 从1开始计算)
