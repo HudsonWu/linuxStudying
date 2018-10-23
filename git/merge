@@ -17,7 +17,9 @@
 > git merge origin/dev  # 合并远端分支origin/dev到当前本地分支
 
 4. 撤销 merge
-> git reset --hard [merge前的版本号]
+> git reset --hard [merge前的commit-hash]
 或者
-> git revert -m [要撤销的那条merge线的编号] [merge的版本号]
-(merge线编号, 从1开始计算)
+> git revert -m [要撤销的那条merge的parent number] [merge的commit-hash]
+(The -m option specifies the parent number. This is because a merge commit has more than one parent, and Git does not know automatically which parent was the mainline, and which parent was the branch you want to un-merge.)
+(Merge: 8989ee0 7c6b236
+git revert 8f937c6 -m 1 will get you the tree as it was in 8989ee0, and git revert -m 2 will reinstate the tree as it was in 7c6b236.)
