@@ -115,7 +115,14 @@ function step2() {
     cd $pro_path && git push
     
     echo "打包花费的时间统计"
-    echo $pack_time
+    for i in $pack_time
+    do
+        if [[ $i = *m*s ]]; then
+            echo -e "$i\n"
+        else
+            echo $i
+        fi
+    done
     
 } 
 
