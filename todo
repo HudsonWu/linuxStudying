@@ -1,13 +1,4 @@
 https://beakerbrowser.com/docs/
 
-find / decompressed-backup-dir -uid 1000 -exec chown hudson:root {} +  # 找出所有属于1000的文件并更改其属主为hudson
-
-1. df: report file system disk space usage
-df -h
-
-2. fdisk: manipulate(操作) disk partition table
-fdisk [options] device
--l,--list	list the partition tables for the specified devices and then exit,If no devices are given,those mentioned in /proc/partitions are used
-
 ngrok
 frps
