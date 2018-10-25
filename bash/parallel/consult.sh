@@ -6,8 +6,8 @@
 
 vue_path=/tmp/ParallelConsultationForVue
 pro_path=/tmp/ParallelConsultingPro
-date=`date +"%Y-%m-%d"`
-branch=dev
+date=`date +"%Y-%m-%d_%H:%M"`
+branch=master
 
 function step1() {    
     
@@ -38,13 +38,16 @@ function step1() {
         exit 1
     fi
     
+    echo "安装chromedriver包"
+    cd $vue_path && npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
+
 }
 
 function step2() {    
     
     result=`sed -n '/"build"/p' $vue_path/package.json | grep max`
     
-    if [ "$result" = "" ]; then
+    if [ "$result"x = ""x ]; then
         echo "解决打包时内存溢出问题"
         sed -i "s/build\/build.js/--max_old_space_size=4096\ build\/build.js/g" $vue_path/package.json
     fi
@@ -58,9 +61,8 @@ function step2() {
     fi
     
     echo "安装依赖包"
-    cd $vue_path && npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver \
-    && npm install
-    
+    cd $vue_path && npm install
+
     if [ $? -ne 0 ]; then
         echo "换用taobao镜像重新安装"
         npm --registry=https://registry.npm.taobao.org \
@@ -80,9 +82,14 @@ function step2() {
     cp -f $vue_path/node_modules/pdfjs-dist/build/pdf.worker.js.map $vue_path/static/pdfjs/
     cp -f $vue_path/node_modules/pdfjs-dist/build/pdf.worker.min.js $vue_path/static/pdfjs/
 
+    if [ -d $vue_path/dist ]; then
+        echo "vue目录下有dist目录, 将删除这个目录"
+        rm -rf $vue_path/dist
+    fi
     
     echo "开始打包代码"
-    cd /tmp/ParallelConsultationForVue && npm run build
+    cd /tmp/ParallelConsultationForVue && (time npm run build) 2> ~/pack_time.txt
+    pack_time=$(cat ~/pack_time.txt)
     
     if [ $? -ne 0 ]; then
         echo "代码打包失败，请检查出现的错误"
@@ -93,6 +100,8 @@ function step2() {
     rm -rf $pro_path/dist
     echo "复制vue下的dist/到pro/下"
     cp -rf $vue_path/dist $pro_path/dist
+    echo "删除vue下的dist/"
+    rm -rf $vue_path/dist
     
     echo "将代码提交"
     cd $pro_path && git add --all && git commit -m "new version $date"
@@ -105,8 +114,9 @@ function step2() {
     echo "上传代码"
     cd $pro_path && git push
     
-    # echo "删除代码"
-    # cd /tmp && rm -rf $vue_path $pro_path
+    echo "打包花费的时间统计"
+    echo $pack_time
+    
 } 
 
 if [ $# -ne 0 ]; then
@@ -119,6 +129,8 @@ if [ $# -ne 0 ]; then
         fi
     elif [ $1 -eq 2 ]; then
         echo "参数是2, 将执行step2"
+        cd $pro_path && git pull
+        cd $vue_path && git pull
         step2
     else
         echo "请检查参数是否正确, 只能是 1 或 2"
