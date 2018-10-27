@@ -21,7 +21,8 @@ export HISTCONTROL=erasedups
 7. 清除历史命令
 history -d 2038  清除指定历史命令
 history -c 清除所有历史命令
-history -w 写入历史命令到文件
+history -w 将内存中的记录写入到文件
 cat /dev/null > ~/.bash_history  清除历史命令文件中的记录
+history -r 重置文件里的内容到内存中
 
 8. export HISTSIZE=0 禁用history，不让bashshell记录你的命令
