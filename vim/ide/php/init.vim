@@ -69,7 +69,7 @@ Plug 'mhinz/vim-startify'
 Plug 'neomake/neomake'
 
 " snippets
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " markdown - writing
@@ -88,7 +88,7 @@ Plug 'reedes/vim-lexical' " dictionnary, thesaurus...
 Plug 'chr4/nginx.vim'
 
 " php
-Plug 'joonty/vdebug'
+" Plug 'joonty/vdebug'
 Plug 'StanAngeloff/php.vim', {'for': 'php'}
 Plug 'stephpy/vim-php-cs-fixer', {'for': 'php'}
 Plug 'nishigori/vim-php-dictionary', {'for': 'php'}
@@ -224,7 +224,7 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " project config - is not on my git repository
-source ~/nvim/projects.nvimrc
+" source ~/nvim/projects.nvimrc
 
 " close the buffer
 nmap <leader>db :Bdelete!<cr>
@@ -340,7 +340,7 @@ tnoremap <C-\> <C-\><C-n>
 command! Ball :silent call general#Bdeleteonly()
 
 " restore the position of the last cursor when you open a file
-autocmd vimrc BufReadPost * call general#RestorePosition()
+" autocmd vimrc BufReadPost * call general#RestorePosition()
 
 " edit vimrc with f5 and source it with f6
 nmap <silent> <leader><f5> :e $MYVIMRC<CR>
@@ -366,7 +366,7 @@ xnoremap @ :<C-u>call general#ExecuteMacroOverVisualRange()<CR>
 "-----------------
 
 " colorscheme
-colo hypnos
+" colo hypnos
 
 " set the directory where the swap file will be saved
 set backupdir=~/nvim/backup//
