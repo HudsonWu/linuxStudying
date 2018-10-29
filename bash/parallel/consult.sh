@@ -6,7 +6,6 @@
 
 vue_path=/tmp/ParallelConsultationForVue
 pro_path=/tmp/ParallelConsultingPro
-date=`date +"%Y-%m-%d_%H:%M"`
 branch=master
 
 function step1() {    
@@ -104,6 +103,7 @@ function step2() {
     rm -rf $vue_path/dist
     
     echo "将代码提交"
+    date=`date +"%Y-%m-%d_%H:%M"`
     cd $pro_path && git add --all && git commit -m "new version $date"
     
     if [ $? -ne 0 ]; then
