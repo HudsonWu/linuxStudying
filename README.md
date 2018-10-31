@@ -1,9 +1,9 @@
-### To study linux, to use linux, to study on linux <br/>
+### The journey of linux <br/>
 
 > <div>I think Linux is a great thing, in the big picture. It's a great hacker's tool, and it has a lot of potential to become something more.</div>
 > <div align="right">Jamie Zawinski</div>
 
-There has various commands on linux which funny or easy or complex <br/>
+There are various commands which funny and useful <br/>
 
 + [vim](https://github.com/HudsonWu/linuxStudying/tree/master/vim)
 + [bash](https://github.com/HudsonWu/linuxStudying/tree/master/bash)
@@ -11,5 +11,5 @@ There has various commands on linux which funny or easy or complex <br/>
 + [docker](https://github.com/HudsonWu/linuxStudying/tree/master/docker)
 
 ### About me
-a linux lover, a tester  
+a linux lover, a dreaming man,  
 > Before you can run, you need to be able to walk.  
