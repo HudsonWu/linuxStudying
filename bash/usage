@@ -15,3 +15,17 @@ bash -n xx.sh  不执行脚本只检查语法错误
 eval首先会扫描命令行进行所有的置换, 然后再执行该命令
 > pipe="|"
 > eval ls $pipe wc -l
+
+## stdin, 读取标准输入
+read a b c
+
+less <&0
+
+cat -
+
+cat "${1:-/dev/stdin}" > "${2:-/dev/stdout}"
+
+while read line; do
+    echo "reading: ${line}"
+done < /dev/stdin
+

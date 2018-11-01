@@ -145,10 +145,7 @@ function vue_update() {
 # update [代码更新函数] [代码绝对路径] [代码分支名]
 # 一般只需更改代码分支名即可
 
-#update "php_update" "/home/Newphp_01" "site_survey"
-update "php_update" "/home/newphp" "majordomo_consulting"
-update "php_update" "/home/Newphp" "majordomo_consulting"
-update "vue_update" "/home/Consultation" "180606steward"
+#update "php_update" "/home/newphp" "majordomo_consulting"
 #update "vue_update" "/home/consultation_02" "27L0416"
 #update "member_update" "/home/Member" "master"
 #update "portal_update" "/home/Portal" "master"
