@@ -8,7 +8,7 @@ else
     echo "$0 [需要开启队列的php目录]"
     echo "Example:"
     echo "$0 /home/phpformobile"
-    echo -e "\n---- 未指定目录, 将开启默认目录下的队列 ----\n"
-    cd /home/phpformobile && php artisan queue:work redis --sleep=3 --tries=3
+    #echo -e "\n---- 未指定目录, 将开启默认目录下的队列 ----\n"
+    #cd /home/phpformobile && php artisan queue:work redis --sleep=3 --tries=3
 fi
 
