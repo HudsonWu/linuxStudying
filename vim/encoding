@@ -18,3 +18,9 @@ vim打开文件时自动辨认其编码，为空则保存文件时采用encoding
 > set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 > set enc=utf8
 > set fencs=utf8,gbk,gb2312,gb18030
+
+## 编码转换
+// 也可使用iconv命令转码
+> :set fileencoding  //查看文件编码格式
+> :set fileformat  //查看文件格式签名编码
+> :set fileencoding=utf-8  //转换文件编码格式为utf-8格式
