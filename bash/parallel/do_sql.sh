@@ -1,7 +1,7 @@
 #!/bin/bash
 date=`date +"%Y-%m-%d %H:%m:%S"`
 
-mysql -uroot -pyfyunmysql << EOF
+mysql -uroot -ppassword << EOF
 use parallel;
 update mettings set time="$date";
 EOF
