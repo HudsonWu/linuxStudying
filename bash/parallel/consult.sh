@@ -87,42 +87,55 @@ function step2() {
     fi
     
     echo "开始打包代码"
-    cd /tmp/ParallelConsultationForVue && (time npm run build) 2> ~/pack_time.txt
-    pack_time=$(cat ~/pack_time.txt)
+    
+    echo "删除vue下的dist/"
+    rm -rf $vue_path/dist
+    
+    date_start=`date +"%Y-%m-%d_%H:%M:%S"`
+    echo "----------" >> ~/pack_time.txt
+    echo -e "$date_start 开始打包\n" >> ~/pack_time.txt
+    cd /tmp/ParallelConsultationForVue && (time npm run build) 2>> ~/pack_time.txt
     
     if [ $? -ne 0 ]; then
         echo "代码打包失败，请检查出现的错误"
         exit 1
     fi
+
+#    pack_time=$(cat ~/pack_time.txt)
     
     echo "删除pro下的dist/"
     rm -rf $pro_path/dist
     echo "复制vue下的dist/到pro/下"
     cp -rf $vue_path/dist $pro_path/dist
-    echo "删除vue下的dist/"
-    rm -rf $vue_path/dist
     
     echo "将代码提交"
-    date=`date +"%Y-%m-%d_%H:%M"`
-    cd $pro_path && git add --all && git commit -m "new version $date"
-    
-    if [ $? -ne 0 ]; then
-        echo "代码提交失败, 请检查出现的错误"
-        exit 1
+    date_end=`date +"%Y-%m-%d_%H:%M:%S"`
+    echo "$date_end 打包完成" >> ~/pack_time.txt
+    if [ -f $pro_path/server.js -a -d $pro_path/dist ]; then
+        cd $pro_path && git add --all && git commit -m "new version $date_end"
+        if [ $? -ne 0 ]; then
+            echo "代码提交失败, 请检查出现的错误"
+            exit 1
+        fi
+    else
+        echo "重要文件丢失"
+        exit 0
     fi
+
     
     echo "上传代码"
     cd $pro_path && git push
     
-    echo "打包花费的时间统计"
-    for i in $pack_time
-    do
-        if [[ $i = *m*s ]]; then
-            echo -e "$i\n"
-        else
-            echo $i
-        fi
-    done
+    echo "打包时间区间: $date_start -- $date_end"
+#    echo "打包花费的时间统计"
+#    for i in $pack_time
+#    do
+#        if [[ $i = *m*s ]]; then
+#            echo -e "$i\n"
+#        else
+#            echo $i
+#        fi
+#    done
     
 } 
 
