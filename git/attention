@@ -31,3 +31,5 @@ depth用于指定克隆深度, 为1即表示只克隆最近一次commit
 > git fetch --depth 1 origin remote_branch_name
 > git checkout remote_branch_name
 
+修改最近一次的commit
+> git commit --amend  //修改提交的描述
