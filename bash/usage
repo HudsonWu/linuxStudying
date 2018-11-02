@@ -29,3 +29,6 @@ while read line; do
     echo "reading: ${line}"
 done < /dev/stdin
 
+## 标准错误输出
+> result=$(ls -lh 2>&1 1>/dev/null)  //标准错误输出到变量
+> ls -lh 2>> result.log  //标准错误追加到文件
