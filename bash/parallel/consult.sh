@@ -146,8 +146,13 @@ if [ $# -ne 0 ]; then
         fi
     elif [ $1 -eq 2 ]; then
         echo "参数是2, 将执行step2"
-        cd $pro_path && git pull
-        cd $vue_path && git pull
+        if [ -d $vue_path -a -d $pro_path ]; then
+            cd $pro_path && git pull
+            cd $vue_path && git pull
+        else
+            echo "相关项目的代码不存在"
+            exit 0
+        fi
         step2
     else
         echo "请检查参数是否正确, 只能是 1 或 2"
