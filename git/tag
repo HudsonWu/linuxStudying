@@ -20,3 +20,5 @@
 > git push origin v1.5  //推送指定标签
 > git push origin --tags  //一次推送所有本地新增的标签
 
+## 删除标签
+> git tag -d v1.3
