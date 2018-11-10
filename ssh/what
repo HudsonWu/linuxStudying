@@ -14,19 +14,6 @@
 5. ssh-agent, ssh-add    管理密钥的工具
 6. ssh-keyscan    扫描网络中的主机, 记录找到的公钥
 
-## ssh配置
-配置文件: /etc/ssh/sshd_config
-> chmod 700 .ssh
-+ 密码验证
-PermitRootLogin yes
-PasswordAuthentication yes
-+ 秘钥对验证
-RSAAuthentication yes
-PubkeyAuthentication yes
-AuthorizedKeysFile .ssh/authorized_keys
-(需要在.ssh/authorized_keys加入公钥)
-> chmod 644 .ssh/authorized_keys
-
 ## ssh-keygen
 > ssh-keygen  //等价于ssh-keygen -t rsa
 (ssh-keygen -t rsa -C "youremail@email.com" -f ~/.ssh/id2_rsa)

@@ -88,9 +88,6 @@ function step2() {
     
     echo "开始打包代码"
     
-    echo "删除vue下的dist/"
-    rm -rf $vue_path/dist
-    
     date_start=`date +"%Y-%m-%d_%H:%M:%S"`
     echo "----------" >> ~/pack_time.txt
     echo -e "$date_start 开始打包\n" >> ~/pack_time.txt
@@ -113,6 +110,8 @@ function step2() {
     echo "$date_end 打包完成" >> ~/pack_time.txt
     if [ -f $pro_path/server.js -a -d $pro_path/dist ]; then
         cd $pro_path && git add --all && git commit -m "new version $date_end"
+        echo "上传代码"
+        cd $pro_path && git push
         if [ $? -ne 0 ]; then
             echo "代码提交失败, 请检查出现的错误"
             exit 1
@@ -123,8 +122,6 @@ function step2() {
     fi
 
     
-    echo "上传代码"
-    cd $pro_path && git push
     
     echo "打包时间区间: $date_start -- $date_end"
 #    echo "打包花费的时间统计"
@@ -149,8 +146,13 @@ if [ $# -ne 0 ]; then
         fi
     elif [ $1 -eq 2 ]; then
         echo "参数是2, 将执行step2"
-        cd $pro_path && git pull
-        cd $vue_path && git pull
+        if [ -d $vue_path -a -d $pro_path ]; then
+            cd $pro_path && git pull
+            cd $vue_path && git pull
+        else
+            echo "相关项目的代码不存在"
+            exit 0
+        fi
         step2
     else
         echo "请检查参数是否正确, 只能是 1 或 2"
