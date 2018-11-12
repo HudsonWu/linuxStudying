@@ -4,7 +4,9 @@
 #  step1: 下拉vue代码, 安装依赖包
 #  step2: 配置文件覆盖, 打包生成dist/, 将dist/复制到pro代码, 提交pro代码, 上传到远程
 
+vue=ParallelConsultationForVue
 vue_path=/tmp/ParallelConsultationForVue
+pro=ParallelConsultingPro
 pro_path=/tmp/ParallelConsultingPro
 branch=master
 
@@ -23,14 +25,14 @@ function step1() {
     echo "拉取咨询机构待打包代码"
     if [ "$branch"x = "master"x ]; then
         echo "master分支"
-        cd /tmp && git clone --depth 1 http://Wu@gitlab.lmdo.cn/binglian/ParallelConsultationForVue.git
+        cd /tmp && git clone --depth 1 http://Wu@gitlab.lmdo.cn/binglian/$vue.git
     else
         echo "$branch 分支"
-        cd /tmp && git clone --depth 1 http://Wu@gitlab.lmdo.cn/binglian/ParallelConsultationForVue.git -b $branch
+        cd /tmp && git clone --depth 1 http://Wu@gitlab.lmdo.cn/binglian/$vue.git -b $branch
     fi
     
     echo "拉取咨询机构已打包代码"
-    cd /tmp && git clone --depth 1 http://Wu@gitlab.lmdo.cn/binglian/ParallelConsultingPro.git
+    cd /tmp && git clone --depth 1 http://Wu@gitlab.lmdo.cn/binglian/$pro.git
     
     if [ $? -ne 0 ]; then
         echo "代码下拉失败, 请检查出现的错误"
@@ -91,7 +93,7 @@ function step2() {
     date_start=`date +"%Y-%m-%d_%H:%M:%S"`
     echo "----------" >> ~/pack_time.txt
     echo -e "$date_start 开始打包\n" >> ~/pack_time.txt
-    cd /tmp/ParallelConsultationForVue && (time npm run build) 2>> ~/pack_time.txt
+    cd $vue_path && (time npm run build) 2>> ~/pack_time.txt
     
     if [ $? -ne 0 ]; then
         echo "代码打包失败，请检查出现的错误"
