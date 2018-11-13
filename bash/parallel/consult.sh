@@ -1,24 +1,30 @@
 #!/bin/bash
   
-#  做的事情:
-#  step1: 下拉vue代码, 安装依赖包
-#  step2: 配置文件覆盖, 打包生成dist/, 将dist/复制到pro代码, 提交pro代码, 上传到远程
-
 vue=ParallelConsultationForVue
 vue_path=/tmp/ParallelConsultationForVue
 pro=ParallelConsultingPro
 pro_path=/tmp/ParallelConsultingPro
 branch=master
 
+function help() {
+    echo "功能:"
+    echo "step1: 下拉vue代码, 安装chromedriver包"
+    echo "step2: 安装依赖包, 配置文件覆盖, 打包生成dist/, 将dist/复制到pro代码, 提交pro代码, 上传到远程"
+    echo -e "\nUsage:"
+    echo "$0 1 2    先执行step1, 再执行step2"
+    echo "$0 2      只执行step2(默认已经下载好了代码)"
+    echo "$0 1      只执行step1"
+}
+
 function step1() {    
     
     if [ -d $vue_path ]; then
-        echo "删除/tmp下存在的vue代码"
+        echo "删除$vue_path目录"
         rm -rf $vue_path
     fi
     
     if [ -d $pro_path ]; then
-        echo "删除/tmp下存在的pro代码"
+        echo "删除$pro_path目录"
         rm -rf $pro_path
     fi
     
@@ -41,6 +47,8 @@ function step1() {
     
     echo "安装chromedriver包"
     cd $vue_path && npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
+
+    echo -e "step1 完成\n"
 
 }
 
@@ -84,7 +92,7 @@ function step2() {
     cp -f $vue_path/node_modules/pdfjs-dist/build/pdf.worker.min.js $vue_path/static/pdfjs/
 
     if [ -d $vue_path/dist ]; then
-        echo "vue目录下有dist目录, 将删除这个目录"
+        echo "$vue_path/dist目录已存在, 将删除"
         rm -rf $vue_path/dist
     fi
     
@@ -113,7 +121,7 @@ function step2() {
     if [ -f $pro_path/server.js -a -d $pro_path/dist ]; then
         cd $pro_path && git add --all && git commit -m "new version $date_end"
         echo "上传代码"
-        cd $pro_path && git push
+        cd $pro_path && git push origin master
         if [ $? -ne 0 ]; then
             echo "代码提交失败, 请检查出现的错误"
             exit 1
@@ -149,16 +157,19 @@ if [ $# -ne 0 ]; then
     elif [ $1 -eq 2 ]; then
         echo "参数是2, 将执行step2"
         if [ -d $vue_path -a -d $pro_path ]; then
-            cd $pro_path && git pull
-            cd $vue_path && git pull
+            echo "$pro代码下拉更新"
+            cd $pro_path && git pull origin master
+            echo "$vue代码下拉更新"
+            cd $vue_path && git pull origin master
         else
-            echo "相关项目的代码不存在"
+            echo "/tmp目录下没有找到相关项目的代码"
             exit 0
         fi
         step2
     else
-        echo "请检查参数是否正确, 只能是 1 或 2"
+        echo "请检查参数是否正确"
+        help
     fi
 else
-    echo "没有参数, 请添加参数"
+    help
 fi
