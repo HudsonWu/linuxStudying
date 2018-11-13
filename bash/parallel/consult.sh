@@ -55,7 +55,7 @@ function step2() {
 
     echo "覆盖配置文件"
     if [ -f /tmp/params.js -a -f /tmp/index.js ]; then
-        cp -f /tmp/params.js $vue_path/src/conf/ && cp -f /tmp/index.js $vue_path/config/
+        cp -f /tmp/params.js $vue_path/src/conf/params.js && cp -f /tmp/index.js $vue_path/config/index.js
     else
         echo "请将param.js和index.js两个配置文件放置于/tmp目录下"
         exit 0
@@ -91,8 +91,8 @@ function step2() {
     echo "开始打包代码"
     
     date_start=`date +"%Y-%m-%d_%H:%M:%S"`
-    echo "----------" >> ~/pack_time.txt
-    echo -e "$date_start 开始打包\n" >> ~/pack_time.txt
+    echo -e "\n----------" >> ~/pack_time.txt
+    echo "$date_start 开始打包" >> ~/pack_time.txt
     cd $vue_path && (time npm run build) 2>> ~/pack_time.txt
     
     if [ $? -ne 0 ]; then
@@ -109,7 +109,7 @@ function step2() {
     
     echo "将代码提交"
     date_end=`date +"%Y-%m-%d_%H:%M:%S"`
-    echo "$date_end 打包完成" >> ~/pack_time.txt
+    echo -e "$date_end 打包完成\n" >> ~/pack_time.txt
     if [ -f $pro_path/server.js -a -d $pro_path/dist ]; then
         cd $pro_path && git add --all && git commit -m "new version $date_end"
         echo "上传代码"
