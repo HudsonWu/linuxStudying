@@ -8,12 +8,70 @@ branch=master
 
 function help() {
     echo "功能:"
-    echo "step1: 下拉vue代码, 安装chromedriver包"
-    echo "step2: 安装依赖包, 配置文件覆盖, 打包生成dist/, 将dist/复制到pro代码, 提交pro代码, 上传到远程"
+    echo "step1: 下拉vue代码, 安装依赖包"
+    echo "step2: 配置文件覆盖, 打包生成dist/, 将dist/复制到pro代码, 提交pro代码, 上传到远程"
     echo -e "\nUsage:"
     echo "$0 1 2    先执行step1, 再执行step2"
     echo "$0 2      只执行step2(默认已经下载好了代码)"
     echo "$0 1      只执行step1"
+}
+
+function update() {
+    if [ -d $vue_path -a -d $pro_path ]; then
+        echo "$pro代码下拉更新"
+        cd $pro_path && git pull origin master
+        if [ $? -ne 0 ]; then
+            echo "$pro_path 代码更新失败"
+            exit 1
+        fi
+        echo "$vue代码下拉更新"
+        cd $vue_path && git pull origin master
+        if [ $? -ne 0 ]; then
+            echo "$vue_path 代码更新失败"
+            exit 1
+        fi
+    else
+        echo "/tmp目录下没有找到相关项目的代码"
+        exit 0
+    fi
+}
+
+function config() {
+
+    result=`sed -n '/"build"/p' $vue_path/package.json | grep max`
+    
+    if [ "$result"x = ""x ]; then
+        echo "解决打包时内存溢出问题"
+        sed -i "s/build\/build.js/--max_old_space_size=4096\ build\/build.js/g" $vue_path/package.json
+    fi
+
+    echo "覆盖配置文件"
+    if [ -f /tmp/params.js -a -f /tmp/index.js ]; then
+        cp -f /tmp/params.js $vue_path/src/conf/params.js && cp -f /tmp/index.js $vue_path/config/index.js
+    else
+        echo "请将param.js和index.js两个配置文件放置于/tmp目录下"
+        exit 0
+    fi
+}
+
+function npm_install() {
+    echo "安装chromedriver包"
+    cd $vue_path && npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
+
+    echo "安装依赖包"
+    cd $vue_path && npm install
+
+    if [ $? -ne 0 ]; then
+        echo "换用taobao镜像重新安装"
+        npm --registry=https://registry.npm.taobao.org \
+        --cahce=$HOME/.npm/.cache/cnpm \
+        --disturl=https://npm.taobao.org/dist \
+        --userconfig=$HOME/.cnpmrc install
+        if [ $? -ne 0 ]; then
+            echo "依赖包安装失败, 请检查出现的错误"
+            exit 1
+        fi
+    fi
 }
 
 function step1() {    
@@ -36,52 +94,37 @@ function step1() {
         echo "$branch 分支"
         cd /tmp && git clone --depth 1 http://Wu@gitlab.lmdo.cn/binglian/$vue.git -b $branch
     fi
+    if [ $? -ne 0 ]; then
+        echo "$vue_path 代码下拉失败, 请检查出现的错误"
+        exit 1
+    fi
     
     echo "拉取咨询机构已打包代码"
     cd /tmp && git clone --depth 1 http://Wu@gitlab.lmdo.cn/binglian/$pro.git
     
     if [ $? -ne 0 ]; then
-        echo "代码下拉失败, 请检查出现的错误"
+        echo "$pro_path 代码下拉失败, 请检查出现的错误"
         exit 1
     fi
     
-    echo "安装chromedriver包"
-    cd $vue_path && npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
+    config
+    npm_install
 
     echo -e "step1 完成\n"
 
 }
 
 function step2() {    
-    
-    result=`sed -n '/"build"/p' $vue_path/package.json | grep max`
-    
-    if [ "$result"x = ""x ]; then
-        echo "解决打包时内存溢出问题"
-        sed -i "s/build\/build.js/--max_old_space_size=4096\ build\/build.js/g" $vue_path/package.json
-    fi
 
-    echo "覆盖配置文件"
-    if [ -f /tmp/params.js -a -f /tmp/index.js ]; then
-        cp -f /tmp/params.js $vue_path/src/conf/params.js && cp -f /tmp/index.js $vue_path/config/index.js
-    else
-        echo "请将param.js和index.js两个配置文件放置于/tmp目录下"
-        exit 0
-    fi
-    
-    echo "安装依赖包"
-    cd $vue_path && npm install
+    config
 
-    if [ $? -ne 0 ]; then
-        echo "换用taobao镜像重新安装"
-        npm --registry=https://registry.npm.taobao.org \
-        --cahce=$HOME/.npm/.cache/cnpm \
-        --disturl=https://npm.taobao.org/dist \
-        --userconfig=$HOME/.cnpmrc install
+    if [ -d $vue_path/node_modules ]; then
+        cd $vue_path && npm install
         if [ $? -ne 0 ]; then
-            echo "依赖包安装失败, 请检查出现的错误"
-            exit 1
+            npm_install
         fi
+    else
+        npm_install
     fi
 
     echo "解决API version问题"
@@ -151,23 +194,14 @@ if [ $# -ne 0 ]; then
         echo "参数是1, 将执行step1"
         step1
         if [ $2 -eq 2 ]; then
-            echo "第二个参数是2, 将执行step2"
+            echo "第二个参数是2, 紧接着执行step2"
             step2
         fi
     elif [ $1 -eq 2 ]; then
-        echo "参数是2, 将执行step2"
-        if [ -d $vue_path -a -d $pro_path ]; then
-            echo "$pro代码下拉更新"
-            cd $pro_path && git pull origin master
-            echo "$vue代码下拉更新"
-            cd $vue_path && git pull origin master
-        else
-            echo "/tmp目录下没有找到相关项目的代码"
-            exit 0
-        fi
+        echo "第一个参数是2, 将只执行step2"
+        update
         step2
     else
-        echo "请检查参数是否正确"
         help
     fi
 else
