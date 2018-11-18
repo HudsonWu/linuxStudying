@@ -4,10 +4,11 @@
 # 使用前需要对一些文件做个备份
 
 isapi=false
-ismigrate=false
+ismigrate=true
+
 # 是否更新api文档
 if [ $# -ne 0 ]; then
-    if [ "$1"x =  "api"x -o "$2"x = "api"x ]; then
+    if [ "$1"x = "api"x -o "$2"x = "api"x ]; then
         isapi=true
         echo "It will update your api documents"
         if [ "$1"x = "migrate"x -o "$2"x = "migrate"x ]; then
@@ -18,14 +19,14 @@ if [ $# -ne 0 ]; then
         ismigrate=true
         echo "It will execute php artisan migrate"
     else
-        echo "The parameter isn't right, should be api"
+        echo "The parameter isn't right, should be api or migrate"
     fi
 else
     echo "You could add 'api' to update api"
     echo "You could add 'migrate' to execute mysql"
 fi
 
-# 代码更新统一
+# 代码更新统一入口
 function update() {
     if [ -d "$2" ]; then
         "$1" "$2" "$3"
@@ -46,7 +47,7 @@ function getbak() {
 
 # 文件备份
 function bak() {
-    if [ ! -f "$1" ]; then
+    if [ ! -f "$1.bak" ]; then
         echo "bak file not found, will autobak"
         cp -f "$1" "$1.bak"
     fi
@@ -56,10 +57,10 @@ function bak() {
 function php_update() {
     bak "$1/.env"
     bak "$1/app/Containers/Project/Configs/project.php"
-    cd $1 && git pull origin $2
+    cd $1 && git fetch origin $2 && git merge origin/$2
     
     if [ $? -ne 0 ]; then
-        echo "!!!$1($2) pull failed, will change something and pull again!!!"
+        echo "!!!$1($2) merge failed, will change something!!!"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/.env"
         getbak "$1/app/Containers/Project/Configs/project.php"
@@ -80,11 +81,13 @@ function php_update() {
 # 会员中心
 function member_update() {
     bak "$1/config/params.js" && bak "$1/config/session.js" && bak "$1/config/cache.js"
-    cd $1 && git pull origin $2
+    bak "$1/config/index.js" && bak "$1/config/globals.js"
+    cd $1 && git fetch origin $2 && git merge origin/$2
     if [ $? -ne 0 ]; then
-        echo "!!!$1($2) pull failed, will change something and pull again!!!"
+        echo "!!!$1($2) merge failed, will reset to origin/$2!!!"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/config/params.js" && getbak "$1/config/session.js" && getbak "$1/config/cache.js"
+        getbak "$1/config/index.js" && getbak "$1/config/globals.js"
     fi
     echo -e "====$1($2) update complete====\n"
 }
@@ -93,11 +96,13 @@ function member_update() {
 # 门户网站
 function portal_update() {
     bak "$1/config/local.js" && bak "$1/config/cache.js" && bak "$1/config/params.js"
-    cd $1 && git pull origin $2
+    bak "$1/config/session.js" && bak "$1/config/globals.js"
+    cd $1 && git fetch origin $2 && git merge origin/$2
     if [ $? -ne 0 ]; then
-        echo "!!!$1($2) pull failed, will change something and pull again!!!"
+        echo "!!!$1($2) merge failed, will reset to origin/$2!!!"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/config/local.js" && getbak "$1/config/cache.js" && getbak "$1/config/params.js"
+        getbak "$1/config/session.js" && getbak "$1/config/globals.js"
     fi
     echo -e "====$1($2) update complete====\n"
 }
@@ -106,9 +111,9 @@ function portal_update() {
 # api代码更新
 function api_update() {
     bak "$1/config/connections.js" && bak "$1/config/local.js" && bak "$1/config/sockets.js" && bak "$1/config/cache.js"
-    cd $1 && git pull origin $2
+    cd $1 && git fetch origin $2 && git merge origin/$2
     if [ $? -ne 0 ]; then
-        echo "!!!$1($2) pull failed, will change something and pull again!!!"
+        echo "!!!$1($2) merge failed, will reset to origin/$2!!!"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/config/connections.js" && getbak "$1/config/local.js" && getbak "$1/config/sockets.js" && getbak "$1/config/cache.js"
     fi
@@ -119,9 +124,9 @@ function api_update() {
 # 打包环境更新
 function package_update() {
     bak "$1/server.js"
-    cd $1 && git pull origin $2
+    cd $1 && git fetch origin $2 && git merge origin/$2
     if [ $? -ne 0 ]; then
-        echo "!!!$1($2) pull failed, will change something and pull again!!!"
+        echo "!!!$1($2) merge failed, will reset to origin/$2!!!"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/server.js"
     fi
@@ -132,9 +137,9 @@ function package_update() {
 # VUE环境更新
 function vue_update() {
     bak "$1/config/index.js" && bak "$1/src/conf/params.js"
-    cd $1 && git pull origin $2
+    cd $1 && git fetch origin $2 && git merge origin/$2
     if [ $? -ne 0 ]; then
-        echo "!!!$1($2) pull failed, will change something and pull again!!!"
+        echo "!!!$1($2) merge failed, will reset to origin/$2!!!"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/config/index.js" && getbak "$1/src/conf/params.js"
     fi
