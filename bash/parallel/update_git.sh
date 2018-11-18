@@ -47,11 +47,15 @@ function getbak() {
 
 # 文件备份
 function bak() {
-    if [ ! -f "$1.bak" ]; then
-        echo "bak file not found, will autobak"
-        cp -f "$1" "$1.bak"
+    if [ -f "$1" ]; then
+        if [ ! -f "$1.bak" ]; then
+            echo "bak file not found, will autobak"
+            cp -f "$1" "$1.bak"
+        fi
+    else
+        echo "$1 file not found"
     fi
-} 
+}
 
 # php代码更新
 function php_update() {
