@@ -61,7 +61,7 @@ function bak() {
 function php_update() {
     bak "$1/.env"
     bak "$1/app/Containers/Project/Configs/project.php"
-    cd $1 && git fetch origin $2 && git merge origin/$2
+    cd $1 && git fetch origin && git merge origin/$2
     
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) merge failed, will change something!!!"
@@ -86,7 +86,7 @@ function php_update() {
 function member_update() {
     bak "$1/config/params.js" && bak "$1/config/session.js" && bak "$1/config/cache.js"
     bak "$1/config/index.js" && bak "$1/config/globals.js"
-    cd $1 && git fetch origin $2 && git merge origin/$2
+    cd $1 && git fetch origin && git merge origin/$2
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) merge failed, will reset to origin/$2!!!"
         git fetch --all && git reset --hard origin/$2
@@ -101,7 +101,7 @@ function member_update() {
 function portal_update() {
     bak "$1/config/local.js" && bak "$1/config/cache.js" && bak "$1/config/params.js"
     bak "$1/config/session.js" && bak "$1/config/globals.js"
-    cd $1 && git fetch origin $2 && git merge origin/$2
+    cd $1 && git fetch origin && git merge origin/$2
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) merge failed, will reset to origin/$2!!!"
         git fetch --all && git reset --hard origin/$2
@@ -115,7 +115,7 @@ function portal_update() {
 # api代码更新
 function api_update() {
     bak "$1/config/connections.js" && bak "$1/config/local.js" && bak "$1/config/sockets.js" && bak "$1/config/cache.js"
-    cd $1 && git fetch origin $2 && git merge origin/$2
+    cd $1 && git fetch origin && git merge origin/$2
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) merge failed, will reset to origin/$2!!!"
         git fetch --all && git reset --hard origin/$2
@@ -128,7 +128,7 @@ function api_update() {
 # 打包环境更新
 function package_update() {
     bak "$1/server.js"
-    cd $1 && git fetch origin $2 && git merge origin/$2
+    cd $1 && git fetch origin && git merge origin/$2
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) merge failed, will reset to origin/$2!!!"
         git fetch --all && git reset --hard origin/$2
@@ -141,7 +141,7 @@ function package_update() {
 # VUE环境更新
 function vue_update() {
     bak "$1/config/index.js" && bak "$1/src/conf/params.js"
-    cd $1 && git fetch origin $2 && git merge origin/$2
+    cd $1 && git fetch origin && git merge origin/$2
     if [ $? -ne 0 ]; then
         echo "!!!$1($2) merge failed, will reset to origin/$2!!!"
         git fetch --all && git reset --hard origin/$2
@@ -154,10 +154,10 @@ function vue_update() {
 # update [代码更新函数] [代码绝对路径] [代码分支名]
 # 一般只需更改代码分支名即可
 
-#update "php_update" "/home/newphp" "master"
 #update "vue_update" "/home/consultation" "master"
 #update "member_update" "/home/member" "master"
 #update "portal_update" "/home/portal" "master"
 #update "api_update" "/home/api" "master"
+update "php_update" "/home/newphp" "printing"
 update "php_update" "/home/Newphp" "printing"
 update "vue_update" "/home/Consultation" "ReportPrinting"
