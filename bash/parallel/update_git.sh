@@ -159,3 +159,5 @@ function vue_update() {
 #update "member_update" "/home/member" "master"
 #update "portal_update" "/home/portal" "master"
 #update "api_update" "/home/api" "master"
+update "php_update" "/home/Newphp" "printing"
+update "vue_update" "/home/Consultation" "ReportPrinting"
