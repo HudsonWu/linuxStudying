@@ -10,20 +10,20 @@ ismigrate=true
 if [ $# -ne 0 ]; then
     if [ "$1"x = "api"x -o "$2"x = "api"x ]; then
         isapi=true
-        echo "It will update your api documents"
+        echo -e "\e[33;40m It will update your api documents\e[0m"
         if [ "$1"x = "migrate"x -o "$2"x = "migrate"x ]; then
             ismigrate=true
-            echo "It will execute php artisan migrate"
+            echo -e "\e[33;40m It will execute php artisan migrate\e[0m"
         fi
     elif [ "$1"x = "migrate"x -o "$2"x = "migrate"x ]; then
         ismigrate=true
-        echo "It will execute php artisan migrate"
+        echo -e "\e[33;40m It will execute php artisan migrate\e[0m"
     else
-        echo "The parameter isn't right, should be api or migrate"
+        echo -e "\e[31;40m The parameter isn't right, should be api or migrate\e[0m"
     fi
 else
-    echo "You could add 'api' to update api"
-    echo "You could add 'migrate' to execute mysql"
+    echo -e "\e[32;40m You could add 'api' to update api\e[0m"
+    #echo -e "\e[32;40m You could add 'migrate' to execute mysql\e[0m"
 fi
 
 # 代码更新统一入口
@@ -31,7 +31,7 @@ function update() {
     if [ -d "$2" ]; then
         "$1" "$2" "$3"
     else
-        echo "The $2 folder not found, please check it"
+        echo -e "\e[33;40m The $2 folder not found, please check it\e[0m"
     fi
 }
 
@@ -39,9 +39,9 @@ function update() {
 function getbak() {
     if [ -f  "$1.bak" ]; then
         cp -f "$1.bak" "$1"
-        echo "getbak success, nothing to worried"
+        echo -e "\e[32;40m getbak success, nothing to worried\e[0m"
     else
-        echo "$1.bak file not found"
+        echo -e "\e[31;40m $1.bak file not found\e[0m"
     fi
 }
 
@@ -49,11 +49,11 @@ function getbak() {
 function bak() {
     if [ -f "$1" ]; then
         if [ ! -f "$1.bak" ]; then
-            echo "bak file not found, will autobak"
+            echo -e "\e[32;40m bak file not found, will autobak\e[0m"
             cp -f "$1" "$1.bak"
         fi
     else
-        echo "$1 file not found"
+        echo -e "\e[31;40m $1 file not found\e[0m"
     fi
 }
 
@@ -64,7 +64,7 @@ function php_update() {
     cd $1 && git fetch origin && git merge origin/$2
     
     if [ $? -ne 0 ]; then
-        echo "!!!$1($2) merge failed, will change something!!!"
+        echo -e "\e[31:40m !!!$1($2) merge failed, will change something!!!\e[0m"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/.env"
         getbak "$1/app/Containers/Project/Configs/project.php"
@@ -78,7 +78,7 @@ function php_update() {
         cd $1 && apidoc -i . -o public/api/
     fi
     
-    echo -e "====$1($2) update complete====\n"
+    echo -e "\e[34;40m ====$1($2) update complete====\n\e[0m"
 }
 
 
@@ -88,12 +88,12 @@ function member_update() {
     bak "$1/config/index.js" && bak "$1/config/globals.js"
     cd $1 && git fetch origin && git merge origin/$2
     if [ $? -ne 0 ]; then
-        echo "!!!$1($2) merge failed, will reset to origin/$2!!!"
+        echo -e "\e[31:40m !!!$1($2) merge failed, will reset to origin/$2!!!\e[0m"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/config/params.js" && getbak "$1/config/session.js" && getbak "$1/config/cache.js"
         getbak "$1/config/index.js" && getbak "$1/config/globals.js"
     fi
-    echo -e "====$1($2) update complete====\n"
+    echo -e "\e[34;40m ====$1($2) update complete====\n\e[0m"
 }
 
 
@@ -103,12 +103,12 @@ function portal_update() {
     bak "$1/config/session.js" && bak "$1/config/globals.js"
     cd $1 && git fetch origin && git merge origin/$2
     if [ $? -ne 0 ]; then
-        echo "!!!$1($2) merge failed, will reset to origin/$2!!!"
+        echo -e "\e[31:40m !!!$1($2) merge failed, will reset to origin/$2!!!\e[0m"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/config/local.js" && getbak "$1/config/cache.js" && getbak "$1/config/params.js"
         getbak "$1/config/session.js" && getbak "$1/config/globals.js"
     fi
-    echo -e "====$1($2) update complete====\n"
+    echo -e "\e[34;40m ====$1($2) update complete====\n\e[0m"
 }
 
 
@@ -117,11 +117,11 @@ function api_update() {
     bak "$1/config/connections.js" && bak "$1/config/local.js" && bak "$1/config/sockets.js" && bak "$1/config/cache.js"
     cd $1 && git fetch origin && git merge origin/$2
     if [ $? -ne 0 ]; then
-        echo "!!!$1($2) merge failed, will reset to origin/$2!!!"
+        echo -e "\e[31:40m !!!$1($2) merge failed, will reset to origin/$2!!!\e[0m"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/config/connections.js" && getbak "$1/config/local.js" && getbak "$1/config/sockets.js" && getbak "$1/config/cache.js"
     fi
-    echo -e "====$1($2) update complete====\n"
+    echo -e "\e[34;40m ====$1($2) update complete====\n\e[0m"
 }
 
 
@@ -130,11 +130,11 @@ function package_update() {
     bak "$1/server.js"
     cd $1 && git fetch origin && git merge origin/$2
     if [ $? -ne 0 ]; then
-        echo "!!!$1($2) merge failed, will reset to origin/$2!!!"
+        echo -e "\e[31:40m !!!$1($2) merge failed, will reset to origin/$2!!!\e[0m"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/server.js"
     fi
-    echo -e "====$1($2) update complete====\n"
+    echo -e "\e[34;40m ====$1($2) update complete====\n\e[0m"
 }
 
 
@@ -143,11 +143,11 @@ function vue_update() {
     bak "$1/config/index.js" && bak "$1/src/conf/params.js"
     cd $1 && git fetch origin && git merge origin/$2
     if [ $? -ne 0 ]; then
-        echo "!!!$1($2) merge failed, will reset to origin/$2!!!"
+        echo -e "\e[31:40m !!!$1($2) merge failed, will reset to origin/$2!!!\e[0m"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/config/index.js" && getbak "$1/src/conf/params.js"
     fi
-    echo -e "====$1($2) update complete====\n"
+    echo -e "\e[34;40m ====$1($2) update complete====\n\e[0m"
 }
 
 # 使用方法
@@ -158,6 +158,8 @@ function vue_update() {
 #update "member_update" "/home/member" "master"
 #update "portal_update" "/home/portal" "master"
 #update "api_update" "/home/api" "master"
-update "php_update" "/home/newphp" "printing"
+#update "php_update" "/home/newphp" "printing"
 update "php_update" "/home/Newphp" "printing"
+#update "php_update" "/home/Newphp" "master"
 update "vue_update" "/home/Consultation" "ReportPrinting"
+#update "vue_update" "/home/Consultation" "master"
