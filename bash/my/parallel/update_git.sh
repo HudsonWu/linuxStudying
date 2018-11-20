@@ -66,7 +66,7 @@ function php_update() {
     # cd $1 && git pull --no-edit origin $2
     
     if [ $? -ne 0 ]; then
-        echo -e "\e[31:40m !!!$1($2) merge failed, will change something!!!\e[0m"
+        echo -e "\e[31;40m !!!$1($2) merge failed, will change something!!!\e[0m"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/.env"
         getbak "$1/app/Containers/Project/Configs/project.php"
@@ -90,7 +90,7 @@ function member_update() {
     bak "$1/config/index.js" && bak "$1/config/globals.js"
     cd $1 && git fetch origin && git merge origin/$2 -m "merge $2"
     if [ $? -ne 0 ]; then
-        echo -e "\e[31:40m !!!$1($2) merge failed, will reset to origin/$2!!!\e[0m"
+        echo -e "\e[31;40m !!!$1($2) merge failed, will reset to origin/$2!!!\e[0m"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/config/params.js" && getbak "$1/config/session.js" && getbak "$1/config/cache.js"
         getbak "$1/config/index.js" && getbak "$1/config/globals.js"
@@ -105,7 +105,7 @@ function portal_update() {
     bak "$1/config/session.js" && bak "$1/config/globals.js"
     cd $1 && git fetch origin && git merge origin/$2 -m "merge $2"
     if [ $? -ne 0 ]; then
-        echo -e "\e[31:40m !!!$1($2) merge failed, will reset to origin/$2!!!\e[0m"
+        echo -e "\e[31;40m !!!$1($2) merge failed, will reset to origin/$2!!!\e[0m"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/config/local.js" && getbak "$1/config/cache.js" && getbak "$1/config/params.js"
         getbak "$1/config/session.js" && getbak "$1/config/globals.js"
@@ -119,7 +119,7 @@ function api_update() {
     bak "$1/config/connections.js" && bak "$1/config/local.js" && bak "$1/config/sockets.js" && bak "$1/config/cache.js"
     cd $1 && git fetch origin && git merge origin/$2 -m "merge $2"
     if [ $? -ne 0 ]; then
-        echo -e "\e[31:40m !!!$1($2) merge failed, will reset to origin/$2!!!\e[0m"
+        echo -e "\e[31;40m !!!$1($2) merge failed, will reset to origin/$2!!!\e[0m"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/config/connections.js" && getbak "$1/config/local.js" && getbak "$1/config/sockets.js" && getbak "$1/config/cache.js"
     fi
@@ -132,7 +132,7 @@ function package_update() {
     bak "$1/server.js"
     cd $1 && git fetch origin && git merge origin/$2 -m "merge $2"
     if [ $? -ne 0 ]; then
-        echo -e "\e[31:40m !!!$1($2) merge failed, will reset to origin/$2!!!\e[0m"
+        echo -e "\e[31;40m !!!$1($2) merge failed, will reset to origin/$2!!!\e[0m"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/server.js"
     fi
@@ -145,7 +145,7 @@ function vue_update() {
     bak "$1/config/index.js" && bak "$1/src/conf/params.js"
     cd $1 && git fetch origin && git merge origin/$2 -m "merge $2"
     if [ $? -ne 0 ]; then
-        echo -e "\e[31:40m !!!$1($2) merge failed, will reset to origin/$2!!!\e[0m"
+        echo -e "\e[31;40m !!!$1($2) merge failed, will reset to origin/$2!!!\e[0m"
         git fetch --all && git reset --hard origin/$2
         getbak "$1/config/index.js" && getbak "$1/src/conf/params.js"
     fi
@@ -160,8 +160,7 @@ function vue_update() {
 #update "member_update" "/home/member" "master"
 #update "portal_update" "/home/portal" "master"
 #update "api_update" "/home/api" "master"
-update "php_update" "/home/newphp" "printing"
-update "php_update" "/home/Newphp" "dev"
+update "php_update" "/home/Newphp" "printing"
 #update "php_update" "/home/Newphp" "master"
 update "vue_update" "/home/Consultation" "ReportPrinting"
 #update "vue_update" "/home/Consultation" "master"
