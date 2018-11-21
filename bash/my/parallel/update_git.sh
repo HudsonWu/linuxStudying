@@ -156,12 +156,9 @@ function vue_update() {
 # update [代码更新函数] [代码绝对路径] [代码分支名]
 # 一般只需更改代码分支名即可
 
-#update "vue_update" "/home/consultation" "master"
+update "php_update" "/home/Newphp" "master"
+#update "php_update" "/home/newphp" "master"
+update "vue_update" "/home/Consultation" "master"
 #update "member_update" "/home/member" "master"
 #update "portal_update" "/home/portal" "master"
 #update "api_update" "/home/api" "master"
-update "php_update" "/home/Newphp" "printing"
-update "php_update" "/home/newphp" "printing"
-#update "php_update" "/home/Newphp" "master"
-update "vue_update" "/home/Consultation" "ReportPrinting"
-#update "vue_update" "/home/Consultation" "master"
