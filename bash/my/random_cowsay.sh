@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# 随机使用/usr/share/cowsay/cows下的cowfile
+# 随机使用/usr/share/cowsay/cows (debian)下的cowfile
+# /usr/share/cowsay (redhat)
 # 显示出fortune命令下的文字
 
 # IFS (Internal Field Separator), 默认为space/tab/new line, 可以指定分隔符
@@ -23,12 +24,13 @@ function rand(){
     echo $(($num%$max+$min))
 }
 
-num=$(rand 1 $len)
+cowfile_num=$(rand 1 $len)
+color_num=$(rand 31 37)
 
 cowfiles=`ls /usr/share/cowsay/cows | grep cow`
-cowfile=`echo $cowfiles | cut -d ' ' -f $num` 
+cowfile=`echo $cowfiles | cut -d ' ' -f $cowfile_num` 
 
-echo "$num  $cowfile"
-fortune | cowsay -f $cowfile
+echo "$cowfile_num  $cowfile ($color_num)"
+echo -e "\e[$color_num;40m $(fortune)\e[0m" | cowsay -f $cowfile
 
 # exit 0

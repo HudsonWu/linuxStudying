@@ -1,6 +1,14 @@
-.git/config文件
-git的设置文件为".git/config", 可以在用户主目录下(全局配置) 也可以在项目目录下(项目配置)
+# git config
 
+## 配置文件
+git 配置文件分为三级, 系统级(--system), 用户级(--global), 目录级(--local)
+三者的使用优先级以离目录最近为原则
++ 系统级配置存储在/etc/gitconfig文件中, 该配置对系统上所有用户及他们所拥有的仓库都生效
++ 用户级存储在每个用户的~/.gitconfig中, 该配置对当前用户上所有仓库有效
++ 目录级存储在每个仓库的.git/config中, 只对当前仓库生效
+
+
+## git config 命令
 1. 显示当前git配置
 git config --list
 2. 编辑git配置文件
@@ -22,7 +30,6 @@ git config --global credential.helper store
 6. git设置连接方式（https或ssh）
 git remote -v
 git remote set-url origin git@github.com...
-7. dos2unix转换工具：CRLF --->  LF
-apt-get install dos2unix
-find . -type f (或者find . -type f -exec dos2unix {} +)
 
+## 一些有用的配置
+> git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"  //缩写, 别名
