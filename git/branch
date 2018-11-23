@@ -9,3 +9,7 @@
 查看本地和远程版本差异
 > git log -p dev..origin/dev
 
+查看分支详细信息
+> git branch -vv  //可查看分支与远程分支追踪状态
+> git remote -vv  //查看远程仓库信息
+
