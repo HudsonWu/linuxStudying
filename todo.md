@@ -1,2 +1,2 @@
-ngrok
-frps
+1. ngrok
+2. frps
