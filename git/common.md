@@ -149,7 +149,9 @@ git push [remote] --all
 </pre>
 
 7. 其他
+<pre>
 //生成一个可供发布的压缩包
 git archive
 //删除所有untracked的文件
 git clean -df
+</pre>
