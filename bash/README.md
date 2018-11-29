@@ -1,6 +1,6 @@
 ## bash, Bourne Again Shell
 
-shell脚本, 是一种为shell编写的脚本程序, 这里只记录Bash脚本的学习和使用, 不关注其他Shell
+shell脚本, 是一种为shell编写的脚本程序, 这里只记录了Bash脚本的学习和使用, 没有关注其他Shell<br/>
 
 
 + [我写的一些脚本](https://github.com/HudsonWu/linuxStudying/tree/master/bash/my)
