@@ -1,0 +1,30 @@
+#!/usr/bin/expect
+# 使用方法: script_name ip1 ip2 ip3 ...
+set timeout 20
+if {$argc < 1} {
+    puts "Usage: scripts IPs"
+    exit 1
+}
+set user "username"
+set password "yourpassword"
+foreach IP $argv {
+spawn ssh $user@$IP
+
+expect \
+  "(yes/no)?" {
+    send "yes\r"
+    expect "password:?" {
+        send "$password\r"
+    }
+  }  "password:?" {
+    send "$password\r"
+  }
+
+expect "\$?"
+
+send "last\r"
+expect "\$?"
+sleep 10
+send "exit\r"
+expect eof
+}

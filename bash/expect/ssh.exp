@@ -1,0 +1,12 @@
+#!/usr/bin/expect -f
+set ip [lindex $argv 0]
+set username [lindex $argv 1]
+set mypassword [lindex $argv 2]
+set timeout 10
+
+spawn ssh $username@$ip  # 发送ssh请求
+expect {
+    "*yes/no" { send "yes\r"; exp_continue }  # 第一次ssh连接会提示yes/no, 继续
+    "*password:" { send "$mypassword\r" }
+}
+interact  # 交互模式, 用户会停留在远程服务器上

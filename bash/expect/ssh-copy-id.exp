@@ -1,0 +1,10 @@
+#!/usr/bin/expect -f
+set timeout 5
+set host [lindex $argv 0]
+
+spawn ssh-copy-id -p2002 root@$host
+expect {
+   "*yes/no" { send "yes\r";exp_continue }
+   "*password:" { send "etyfhzm\r" }
+}   
+expect eof
