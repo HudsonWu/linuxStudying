@@ -1,5 +1,5 @@
 ## vim修改时发现没有写入权限
-
+<pre>
 1. 使用 :w newname 方式另存为新文件
 
 2. :w !sudo tee % > /dev/null
@@ -11,9 +11,10 @@
 
 %是vim中保存当前文件路径名的专用寄存器,在命令行下会自动替换为完整路径
 :w !sudo tee %实际就能借助tee命令保存文件内容了,但tee命令还有标准输出,为了避免重复,将其丢弃,即/dev/null
+</pre>
 
 ## 命令模式下一些有用的命令
-
+<pre>
 1. :help key-notation 查看帮助文件
 
 2. :map 键盘映射
@@ -33,8 +34,10 @@ map \T <Esc>:set expandtab tabstop=8 shiftwidth=8<CR>
 3. 匹配
 :g/pattern/d  删除包含特定字符的行
 :v/pattern/d  或者  :g!/pattern/d  删除不包含指定字符的行
+</pre>
 
 ## 移除不需要的空行
+<pre>
 1. 移除空行
 :g/^$/d
 :v/./d
@@ -51,11 +54,15 @@ the following will delete all empty lines, or lines that comtain only combinatio
 :g/^[ \t\u3000]*$/d
 an alternative procedure, which should work in other encoding, would be to enter the CJK space directly into the pattern. that is, you would type the following, but instead of '#' youwould enter a CJK space
 :g/^ \t#]*$/d
+</pre>
 
 ## 查找当前单词
+<pre>
 normal模式下按下 * 即可查找光标所在单词，按下 g* 即可查找光标所在单词的字符序列
+</pre>
 
 ## 查找与替换(substitude)
+<pre>
 :{作用范围}s/{目标}/{替换}/{替换标志}
 如:%s/foo/bar/g  在全局范围(%)查找(foo)并替换为(bar),所有出现都会被替换(g)
 1. 作用范围
@@ -79,8 +86,10 @@ normal模式下按下 * 即可查找光标所在单词，按下 g* 即可查找�
 :%s/foo/bar/gc
 (y/n/a/q/l/^E/6Y)?  y--替换 n--不替换 a--替换所有 q--退出查找模式 
 l--替换当前位置并退出 ^E和^Y是光标移动快捷键
+</pre>
 
 ## 将tabs替换为空格
+<pre>
 1. To insert space characters whenever the tab key is pressed, set the 'expandtab' option
 -- :set expandtab --
 with this option set, if you want to enter a real tab character use Ctrl-V<Tab> key sequence
@@ -102,3 +111,4 @@ autocmd BufEnter *.py set ai sw=4 ts=4 sta et fo=croql
 4. makes the spaces feel like real tabs
 -- set softtabstop=4 --
 This makes the backspace key treat the four spaces like a tab
+</pre>
