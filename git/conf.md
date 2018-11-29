@@ -23,12 +23,12 @@ git 配置文件分为三级, 三者的使用优先级以离目录最近为原�
 ## git config 命令
 <pre>
 1. 显示当前git配置
-git config --list
+> git config --list
 2. 编辑git配置文件
-git config -e [--global]
+> git config -e [--global]
 3. 设置提交代码时的用户信息
-git config [--global] user.name "[name]"
-git config [--global] user.email "[email address]"
+> git config [--global] user.name "[name]"
+> git config [--global] user.email "[email address]"
 4. 设置编辑器
 git config --global core.editor vim
 5. git设置连接方式（https或ssh）

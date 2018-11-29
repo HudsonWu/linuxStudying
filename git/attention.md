@@ -29,11 +29,15 @@ input  -->  添加文件到仓库时将crlf变成lf, check代码时也是lf, 在
 </pre>
 
 4. 远程覆盖本地
-> git fetch --all<br/>
-> git reset --hard origin/master<br/>
+<pre>
+git fetch --all
+git reset --hard origin/master
+</pre>
 
 5. 测试ssh是否成功连接
-> ssh -vT git@github.com<br/>
+<pre>
+ssh -vT git@github.com
+</pre>
 
 6. 查看master分支所有提交
 <pre>
@@ -54,5 +58,7 @@ git fetch --depth 1 origin remote_branch_name
 git checkout remote_branch_name
 </pre>
 
-8. 修改最近一次的commit
-> git commit --amend  //修改提交的描述<br/>
+8. 修改最近一次的commit msg
+<pre>
+git commit --amend
+</pre>
