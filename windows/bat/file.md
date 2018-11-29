@@ -1,5 +1,5 @@
 ## 创建, 复制, 删除文件及文件夹
-
+<pre>
 copy cd.dll %windir%\system32  //复制cd.dll文件到windows\system32中
 del %windir%\system32\cd.dll  /删除cd.dll文件
 del C:\DOWNLOAD\*.*  //删除download文件夹中的文件
@@ -7,14 +7,17 @@ rd Filemon  //删除Filemon文件夹 (只能删除空文件夹)
 rd /s /q folder1  //删除folder1文件夹
 (/s表示删除该文件夹及其下面的子目录和文件, /q表示不需要确认)
 md "E:\MyDocuments\NewFolder1"  //新建文件夹
+</pre>
 
 ## 执行程序, 打开文件或目录
+<pre>
 start C:\Test  //打开指定目录
 start C:\WinWord.exe  //执行WinWord.exe程序
 start d:\TheWorld\TheWorld.EXE "C:\MyDocuments\index.htm"  //用某个程序打开某个文件
+</pre>
 
 ## 拷贝文件夹 XCOPY
-
+<pre>
 XCOPY命令可用于复制文件和目录, 包括子目录; 其功能多数是通过增加参数来实现的
 
 XCOPY source [destination] 参数(如 /s /e) 
@@ -62,3 +65,4 @@ destination 指定新文件的位置和/或名称
 /-Y 导致提示以确认改写一个 
 现存目标文件
 /Z 用重新启动模式复制网络文件
+</pre>
