@@ -37,6 +37,7 @@ git remote set-url origin git@github.com...
 </pre>
 
 ## 记住用户名和密码
+<pre>
 1. 设置上游仓库时设置用户名和密码
 git remote set-url origin https://username:password@github.com/username/project.git
 2. 设置密码存储
@@ -46,6 +47,7 @@ git config credential.helper 'cache --timeout=3600'  //自定义存储时间
 3. .git/config文件
 [credential]
   helper=store
+</pre>
 
 ## 一些使用的命令
 <pre>
