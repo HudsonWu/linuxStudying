@@ -1,42 +1,48 @@
-# git config
-
 ## 配置文件
-git 配置文件分为三级, 系统级(--system), 用户级(--global), 目录级(--local)
-三者的使用优先级以离目录最近为原则
-+ 系统级配置存储在/etc/gitconfig文件中, 该配置对系统上所有用户及他们所拥有的仓库都生效
-+ 用户级存储在每个用户的~/.gitconfig中, 该配置对当前用户上所有仓库有效
-+ 目录级存储在每个仓库的.git/config中, 只对当前仓库生效
+
+### 配置文件的分级
+git 配置文件分为三级, 三者的使用优先级以离目录最近为原则
+
++ 系统级(--system)
+    + /etc/gitconfig, 该配置对系统上所有用户及他们所拥有的仓库都生效
++ 用户级(--global)
+    + ~/.gitconfig, 该配置对当前用户的所有仓库生效
++ 目录级(--local)
+    + .git/config, 该配置只对当前仓库生效
 
 ### 修改分支的追踪关系
-#### [remote "origin"] 
+<pre>
+[remote "origin"] 
 这一项修改对应远程仓库地址
 
-#### [branch "master"] 
+[branch "master"] 
 这一项修改本地分支'master'的远程追踪关系分支
-如修改merge = refs/heads/master为 merge = refs/heads/dev
+如修改merge = refs/heads/master为merge = refs/heads/dev
+</pre>
 
 ## git config 命令
 1. 显示当前git配置
-git config --list
+> git config --list
 2. 编辑git配置文件
-git config -e [--global]
+> git config -e [--global]
 3. 设置提交代码时的用户信息
-git config [--global] user.name "[name]"
-git config [--global] user.email "[email address]"
+> git config [--global] user.name "[name]"
+> git config [--global] user.email "[email address]"
 4. 设置编辑器
-git config --global core.editor vim
+> git config --global core.editor vim
 5. 记住用户名和密码
- (1) git remote set-url origin https://username:password@github.com/username/project.git
- (2) 设置在全局git环境中, 长期存储密码
-git config --global credential.helper store
-记住密码（默认15分钟）  git config --global credential.helper cache
-自定义存储时间   git config credential.helper 'cache --timeout=3600'
- (3) .git/config文件
-[credential]
-    helper=store
+    1. 设置上游仓库时设置用户名和密码
+    > git remote set-url origin https://username:password@github.com/username/project.git
+    2. 设置密码存储
+    > git config --global credential.helper store  //长期存储密码
+    > git config --global credential.helper cache  //记住密码(默认15min)
+    > git config credential.helper 'cache --timeout=3600'  //自定义存储时间
+    3. .git/config文件
+    [credential]
+      helper=store
 6. git设置连接方式（https或ssh）
-git remote -v
-git remote set-url origin git@github.com...
+> git remote -v
+> git remote set-url origin git@github.com...
 
 ### 一些有用的配置
 > git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"  //缩写, 别名
