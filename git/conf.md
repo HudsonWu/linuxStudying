@@ -24,13 +24,17 @@ git 配置文件分为三级, 三者的使用优先级以离目录最近为原�
 <pre>
 1. 显示当前git配置
 git config --list
+
 2. 编辑git配置文件
 git config -e [--global]
+
 3. 设置提交代码时的用户信息
 git config [--global] user.name "[name]"
 git config [--global] user.email "[email address]"
+
 4. 设置编辑器
 git config --global core.editor vim
+
 5. git设置连接方式（https或ssh）
 git remote -v
 git remote set-url origin git@github.com...
@@ -40,10 +44,12 @@ git remote set-url origin git@github.com...
 <pre>
 1. 设置上游仓库时设置用户名和密码
 git remote set-url origin https://username:password@github.com/username/project.git
+
 2. 设置密码存储
 git config --global credential.helper store  //长期存储密码
 git config --global credential.helper cache  //记住密码(默认15min)
 git config credential.helper 'cache --timeout=3600'  //自定义存储时间
+
 3. .git/config文件
 [credential]
   helper=store
