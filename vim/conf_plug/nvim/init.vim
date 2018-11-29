@@ -1,3 +1,5 @@
+" https://web-techno.net/vim-php-ide/
+" neovim
 " Skip initialization for vim-tiny or vim-small.
 if !1 | finish | endif
 
