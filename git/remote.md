@@ -1,5 +1,5 @@
 ## git remote
-
+<pre>
 1. 添加上游仓库
 git remote add <name> <url>
 > git remote add origin git@github.com:username/project.git
@@ -18,22 +18,29 @@ git fetch --all  //更新所有
 
 5. 推送本地更改到上游
 git push -u <name> <branch>
+</pre>
 
 ## git fetch 和 git pull
+<pre>
 1. git fetch 从远程获取最新版本到本地，但不会自动merge
 git fetch origin
 git merge origin/dev
 2. git pull 从远程获取最新版本并merge到本地
 git pull origin dev
+</pre>
 
 ## git初始提交
+<pre>
 echo "# ui_automated_testing" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/HudsonWu/ui_automated_testing.git
 git push -u origin master
+</pre>
 
 ## 推送到远程时文件忽略
+<pre>
 .gitignore文件, 用于设置公共需要排除的文件
 .git/info/exclude文件, 用于设置本地需要忽略的文件
+</pre>
