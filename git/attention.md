@@ -60,5 +60,5 @@ git checkout remote_branch_name
 
 8. 修改最近一次的commit msg
 <pre>
-git commit --amendd
+git commit --amend
 </pre>
