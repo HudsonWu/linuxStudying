@@ -33,7 +33,7 @@ There are various commands which funny and useful <br/>
 + [markdown, 轻量级标记语言](https://github.com/HudsonWu/linuxStudying/tree/master/markdown)
     + [基本语法](https://github.com/HudsonWu/linuxStudying/blob/master/markdown/how.md)
     + [实际使用](https://github.com/HudsonWu/linuxStudying/blob/master/markdown/use.md)
-+ [windows高级用法, windows的一些便利用法](https://github.com/HudsonWu/linuxStudying/tree/master/windows)
++ [windows的一些便利用法](https://github.com/HudsonWu/linuxStudying/tree/master/windows)
     + [批处理文件](https://github.com/HudsonWu/linuxStudying/tree/master/windows/bat)
 
 ### About me
