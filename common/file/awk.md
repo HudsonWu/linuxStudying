@@ -1,17 +1,26 @@
+# awk
+
 awk是一种处理文本文件的语言, 是一个强大的文本分析工具
 
+## 用途
 + Define variables
 + Use string and arithmetric operators
 + Use control flow and loops
 + Generate formatted report
 
-The awk command is used like this:
-> awk options program file
+
+## 语法
+<pre>
+awk [options] [program] [file]
+
 Awk can take the following options:
 -F fs    //To specify a file separator
 -f file    //To specify a file that contains awk script
 -v var=value    //To declare a variable
+</pre>
 
+## 使用
+<pre>
 1. To define an awk script
 > awk '{print "welcome to awk"}'
 If you type anything, it returns the same welcome string we provide
@@ -120,3 +129,4 @@ o    //prints octal value
 s    //prints a text string
 
 > awk 'BEGIN{x=100*100; printf "The result is: %e\n", x}'
+</pre>

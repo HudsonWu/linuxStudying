@@ -2,7 +2,7 @@
 
 <pre>
 对于误删除文件还原分为两种情况
-1. 删除以后再进程存在删除信息
+1. 删除以后进程存在删除信息
 2. 删除以后进程都找不到, 只有借助于工具还原
 </pre>
 
@@ -17,4 +17,5 @@
 </pre>
 
 ## 误删除的文件进程已经不存在, 借助于工具还原
-extundelete
+
++ [extundelete] (https://github.com/HudsonWu/linuxStudying/tree/master/common/file/delete_mistake/extundelete.md)

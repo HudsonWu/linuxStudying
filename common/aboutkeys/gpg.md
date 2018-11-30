@@ -1,5 +1,8 @@
-GnuPG，是目前最流行、最好用的加密工具之一
-密钥管理：
+## GnuPG
+是目前最流行、最好用的加密工具之一<br/>
+
+### 密钥管理
+<pre>
 1. 生成密钥
 gpg --gen-key
 2. 生成“撤销证书“
@@ -27,8 +30,10 @@ gpg --import [密钥文件]
 gpg --keyserver hkp://subkeys.pgp.net --search-keys [用户ID]
 gpg --keyserver hkp://subkeys.pgp.net --recv [用户ID]
 gpg --recv-keys [用户ID]
+</pre>
 
-加密和解密：
+### 加密和解密
+<pre>
 1. 加密
 gpg --recipient [用户ID] --output demo.en.txt --encrypt demo.txt
 recipient参数指定接收者的公钥，output参数制定加密后的文件名，encrypt参数指定源文件
@@ -38,8 +43,10 @@ decrypt参数指定需要解密的文件，output参数指定解密后生成的�
 GPG允许省略decrypt参数
 gpg demo.en.txt
 运行上面的命令后，解密后的文件内容直接显示在标准输出
+</pre>
 
-签名：
+### 签名
+<pre>
 1. 对文件签名
 有时，我们不需要加密文件，只需要对文件签名，表示这个文件确实是我本人发出的
 gpg --sign demo.txt
@@ -61,3 +68,12 @@ gpg --export --armor 4F6C1E86 | sudo apt-key add -
 (pgpkeys.mit.edu  keys.gnupg.net  ubuntu PPA: keyserver.ubuntu.com)
 
 wget -qO - https://mirrors.ustc.edu.cn/kali/dists/kali-rolling/Release.gpg | sudo apt-key add -
+</pre>
+
+### 常用命令
+```sh
+gpg --full-generate-key  //生成GPG密钥对
+gpg --list-secret-keys --keyid-format LONG  //密钥列表
+gpg --armor --export 3AA5C34371567BD2  //使用ASCII armor格式打印密钥ID
+//Copy your GPG key, beginning with -----BEGIN PGP PUBLIC KEY BLOCK----- and ending with -----END PGP PUBLIC KEY BLOCK-----
+```
