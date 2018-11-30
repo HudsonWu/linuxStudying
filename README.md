@@ -31,6 +31,8 @@ There are various commands which funny and useful <br/>
 + [web服务器的一些配置, 性能优化之路](https://github.com/HudsonWu/linuxStudying/tree/master/webservers)
 + [关系型数据库, 结构化查询语言](https://github.com/HudsonWu/linuxStudying/tree/master/rdbms)
 + [markdown, 轻量级标记语言](https://github.com/HudsonWu/linuxStudying/tree/master/markdown)
+    + [基本语法](https://github.com/HudsonWu/linuxStudying/blob/master/markdown/how.md)
+    + [实际使用](https://github.com/HudsonWu/linuxStudying/blob/master/markdown/use.md)
 + [windows高级用法, windows的一些便利用法](https://github.com/HudsonWu/linuxStudying/tree/master/windows)
 
 ### About me
