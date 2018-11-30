@@ -34,13 +34,13 @@ xhtml2pdf --html Release-Notes.html Release-Notes.pdf
 </pre>
 
 ## 转换中出现的编码问题
-<pre>
+```js
 sed -i '1i\<meta http-equiv="content-type" content="text/html; charset=UTF-8">' *.md
-</pre>
+```
 
 ## Makefile
 可以在文档目录下放置Makefile来自动转换过程
-<pre>
+```js
 # Makefile
 
 MD = markdown
@@ -66,11 +66,10 @@ $(OBJECTS): %.html: %.md
     $(MD) $(MDFLAGS) -o $@ $<
 clean:
     rm -f $(OBJECTS)
-</pre>
-
+```
 
 ## 继续学习
-<pre>
+```js
 https://legacy.gitbook.com/book/wizardforcel/markdown-simple-world/details  Markdown-简单的世界
 https://www.appinn.com/markdown/  Markdown语法说明
 
@@ -78,4 +77,4 @@ https://www.appinn.com/markdown/  Markdown语法说明
 半方大的空白&ensp;或&#8194;
 全方大的空白&emsp;或&#8195;
 不断行的空白格&nbsp;或&#160;
-</pre>
+```
