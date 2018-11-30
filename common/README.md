@@ -3,7 +3,7 @@
 + [文件相关命令](https://github.com/HudsonWu/linuxStudying/tree/master/common/file)
     + [不同文件搜索命令的异同](https://github.com/HudsonWu/linuxStudying/tree/master/common/file/file_search/file_search_commands.md)
     + [find命令的一些奇技淫巧](https://github.com/HudsonWu/linuxStudying/tree/master/common/file/find.md)
-    + [grep, 强大的文本搜索工具](://github.com/HudsonWu/linuxStudying/tree/master/common/file/grep.md)
+    + [grep, 强大的文本搜索工具](https://github.com/HudsonWu/linuxStudying/tree/master/common/file/grep.md)
     + [sed, 流编辑器](https://github.com/HudsonWu/linuxStudying/tree/master/common/file/sed.md)
     + [awk, 文本文件处理语言](https://github.com/HudsonWu/linuxStudying/tree/master/common/file/awk.md)
     + [touch命令](https://github.com/HudsonWu/linuxStudying/tree/master/common/file/touch.md)
