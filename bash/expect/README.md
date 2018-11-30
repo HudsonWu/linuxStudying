@@ -43,7 +43,7 @@ expect { -re "regex" { send "str\r" } }
 </pre>
 
 ## 简单使用
-<pre>
+```sh
 #!/usr/bin/expect
 # ---------- 配置信息开始 ----------
 # 变量
@@ -64,10 +64,10 @@ send "$password\r"
 # interact, 执行完成后保持交互状态, 把控制权交给控制台
 # 如果没有这一句, 登录完成后会退出
 interact
-</pre>
+```
 
 ## 与bash共用
-<pre>
+```sh
 #!/bin/bash
 echo "this bash func"
 #---------expect开始----------
@@ -82,4 +82,4 @@ interact
 
 END
 #---------expect结束----------
-</pre>
+```
