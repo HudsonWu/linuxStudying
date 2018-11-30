@@ -28,7 +28,7 @@ markdown_py -o html4 Release-Notes.md > Release-Notes.html
 
 ## 转换成pdf
 <pre>
-使用python-pisa提供的xhtml2pdf
+//使用python-pisa提供的xhtml2pdf
 apt-get install python-pisa
 xhtml2pdf --html Release-Notes.html Release-Notes.pdf
 </pre>
