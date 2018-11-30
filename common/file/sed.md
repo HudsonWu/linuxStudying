@@ -30,7 +30,8 @@ nl /etc/passwd | sed -n '5,7p'  //仅列出5-7行
 nl /etc/passwd | sed '/root/p'  //搜索有root关键字的行(除了输出所有行, 还会输出匹配行)
 nl /etc/passwd | sed -n '/root/p'  //只打印包含模板的行
 6. 取代, s
-nl /etc/passwd | sed -n '/root/{s/bash/blueshell/;p;q}'  //找到root对应的行, 执行花括号的一组命令, 每个命令之间用分号分隔, 最后的q是退出
+nl /etc/passwd | sed -n '/root/{s/bash/blueshell/;p;q}'
+//找到root对应的行, 执行花括号的一组命令, 每个命令之间用分号分隔, 最后的q是退出
 ```
 
 ## Usage
