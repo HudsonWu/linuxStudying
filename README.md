@@ -1,8 +1,6 @@
-# The journey of linux
+## The journey of linux
 
 **There are various commands which funny and useful**<br/>
-
-## 笔记分类
 
 ### [常用命令, linux系统之美](https://github.com/HudsonWu/linuxStudying/tree/master/common)
 + [文件相关命令](https://github.com/HudsonWu/linuxStudying/tree/master/common/file)
