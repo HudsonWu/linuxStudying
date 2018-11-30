@@ -1,4 +1,11 @@
-## The journey of linux
+# The journey of linux
+
+```
+           I think Linux is a great thing,
+                     in the big picture. It's a great hacker's tool,
+                             and it has a lot of potential to become something more.
+                                                                            Jamie Zawinski
+```
 
 **There are various commands which funny and useful**<br/>
 
@@ -48,9 +55,9 @@
 + [git使用中的一些配置](https://github.com/HudsonWu/linuxStudying/blob/master/git/conf.md)
 + [标签的使用](https://github.com/HudsonWu/linuxStudying/blob/master/git/tag.md)
 
-### [docker, 容器的学习](https://github.com/HudsonWu/linuxStudying/tree/master/docker)
-
-### [kubernetes, 容器化应用程序的自动部署、扩展和管理](https://github.com/HudsonWu/linuxStudying/tree/master/kubernetes)
+### [容器的学习](https://github.com/HudsonWu/linuxStudying/tree/master/container)
++ [docker, 开源容器解决方案](https://github.com/HudsonWu/linuxStudying/tree/master/container/docker)
++ [kubernetes, 容器化应用程序的自动部署、扩展和管理](https://github.com/HudsonWu/linuxStudying/tree/master/container/kubernetes)
 
 ### [网络相关命令, 网络的监控、安全攻防](https://github.com/HudsonWu/linuxStudying/tree/master/network)
 
@@ -68,11 +75,6 @@
 + [批处理文件](https://github.com/HudsonWu/linuxStudying/tree/master/windows/bat)
 
 ## About me
-a linux lover, a dreaming man,  
+a linux lover, a dreaming man, <br/>
 
-```
-I think Linux is a great thing,
-          in the big picture. It's a great hacker's tool,
-                  and it has a lot of potential to become something more.
-                                                                  Jamie Zawinski
-```
+> Before you can run, you need to be able to walk </br>
