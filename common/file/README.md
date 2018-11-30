@@ -8,7 +8,7 @@ grep, 适合单纯的查找或匹配文本<br/>
 sed, 适合编辑匹配到的文本<br/>
 awk, 适合格式化文本, 对文本进行较复杂格式的处理
 
-+ [grep, 强大的文本搜索工具](://github.com/HudsonWu/linuxStudying/tree/master/common/file/grep.md)
++ [grep, 强大的文本搜索工具](https://github.com/HudsonWu/linuxStudying/tree/master/common/file/grep.md)
 + [sed, 流编辑器](https://github.com/HudsonWu/linuxStudying/tree/master/common/file/sed.md)
 + [awk, 文本文件处理语言](https://github.com/HudsonWu/linuxStudying/tree/master/common/file/awk.md)
 
