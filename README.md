@@ -1,13 +1,6 @@
 # The journey of linux
-```
-I think Linux is a great thing,
-          in the big picture. It's a great hacker's tool,
-                  and it has a lot of potential to become something more.
-                                                                  Jamie Zawinski
-```
-******
 
-There are various commands which funny and useful <br/>
+**There are various commands which funny and useful**<br/>
 
 ## 笔记分类
 
@@ -79,4 +72,9 @@ There are various commands which funny and useful <br/>
 ## About me
 a linux lover, a dreaming man,  
 
-> Before you can run, you need to be able to walk.</br>
+```
+I think Linux is a great thing,
+          in the big picture. It's a great hacker's tool,
+                  and it has a lot of potential to become something more.
+                                                                  Jamie Zawinski
+```
