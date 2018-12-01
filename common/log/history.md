@@ -1,5 +1,5 @@
-history
-
+## history
+```
 1. 使用HISTTIMEFORMAT在历史中显示TIMESTAMP
 export HISTTIMEFORMAT='%F %T '
 
@@ -26,3 +26,4 @@ cat /dev/null > ~/.bash_history  清除历史命令文件中的记录
 history -r 重置文件里的内容到内存中
 
 8. export HISTSIZE=0 禁用history，不让bashshell记录你的命令
+```
