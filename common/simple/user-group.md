@@ -1,8 +1,10 @@
+<pre>
 1. 查看所有用户和用户组
 cat /etc/passwd
 cat /etc/group
 id user1  查看用户user1的UID和GID
 finger user1  查看用户user1的主目录、启动shell、用户名、地址、电话等信息
+
 2. 建立用户
 adduser hudson  会在home目录下添加一个帐号
 useradd hudson  仅仅是添加用户，不会在home目录添加帐号
@@ -23,6 +25,7 @@ usermod -a -G adm user1
 usermod -a -G sudo user1   为user1添加sudo权限
 userdel user2  删除用户user2
 userdel -r user2  删除用户user2，同时删除工作目录
+
 3. 增加用户组
 groupadd 选项 用户组
 -g  为用户组指定组标识号（GID）
@@ -36,6 +39,7 @@ groupmod 修改组
 groupmod -n user users  修改组名user为users
 groupdel  删除组
 groupdel users  删除组users
+
 4. 相关系统文件
 /etc/passwd  用户管理工作最重要的一个文件，记录了每个用户的一些基本属性
 用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录shell
@@ -45,4 +49,4 @@ shell是用户与linux系统之间的接口，linux的shell有很多种，常见
 系统管理员可以根据系统情况和用户习惯为用户指定某个Shell，若不指定，系统使用sh为默认的登录shell
 
 usermod -a -G groupA user1  将user1添加到用户组groupA中
-
+</pre>

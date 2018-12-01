@@ -1,5 +1,8 @@
-supervisorctl有两种用法, 一种是命令式, 一种是交互式
+## supervisorctl
 
+有两种用法, 一种是命令式, 一种是交互式
+
+```
 命令式
 1. 查询各进程运行状态
 > supervisorctl status
@@ -20,3 +23,4 @@ supervisorctl有两种用法, 一种是命令式, 一种是交互式
 (注意:这是线上可以操作的命令, 不会重启原有进程)
 > supervisorctl update
 (注意:显示状态为stop的进程, 用reload或update都不会自动重启)
+```

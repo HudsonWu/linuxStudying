@@ -1,5 +1,6 @@
 # journalctl 
 
+```
 /etc/systemd/journald.conf
 
 //查看所有日志
@@ -77,4 +78,4 @@
 > journalctl --vacuum-size=1G
 //指定日志保存多久
 > journalctl --vacuum-time=1years
-
+```

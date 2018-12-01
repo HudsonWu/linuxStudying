@@ -1,28 +1,28 @@
 1. 简单的邮件
-<pre>
+```
 $ mail -s "This is the subject" someone@example.com
 Hi someone
 How are you
 I am fine
 Bye
-EOT
-</pre>
+> EOT
+```
 输入第一行命令, 回车后就可以输入邮件内容, 完成输入后按CTRL+D, mailx就会显示出EOT
 
 2. 从文件中取邮件内容
-> mail -s "This is subject" someone@example < /path/to/file
-或者可以用echo
-> echo "This is message body" | mail -s "This is subject" someone@example.com
+> mail -s "This is subject" someone@example < /path/to/file <br/>
+或者可以用echo <br/>
+> echo "This is message body" | mail -s "This is subject" someone@example.com <br/>
 
 3. 多个收件人, 收件地址使用逗号 "," 隔开
 > echo "This is message body" | mail -s "This is subject" someone@example.com,someone2@example.com
 
 4. 抄送和密送
--c 表示抄送  -b 表示密送
+-c 表示抄送  -b 表示密送 <br/>
 > echo "This is message body" | mail -s "This is Subject" -c ccuser@example.com someone@example.com
 
 5. 定义发件人信息
-使用-r定义发件人
+使用-r定义发件人<br/>
 > echo "This is message body" | mail -s "This is Subject" -r "Harry<harry@gmail.com>" someone@example.com
 
 6. 使用特殊的回复地址
@@ -52,4 +52,4 @@ $ echo "This is the message body and contains the message" | mailx -v \
 yourfriend@gmail.com
 </pre>
 
-echo "sent from helloworld's account" | mailx -v -A someaccount -s "Command line mail" someone@example.com
+echo "sent from helloworld's account" | mailx -v -A someaccount -s "Command line mail" someone@example.com <br/>
