@@ -1,3 +1,4 @@
+<pre>
 1. utmp, wtmp, btmp
 /var/run/utmp  记录当前正在登录系统的用户信息, 
                默认由who和w记录当前用户的信息, uptime记录系统启动时间 (user)
@@ -52,3 +53,4 @@ w的信息来自两个文件: 用户登录信息来自/var/run/utmp, 进程信�
 
 10. 踢出已登录用户
 pkill -KILL -t pts/0
+</pre>
