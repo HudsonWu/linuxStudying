@@ -1,3 +1,9 @@
+## 一些学习站点
+
++ [Markdown-简单的世界](https://legacy.gitbook.com/book/wizardforcel/markdown-simple-world/details)
++ [Markdown语法说明](https://www.appinn.com/markdown)
++ [Markdown常用语法总结](https://github.com/guangqiang-liu/MarkdownSyntax)
+
 ## 基本语法
 ```js
  1. 段落(<p></p>)
@@ -141,4 +147,10 @@ markdown支持在以下字符前插入反斜杠, 插入后, 将不再解析这�
 
 14. 内联HTML
 任何html标签及其内容都会原样输出到结果中
+<pre>
+空格符号:
+半方大的空白&ensp;或&#8194;
+全方大的空白&emsp;或&#8195;
+不断行的空白格&nbsp;或&#160;
+</pre>
 ```
