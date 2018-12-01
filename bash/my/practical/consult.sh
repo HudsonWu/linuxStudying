@@ -61,6 +61,10 @@ function npm_install() {
     if [ ${node_version:1} -ge 10 ]; then 
         echo "node版本为: ${node_version:1}"
         # npm更新到10版本时在root环境下执行
+        
+        echo -e "\e[32;40m 安装chromedriver包\e[0m"
+        cd $vue_path && npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver \
+        --unsafe-perm --allow-root
         echo -e "\e[32;40m 安装依赖包\e[0m"
         cd $vue_path && npm install --unsafe-perm=true --allow-root
         
