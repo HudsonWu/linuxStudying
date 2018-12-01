@@ -1,6 +1,8 @@
-## 日志系统
+# 日志系统
 
+<pre>
 在linux系统中, 有三个主要的日志子系统
+
 1. 连接时间日志
 由多个程序执行, 把记录写入到/var/log/wtmp和/var/run/utmp
 login等程序更新wtmp和utmp文件, 使系统管理员能够追踪谁在何时登录到系统
@@ -13,8 +15,10 @@ login等程序更新wtmp和utmp文件, 使系统管理员能够追踪谁在何�
 由syslogd(8)执行, 各种系统守护进程, 用户程序和内核通过syslog(3)
 向文件/var/log/messages报告值得注意的事件
 另外有许多UNIX程序创建日志, 像HTTP和FTP这样提供网络服务的服务器也保持详细的日志
+</pre>
 
 ## 常用的日志文件
+```
 aculog  记录MODEM的活动
 btmp  记录失败的记录
 lastlog  记录最近几次成功登录的事件和最后一次不成功的登录
@@ -25,8 +29,10 @@ syslog  从syslog中记录信息(通常链接到messages文件)
 utmp  记录当前登录的每个用户
 wtmp  一个用户每次登录进入和退出时间的永久记录
 xferlog  记录FTP会话
+```
 
 ## 登录日志
+```
 每次有一个用户登录时, login程序在文件lastlog中查看用户的UID, 
 如果找到了, 就把用户上次登录, 退出时间和主机名写到标准输出中, 
 然后login程序在lastlog中记录新的登录时间
@@ -36,8 +42,10 @@ utmp文件被各种命令文件使用, 包括who, w, users, finger
 下一步, login程序打开文件wtmp附加用户的utmp记录, 
 当用户登录退出时, 具有更新时间戳的同一utmp记录附加到文件中
 wtmp文件被程序last和ac使用
+```
 
 ## 日志查看命令
+```
 wtmp和utmp文件都是二进制文件
 who  查询utmp文件并报告当前登录的每个用户
 who /var/log/wtmp  报告自wtmp文件创建或删改以来的每一次登录
@@ -53,9 +61,10 @@ lastlog  lastlog文件每次有用户登录时被查询, 可以使用lastlog命�
 某特定用户上次登录的时间, 并格式化输出上次登录日志/var/log/lastlog的内容
 lastlog -u 102  报告UID为102的用户
 lastlog -t 7 限制上一周的报告
+```
 
 ## 进程统计
-
+```
 工具的安装
 > yum install psacct
 > apt-get install acct
@@ -82,3 +91,4 @@ lastcomm命令报告以前执行的文件,
 > sa -c  //百分比排序显示
 > lastcomm tecmint  //列出tecmint上最近执行的命令
 > lastcomm ls  //按命令查找
+```
