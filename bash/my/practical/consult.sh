@@ -55,23 +55,49 @@ function config() {
 }
 
 function npm_install() {
-    echo -e "\e[32;40m 安装chromedriver包\e[0m"
-    cd $vue_path && npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
 
-    echo -e "\e[32;40m 安装依赖包\e[0m"
-    cd $vue_path && npm install
+    node_version=`node -v | awk -F. '{print $1}'`
 
-    if [ $? -ne 0 ]; then
-        echo -e "\e[32;40m 换用taobao镜像重新安装\e[0m"
-        npm --registry=https://registry.npm.taobao.org \
-        --cahce=$HOME/.npm/.cache/cnpm \
-        --disturl=https://npm.taobao.org/dist \
-        --userconfig=$HOME/.cnpmrc install
+    if [ ${node_version:1} -ge 10 ]; then 
+        echo "node版本为: ${node_version:1}"
+        # npm更新到10版本时在root环境下执行
+        echo -e "\e[32;40m 安装依赖包\e[0m"
+        cd $vue_path && npm install --unsafe-perm=true --allow-root
+        
         if [ $? -ne 0 ]; then
-            echo -e "\e[31;40m 依赖包安装失败, 请检查出现的错误\e[0m"
-            exit 1
+            echo -e "\e[32;40m 换用taobao镜像重新安装\e[0m"
+            npm --registry=https://registry.npm.taobao.org \
+            --cahce=$HOME/.npm/.cache/cnpm \
+            --disturl=https://npm.taobao.org/dist \
+            --userconfig=$HOME/.cnpmrc install \
+            --unsafe-perm=true --allow-root
+            
+            if [ $? -ne 0 ]; then
+                echo -e "\e[31;40m 依赖包安装失败, 请检查出现的错误\e[0m"
+                exit 1
+            fi
+        fi
+    else
+        echo "node版本为: ${node_version:1}"
+        echo -e "\e[32;40m 安装chromedriver包\e[0m"
+        cd $vue_path && npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
+    
+        echo -e "\e[32;40m 安装依赖包\e[0m"
+        cd $vue_path && npm install
+    
+        if [ $? -ne 0 ]; then
+            echo -e "\e[32;40m 换用taobao镜像重新安装\e[0m"
+            npm --registry=https://registry.npm.taobao.org \
+            --cahce=$HOME/.npm/.cache/cnpm \
+            --disturl=https://npm.taobao.org/dist \
+            --userconfig=$HOME/.cnpmrc install
+            if [ $? -ne 0 ]; then
+                echo -e "\e[31;40m 依赖包安装失败, 请检查出现的错误\e[0m"
+                exit 1
+            fi
         fi
     fi
+
 }
 
 function step1() {    
@@ -107,9 +133,6 @@ function step1() {
         exit 1
     fi
     
-    config
-    npm_install
-
     echo -e "\e[32;40m step1 完成\n\e[0m"
 
 }
@@ -118,11 +141,9 @@ function step2() {
 
     config
 
-    if [ -d $vue_path/node_modules ]; then
-        cd $vue_path && npm install
-        if [ $? -ne 0 ]; then
-            npm_install
-        fi
+    if [ -d $vue_path/node_modules -a -f $vue_path/package-lock.json ]; then
+        cd $vue_path && rm -rf node_modules package-lock.json
+        npm_install
     else
         npm_install
     fi
