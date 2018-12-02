@@ -1,6 +1,6 @@
-https://docs.docker.com
+## 基础命令
 
-基础命令：
+```
 1. 搜索镜像
 docker search centos:7
 2. 获取镜像
@@ -43,3 +43,4 @@ docker load < centos7.tar
 docker tag rhel-httpd registry-host:5000/myadmin/rhel-httpd
 docker push registry-host:5000/myadmin/rhel-httpd
 docker images
+</pre>

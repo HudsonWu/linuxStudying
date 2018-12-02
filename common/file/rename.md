@@ -1,7 +1,7 @@
 ## rename
 
 ### 通配符
-<pre>
+```
 假设文件夹中有文件foo1,foo2,...,foo200
 1. ? 替代单个字符
 rename foo foo0 foo?
@@ -12,7 +12,7 @@ rename foo foo0 foo*
 3. [charset] 替代charset集中的任意单个字符
 rename foo0 foo foo0[2]*
 找到文件名以foo02开头的文件, 替换foo0为foo
-</pre>
+```
 
 ### 正则表达式
 ```
