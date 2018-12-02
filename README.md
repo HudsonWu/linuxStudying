@@ -76,6 +76,9 @@
 
 ### [bash脚本, linux系统维护利器](https://github.com/HudsonWu/linuxStudying/tree/master/bash)
 + [我写的一些脚本](https://github.com/HudsonWu/linuxStudying/tree/master/bash/my)
+    + [fortune和cowsay](https://github.com/HudsonWu/linuxStudying/tree/master/bash/my/cowsay)
+    + [根据mtime备份.vimrc文件](https://github.com/HudsonWu/linuxStudying/tree/master/bash/my/autobak_vimrc)
+    + [实践中的一些脚本](https://github.com/HudsonWu/linuxStudying/tree/master/bash/my/practical)
 + [expect语言, 自动和交互式任务进行通信](https://github.com/HudsonWu/linuxStudying/tree/master/bash/expect)
 + [一些bash脚本例子](https://github.com/HudsonWu/linuxStudying/tree/master/bash/examples)
 + [shell编程中一些迷惑点](https://github.com/HudsonWu/linuxStudying/tree/master/bash/usage.md)
@@ -99,6 +102,13 @@
 + [web服务器的一些配置, 性能优化之路](https://github.com/HudsonWu/linuxStudying/tree/master/network/webservers)
 
 ### [vim编辑器, 命令行下强大的文本编辑器](https://github.com/HudsonWu/linuxStudying/tree/master/vim)
++ [命令模式下一些实用的命令](https://github.com/HudsonWu/linuxStudying/blob/master/vim/cmd.md)
++ [普通模式下一些常用的快键键](https://github.com/HudsonWu/linuxStudying/blob/master/vim/normal.md)
++ [vim中的编码问题](https://github.com/HudsonWu/linuxStudying/blob/master/vim/encoding.md)
++ [vim打开或编辑多个文件](https://github.com/HudsonWu/linuxStudying/blob/master/vim/multifile.md)
++ [插件管理](https://github.com/HudsonWu/linuxStudying/blob/master/vim/plugins.md)
++ [vimrc配置文件(不使用插件)](https://github.com/HudsonWu/linuxStudying/blob/master/vim/vimrc)
++ [vimrc配置文件(使用插件)](https://github.com/HudsonWu/linuxStudying/blob/master/vim/init.vim)
 
 ### [关系型数据库, 结构化查询语言](https://github.com/HudsonWu/linuxStudying/tree/master/rdbms)
 

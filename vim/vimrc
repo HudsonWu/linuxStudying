@@ -35,6 +35,8 @@ set smartindent
 set expandtab
 " tab键位4个空格
 set tabstop=4
+" 将四个空格视为tab
+set softtabstop=4
 " 当行之间交错时使用4个空格
 set shiftwidth=4
 " 设置匹配模式

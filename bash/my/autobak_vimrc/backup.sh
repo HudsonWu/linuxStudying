@@ -13,6 +13,8 @@ fi
 vim_src="~/.vimrc"
 # 备份文件
 vim_bak="./vimrc.bak"
+# 对备份文件的备份
+vim_bak2="./vimrc"
 
 # 上一次执行脚本时的modification time
 read old_time < ./mtime
@@ -30,6 +32,7 @@ if [ $new_time -gt $old_time ]; then
     diff $vim_src $vim_bak >> /dev/null
     if [ $? -ne 0 ]; then
         echo "The .vimrc file updated, will auto backup"
+        cp -f $vim_bak $vim_bak2
         cp -f $vim_src $vim_bak
         if [ $? -eq 0 ]; then
             echo 'Congratulations! vimrc update success'
