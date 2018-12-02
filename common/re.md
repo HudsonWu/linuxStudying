@@ -65,6 +65,15 @@ x|y    匹配x或y
 
 ## 实例
 
+### `(pattern)`, `(?:pattern)`, `(?=pattern)`
+```
+var str = "heihei 2333";
+str.match(/heihei (?:2222|2333|1211)/)  //['heihei 2333']
+str.match(/heihei (?=2222|2333|1211)/)  //['heihei ']
+str.match(/heihei (?!=2222)/)  //['heihei ']
+str.match(/dadiao (2222|2333|1211)/)  //['heihei 2333', '2333']
+```
+
 ### 正则表达式括号嵌套匹配
 
 ```
