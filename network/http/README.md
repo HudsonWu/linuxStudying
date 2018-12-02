@@ -8,4 +8,4 @@ w3m, 一个基于文本的网页浏览器工具  
 
 + [curl, 数据传输工具](https://github.com/HudsonWu/linuxStudying/tree/master/network/http/curl)
 + [httpie, http命令行客户端](https://github.com/HudsonWu/linuxStudying/tree/master/network/http/httpie)
-+ [urlencode编码与解码](https://github.com/HudsonWu/linuxStudying/tree/master/network/http/urlencode)
++ [urlencode编码与解码](https://github.com/HudsonWu/linuxStudying/blob/master/network/http/urlencode.md)
