@@ -17,4 +17,4 @@ shell脚本, 是一种为shell编写的脚本程序, 这里只记录了Bash脚�
         + [代码更新功能封装](https://github.com/HudsonWu/linuxStudying/blob/master/bash/my/practical/update_git.sh)
 + [expect语言, 自动和交互式任务进行通信](https://github.com/HudsonWu/linuxStudying/tree/master/bash/expect)
 + [一些bash脚本例子](https://github.com/HudsonWu/linuxStudying/tree/master/bash/examples)
-+ [shell编程中一些迷惑点](https://github.com/HudsonWu/linuxStudying/tree/master/bash/usage.md)
++ [shell编程中一些迷惑点](https://github.com/HudsonWu/linuxStudying/blob/master/bash/usage.md)

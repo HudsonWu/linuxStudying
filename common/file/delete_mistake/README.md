@@ -18,4 +18,4 @@
 
 ## 误删除的文件进程已经不存在, 借助于工具还原
 
-+ [extundelete] (https://github.com/HudsonWu/linuxStudying/tree/master/common/file/delete_mistake/extundelete.md)
++ [extundelete] (https://github.com/HudsonWu/linuxStudying/blob/master/common/file/delete_mistake/extundelete.md)
