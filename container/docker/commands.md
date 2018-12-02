@@ -44,3 +44,11 @@ docker tag rhel-httpd registry-host:5000/myadmin/rhel-httpd
 docker push registry-host:5000/myadmin/rhel-httpd
 docker images
 </pre>
+
+## 一些实用命令
+
+1. docker容器和主机文件传输
+```
+docker cp foo.txt mycontainer:/foo.txt
+docker cp mycontainer:/foo.txt foo.txt
+```
