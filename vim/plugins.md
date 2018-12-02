@@ -1,4 +1,35 @@
+# vim插件
+
 ## 插件管理工具
+
+### vim-plug, 极简vim插件管理器
+
+项目地址: <https://github.com/junegunn/vim-plug> <br/>
+
+安装 <br/>
+```
+curl -fL0 ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+使用 <br/>
+在.vimrc文件中加入: <br/>
+```
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/vim-easy-align'
+
+call plug#end()
+```
+在begin和end中间加入要安装的插件即可<br/>
+
+重用命令
+```
+:PlugStatus  //查看插件状态
+:PlugInstall  //安装插件
+:PlugUpdate  //更新插件
+:PlugClean  //清理插件
+```
 
 ### vundle
 
@@ -107,4 +138,9 @@ nmap <F8> :TagbarToggle<CR>
 ```
 nmap <F5> :NERDTreeToggle<CR> 
 ```
-### spf13
+
+## spf13-vim, 终极利器
+spf13-vim是针对Vim, gVim, MacVim, 包含众多vim插件和相关资源的vim发行版 <br/>
+
+项目地址: <https://github.com/spf13/spf13-vim> <br/>
+
