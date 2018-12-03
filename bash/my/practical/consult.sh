@@ -8,7 +8,7 @@ branch=master
 
 function help() {
     echo -e "\e[34;40m 功能:\e[0m"
-    echo -e "\e[34;40m step1: 下拉vue代码, 安装依赖包\e[0m"
+    echo -e "\e[34;40m step1: git clone vue和pro代码\e[0m"
     echo -e "\e[34;40m step2: 配置文件覆盖, 打包生成dist/, 将dist/复制到pro代码, 提交pro代码, 上传到远程\e[0m"
     echo -e "\n\e[34;40m Usage:\e[0m"
     echo -e "\e[34;40m $0 1 2    先执行step1, 再执行step2\e[0m"
@@ -54,14 +54,22 @@ function config() {
     fi
 }
 
-function npm_install() {
-
+function get_node_version() {
+    
+    # npm在10版本以上时在root环境下需要加上--unsafe-perm --allow-root参数
     node_version=`node -v | awk -F. '{print $1}'`
+    if [ ${node_version:1} -ge 10 ]; then
+        echo true
+    fi
+}
 
-    if [ ${node_version:1} -ge 10 ]; then 
-        echo "node版本为: ${node_version:1}"
-        # npm更新到10版本时在root环境下执行
-        
+function standard_npm() {
+    
+    # 接收参数, 为true时以node10以上加参数方式安装
+    # 为false时以node10以下方式安装
+
+    if $1 ; then
+        echo -e "\e[32;40m node10以上有参数的标准化依赖包安装流程\e[0m\n"
         echo -e "\e[32;40m 安装chromedriver包\e[0m"
         cd $vue_path && npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver \
         --unsafe-perm --allow-root
@@ -82,7 +90,7 @@ function npm_install() {
             fi
         fi
     else
-        echo "node版本为: ${node_version:1}"
+        echo -e "\e[32;40m node小于10版本的标准化依赖包安装流程\e[0m\n"
         echo -e "\e[32;40m 安装chromedriver包\e[0m"
         cd $vue_path && npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
     
@@ -99,6 +107,45 @@ function npm_install() {
                 echo -e "\e[31;40m 依赖包安装失败, 请检查出现的错误\e[0m"
                 exit 1
             fi
+        fi
+    fi
+
+}
+
+function npm_install() {
+    
+    node10=get_node_version
+
+    # 接受一个参数, 为false时直接完整执行标准流程, 
+    # 为true时先直接 执行npm install, 失败时再执行标准流程
+    
+    if $1 ; then
+        if $node10 ; then
+            echo -e "\e[32;40m node版本在10以上, 安装依赖包时会加上必要参数\e[0m"
+            cd $vue_path && npm install --unsafe-perm=true --allow-root
+            
+            if [ $? -ne 0 ]; then
+                if [ -d $vue_path/node_modules -a -f $vue_path/package-lock.json ]; then
+                    cd $vue_path && rm -rf node_modules package-lock.json
+                fi
+                standard_npm true
+            fi
+        else
+            echo -e "\e[32;40m node版本小于10\e[0m"
+            cd $vue_path && npm install 
+            
+            if [ $? -ne 0 ]; then
+                if [ -d $vue_path/node_modules -a -f $vue_path/package-lock.json ]; then
+                    cd $vue_path && rm -rf node_modules package-lock.json
+                fi
+                standard_npm false
+            fi
+        fi
+    else
+        if $node10 ; then
+            standard_npm true
+        else
+            standard_npm false
         fi
     fi
 
@@ -146,10 +193,9 @@ function step2() {
     config
 
     if [ -d $vue_path/node_modules -a -f $vue_path/package-lock.json ]; then
-        cd $vue_path && rm -rf node_modules package-lock.json
-        npm_install
+        npm_install true
     else
-        npm_install
+        npm_install false
     fi
 
     echo "解决API version问题"
