@@ -1,6 +1,6 @@
 ## Docker容器日志查看和清理
 
-容器日志一般存放在/var/lib/docker/containers/container_id/ <br/>
+容器日志一般存放路径: /var/lib/docker/containers/container_id/ <br/>
 
 ### 查看各个日志文件大小, docker_log_size.sh <br/>
 

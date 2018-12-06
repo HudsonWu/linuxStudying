@@ -3,6 +3,7 @@
 + [docker, 开源容器解决方案](https://github.com/HudsonWu/linuxStudying/tree/master/container/docker)
     + [Docker是什么](https://github.com/HudsonWu/linuxStudying/blob/master/container/docker/start.md)
     + [Docker的常用命令](https://github.com/HudsonWu/linuxStudying/blob/master/container/docker/commands.md)
+    + [Docker容器的日志查看和清理](https://github.com/HudsonWu/linuxStudying/blob/master/container/docker/logs.md)
     + [Dockerfile文件](https://github.com/HudsonWu/linuxStudying/tree/master/container/docker/Dockerfiles)
     + [dvwa的docker环境搭建](https://github.com/HudsonWu/linuxStudying/blob/master/container/docker/dvwa.md)
     + [docker-compose环境搭建](https://github.com/HudsonWu/linuxStudying/tree/master/container/docker/docker-compose)
