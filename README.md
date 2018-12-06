@@ -9,7 +9,7 @@
 
 **There are various commands which funny and useful**<br/>
 
-### [git的使用, 代码版本管理](https://github.com/HudsonWu/linuxStudying/tree/master/git)
+### [git, 分布式代码版本管理工具](https://github.com/HudsonWu/linuxStudying/tree/master/git)
 + [一般用法](https://github.com/HudsonWu/linuxStudying/blob/master/git/common.md)
 + [git log的使用](https://github.com/HudsonWu/linuxStudying/blob/master/git/log.md)
 + [处理好分支的合并](https://github.com/HudsonWu/linuxStudying/blob/master/git/merge.md)
