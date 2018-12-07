@@ -1,0 +1,179 @@
+version: "3.1"
+
+services:
+  mongo:
+    image: "registry-vpc.cn-beijing.aliyuncs.com/yourproject/yourproject-mongo:1.0.1"
+    restart: always
+    container_name: "${MONGO_CONTAINER_NAME}"
+    ports:
+      - "${MONGO_PORT}:${MONGO_PORT}"
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+    networks:
+      - frontend
+  helper:
+    image: "registry-vpc.cn-beijing.aliyuncs.com/yourproject/parallel_helper:1.0.0"
+    restart: always
+    container_name: "${HELPER_CONTAINER_NAME}"
+    ports:
+      - "${HELPER_PORT}:${PROD_PORT}"
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+    extra_hosts:
+      - "${API_HOST}:${MASTER_IP_ADDRESS}"
+      - "${WEB_HOST}:${MASTER_IP_ADDRESS}"
+    networks:
+      - frontend
+  member:
+    image: "registry-vpc.cn-beijing.aliyuncs.com/yourproject/parallel_member_center:v1.0.8"
+    restart: always
+    container_name: "${MEMBER_CONTAINER_NAME}"
+    ports:
+      - "${MEMBER_PORT}:${PROD_PORT}"
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+    extra_hosts:
+      - "${API_HOST}:${MASTER_IP_ADDRESS}"
+      - "${WEB_HOST}:${MASTER_IP_ADDRESS}"
+    networks:
+      - frontend
+  backend:
+    image: "registry-vpc.cn-beijing.aliyuncs.com/yourproject/parallel_backend:1.1.2"
+    restart: always
+    container_name: "${BACKEND_CONTAINER_NAME}"
+    ports:
+      - "${BACKEND_PORT}:${PROD_PORT}"
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+    extra_hosts:
+      - "${API_HOST}:${MASTER_IP_ADDRESS}"
+      - "${WEB_HOST}:${MASTER_IP_ADDRESS}"
+    networks:
+      - frontend
+  test_backend:
+    image: "registry-vpc.cn-beijing.aliyuncs.com/yourproject/parallel_backend:test1.1"
+    restart: always
+    container_name: "${TEST_BACKEND_CONTAINER_NAME}"
+    ports:
+      - "${TEST_BACKEND_PORT}:${PROD_PORT}"
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+    extra_hosts:
+      - "test.api.yourproject.com:${MASTER_IP_ADDRESS}"
+      - "test.web.yourproject.com:${MASTER_IP_ADDRESS}"
+    networks:
+      - frontend
+  jenkins:
+    image: "registry-vpc.cn-beijing.aliyuncs.com/yourproject/yourproject-jenkins:latest"
+    restart: always
+    container_name: "${JENKINS_CONTAINER_NAME}"
+    ports:
+      - "${JENKINS_PORT}:${JENKINS_PORT}"
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+      - "/run/docker.sock:/run/docker.sock"
+    networks:
+      - frontend
+  portal:
+    image: "registry-vpc.cn-beijing.aliyuncs.com/yourproject/parallel_portal:1.0.6"
+    restart: always
+    container_name: "${PORTAL_CONTAINER_NAME}"
+    ports:
+      - "${PORTAL_PORT}:${PROD_PORT}"
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+    extra_hosts:
+      - "${API_HOST}:${MASTER_IP_ADDRESS}"
+      - "${WEB_HOST}:${MASTER_IP_ADDRESS}"
+    networks:
+      - frontend
+  test_parallel_new:
+    image: "registry-vpc.cn-beijing.aliyuncs.com/yourproject/parallel_new:master_mojor_1.0"
+    restart: always
+    container_name: "${TEST_PARALLEL_API_CONTAINER_NAME}"
+    ports:
+      - "${TEST_PARALLEL_API_PORT}:${PROD_PORT}"
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+    extra_hosts:
+      - "test.api.yourproject.com:127.0.0.1"
+      - "test.web.yourproject.com:127.0.0.1"
+    networks:
+      - frontend
+  owner:
+    image: "registry-vpc.cn-beijing.aliyuncs.com/yourproject/parallel_owner:1.0.3"
+    restart: always
+    container_name: "${OWNER_CONTAINER_NAME}"
+    ports:
+      - "${OWNER_PORT}:${PROD_PORT}"
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+    extra_hosts:
+      - "${API_HOST}:${MASTER_IP_ADDRESS}"
+      - "${WEB_HOST}:${MASTER_IP_ADDRESS}"
+    networks:
+      - frontend
+  park:
+    image: "registry-vpc.cn-beijing.aliyuncs.com/yourproject/parallel_park_pro:1.0.3"
+    restart: always
+    container_name: "${PARK_CONTAINER_NAME}"
+    ports:
+      - "${PARK_PORT}:${PROD_PORT}"
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+    extra_hosts:
+      - "${API_HOST}:${MASTER_IP_ADDRESS}"
+      - "${WEB_HOST}:${MASTER_IP_ADDRESS}"
+    networks:
+      - frontend
+  law:
+    image: "registry-vpc.cn-beijing.aliyuncs.com/yourproject/parallel_law:1.0.1"
+    restart: always
+    container_name: "${LAW_CONTAINER_NAME}"
+    ports:
+      - "${LAW_PORT}:${LAW_PORT}"
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+    extra_hosts:
+      - "${API_HOST}:${MASTER_IP_ADDRESS}"
+      - "${WEB_HOST}:${MASTER_IP_ADDRESS}"
+    networks:
+      - frontend
+    environment:
+      - PORT=${LAW_PORT}
+    command: "pm2 start app.js --no-daemon"
+  evaluator:
+    image: "registry-vpc.cn-beijing.aliyuncs.com/yourproject/parallel_evaluator:1.0.0"
+    restart: always
+    container_name: "${EVALUATOR_CONTAINER_NAME}"
+    ports:
+      - "${EVALUATOR_PORT}:${EVALUATOR_PORT}"
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+    extra_hosts:
+      - "${API_HOST}:${MASTER_IP_ADDRESS}"
+      - "${WEB_HOST}:${MASTER_IP_ADDRESS}"
+    networks:
+      - frontend
+    environment:
+      - PORT=${EVALUATOR_PORT}
+    command: "pm2 start server.js --no-daemon"
+  expert:
+    image: "registry-vpc.cn-beijing.aliyuncs.com/yourproject/parallel_expert:1.0.0"
+    restart: always
+    container_name: "${EXPERT_CONTAINER_NAME}"
+    ports:
+      - "${EXPERT_PORT}:${EXPERT_PORT}"
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+    extra_hosts:
+      - "${API_HOST}:${MASTER_IP_ADDRESS}"
+      - "${WEB_HOST}:${MASTER_IP_ADDRESS}"
+    networks:
+      - frontend
+    environment:
+      - PORT=${EXPERT_PORT}
+    command: "pm2 start server.js --no-daemon"
+networks:
+  frontend:
+    driver: "bridge"

@@ -1,0 +1,38 @@
+FROM registry.cn-beijing.aliyuncs.com/yourproject/yourproject-centos7-php71:1.0.0
+
+WORKDIR /
+
+#RUN wget https://mirrors.tuna.tsinghua.edu.cn/epel/epel-release-latest-7.noarch.rpm && \
+#    rpm -ivh epel-release-latest-7.noarch.rpm
+
+RUN rpm --rebuilddb && yum install -y supervisor
+
+
+
+RUN mkdir /yourproject
+
+ADD . /yourproject/ParallelForPhp_new
+
+WORKDIR /yourproject/ParallelForPhp_new/
+
+RUN cp -f ./.env.prod ./.env && composer install
+
+RUN cp -f ./dockerBuild/files/DefaultProfile.php ./vendor/overnic/aliyun-openapi-php-sdk/src/Core/Profile/DefaultProfile.php
+RUN cp -f ./dockerBuild/files/HttpHelper.php ./vendor/overnic/aliyun-openapi-php-sdk/src/Core/Http/HttpHelper.php
+
+RUN chmod -R 777 storage bootstrap
+
+RUN php artisan passport:keys
+
+ADD dockerBuild/configs/nginx-yourproject.conf /etc/nginx/conf.d/yourproject.conf
+
+RUN mkdir /run/php-fpm
+
+
+ADD dockerBuild/configs/laravel-worker.ini /etc/supervisord.d/laravel-worker.ini
+
+CMD ["/usr/bin/supervisord", "-n"]
+
+
+EXPOSE 80 443
+
