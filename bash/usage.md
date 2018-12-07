@@ -1,14 +1,17 @@
 
 ## 脚本调试
+
 1. 跟踪脚本的执行
 ```
 bash -x example_script.sh
 ```
-bash在运行前打印出了每一行命令 <br/>
+bash在运行前打印出了每一行命令
+
 2. 在跟踪里输出行号 (设置环境变量)
 ```
 export PS4='+${BASH_SOURCE}:${LINENO}:${FUNCNAME[0]}: '
 ```
+
 3. 调试部分脚本
 在你想要调试的脚本之前, 调用 set -x, 结束时调用 set +x <br/>
 ```sh
