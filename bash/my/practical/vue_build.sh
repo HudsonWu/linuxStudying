@@ -10,11 +10,18 @@
 # Note: prod
 #
 
-vue=ParallelConsultationForVue
-vue_path=/tmp/ParallelConsultationForVue
-pro=ParallelConsultingPro
-pro_path=/tmp/ParallelConsultingPro
-branch=master
+#
+# step1, 下拉vue的master分支代码, 下拉pro的特定分支代码 (目的是先更新到分支, 没问题时再手动合并到master)
+# step2, vue代码的一些必要配置, 打包vue代码, 生成dist目录, 完全取代pro代码下的dist目录, 提交到pro代码的指定分支 
+#
+
+
+vue="ParallelConsultationForVue"
+vue_path="/tmp/ParallelConsultationForVue"
+
+pro="ParallelConsultingPro"
+pro_path="/tmp/ParallelConsultingPro"
+pro_branch="test"
 
 function help() {
     echo -e "\e[34;40m 功能:\e[0m"
@@ -173,21 +180,16 @@ function step1() {
         rm -rf $pro_path
     fi
     
-    echo -e "\e[32;40m 拉取咨询机构待打包代码\e[0m"
-    if [ "$branch"x = "master"x ]; then
-        echo -e "\e[32;40m master分支\e[0m"
-        cd /tmp && git clone --depth 1 http://Wu@gitlab.lmdo.cn/binglian/$vue.git
-    else
-        echo -e "\e[32;40m $branch 分支\e[0m"
-        cd /tmp && git clone --depth 1 http://Wu@gitlab.lmdo.cn/binglian/$vue.git -b $branch
-    fi
+    echo -e "\e[32;40m 拉取咨询机构vue待打包的(master分支)代码\e[0m"
+    cd /tmp && git clone --depth 1 http://Wu@gitlab.lmdo.cn/binglian/$vue.git
+
     if [ $? -ne 0 ]; then
         echo -e "\e[31;40m $vue_path 代码下拉失败, 请检查出现的错误\e[0m"
         exit 1
     fi
     
-    echo -e "\e[32;40m 拉取咨询机构已打包代码\e[0m"
-    cd /tmp && git clone --depth 1 http://Wu@gitlab.lmdo.cn/binglian/$pro.git
+    echo -e "\e[32;40m 拉取咨询机构pro已打包($pro_branch分支)代码\e[0m"
+    cd /tmp && git clone -b $pro_branch --depth 1 http://Wu@gitlab.lmdo.cn/binglian/$pro.git
     
     if [ $? -ne 0 ]; then
         echo -e "\e[31;40m $pro_path 代码下拉失败, 请检查出现的错误\e[0m"
@@ -239,13 +241,14 @@ function step2() {
     echo -e "\e[32;40m 复制vue下的dist/到pro/下\e[0m"
     cp -rf $vue_path/dist $pro_path/dist
     
-    echo -e "\e[32;40m 将代码提交\e[0m"
     date_end=`date +"%Y-%m-%d_%H:%M:%S"`
     echo -e "$date_end 打包完成\n" >> ~/pack_time.txt
+    
+    echo -e "\e[32;40m 将代码提交\e[0m"
     if [ -f $pro_path/server.js -a -d $pro_path/dist ]; then
         cd $pro_path && git add --all && git commit -m "new version $date_end"
         echo -e "\e[32;40m 上传代码\e[0m"
-        cd $pro_path && git push origin master
+        cd $pro_path && git push origin $pro_branch:$pro_branch
         if [ $? -ne 0 ]; then
             echo -e "\e[31;40m 代码提交失败, 请检查出现的错误\e[0m"
             exit 1
