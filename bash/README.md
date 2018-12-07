@@ -16,5 +16,7 @@ shell脚本, 是一种为shell编写的脚本程序, 这里只记录了Bash脚�
         + [laraval代码更新](https://github.com/HudsonWu/linuxStudying/blob/master/bash/my/practical/php_update.sh)
         + [代码更新功能封装](https://github.com/HudsonWu/linuxStudying/blob/master/bash/my/practical/update_git.sh)
 + [expect语言, 自动和交互式任务进行通信](https://github.com/HudsonWu/linuxStudying/tree/master/bash/expect)
++ [shell编程中一些有用的知识点](https://github.com/HudsonWu/linuxStudying/blob/master/bash/usage.md)
++ [shell中各种括号的运用](https://github.com/HudsonWu/linuxStudying/blob/master/bash/brackets.md)
++ [set, env, export的区分](https://github.com/HudsonWu/linuxStudying/blob/master/bash/env_vars.md)
 + [一些bash脚本例子](https://github.com/HudsonWu/linuxStudying/tree/master/bash/examples)
-+ [shell编程中一些迷惑点](https://github.com/HudsonWu/linuxStudying/blob/master/bash/usage.md)
