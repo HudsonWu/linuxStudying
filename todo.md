@@ -1,5 +1,5 @@
-1. ngrok  
-2. frps  
+1. ansible
+2. hadoop
   
 HTTP服务代理缓存加速 (varnish, nginx缓存系统, CDN)  
 企业级负载集群 (nginx, haproxy, lvs, 负载均衡)  
