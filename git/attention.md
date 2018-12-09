@@ -68,3 +68,8 @@ git checkout remote_branch_name
 <pre>
 git commit --amend
 </pre>
+
+9. 获取当前分支名
+```
+git symbolic-ref --short -q HEAD
+```

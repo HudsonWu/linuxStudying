@@ -23,7 +23,7 @@ pro="ParallelConsultingPro"
 pro_path="/tmp/ParallelConsultingPro"
 pro_branch="test"
 
-function help() {
+function for_help() {
     echo -e "\e[34;40m 功能:\e[0m"
     echo -e "\e[34;40m step1: git clone vue和pro代码\e[0m"
     echo -e "\e[34;40m step2: 配置文件覆盖, 打包生成dist/, 将dist/复制到pro代码, 提交pro代码, 上传到远程\e[0m"
@@ -244,11 +244,14 @@ function step2() {
     date_end=`date +"%Y-%m-%d_%H:%M:%S"`
     echo -e "$date_end 打包完成\n" >> ~/pack_time.txt
     
-    echo -e "\e[32;40m 将代码提交\e[0m"
+    current_branch=`cd $pro_path && git symbolic-ref --short -q HEAD`
+    echo -e "\e[32;40m $pro 当前分支为  $current_branch \e[0m"
+
     if [ -f $pro_path/server.js -a -d $pro_path/dist ]; then
+        echo -e "\e[32;40m 将代码提交\e[0m"
         cd $pro_path && git add --all && git commit -m "new version $date_end"
         echo -e "\e[32;40m 上传代码\e[0m"
-        cd $pro_path && git push origin $pro_branch:$pro_branch
+        cd $pro_path && git push origin $current_branch:$pro_branch
         if [ $? -ne 0 ]; then
             echo -e "\e[31;40m 代码提交失败, 请检查出现的错误\e[0m"
             exit 1
@@ -285,8 +288,8 @@ if [ $# -ne 0 ]; then
         update
         step2
     else
-        help
+        for_help
     fi
 else
-    help
+    for_help
 fi
