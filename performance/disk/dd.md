@@ -33,8 +33,8 @@ bs代表字节为单位的块大小, count代表被复制的块数 <br/>
 + if=文件名, 输入文件名, 默认为标准输入
 + of=文件名, 输出文件名, 默认为标准输出
 + ibs=bytes, 一次读入bytes个字节, 即指定一个读入块, 大小为bytes个字节
-  obs=bytes, 一次输出bytes个字节, 即指定一个输出块, 大小为bytes个字节
-  bs=bytes, 同时设置读入/输出的块大小为bytes个字节
++ obs=bytes, 一次输出bytes个字节, 即指定一个输出块, 大小为bytes个字节
++ bs=bytes, 同时设置读入/输出的块大小为bytes个字节
 + cbs=bytes, 一次转换bytes个字节, 即指定转换缓冲区大小
 + skip=blocks, 从输入文件开头跳过blocks个块后再开始复制
 + seek=blocks, 从输出文件开头跳过blocks个块后再开始复制
@@ -56,12 +56,30 @@ bs代表字节为单位的块大小, count代表被复制的块数 <br/>
 + --version, 显示版本信息
 
 块大小可以使用的计量单位表: <br/>
-| 单元大小 | 代码 |
-|  :----:  | :--: |
-| 字节(1B) |  c   |
-| 字节(2B) |  w   |
-| 块(512B) |  b   |
-|千字节(1024B)|  k   |
-|兆字节(1024KB)|  M   |
-|吉字节(1024MB)|  G   |
+<table>
+<thead>
+<tr>
+    <th align="center">单元大小</th>
+    <th aligh="center">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td align="center">字节(1B)</td>
+    <td align="center">字节(2B)</td>
+    <td align="center">块(512B)</td>
+    <td align="center">千字节(1024B)</td>
+    <td align="center">兆字节(1024KB)</td>
+    <td align="center">吉字节(1024MB)</td>
+</tr>
+<tr>
+    <td align="center">c</td>
+    <td align="center">w</td>
+    <td align="center">b</td>
+    <td align="center">K</td>
+    <td align="center">M</td>
+    <td align="center">G</td>
+</tr>
+</tbody>
+</table>
 
