@@ -28,6 +28,100 @@ dd if=/dev/zero of=test.log bs=1M count=50
 /dev/zero是一个字符设备, 会不断返回0值字节(\0) <br/>
 bs代表字节为单位的块大小, count代表被复制的块数 <br/>
 
+## 数据备份和恢复
+
+### 整盘数据备份和恢复
+
+```
+备份:
+dd if=/dev/hdx of=/dev/hdy  //将/dev/hdx整盘备份到/dev/hdy
+dd if=/dev/hdx of=/path/to/image  //将/dev/hdx整盘备份到指定路径的image文件
+dd if=/dev/hdx | gzip > /path/to/image.gz  //备份/dev/hdx全盘数据, 并利用gzip压缩
+
+恢复:
+dd if=/path/to/image of=/dev/hdx
+gzip -dc /path/to/image.gz | dd of=/dev/hdx
+```
+
+### 利用netcat远程备份
+
+```
+//在源主机上执行命令备份/dev/hda
+dd if=/dev/hda bs=16065b | netcat 192.168.0.2 1234
+
+//在目的主机上执行命令接收数据并写入/dev/hdc
+netcat -l -p 1234 | dd of=/dev/hdc bs=16065b
+
+netcat -l -p 1234 | bzip2 > partition.im
+```
+
+### 备份MBR
+
+```
+//备份磁盘开始的512Byte大小的MBR信息到指定文件
+dd if=/dev/hdx of=/path/to/image count=1 bs=512
+
+//降备份的MBR信息写到磁盘开始部分
+dd if=/path/to/image of=/dev/hdx
+```
+
+### 其他操作
+
+```
+//将软驱数据备份到当前目录的disk.img文件
+dd if=/dev/fd0 of=disk.img count=1 bs=1440k
+
+//拷贝内存资料到硬盘
+dd if=/dev/mem of=/root/mem.bin bs=1024
+
+//从光盘拷贝iso镜像
+dd if=/dev/cdrom of=/root/cd.iso
+
+//销毁磁盘数据
+dd if=/dev/urandom of=/dev/hda1
+利用随机数据填充硬盘, 在某些场合可以用来销毁数据
+执行此操作后, /dev/hda1将无法挂载, 创建和拷贝操作无法执行
+```
+
+### 增加swap分区文件大小
+
+```
+//创建一个足够大的文件(此处为256M)
+dd if=/dev/zero of=/swapfile bs=1024 count=262144
+//把这个文件变成swap文件
+mkswap /swapfile
+//启用这个swap文件
+swapon /swapfile
+//开机自动加载swap文件(在/etc/fstab文件中增加一行)
+/swapfile swap swap defaults 0 0
+```
+
+## 磁盘管理
+
+1. 得到最恰当的block size
+```
+dd if=/dev/zero bs=1024 count=1000000 of=/root/1Gb.file
+dd if=/dev/zero bs=2048 count=500000 of=/root/1Gb.file
+dd if=/dev/zero bs=4096 count=250000 of=/root/1Gb.file
+dd if=/dev/zero bs=8192 count=125000 of=/root/1Gb.file
+```
+通过比较dd指令输出中所显示的命令执行时间, 即可确定系统最佳的block size大小
+
+2. 测试硬盘读写速度
+```
+dd if=/root/1Gb.file bs=64k | dd of=/dev/null
+dd if=/dev/zero of=/root/1Gb.file bs=1024 count=1000000
+```
+通过上两个命令输出的执行时间, 可以计算出磁盘的读/写速度
+
+3. 修复硬盘
+```
+dd if=/dev/sda of=/dev/sda
+当硬盘较长时间放置不使用时, 磁盘上会产生magnetic flux point, 
+当磁头读到这些区域时会遇到困难, 可能导致I/O错误, 
+当这种情况影响到硬盘的第一个扇区时, 可能导致硬盘报废, 
+上面的命令可能使这些数据起死回生, 且这个过程是安全, 高效的
+
 ## 参数说明
 
 + if=文件名, 输入文件名, 默认为标准输入
