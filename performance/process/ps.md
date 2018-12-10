@@ -97,4 +97,5 @@ watch -n 1 'ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head'
 ps aux | sort -rnk 4  //按内存资源的使用量对进程进行排序
 ps aux | sort -rnk 3  //按CPU资源的使用量对进程进行排序
 ps aux --sort -pcpu,-pmem    //根据cpu,内存的使用量对进程进行排序
+ps -eo pcpu,pid,user,args | sort -r -k1 | head -10
 ```
