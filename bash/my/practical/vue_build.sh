@@ -15,7 +15,6 @@
 # step2, vue代码的一些必要配置, 打包vue代码, 生成dist目录, 完全取代pro代码下的dist目录, 提交到pro代码的指定分支 
 #
 
-
 vue="ParallelConsultationForVue"
 vue_path="/tmp/ParallelConsultationForVue"
 
@@ -168,6 +167,16 @@ function npm_install() {
 
 }
 
+function update_branch() {
+
+    cd $1 && git pull -m "merging master" origin master
+    if [ $? -ne 0 ]; then
+        echo "$1 当前分支的代码合并master代码失败"
+        exit 1
+    fi
+
+}
+
 function step1() {    
     
     if [ -d $vue_path ]; then
@@ -234,19 +243,22 @@ function step2() {
         exit 1
     fi
 
+    date_end=`date +"%Y-%m-%d_%H:%M:%S"`
+    echo -e "$date_end 打包完成\n" >> ~/pack_time.txt
+
 #    pack_time=$(cat ~/pack_time.txt)
     
+    current_branch=`cd $pro_path && git symbolic-ref --short -q HEAD`
+    echo -e "\e[32;40m $pro 当前分支为  $current_branch \e[0m"
+
+    echo "将master分支代码合并到当前分支"
+    update_branch $pro_path
+
     echo -e "\e[32;40m 删除pro下的dist/\e[0m"
     rm -rf $pro_path/dist
     echo -e "\e[32;40m 复制vue下的dist/到pro/下\e[0m"
     cp -rf $vue_path/dist $pro_path/dist
     
-    date_end=`date +"%Y-%m-%d_%H:%M:%S"`
-    echo -e "$date_end 打包完成\n" >> ~/pack_time.txt
-    
-    current_branch=`cd $pro_path && git symbolic-ref --short -q HEAD`
-    echo -e "\e[32;40m $pro 当前分支为  $current_branch \e[0m"
-
     if [ -f $pro_path/server.js -a -d $pro_path/dist ]; then
         echo -e "\e[32;40m 将代码提交\e[0m"
         cd $pro_path && git add --all && git commit -m "new version $date_end"
@@ -261,8 +273,8 @@ function step2() {
         exit 0
     fi
 
-    
     echo -e "\e[34;40m 打包时间区间: $date_start -- $date_end\e[0m"
+
 #    echo "打包花费的时间统计"
 #    for i in $pack_time
 #    do
