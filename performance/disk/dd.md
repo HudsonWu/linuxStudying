@@ -83,8 +83,8 @@ bs代表字节为单位的块大小, count代表被复制的块数 <br/>
     <td align="center">M</td>
 </tr>
 <tr>
-    <td align="center">G</td>
     <td align="center">吉字节(1024MB)</td>
+    <td align="center">G</td>
 </tr>
 </tbody>
 </table>
