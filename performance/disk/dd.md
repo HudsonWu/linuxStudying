@@ -57,29 +57,34 @@ bs代表字节为单位的块大小, count代表被复制的块数 <br/>
 
 块大小可以使用的计量单位表: <br/>
 <table>
-<thead>
-<tr>
+<thead><tr>
     <th align="center">单元大小</th>
     <th aligh="center">代码</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr>
     <td align="center">字节(1B)</td>
-    <td align="center">字节(2B)</td>
-    <td align="center">块(512B)</td>
-    <td align="center">千字节(1024B)</td>
-    <td align="center">兆字节(1024KB)</td>
-    <td align="center">吉字节(1024MB)</td>
+    <td align="center">c</td>
 </tr>
 <tr>
-    <td align="center">c</td>
+    <td align="center">字节(2B)</td>
     <td align="center">w</td>
+</tr>
+<tr>
+    <td align="center">块(512B)</td>
     <td align="center">b</td>
+</tr>
+<tr>
+    <td align="center">千字节(1024B)</td>
     <td align="center">K</td>
+</tr>
+<tr>
+    <td align="center">兆字节(1024KB)</td>
     <td align="center">M</td>
+</tr>
+<tr>
     <td align="center">G</td>
+    <td align="center">吉字节(1024MB)</td>
 </tr>
 </tbody>
 </table>
-
