@@ -18,6 +18,9 @@
 + [撤销、回退以及进度保存](https://github.com/HudsonWu/linuxStudying/blob/master/git/checkout.md)
 + [git使用中的一些配置](https://github.com/HudsonWu/linuxStudying/blob/master/git/conf.md)
 + [标签的使用](https://github.com/HudsonWu/linuxStudying/blob/master/git/tag.md)
++ [markdown, 轻量级标记语言](https://github.com/HudsonWu/linuxStudying/tree/master/common/markdown)
+    + [基本语法](https://github.com/HudsonWu/linuxStudying/blob/master/common/markdown/syntax.md)
+    + [实际使用](https://github.com/HudsonWu/linuxStudying/blob/master/common/markdown/solve.md)
 
 ### [bash脚本, linux系统维护利器](https://github.com/HudsonWu/linuxStudying/tree/master/bash)
 + [我写的一些脚本](https://github.com/HudsonWu/linuxStudying/tree/master/bash/my)
@@ -134,10 +137,6 @@
         + [firewall-cmd命令使用](https://github.com/HudsonWu/linuxStudying/blob/master/network/iptables/firewalld/use.md)
 + [web服务器的一些配置, 性能优化之路](https://github.com/HudsonWu/linuxStudying/tree/master/network/webservers)
 + [关系型数据库, 结构化查询语言](https://github.com/HudsonWu/linuxStudying/tree/master/network/rdbms)
-
-### [markdown, 轻量级标记语言](https://github.com/HudsonWu/linuxStudying/tree/master/markdown)
-+ [基本语法](https://github.com/HudsonWu/linuxStudying/blob/master/markdown/how.md)
-+ [实际使用](https://github.com/HudsonWu/linuxStudying/blob/master/markdown/use.md)
 
 ### [windows的一些便利用法](https://github.com/HudsonWu/linuxStudying/tree/master/windows)
 + [批处理文件](https://github.com/HudsonWu/linuxStudying/tree/master/windows/bat)

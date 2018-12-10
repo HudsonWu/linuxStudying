@@ -4,7 +4,6 @@
 + [正则表达式](https://github.com/HudsonWu/linuxStudying/blob/master/common/re.md)
 + [bc, 任意精度计算语言](https://github.com/HudsonWu/linuxStudying/blob/master/common/calc/bc.md)
 
-
 ## 常用命令集锦
 
 + [文件相关命令](https://github.com/HudsonWu/linuxStudying/tree/master/common/file)
