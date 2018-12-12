@@ -58,7 +58,7 @@
         + [docker-compose.yml配置文件](https://github.com/HudsonWu/linuxStudying/blob/master/container/docker/docker-compose/yml.md)
 + [kubernetes, 容器化应用程序的自动部署、扩展和管理](https://github.com/HudsonWu/linuxStudying/tree/master/container/kubernetes)
 
-### [vim编辑器, 命令行下强大的文本编辑器](https://github.com/HudsonWu/linuxStudying/tree/master/vim)
+### [vim, 命令行下强大的文本编辑器](https://github.com/HudsonWu/linuxStudying/tree/master/vim)
 + [命令模式下一些实用的命令](https://github.com/HudsonWu/linuxStudying/blob/master/vim/cmd.md)
 + [普通模式下一些常用的快键键](https://github.com/HudsonWu/linuxStudying/blob/master/vim/normal.md)
 + [vim中的编码问题](https://github.com/HudsonWu/linuxStudying/blob/master/vim/encoding.md)
