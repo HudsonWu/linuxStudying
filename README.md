@@ -41,7 +41,7 @@
 + [set, env, export的区分](https://github.com/HudsonWu/linuxStudying/blob/master/bash/env_vars.md)
 + [一些bash脚本例子](https://github.com/HudsonWu/linuxStudying/tree/master/bash/examples)
 
-### [容器的学习](https://github.com/HudsonWu/linuxStudying/tree/master/container)
+### [container, A standardized unit of software](https://github.com/HudsonWu/linuxStudying/tree/master/container)
 + [docker, 开源容器解决方案](https://github.com/HudsonWu/linuxStudying/tree/master/container/docker)
     + [Docker是什么](https://github.com/HudsonWu/linuxStudying/blob/master/container/docker/start.md)
     + [Docker的常用命令](https://github.com/HudsonWu/linuxStudying/blob/master/container/docker/commands.md)
