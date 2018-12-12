@@ -3,11 +3,12 @@
 + [screen命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/screen.md)
 + [正则表达式](https://github.com/HudsonWu/linuxStudying/blob/master/common/re.md)
 + [bc, 任意精度计算语言](https://github.com/HudsonWu/linuxStudying/blob/master/common/calc/bc.md)
++ [一些有趣的命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/funny_tools.md)
 
 ## 常用命令集锦
 
 + [文件相关命令](https://github.com/HudsonWu/linuxStudying/tree/master/common/file)
-    + [不同文件搜索命令的异同](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/file_search/file_search_commands.md)
+    + [不同文件搜索命令的异同](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/file_search/commands.md)
     + [find命令的一些奇技淫巧](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/find.md)
     + [grep, 强大的文本搜索工具](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/grep.md)
     + [sed, 流编辑器](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/sed.md)
@@ -17,7 +18,6 @@
     + [rename, 批量重命名](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/rename.md)
     + [dos2unix和unix2dos, 文本格式转换](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/dos2unix.md)
     + [tee, 读取标准输入, 输出到标准输出和文件](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/tee.md)
-    + [lsof, 列出当前系统打开的文件](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/lsof.md)
     + [大文件分卷压缩](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/sub_volume.md)
     + [误删除文件恢复](https://github.com/HudsonWu/linuxStudying/tree/master/common/file/delete_mistake)
 + [查看进度](https://github.com/HudsonWu/linuxStudying/tree/master/common/progress)

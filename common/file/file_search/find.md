@@ -1,35 +1,44 @@
-## find 排除某目录或文件
-<pre>
+# find命令的用法探寻
+
+## 排除某目录或文件
+
+```
 1. 查找cache目录下不是html的文件
 find ./cache ! -name "*.html" -type f
+
 2. 列出当前目录下的目录名, 排除includes目录, 后面的-print不能少
 find . -path './includes' -prune -o -type d -maxdepth 1 -print
+
 3. 排除多个目录
 find /usr/sam \( -path /usr/sam/dir1 -o path /usr/sam/file1 \) -prune -o -print
 (-path "/usr/sam" -prune -o -print 是 -path "/usr/sam" -a -prune -o -print 的简写表达式按顺序求值, 
 -a 和 -o 都是短路求值, 与 shell 的 && 和 || 类似
 如果 -path "/usr/sam" 为真, 则求值 -prune , -prune 返回真, 与逻辑表达式为真, 否则不求值 -prune, 与逻辑表达式为假
 如果 -path "/usr/sam" -a -prune 为假, 则求值 -print , -print返回真, 或逻辑表达式为真；否则不求值 -print, 或逻辑表达式为真)
-</pre>
+```
 
-## find 递归/不递归查找子目录
-<pre>
+## 递归/不递归查找子目录
+
+```
 1. 递归查找
 find . -name "*.txt"
+
 2. 不递归查找
 find . -name "*.txt" -maxdepth 1
-</pre>
+```
 
 ## find命令之exec
-<pre>
+
+```
 1. -exec 参数后面跟的是command命令, 以 ; 为结束标志, 所以分号是不可缺少的, 
 考虑到各个系统中分号会有不同的意义, 所以前面加反斜杠
 
 2. {} 花括号代表前面find查找出来的文件名 
-</pre>
+```
 
 ### 实例
-<pre>
+
+```
 1. 先查看相应的文件, 然后删除
 find . -type f -mtime +14 -exec ls -l {} \;
 find . -type f -mtime +14 -exec rm {} \;
@@ -52,4 +61,4 @@ find . -type f -name "*.log" | grep -v .do-not-touch | while read fname; do mv $
 
 7. 忽略某个目录查找
 find . -path "./.git" -prune -o -type f ! -name "*.*" -print
-</pre>
+```

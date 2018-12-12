@@ -119,3 +119,15 @@ cat /etc/issue
 cat /etc/os-release
 lsb_release -cs
 ```
+## type
+
+```
+用来区分某个命令是由shell自带的还是由shell外部的独立二进制文件提供的 
+如果一个命令是外部命令, 使用-p参数, 会显示该命令的路径, 相当于which
+1. type cd
+系统会提示, cd是shell自带命令(build-in)
+2. type grep
+系统会提示, grep是一个外部命令, 并显示该命令的路径
+3. type -p grep
+相当于which命令
+```
