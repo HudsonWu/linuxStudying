@@ -1,7 +1,6 @@
-## 提高效率
+## Useful Commands
 
 + [screen命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/screen.md)
-+ [正则表达式](https://github.com/HudsonWu/linuxStudying/blob/master/common/re.md)
 + [bc, 任意精度计算语言](https://github.com/HudsonWu/linuxStudying/blob/master/common/calc/bc.md)
 + [一些有趣的命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/funny_tools.md)
 

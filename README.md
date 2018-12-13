@@ -9,20 +9,34 @@
 
 **There are various commands which funny and useful**
 
-### [git, 分布式代码版本管理工具](https://github.com/HudsonWu/linuxStudying/tree/master/git)
-+ [一般用法](https://github.com/HudsonWu/linuxStudying/blob/master/git/common.md)
-+ [git log的使用](https://github.com/HudsonWu/linuxStudying/blob/master/git/log.md)
-+ [处理好分支的合并](https://github.com/HudsonWu/linuxStudying/blob/master/git/merge.md)
-+ [远程仓库跟踪](https://github.com/HudsonWu/linuxStudying/blob/master/git/remote.md)
-+ [解决实际问题](https://github.com/HudsonWu/linuxStudying/blob/master/git/attention.md)
-+ [撤销、回退以及进度保存](https://github.com/HudsonWu/linuxStudying/blob/master/git/checkout.md)
-+ [git使用中的一些配置](https://github.com/HudsonWu/linuxStudying/blob/master/git/conf.md)
-+ [标签的使用](https://github.com/HudsonWu/linuxStudying/blob/master/git/tag.md)
-+ [markdown, 轻量级标记语言](https://github.com/HudsonWu/linuxStudying/tree/master/common/markdown)
-    + [基本语法](https://github.com/HudsonWu/linuxStudying/blob/master/common/markdown/syntax.md)
-    + [实际使用](https://github.com/HudsonWu/linuxStudying/blob/master/common/markdown/solve.md)
+
+### [Linux下高效办公](https://github.com/HudsonWu/linuxStudying/tree/master/efficiency)
+
++ [git, 分布式代码版本管理工具](https://github.com/HudsonWu/linuxStudying/tree/master/efficiency/git)
+    + [一般用法](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/git/common.md)
+    + [git log的使用](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/git/log.md)
+    + [处理好分支的合并](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/git/merge.md)
+    + [远程仓库跟踪](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/git/remote.md)
+    + [解决实际问题](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/git/attention.md)
+    + [撤销、回退以及进度保存](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/git/checkout.md)
+    + [git使用中的一些配置](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/git/conf.md)
+    + [标签的使用](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/git/tag.md)
++ [vim, 命令行下强大的文本编辑器](https://github.com/HudsonWu/linuxStudying/tree/master/efficiency/vim)
+    + [命令模式下一些实用的命令](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/vim/cmd.md)
+    + [普通模式下一些常用的快键键](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/vim/normal.md)
+    + [vim中的编码问题](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/vim/encoding.md)
+    + [vim打开或编辑多个文件](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/vim/multifile.md)
+    + [插件管理](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/vim/plugins.md)
+    + [vimrc配置文件(不使用插件)](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/vim/vimrc)
+    + [vimrc配置文件(使用插件)](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/vim/init.vim)
++ [Markdown, 轻量级标记语言](https://github.com/HudsonWu/linuxStudying/tree/master/efficiency/vim)
+    + [基本语法](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/markdown/syntax.md)
+    + [实际使用](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/markdown/solve.md)
++ [正则表达式, 检索、替换符合某个模式的文本](https://github.com/HudsonWu/linuxStudying/tree/master/efficiency/regular_expression)
+    + [regular expression](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/regular_expression/README.md)
 
 ### [bash脚本, linux系统维护利器](https://github.com/HudsonWu/linuxStudying/tree/master/bash)
+
 + [我写的一些脚本](https://github.com/HudsonWu/linuxStudying/tree/master/bash/my)
     + [fortune和cowsay](https://github.com/HudsonWu/linuxStudying/tree/master/bash/my/cowsay)
         + [依次使用所有的cowfile打印显示处fortune命令下的文字](https://github.com/HudsonWu/linuxStudying/blob/master/bash/my/cowsay/all_cowsay.sh)
@@ -42,6 +56,7 @@
 + [一些bash脚本例子](https://github.com/HudsonWu/linuxStudying/tree/master/bash/examples)
 
 ### [container, A standardized unit of software](https://github.com/HudsonWu/linuxStudying/tree/master/container)
+
 + [docker, 开源容器解决方案](https://github.com/HudsonWu/linuxStudying/tree/master/container/docker)
     + [Docker是什么](https://github.com/HudsonWu/linuxStudying/blob/master/container/docker/start.md)
     + [Docker的常用命令](https://github.com/HudsonWu/linuxStudying/blob/master/container/docker/commands.md)
@@ -58,17 +73,8 @@
         + [docker-compose.yml配置文件](https://github.com/HudsonWu/linuxStudying/blob/master/container/docker/docker-compose/yml.md)
 + [kubernetes, 容器化应用程序的自动部署、扩展和管理](https://github.com/HudsonWu/linuxStudying/tree/master/container/kubernetes)
 
-### [vim, 命令行下强大的文本编辑器](https://github.com/HudsonWu/linuxStudying/tree/master/vim)
-+ [命令模式下一些实用的命令](https://github.com/HudsonWu/linuxStudying/blob/master/vim/cmd.md)
-+ [普通模式下一些常用的快键键](https://github.com/HudsonWu/linuxStudying/blob/master/vim/normal.md)
-+ [vim中的编码问题](https://github.com/HudsonWu/linuxStudying/blob/master/vim/encoding.md)
-+ [vim打开或编辑多个文件](https://github.com/HudsonWu/linuxStudying/blob/master/vim/multifile.md)
-+ [插件管理](https://github.com/HudsonWu/linuxStudying/blob/master/vim/plugins.md)
-+ [vimrc配置文件(不使用插件)](https://github.com/HudsonWu/linuxStudying/blob/master/vim/vimrc)
-+ [vimrc配置文件(使用插件)](https://github.com/HudsonWu/linuxStudying/blob/master/vim/init.vim)
-
 ### [常用命令, linux系统之美](https://github.com/HudsonWu/linuxStudying/tree/master/common)
-+ [正则表达式](https://github.com/HudsonWu/linuxStudying/blob/master/common/re.md)
+
 + [screen命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/screen.md)
 + [一些有趣的命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/funny_tools.md)
 + [文件相关命令](https://github.com/HudsonWu/linuxStudying/tree/master/common/file)
@@ -120,23 +126,8 @@
     + [用户管理](https://github.com/HudsonWu/linuxStudying/blob/master/common/simple/user_group.md)
     + [简单命令集合](https://github.com/HudsonWu/linuxStudying/blob/master/common/simple/simple.md)
 
-### [网络相关命令, 网络的监控、安全攻防](https://github.com/HudsonWu/linuxStudying/tree/master/network)
-+ [网络监控工具整理](https://github.com/HudsonWu/linuxStudying/blob/master/network/monitorNetwork.md)
-+ [ss, socket统计信息](https://github.com/HudsonWu/linuxStudying/blob/master/network/ss.md)
-+ [netcat, 网络工具中的瑞士军刀](https://github.com/HudsonWu/linuxStudying/blob/master/network/netcat.md)
-+ [iproute2命令列表](https://github.com/HudsonWu/linuxStudying/blob/master/network/iproute2.md)
-+ [http, web访问和传输相关命令](https://github.com/HudsonWu/linuxStudying/tree/master/network/http)
-    + [curl, 数据传输工具](https://github.com/HudsonWu/linuxStudying/tree/master/network/http/curl)
-    + [httpie, http命令行客户端](https://github.com/HudsonWu/linuxStudying/tree/master/network/http/httpie)
-    + [urlencode编码与解码](https://github.com/HudsonWu/linuxStudying/blob/master/network/http/urlencode.md)
-+ [iptables, 命令行防火墙工具](https://github.com/HudsonWu/linuxStudying/blob/master/network/iptables)
-    + [iptables原理分析](https://github.com/HudsonWu/linuxStudying/blob/master/network/iptables/principle.md)
-    + [iptables命令使用](https://github.com/HudsonWu/linuxStudying/blob/master/network/iptables/use.md)
-    + [firewalld, iptables的前端控制器](https://github.com/HudsonWu/linuxStudying/tree/master/network/iptables/firewalld)
-        + [firewalld原理分析](https://github.com/HudsonWu/linuxStudying/blob/master/network/iptables/firewalld/theory.md)
-        + [firewall-cmd命令使用](https://github.com/HudsonWu/linuxStudying/blob/master/network/iptables/firewalld/use.md)
+### [其他深入的学习](https://github.com/linuxStudying/tree/master/less-is-more)
 
-### 更多
 + [web服务器的一些配置, 性能优化之路](https://github.com/HudsonWu/linuxStudying/tree/master/less-is-more/webservers)
 + [关系型数据库, 结构化查询语言](https://github.com/HudsonWu/linuxStudying/tree/master/less-is-more/rdbms)
 + [windows的一些便利用法](https://github.com/HudsonWu/linuxStudying/tree/master/less-is-more/windows)
@@ -153,4 +144,3 @@
 a linux lover, a dreaming man, 
 
 > Before you can run, you need to be able to walk
-
