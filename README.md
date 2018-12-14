@@ -145,4 +145,4 @@ a linux lover, a dreaming man,
 
 > Before you can run, you need to be able to walk
 
-[linuxStudying]: https://github.com/HudsonWu/linuxStudying/tree/master
+[linuxStudying]:https://github.com/HudsonWu/linuxStudying/tree/master
