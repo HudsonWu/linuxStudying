@@ -10,7 +10,7 @@
 **There are various commands which funny and useful**
 
 
-### [Linux下高效办公](https://github.com/HudsonWu/linuxStudying/tree/master/efficiency)
+### [Linux下高效办公]([linuxStudying]/efficiency)
 
 + [git, 分布式代码版本管理工具](https://github.com/HudsonWu/linuxStudying/tree/master/efficiency/git)
     + [一般用法](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/git/common.md)
@@ -144,3 +144,5 @@
 a linux lover, a dreaming man, 
 
 > Before you can run, you need to be able to walk
+
+[linuxStudying]: https://github.com/HudsonWu/linuxStudying/tree/master
