@@ -1,4 +1,4 @@
-# jenkins
+# Jenkins
 
 Jenkins is a self-contained, open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software.
 
@@ -170,8 +170,10 @@ pipeline {
     }
 }
 ```
-If more than one parameter is specified in the archiveArtifacts step, then each parameter’s name must explicitly be specified in the step code - i.e. artifacts for the artifact’s path and file name and fingerprint to choose this option. If you only need to specify the artifacts' path and file name/s, then you can omit the parameter name artifacts - e.g.
+If more than one parameter is specified in the `archiveArtifacts` step, then each parameter’s name must explicitly be specified in the step code - i.e. `artifacts` for the artifact’s path and file name and fingerprint to choose this option. If you only need to specify the artifacts' path and file name/s, then you can omit the parameter name artifacts - e.g.
+```
 archiveArtifacts 'build/libs/**/*.jar'
+```
 
 ## Notifications
 
