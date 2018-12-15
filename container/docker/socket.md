@@ -52,7 +52,7 @@ curl --unix-socket /var/run/docker.sock http://localhost/events
 > + 连接默认的桥接网络 bridge network
 > + 启动容器
 
-## Portainer
+## Portainer, 集群管理工具
 
 [Portainer](http://portainer.io/), 它提供了图形化界面用于管理Docker主机和Swarm集群, Portainer通过绑定的/var/run/docker.sock文件与Docker守护进程通信，执行各种管理操作。
 
