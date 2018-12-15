@@ -1,8 +1,8 @@
 # shell
 
-查看当前shell
 ```
-echo $shell
+echo $shell  //查看当前shell
+cat /etc/shells  //查看系统中安装的shell
 ```
 
 ## chsh, 改变默认shell
