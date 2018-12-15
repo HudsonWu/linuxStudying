@@ -11,17 +11,17 @@ git 配置文件分为三级, 三者的使用优先级以离目录最近为原�
     + .git/config, 该配置只对当前仓库生效
 
 ### 修改分支的追踪关系
-<pre>
+```
 [remote "origin"] 
 这一项修改对应远程仓库地址
 
 [branch "master"] 
 这一项修改本地分支'master'的远程追踪关系分支
 如修改merge = refs/heads/master为merge = refs/heads/dev
-</pre>
+```
 
 ## git config 命令
-<pre>
+```
 1. 显示当前git配置
 git config --list
 
@@ -38,10 +38,10 @@ git config --global core.editor vim
 5. git设置连接方式（https或ssh）
 git remote -v
 git remote set-url origin git@github.com...
-</pre>
+```
 
 ## 记住用户名和密码
-<pre>
+```
 1. 设置上游仓库时设置用户名和密码
 git remote set-url origin https://username:password@github.com/username/project.git
 
@@ -53,18 +53,18 @@ git config credential.helper 'cache --timeout=3600'  //自定义存储时间
 3. .git/config文件
 [credential]
   helper=store
-</pre>
+```
 
 ## 一些使用的命令
-<pre>
+```
 1. 缩写, 别名
 git config --global alias.lg "log --color --graph --pretty=\ 
 format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\ 
 --abbrev-commit"
-</pre>
+```
 
 ## 对于本地频繁更改但不需要每次都提交的文件
-<pre>
+```
 1. 使用模板文件
 新建一个文件, 在文件名上加以区分然后用 Git 记住, 作为模板文件
 比如说实际的配置文件应该叫 database.conf, 在写好模版之后可以更名为 database.conf.example
@@ -76,4 +76,4 @@ git update-index --assume-unchanged
 当你的工作告一段落决定可以提交时, 执行下面的命令重置该标识
 git update-index --no-assume-unchanged
 这样可以让git在必要的时候提交该文件的更新
-</pre>
+```
