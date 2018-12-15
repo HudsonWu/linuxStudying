@@ -3,7 +3,7 @@
 ## 输出格式
 
 ### 格式化log输出
-<pre>
+```
 1. --oneline
 把每一个提交显示在一行中, 默认只显示提交ID和提交信息的第一行
 2. --decorat
@@ -19,17 +19,17 @@ git shortlog 是一种特殊的 git log, 它把每个提交按作者分类, 显�
 5. Graph
 --graph, 绘制一个ASCII图像来展示提交历史的分支结构
 常和 --oneline, --decorate 两个选项一起使用
-</pre>
+```
 
 ### 自定义格式
-<pre>
+```
 可以使用 --pretty=format:"<string>" 选项, 它允许使用像printf一样的占位符来输出提交
 git log --pretty=format:"%cn committed %h on %cd"
 %cn, %h, %cd 这三种占位符会被分别替换为作者名字, 缩略标识, 提交日期
-</pre>
+```
 
 ## 过滤提交历史
-<pre>
+```
 1. 按数量
 -<n> 选项, 限制显示的提交数量
 git log -3  //显示最新的3次提交
@@ -66,4 +66,4 @@ git log master..feature
 8. 过滤合并提交
 git log --no-merges  //排除合并提交
 git log --merges  //只显示合并提交
-</pre>
+```

@@ -1,25 +1,25 @@
 ## 几个概念
-<pre>
+```
 Workspace  工作区
 Index / Stage  暂存区
 Repository  仓库区（或本地仓库）
 Remote  远程仓库
-</pre>
+```
 
 ## 使用
 
 1. 新建代码库
-<pre>
+```
 //在当前目录新建一个git代码库
 git init
 //新建一个目录, 将其初始化为Git代码库
 git init [project-name]
 //下载一个项目和它的整个代码历史
 git clone [url]
-</pre>
+```
 
 2. 增加文件
-<pre>
+```
 //添加指定文件到暂存区
 git add [file1] [file2] ...
 //添加指定目录到暂存区, 包括子目录
@@ -28,10 +28,10 @@ git add [dir]
 //添加每个变化前, 都会要求确认
 //对于同一个文件的多处变化, 可以实现分次提交
 git add -p
-</pre>
+```
 
 3. 代码提交
-<pre>
+```
 //提交暂存区到仓库区
 git commit -m [message]
 //提交暂存区的指定文件到仓库区
@@ -46,10 +46,10 @@ git commit -v
 git commit --amend -m [message]
 //重做上一次commit, 并包括指定文件的新变化
 git commit --amend [file1] [file2] ...
-</pre>
+```
 
 4. 分支
-<pre>
+```
 //列出所有本地分支
 git branch
 //列出所有远程分支
@@ -82,11 +82,11 @@ git branch -d [branch-name]
 //删除远程分支
 git push origin --delete [branch-name]
 git branch -dr [remote/branch]
-</pre>
+```
 
 
 5. 查看信息
-<pre>
+```
 //显示有变更的文件
 git status
 //显示当前分支的版本历史
@@ -126,10 +126,10 @@ git show --name-only [commit]
 git show [commit]:[filename]
 //显示当前分支的最近几次提交
 git reflog
-</pre>
+```
 
 6. 远程同步
-<pre>
+```
 //下载远程仓库的所有变动
 git fetch [remote]
 //显示所有远程仓库
@@ -146,12 +146,12 @@ git push [remote] [branch]
 git push [remote] --force
 //推送所有分支到远程仓库
 git push [remote] --all
-</pre>
+```
 
 7. 其他
-<pre>
+```
 //生成一个可供发布的压缩包
 git archive
 //删除所有untracked的文件
 git clean -df
-</pre>
+```
