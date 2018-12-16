@@ -1,9 +1,10 @@
-# 加速nginx
-https://www.darrenfang.com/2015/01/setting-up-http-cache-and-gzip-with-nginx/
+# nginx加速
+
+<https://www.darrenfang.com/2015/01/setting-up-http-cache-and-gzip-with-nginx/>
 
 ## 开启gzip
 
-<pre>
+```
 # 开启gzip
 gzip on;
 
@@ -21,11 +22,11 @@ gzip_vary on;
 
 # 禁用IE 6 gzip
 gzip_disable "MSIE [1-6]\.";
-</pre>
+```
 
 ## 开启缓存
 
-<pre>
+```
 location ~* ^.+\.(ico|gif|jpg|jpeg|png)$ { 
     access_log   off; 
     expires      30d;
@@ -39,11 +40,11 @@ location ~* ^.+\.(css|js|txt|xml|swf|wav)$ {
 location ~* ^.+\.(html|htm)$ {
     expires      1h;
 }
-</pre>
+```
 
 ## 关于字体
 
-<pre>
+```
 # 设置字体缓存
 location ~* ^.+\.(eot|ttf|otf|woff|svg)$ {
     access_log   off;
@@ -51,4 +52,4 @@ location ~* ^.+\.(eot|ttf|otf|woff|svg)$ {
 }
 # 启用gzip
 gzip_types  font/ttf font/otf image/svg+xml;
-</pre>
+```
