@@ -15,3 +15,38 @@ source, 运行脚本的时候, 不会启用一个新的shell进程, 而是在当
 exec, 运行脚本或命令的时候, 不会启用一个新的shell进程, 
       并且exec后续的脚本内容不会得到执行, 即当前shell进程结束了
 ```
+
+## 简单实例
+
+1.sh:
+```sh
+#!/bin/bash
+A=B
+echo "PID for 1.sh before exec/source/fork: $$"
+export A
+echo "1.sh: \$A is $A"
+case $1 in
+    exec)
+        echo "using exec ..."
+        exec ./2.sh;;
+    source)
+        echo "using source ..."
+        . ./2.sh;;
+    *)
+        echo "using fork by default ..."
+        ./2.sh;;
+esac
+echo "PID for 1.sh after exec/source/fork: $$"
+echo "1.sh: \$A is $A"
+```
+
+2.sh:
+```sh
+#!/bin/bash
+
+echo "PID for 2.sh: $$"
+echo "2.sh get \$A=$A from 1.sh"
+A=C
+export A
+echo "2.sh: \$A is $A"
+```

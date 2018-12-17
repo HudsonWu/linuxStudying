@@ -40,3 +40,20 @@ git push origin --tags  //一次推送所有本地新增的标签
 git tag -d v1.3  //删除本地标签
 git push origin :refs/tags/v1.3  //删除远程标签
 ```
+
+## 标签的更新
+```
+git fetch  //获取所有的提交以及标签的更新
+git fetch origin --tags  //仅仅获取标签的更新
+```
+
+## 查看远程仓库的标签
+```console
+$ git ls-remote --tags
+From git@github:someone/project01.git
+a2f799ac3b27a6aef69d38357deb5d145a9407ad    refs/tags/1.0.0
+5814a19e66760629dd153836586cc9f8eadb78ae    refs/tags/1.0.0^{}
+0ee6bf7e00c9fa256231e4ef387dfab456e4ee28    refs/tags/1.0.1
+6c637a92acafbcde94609e93e6f5c112fa2d73d5    refs/tags/1.0.1^{}
+```
+`refs/tags/1.0.1^{}`表示1.0.1是含附注的标签, 参数`--tags`可以简化为`-t`
