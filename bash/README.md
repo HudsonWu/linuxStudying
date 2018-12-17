@@ -20,3 +20,8 @@ shell脚本, 是一种为shell编写的脚本程序, 这里只记录了Bash脚�
 + [shell中各种括号的运用](https://github.com/HudsonWu/linuxStudying/blob/master/bash/brackets.md)
 + [set, env, export的区分](https://github.com/HudsonWu/linuxStudying/blob/master/bash/env_vars.md)
 + [一些bash脚本例子](https://github.com/HudsonWu/linuxStudying/tree/master/bash/examples)
+
+## Refer
+
++ <https://www.gnu.org/software/bash/manual/bashref.html#Shell-Parameter-Expansion>
++ <http://www.tldp.org/>

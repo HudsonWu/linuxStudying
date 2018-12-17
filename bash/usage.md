@@ -1,3 +1,4 @@
+# bash灵活使用
 
 ## 脚本调试
 
@@ -13,7 +14,9 @@ export PS4='+${BASH_SOURCE}:${LINENO}:${FUNCNAME[0]}: '
 ```
 
 3. 调试部分脚本
-在你想要调试的脚本之前, 调用 set -x, 结束时调用 set +x <br/>
+
+在你想要调试的脚本之前, 调用 set -x, 结束时调用 set +x
+
 ```sh
 #!/bin/bash
 echo "Hello $USER,"
@@ -24,7 +27,7 @@ set +x
 
 4. 专用调试器
 
-> <http://bashdb.sourceforge.net/> <br/>
+> + <http://bashdb.sourceforge.net/>
 
 
 ## 日志输出
@@ -54,11 +57,11 @@ _DEBUG=true ./example_script.sh
 ```
 
 ## eval
-<pre>
+```
 //eval首先会扫描命令行进行所有的置换, 然后再执行该命令
 pipe="|"
 eval ls $pipe wc -l
-</pre>
+```
 
 ## 输入输出
 
