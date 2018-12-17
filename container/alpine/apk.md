@@ -3,7 +3,6 @@
 ## 命令简介
 
 ```
-apk install xxx
 apk search xxx  //支持正则
 apk info xxx  //查看包的详细信息
 apk show  //list local package
@@ -116,3 +115,6 @@ rc-update add sshd
 /etc/sshd_config
 apk add dropbear // another openssh implementation
 ```
+
+Refer:
++ [alpine文档](https://wiki.alpinelinux.org/wiki/Developer_Documentation)
