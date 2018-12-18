@@ -358,7 +358,7 @@ if [ $# -ne 0 ]; then
         echo
         echo -e "\e[36;40m ----- 参数是1, 执行step1: -----\e[0m"
         step1
-        if [ $2 -eq 2 ]; then
+        if [ -n $2 -a $2 -eq 2 ]; then
             echo -e "\n\e[36;40m ----- 第二个参数是2, 紧接着执行step2: -----\e[0m"
             step2
         fi
