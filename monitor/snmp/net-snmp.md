@@ -32,6 +32,6 @@ snmpget -u bootstrap -l authPriv -a MD5 -x DES -A temp_password -X temp_password
 ```
 The 1.3.6.1.2.1.1.1.0 string is the OID that is responsible for displaying system information. It will basically return the output of "uname -a" on the remote system
 
-## Refer
+## References
 
 + [Net-SNMP Documentation](http://www.net-snmp.org/docs/man/)

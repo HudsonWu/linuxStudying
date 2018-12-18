@@ -93,7 +93,7 @@ ASN.1、BER、SMI、MIB、PDU的关系
 - - - - - - - - - - - - - - - - - - -
 ```
 
-## Refer
+## References
 
 + [monitoring-and-managing-your-network-with-snmp](https://www.digitalocean.com/community/tutorial_series/monitoring-and-managing-your-network-with-snmp)
 + [浅谈Linux系统中的SNMP Trap](https://www.ibm.com/developerworks/cn/linux/l-cn-snmp/index.html)
