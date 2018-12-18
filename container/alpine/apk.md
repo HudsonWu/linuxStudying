@@ -116,6 +116,6 @@ rc-update add sshd
 apk add dropbear // another openssh implementation
 ```
 
-## Refer
+## References
 
 + [alpine文档](https://wiki.alpinelinux.org/wiki/Developer_Documentation)
