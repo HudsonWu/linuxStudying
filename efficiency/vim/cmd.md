@@ -2,7 +2,7 @@
 
 ## 一些实用的命令
  
-1. :help key-notation 查看帮助文件
+1. :help key-notation
 
 2. :map 键盘映射
 
@@ -21,6 +21,15 @@ map \T <Esc>:set expandtab tabstop=8 shiftwidth=8<CR>
 3. 匹配
 :g/pattern/d  删除包含特定字符的行<br/>
 :v/pattern/d  或者  :g!/pattern/d  删除不包含指定字符的行<br/>
+
+4. wildmenu
+
+```
+set wildmenu wildmode=longest:full,full
+```
+What it does:
++ First tab: longest match, list in the statusbar
++ Following tabs: cycle through matches
 
 ## vim修改时发现没有写入权限
 
