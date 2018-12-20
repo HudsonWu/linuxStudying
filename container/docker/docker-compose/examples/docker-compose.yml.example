@@ -1,0 +1,48 @@
+version: "3.1"
+
+  sails_example:
+    image: "registry-vpc.cn-beijing.aliyuncs.com/yourproject/Sails_example:1.0"
+    restart: always
+    container_name: "${SAILS_CONTAINER_NAME}"
+    ports:
+      - "${SAILS_PORT}:${CONTAINER_PORT}"
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+    extra_hosts:
+      - "${API_HOST}:${MASTER_IP_ADDRESS}"
+      - "${WEB_HOST}:${MASTER_IP_ADDRESS}"
+    networks:
+      - frontend
+
+  jenkins:
+    image: "registry-vpc.cn-beijing.aliyuncs.com/yourproject/yourproject-jenkins:latest"
+    restart: always
+    container_name: "${JENKINS_CONTAINER_NAME}"
+    ports:
+      - "${JENKINS_PORT}:${JENKINS_PORT}"
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+      - "/run/docker.sock:/run/docker.sock"
+    networks:
+      - frontend
+
+  vue_example:
+    image: "registry-vpc.cn-beijing.aliyuncs.com/yourproject/vue_example:1.0"
+    restart: always
+    container_name: "${VUE_CONTAINER_NAME}"
+    ports:
+      - "${VUE_PORT}:${CONTAINER_PORT}"
+    volumes:
+      - "/etc/timezone:/etc/timezone"
+    extra_hosts:
+      - "${API_HOST}:${MASTER_IP_ADDRESS}"
+      - "${WEB_HOST}:${MASTER_IP_ADDRESS}"
+    networks:
+      - frontend
+    environment:
+      - PORT=${VUE_PORT}
+    command: "pm2 start server.js --no-daemon"
+
+networks:
+  frontend:
+    driver: "bridge"
