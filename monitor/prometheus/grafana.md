@@ -12,14 +12,14 @@
 配置文件: /etc/grafana/grafana.ini
 
 + 编辑grafana.ini文件
-<pre>
+```
 [dashboards.json]
 enabled = true
 path = /var/lib/grafana/dashboards
-</pre>
+```
 
 + 安装仪表盘
-<pre>
+```
 // mysql图表模板(Percona提供的模板)
 git clone https://github.com/percona/grafana-dashboards.git
 // 复制所有模板到指定位置
@@ -35,5 +35,4 @@ redis_exporter:
 
 nginx-vts_exporter:
 2949  "Nginx VTS Stats"
-
-</pre>
+```

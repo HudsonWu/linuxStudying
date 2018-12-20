@@ -292,12 +292,12 @@ function step2() {
     merge_master $pro_path $pro_branch
 
     if [[ $pro == *[pP]ark* ]]; then
-        echo "\e[34;40m 当前要打包的代码是园区端\e[0m"
+        echo -e "\e[34;40m 当前要打包的代码是园区端\e[0m"
         
-        echo "\e[35;40m $pro: 转移dist目录下的park目录后删除dist目录"
+        echo -e "\e[35;40m $pro: 转移dist目录下的park目录后删除dist目录\e[0m"
         mv $pro_path/dist/park $pro_path && rm -rf $pro_path/dist
 
-        echo "\e[35;40m 将打包生成的dist目录复制到$pro后将park目录移动到dist目录下"
+        echo -e "\e[35;40m 将打包生成的dist目录复制到$pro后将park目录移动到dist目录下\e[0m"
         cp -rf $vue_path/dist $pro_path/dist && mv $pro_path/park $pro_path/dist
         
         if [ ! -d $pro_path/dist/park ]; then
