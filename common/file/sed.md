@@ -78,7 +78,7 @@ $ 表示一行的结尾, 如: /}$/ 以}结尾的匹配
 ```
 
 #### 例子: html.txt
-```html
+```
 <b>This</b> is what <span style="text-decoration: underline;">I</span> meant. Understand?
 sed 's/<.*>//g' html.txt
 -> meant. Understand?
@@ -87,9 +87,9 @@ This is what I meant. Understand?
 ```
 
 ## 一些有用的命令
-<pre>
+```
 1. 在指定行前面或后面插入新行
 sed '/test/i\ add a new line' -i a.txt
 sed '/test/a\ a new line' -i a.txt
 sed -i '/allow 361way.com/iallow www.361way.com' the.conf.file
-</pre>
+```

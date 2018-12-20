@@ -1,16 +1,19 @@
 ## grep
-global search regular expression and print out the line <br/>
+
+global search regular expression and print out the line
+
 强大的文本搜索工具, 使用正则表达式搜索文本, 并把匹配的行打印出来
 
 ### 简单用法
-<pre>
+
+```
 1. 在多个文件中查找
 grep "match_pattern" file_1 file_2 ...
-2. 输出除之外的所有行
+2. 输出匹配之外的所有行
 grep -v "match_pattern" file_name
 3. 标记匹配颜色
 grep "match_pattern" file_name --color=auto
-4. 使用正则表达式
+4. 使用扩展正则表达式
 grep -E "[1-9]+"
 egrep "[1-9]+"
 5. 只输出文件中匹配到的部分
@@ -32,9 +35,10 @@ echo aaa bbb ccc ddd eee | grep -f patfile -o  //在patfile文件中逐行写出
 12. 静默输出, 一般用于条件测试
 grep -q "test" filename
 //不会输出任何信息, 如果命令运行成功返回0, 失败返回非0值
-</pre>
+```
 
 ### 更多用法
+
 ```
 1. 在grep搜索结果中包括或排除指定文件
 //只在目录中所有的.php和.html文件中递归搜索字符"main()"
