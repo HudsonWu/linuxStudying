@@ -3,7 +3,7 @@
 When using the suite of tools included in the snmp package(the net-snmp software suite), you will notice a few patterns in the way you must call the commands.
 
 The first thing you must do is authenticate with the SNMP daemon that you wish to communicate with. This usually involves supplying quite a few pieces of information. The common ones are below:
-
+```
   -v VERSION: This flag is used to specify the version of the SNMP protocol that you would like to use. we will bu using v3 in this guide
 
   -c COMMUNITY: This flag is used if you are using SNMP v1 or v2-style community string for authentication. Since we are using v3-style user-based authentication, we will not be needing this
@@ -19,6 +19,7 @@ The first thing you must do is authenticate with the SNMP daemon that you wish t
   -A PASSPHRASE: This is used to give the authentication passphrase that was specified when the user was created
 
   -X PASSPHRSE: This is the encryption passphrase that was specified when the user was created. If none was specified but an encryption algorithm was given, the authentication passphrase will be used. This is required when the "-x" parameter is given or whenever a user's privilege specification has a "priv" after it, requiring encryption
+```
 
 ## Usage
 

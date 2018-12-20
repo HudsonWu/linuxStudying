@@ -69,7 +69,12 @@ What it does:
 The e substitute flag means that no error is displayed if the pattern is not found <br/>
 \n in the search pattern finds newline, while \r in the replacement inserts a newline <br/>
 
-4. Handing IDEOGRAPHIC SPACE
+4. 把空格替换为换行
+```
+:%s/ /\r/g
+```
+
+5. Handing IDEOGRAPHIC SPACE
 the following will delete all empty lines, <br/>
 or lines that contain only combinations of space, tab or IDEOGRAPHIC SPACE <br/>
 (in CJK languages, the Unicode character IDEOGRAPHIC SPACE may be used. <br/>
