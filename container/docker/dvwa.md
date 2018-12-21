@@ -16,6 +16,6 @@ EXPOSE 80
 3. run that image and attach to it:
 ```
 docker run -i -t dvwa
-or to run it in the background:
+//or to run it in the background
 docker run -d dvwa
 ```

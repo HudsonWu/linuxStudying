@@ -17,4 +17,5 @@ linux上进程有5种状态: <br/>
 + [类top进程监控工具](https://github.com/HudsonWu/linuxStudying/blob/master/process/top-like.md)
 + [kill, 终止进程](https://github.com/HudsonWu/linuxStudying/blob/master/process/kill.md)
 + [fg, bg, jobs](https://github.com/HudsonWu/linuxStudying/blob/master//process/jobs.md)
++ [IPC, 进程间通信](https://github.com/HudsonWu/linuxStudying/blob/master/process/ipc.md)
 + [supervisor, 进程管理工具](https://github.com/HudsonWu/linuxStudying/tree/master/process/supervisor)

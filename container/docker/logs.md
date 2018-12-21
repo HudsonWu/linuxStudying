@@ -1,11 +1,11 @@
-## Docker容器日志查看和清理
+# Docker容器日志查看和清理
 
 容器日志一般存放路径: /var/lib/docker/containers/container_id/ <br/>
 
-### 查看各个日志文件大小, docker_log_size.sh <br/>
+## 查看各个日志文件大小, docker_log_size.sh <br/>
 
 ```sh
-#!/bin/bash
+!/bin/bash
 
 echo "===== docker containers logs file size ====="
 
@@ -16,18 +16,18 @@ for log in $logs
         ls -lh $log
     done
 
-# chmod +x docker_log_size.sh
-# ./docker_log_size.sh
+ chmod +x docker_log_size.sh
+ ./docker_log_size.sh
 ```
 
-### 清理Docker容器日志
+## 清理Docker容器日志
 
 如果docker容器正在运行, 使用rm -rf删除文件, 将会从文件系统的目录结构上解除链接(unlink), <br/>
 如果文件是被打开的(有一个进程正在使用), 那么进程仍然可以读取该文件, 磁盘空间也一直被占用, <br/>
 使用cat /dev/null > *-json.log命令, 可以删除文件, 且立即释放磁盘空间<br/>
 clean_docker_log.sh <br/>
 ```sh
-#!/bin/bash
+!/bin/bash
 
 echo "===== start clean docker containers logs ====="
 
@@ -42,7 +42,7 @@ for log in $logs
 echo "===== end clean docker containers logs ====="
 ```
 
-### 设置Docker容器日志大小
+## 设置Docker容器日志大小
 
 1. 设置一个容器服务的日志大小上限
 
