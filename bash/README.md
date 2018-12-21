@@ -2,7 +2,7 @@
 
 shell脚本, 是一种为shell编写的脚本程序
 
-+ [linux中的shell](https://github.com/HudsonWu/linuxStudying/blob/master/bash/usage.md)
++ [linux中的shell](https://github.com/HudsonWu/linuxStudying/blob/master/bash/shell.md)
 + [bash中各种括号的运用](https://github.com/HudsonWu/linuxStudying/blob/master/bash/brackets.md)
 + [set, env, export的区分](https://github.com/HudsonWu/linuxStudying/blob/master/bash/env_vars.md)
 + [bash灵活使用](https://github.com/HudsonWu/linuxStudying/blob/master/bash/usage.md)

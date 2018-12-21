@@ -30,7 +30,7 @@
 
 ## [正则表达式, 检索、替换符合某个模式的文本](https://github.com/HudsonWu/linuxStudying/tree/master/efficiency/regular_expression)
 
-+ [regular expression](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/regular_expression/README.md)
++ [regular expression](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/regular_expression/overview.md)
 
 ## [Jenkins, 持续集成/持续交付工具](https://github.com/HudsonWu/linuxStudying/tree/master/efficiency/jenkins)
 
