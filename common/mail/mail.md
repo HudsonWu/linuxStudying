@@ -1,3 +1,5 @@
+# mail命令的使用
+
 1. 简单的邮件
 ```
 $ mail -s "This is the subject" someone@example.com
@@ -26,20 +28,20 @@ Bye
 > echo "This is message body" | mail -s "This is Subject" -r "Harry<harry@gmail.com>" someone@example.com
 
 6. 使用特殊的回复地址
-<pre>
+```
 # 回复地址
 $ echo "This is message" | mail -s "Testing replyto" -S replyto="mark@gmail.com" someone@example.com
 
 # 回复地址和名称
 $ echo "This is message" | mail -s "Testing replyto" -S replyto="Mark<mark@gmail.com>" someone@example.com
-</pre>
+```
 
 7. 发送附件
 使用-a加上文件路径
 > echo "This is message body" | mail -s "This is Subject" -r "Harry<harry@gmail.com>" -a /path/to/file someone@example.com
 
 8. 使用外部的SMTP服务器
-<pre>
+```
 $ echo "This is the message body and contains the message" | mailx -v \
 -r "someone@example.com" \
 -s "This is the subject" \
@@ -50,6 +52,6 @@ $ echo "This is the message body and contains the message" | mailx -v \
 -S smtp-auth-password="abc123" \
 -S ssl-verify=ignore \
 yourfriend@gmail.com
-</pre>
+```
 
 echo "sent from helloworld's account" | mailx -v -A someaccount -s "Command line mail" someone@example.com <br/>

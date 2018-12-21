@@ -1,56 +1,54 @@
-## Useful Commands
+# linux基础学习
 
-+ [screen命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/screen.md)
++ [一些基础命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/some_commands.md)
++ [用户管理](https://github.com/HudsonWu/linuxStudying/blob/master/common/user_group.md)
+
+## [计划任务](https://github.com/HudsonWu/linuxStudying/tree/master/common/schedule)
+
++ [at, 在指定时间执行任务](https://github.com/HudsonWu/linuxStudying/blob/master/common/schedule/at.md)
++ [crontab, 周期性地执行任务](https://github.com/HudsonWu/linuxStudying/blob/master/common/schedule/crontab.md)
+
+## [服务管理](https://github.com/HudsonWu/linuxStudying/tree/master/common/service)
+
++ [systemctl命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/service/systemctl.md)
++ [journalctl命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/service/journalctl.md)
++ [给程序设置systemd](https://github.com/HudsonWu/linuxStudying/tree/master/common/service/system)
+
+## [日志管理](https://github.com/HudsonWu/linuxStudying/tree/master/common/log)
+
++ [日志系统](https://github.com/HudsonWu/linuxStudying/blob/master/common/log/log.md)
++ [history, 历史命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/log/history.md)
++ [logrotate, 日志轮循](https://github.com/HudsonWu/linuxStudying/blob/master/common/log/logrotate.md)
++ [日志清理](https://github.com/HudsonWu/linuxStudying/tree/master/common/log/clean_logs)
+
+## [日期、时区、字符](https://github.com/HudsonWu/linuxStudying/tree/master/common/time)
+
++ [epoch, unix timestamp](https://github.com/HudsonWu/linuxStudying/blob/master/common/time/epoch.md)
++ [time命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/time/time.md)
++ [linux时间](https://github.com/HudsonWu/linuxStudying/blob/master/common/time/time.md)
++ [字符和时区](https://github.com/HudsonWu/linuxStudying/blob/master/common/time/lang_timezone.md)
++ [ntp, 网络时间协议](https://github.com/HudsonWu/linuxStudying/blob/master/common/time/ntp.md)
+
+## [数学计算](https://github.com/HudsonWu/linuxStudying/tree/master/common/calc)
+
 + [bc, 任意精度计算语言](https://github.com/HudsonWu/linuxStudying/blob/master/common/calc/bc.md)
-+ [一些有趣的命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/funny_tools.md)
++ [expr, 命令行计数器](https://github.com/HudsonWu/linuxStudying/blob/master/common/calc/expr.md)
 
-## 常用命令集锦
+## [加密和解密](https://github.com/HudsonWu/linuxStudying/tree/master/common/aboutkeys)
 
-+ [文件相关命令](https://github.com/HudsonWu/linuxStudying/tree/master/common/file)
-    + [不同文件搜索命令的异同](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/file_search/commands.md)
-    + [find命令的一些奇技淫巧](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/find.md)
-    + [grep, 强大的文本搜索工具](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/grep.md)
-    + [sed, 流编辑器](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/sed.md)
-    + [awk, 文本文件处理语言](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/awk.md)
-    + [touch命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/touch.md)
-    + [文件时间戳的修改](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/timestamps.md)
-    + [rename, 批量重命名](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/rename.md)
-    + [dos2unix和unix2dos, 文本格式转换](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/dos2unix.md)
-    + [tee, 读取标准输入, 输出到标准输出和文件](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/tee.md)
-    + [大文件分卷压缩](https://github.com/HudsonWu/linuxStudying/blob/master/common/file/sub_volume.md)
-    + [误删除文件恢复](https://github.com/HudsonWu/linuxStudying/tree/master/common/file/delete_mistake)
-+ [查看进度](https://github.com/HudsonWu/linuxStudying/tree/master/common/progress)
-    + [progress, 监控命令执行进度](https://github.com/HudsonWu/linuxStudying/blob/master/common/progress/progress.md)
-    + [pv, 显示当前命令执行进度](https://github.com/HudsonWu/linuxStudying/blob/master/common/progress/pv.md)
-+ [计划任务](https://github.com/HudsonWu/linuxStudying/tree/master/common/schedule)
-    + [at, 在指定时间执行任务](https://github.com/HudsonWu/linuxStudying/blob/master/common/schedule/at.md)
-    + [crontab, 周期性地执行任务](https://github.com/HudsonWu/linuxStudying/blob/master/common/schedule/crontab.md)
-+ [服务管理](https://github.com/HudsonWu/linuxStudying/tree/master/common/service)
-    + [systemctl命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/service/systemctl.md)
-    + [journalctl命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/service/journalctl.md)
-    + [给程序设置systemd](https://github.com/HudsonWu/linuxStudying/tree/master/common/service/system)
-+ [日志管理](https://github.com/HudsonWu/linuxStudying/tree/master/common/log)
-    + [日志系统](https://github.com/HudsonWu/linuxStudying/blob/master/common/log/log.md)
-    + [history, 历史命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/log/history.md)
-    + [logrotate, 日志轮循](https://github.com/HudsonWu/linuxStudying/blob/master/common/log/logrotate.md)
-    + [日志清理](https://github.com/HudsonWu/linuxStudying/tree/master/common/log/clean_logs)
-+ [日期、时区、字符](https://github.com/HudsonWu/linuxStudying/tree/master/common/time)
-    + [epoch, unix timestamp](https://github.com/HudsonWu/linuxStudying/blob/master/common/time/epoch.md)
-    + [time命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/time/time.md)
-    + [linux时间](https://github.com/HudsonWu/linuxStudying/blob/master/common/time/time.md)
-    + [字符和时区](https://github.com/HudsonWu/linuxStudying/blob/master/common/time/lang_timezone.md)
-    + [ntp, 网络时间协议](https://github.com/HudsonWu/linuxStudying/blob/master/common/time/ntp.md)
-+ [数学计算](https://github.com/HudsonWu/linuxStudying/tree/master/common/calc)
-    + [bc, 任意精度计算语言](https://github.com/HudsonWu/linuxStudying/blob/master/common/calc/bc.md)
-    + [expr, 命令行计数器](https://github.com/HudsonWu/linuxStudying/blob/master/common/calc/expr.md)
-+ [加密和解密](https://github.com/HudsonWu/linuxStudying/tree/master/common/aboutkeys)
-    + [Debian中的软件包密钥](https://github.com/HudsonWu/linuxStudying/blob/master/common/aboutkeys/apt-key.md)
-    + [GnuPG加密工具](https://github.com/HudsonWu/linuxStudying/blob/master/common/aboutkeys/gpg.md)
-    + [openssl加密工具](https://github.com/HudsonWu/linuxStudying/blob/master/common/aboutkeys/openssl.md)
-+ [其他一些基本命令](https://github.com/HudsonWu/linuxStudying/tree/master/common/simple)
-    + [邮件的使用](https://github.com/HudsonWu/linuxStudying/tree/master/common/simple/mail)
-    + [ssh协议](https://github.com/HudsonWu/linuxStudying/blob/master/common/simple/ssh.md)
-    + [ssh配置](https://github.com/HudsonWu/linuxStudying/blob/master/common/simple/ssh_config.md)
-    + [ftp协议](https://github.com/HudsonWu/linuxStudying/blob/master/common/simple/ftp.md)
-    + [用户管理](https://github.com/HudsonWu/linuxStudying/blob/master/common/simple/user_group.md)
-    + [简单命令集合](https://github.com/HudsonWu/linuxStudying/blob/master/common/simple/simple.md)
++ [Debian中的软件包密钥](https://github.com/HudsonWu/linuxStudying/blob/master/common/aboutkeys/apt-key.md)
++ [GnuPG加密工具](https://github.com/HudsonWu/linuxStudying/blob/master/common/aboutkeys/gpg.md)
++ [openssl加密工具](https://github.com/HudsonWu/linuxStudying/blob/master/common/aboutkeys/openssl.md)
+
+## [linux邮件功能](https://github.com/HudsonWu/linuxStudying/tree/master/common/mail)
+
++ [linux下的邮件配置](https://github.com/HudsonWu/linuxStudying/blob/master/common/schedule/mail/config.md)
++ [mail命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/schedule/mail/mail.md)
++ [postfix](https://github.com/HudsonWu/linuxStudying/blob/master/common/schedule/mail/postfix.md)
+
+## [ssh和ftp](https://github.com/HudsonWu/linuxStudying/tree/master/common/mail)
+
++ [ssh协议](https://github.com/HudsonWu/linuxStudying/blob/master/common/ssh_and_ftp/ssh.md)
++ [ftp实际使用](https://github.com/HudsonWu/linuxStudying/blob/master/common/ssh_and_ftp/ftp.md)
++ [scp命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/ssh_and_ftp/scp.md)
++ [ssh配置](https://github.com/HudsonWu/linuxStudying/blob/master/common/ssh_and_ftp/config_ssh.md)

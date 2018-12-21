@@ -1,13 +1,3 @@
-## scp, 使用ssh协议进行网络传输
-
-```
-windows下需要安装ssh for windows的客户端软件，如winsshd
-1. 从linux系统复制文件到windows系统(administrator为windows下用户名)
-scp /oracle/a.txt administrator@192.168.1.111:/d:/
-2. 将windows下的文件复制到linux系统中
-scp administrator@192.168.1.111:/d:/test/abc.txt /oracle
-```
-
 ## cat, 查看文件内容
 
 ```
@@ -21,13 +11,6 @@ scp administrator@192.168.1.111:/d:/test/abc.txt /oracle
 cat -n textfile1 textfile2 把1文件内容加上行号后输入2文件里
 cat /dev/null /etc/test.txt 把text.txt文件扔进垃圾箱，赋空值test.txt
 cat file1 << EOF 向file1输入内容（>为创建，>>为追加），内容输入完以EOF结束
-```
-
-## lrzsz, xshell上传下载工具包
-
-```
-//包括rz命令和sz命令 (receive和send)
-apt-get install lrzsz
 ```
 
 ## readlink, 获取符号链接指向的文件
@@ -119,6 +102,7 @@ cat /etc/issue
 cat /etc/os-release
 lsb_release -cs
 ```
+
 ## type
 
 ```

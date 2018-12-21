@@ -1,7 +1,7 @@
-# screen
+# screen, 多重视窗管理程序
 
 ## 语法
-<pre>
+```
 screen [-AmRvx -ls -wipe][-d <作业名称>][-h <行数>][-r <作业名称>][-s ][-S <作业名称>]
 
 参数说明
@@ -17,12 +17,12 @@ screen [-AmRvx -ls -wipe][-d <作业名称>][-h <行数>][-r <作业名称>][-s 
 -x 　恢复之前离线的screen作业
 -ls或--list 　显示目前所有的screen作业
 -wipe 　检查目前所有的screen作业, 并删除已经无法使用的screen作业
-</pre>
+```
 
 ## Usage
 
 ### 命令和快捷键
-<pre>
+```
 //创建一个新的窗口
 > screen -S david  //-S, 指定session名
 > screen vi test.txt  //打开指定的程序
@@ -59,10 +59,10 @@ screen [-AmRvx -ls -wipe][-d <作业名称>][-h <行数>][-r <作业名称>][-s 
 关闭当前焦点所在屏幕区块: "C-a X"
 关闭除当前区块外的其他所有区块: "C-a Q"
 关闭的区块中的窗口并不会关闭, 还可以通过窗口切换找到它
-</pre>
+```
 
 ### C/P模式和操作
-<pre>
+```
 screen的另一个很强大的功能就是可以在不同窗口之间进行复制粘贴
 使用快捷键"C-a <Esc>"或者"C-a ["可以进入copy/paste模式
 这个模式下可以像在vi中一样移动光标, 并可以使用空格键设置标记
@@ -71,15 +71,15 @@ screen的另一个很强大的功能就是可以在不同窗口之间进行复�
 一般情况下, 可以移动光标到指定位置, 按下空格设置一个开头标记, 然后移动光标到结尾位置, 按下空格设置第二个标记, 
 同时会将两个标记之间的部分储存在copy/paste buffer中, 并退出copy/paste模式在正常模式下, 
 可以使用快捷键"C-a ]"将储存在buffer中的内容粘贴到当前窗口
-</pre>
+```
 
 ### 更多
-<pre>
+```
 你可以在Screen的默认两级配置文件/etc/screenrc和$HOME/.screenrc中指定更多, 
 例如设定screen选项, 定制绑定键, 设定screen会话自启动窗口, 启用多用户模式, 定制用户访问权限控制等等, 
 如果你愿意的话, 也可以自己指定screen配置文件 
 
 以多用户功能为例, screen默认是以单用户模式运行的, 你需要在配置文件中指定multiuser on 来打开多用户模式, 
 通过acl*（acladd,acldel,aclchg...）命令, 你可以灵活配置其他用户访问你的screen会话, 更多配置文件内容请参考screen的man页
-</pre>
+```
 

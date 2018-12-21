@@ -1,6 +1,6 @@
-## 配置文件
+# 配置文件
 
-### /etc/ssh/sshd_config
+## /etc/ssh/sshd_config
 ```
 > chmod 700 .ssh
 //密码验证
@@ -17,7 +17,7 @@ ListenAddress 0.0.0.0:22
 ListenAddress 0.0.0.0:181
 ```
 
-### .ssh/config文件, 管理多个私钥
+## .ssh/config文件, 管理多个私钥
 ```
 Host 192.168.0.*
 IdentityFile ~/.ssh/id2_rsa
@@ -28,7 +28,7 @@ IdentityFile ~/.ssh/id_rsa
 User HudsonWu
 ```
 
-### 限制IP和用户通过ssh登录Linux
+## 限制IP和用户通过ssh登录Linux
 
 1. hosts.allow, hosts.deny
 /etc/hosts.allow
