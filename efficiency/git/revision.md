@@ -59,5 +59,5 @@ git log refA refB --not refC
 被两个引用中的一个包含但又不被两者同时包含的提交
 ```
 git log master...experiment
-git log --left-right master..experiment  //显示每个提交属于哪一侧引用
+git log --left-right master...experiment  //显示每个提交属于哪一侧引用
 ```
