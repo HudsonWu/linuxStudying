@@ -20,7 +20,7 @@
         + ip link set eth0 up
         + ip link s gre01 down
 
-路由表管理
++ 路由表管理
     + 显示路由表
         + ip route
         + ip ro show dev gre01
