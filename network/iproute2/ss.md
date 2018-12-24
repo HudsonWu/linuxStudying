@@ -1,11 +1,12 @@
 # ss(Socket Statistics)
 
-ss命令用来获取socket统计信息, 它可以显示和netstat类似的内容 <br/>
-ss的优势在于它能够显示更多更详细的有关TCP和连接状态的信息, 而且更快速更高效 <br/>
-ss是iproute2包附带的一个工具 <br/>
+ss是iproute2包附带的一个工具, 用来获取socket统计信息, 它可以显示和netstat类似的内容
+
+ss的优势在于它能够显示更多更详细的有关TCP和连接状态的信息, 而且更快速更高效
 
 ## 语法
-<pre>
+
+```
 ss [参数]
 ss [参数] [过滤]
 
@@ -35,9 +36,10 @@ ss [参数] [过滤]
 -D, --diag=FILE  将原始TCP套接字信息转储到文件
 -F, --filter=FILE  从文件中读取过滤器信息
     FILTER := [ state TCP-STATE ] [ EXPRESSION ]
-</pre>
+```
 
 ## Usage
+
 ```
 ss -t -a  // 显示TCP连接
 ss -s  // 显示Socket摘要
@@ -77,9 +79,8 @@ connected: 除了listen和closed的所有状态
 synchronized: 所有已连接的状态, 除了syn-sent
 bucket: 显示状态为maintained as minisockets, 如: time-wait和syn-recv
 big: 和bucket相反
-```
 
-```
-netstat -pantu | grep tor
-netstat -nlt
+// 常用命令
+ss -pantu | grep tor
+ss -nlt
 ```
