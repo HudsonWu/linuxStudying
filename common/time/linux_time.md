@@ -1,22 +1,34 @@
 ## linux时间
-<pre>
-linux时间有两个:
+
+linux时间有两个
 + 系统时间: 也叫软件时间(sys), 1970年1月1日到当前时间的秒数
 + BOIS时间: 也叫硬件时间(hc)
+
 1. 显示时间
+
 > date
+
 > hwclock -r
+
 2. 设置时间
+
 date -s, 没有网络的情况下可以用这个
+
 > date -s 20121019
+
 > date -s 23:40:00
+
 ntpdate, 联网更新时间
+
 > ntpdate time.windows.com && hwclock -w
+
 hwclock -w 或 hwclock --systohc 可以做到crontab里
+
 启动ntpd服务
-> rpm -qa | grep ntp
-> chkconfig --list | grep ntp
-> chkconfig ntpd on
-> /etc/init.d/ntpd start
+```
+rpm -qa | grep ntp
+chkconfig --list | grep ntp
+chkconfig ntpd on
+/etc/init.d/ntpd start
+```
 必要的话设置下/etc/ntp.conf
-</pre>
