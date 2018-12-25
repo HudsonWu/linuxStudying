@@ -93,17 +93,17 @@
     + [kubernetes简单示例](https://github.com/HudsonWu/linuxStudying/tree/master/container/laravel_k8s)
 + [Alpine Linux, 轻型Linux发行版](https://github.com/HudsonWu/linuxStudying/tree/master/container/alpine)
 
-### [进程监控和管理](https://github.com/HudsonWu/linuxStudying/tree/master/process)
+### [进程监控和管理](https://github.com/HudsonWu/linuxStudying/tree/master/performance/process)
 
-+ [ps, 进程查看器](https://github.com/HudsonWu/linuxStudying/blob/master/process/ps.md)
-+ [pstree, 以树状图显示进程间关系](https://github.com/HudsonWu/linuxStudying/blob/master/process/pstree.md)
-+ [lsof, list open files](https://github.com/HudsonWu/linuxStudying/blob/master/process/lsof.md)
-+ [top, linux下的任务管理器](https://github.com/HudsonWu/linuxStudying/blob/master/process/top.md)
-+ [类top进程监控工具](https://github.com/HudsonWu/linuxStudying/blob/master/process/top-like.md)
-+ [kill, 终止进程](https://github.com/HudsonWu/linuxStudying/blob/master/process/kill.md)
-+ [fg, bg, jobs](https://github.com/HudsonWu/linuxStudying/blob/master//process/jobs.md)
-+ [IPC, 进程间通信](https://github.com/HudsonWu/linuxStudying/blob/master/process/ipc.md)
-+ [supervisor, 进程管理工具](https://github.com/HudsonWu/linuxStudying/tree/master/process/supervisor)
++ [ps, 进程查看器](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/ps.md)
++ [pstree, 以树状图显示进程间关系](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/pstree.md)
++ [lsof, list open files](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/lsof.md)
++ [top, linux下的任务管理器](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/top.md)
++ [类top进程监控工具](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/top-like.md)
++ [kill, 终止进程](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/kill.md)
++ [fg, bg, jobs](https://github.com/HudsonWu/linuxStudying/blob/master//performance/process/jobs.md)
++ [IPC, 进程间通信](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/ipc.md)
++ [supervisor, 进程管理工具](https://github.com/HudsonWu/linuxStudying/tree/master/performance/process/supervisor)
 
 ### [linux系统下的文件管理](https://github.com/HudsonWu/linuxStudying/tree/master/file)
 
