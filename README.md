@@ -13,13 +13,13 @@
 ## Table of Contents
 
 + [Linux下高效工作](#Linux下高效工作)
-+ [bash脚本, linux系统维护利器](#bash脚本)
-+ [container, A standardized unit of software](#container)
++ [bash脚本, linux系统维护利器](#bash脚本,\ linux系统维护利器)
++ [container, A standardized unit of software](#container,\ A standardized unit of software)
 + [linux性能分析和工具](#linux性能分析和工具)
 + [linux系统下的文件管理](#linux系统下的文件管理)
 + [网络管理](#网络管理)
 + [web技术](#web技术)
-+ [基础命令, 开启linux之旅](#基础命令)
++ [基础命令, 开启linux之旅](#基础命令,\ 开启linux之旅)
 + [其他深入的学习](#其他深入的学习)
 
 
@@ -221,9 +221,7 @@
 + [windows的一些便利用法](https://github.com/HudsonWu/linuxStudying/tree/master/less-is-more/windows)
     + [批处理文件](https://github.com/HudsonWu/linuxStudying/tree/master/less-is-more/windows/bat)
 
-
-### [回到目录](#Table of Contents)
-
+### [回到目录](#Table\ of\ Contents)
 
 ## About
 
