@@ -1,5 +1,6 @@
 ## du, disk usage
-显示指定的目录或文件所占用的磁盘空间<br/>
+
+显示指定的目录或文件所占用的磁盘空间
 
 ```sh
 du -sh /home/tecmint
