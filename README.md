@@ -19,7 +19,7 @@
 + [Linux性能分析和工具](#Linux性能分析和工具)
 + [网络的学习和相关命令](#网络管理)
 + [文件的查找和操作](#Linux系统下的文件管理)
-+ [web技术](#web技术)
++ [web服务, 服务器, 容器, 中间件](#web技术)
 + [基础命令, 开启Linux之旅](#基础命令-开启Linux之旅)
 + [其他一些相关知识的学习](#其他深入的学习)
 
@@ -223,7 +223,7 @@
     + [scp命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/ssh_and_ftp/scp.md)
     + [ssh配置](https://github.com/HudsonWu/linuxStudying/blob/master/common/ssh_and_ftp/config_ssh.md)
 
-### [其他深入的学习](https://github.com/linuxStudying/tree/master/less-is-more)
+### [其他一些相关知识的学习](https://github.com/linuxStudying/tree/master/less-is-more)
 
 + [关系型数据库, 结构化查询语言](https://github.com/HudsonWu/linuxStudying/tree/master/less-is-more/rdbms)
 + [windows的一些便利用法](https://github.com/HudsonWu/linuxStudying/tree/master/less-is-more/windows)
