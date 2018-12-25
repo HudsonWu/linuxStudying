@@ -42,3 +42,7 @@
 + [基本语法](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/markdown/syntax.md)
 + [实际使用](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/markdown/solve.md)
 
+## [命令执行进度的监控](https://github.com/HudsonWu/linuxStudying/tree/master/efficiency/progress)
+
++ [progress, 监控命令执行进度](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/progress/progress.md)
++ [pv, 显示当前命令执行进度](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/progress/pv.md)

@@ -17,11 +17,11 @@
 + [Bash脚本, Linux系统维护利器](#Bash脚本-Linux系统维护利器)
 + [Container, A standardized unit of software](#Container)
 + [Linux性能分析和工具](#Linux性能分析和工具)
-+ [Linux系统下的文件管理](#Linux系统下的文件管理)
-+ [Network](#网络管理)
++ [网络的学习和相关命令](#网络管理)
++ [文件的查找和操作](#Linux系统下的文件管理)
 + [web技术](#web技术)
 + [基础命令, 开启Linux之旅](#基础命令-开启Linux之旅)
-+ [其他深入的学习](#其他深入的学习)
++ [其他一些相关知识的学习](#其他深入的学习)
 
 
 ### [Linux下高效工作](https://github.com/HudsonWu/linuxStudying/tree/master/efficiency)
@@ -57,6 +57,9 @@
 + [Markdown, 轻量级标记语言](https://github.com/HudsonWu/linuxStudying/tree/master/efficiency/vim)
     + [基本语法](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/markdown/syntax.md)
     + [实际使用](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/markdown/solve.md)
++ [命令执行进度的监控](https://github.com/HudsonWu/linuxStudying/tree/master/efficiency/progress)
+    + [progress, 监控命令执行进度](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/progress/progress.md)
+    + [pv, 显示当前命令执行进度](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/progress/pv.md)
 
 ### [Bash脚本-Linux系统维护利器](https://github.com/HudsonWu/linuxStudying/tree/master/bash)
 
@@ -117,24 +120,6 @@
     + [IPC, 进程间通信](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/ipc.md)
     + [supervisor, 进程管理工具](https://github.com/HudsonWu/linuxStudying/tree/master/performance/process/supervisor)
 
-### [Linux系统下的文件管理](https://github.com/HudsonWu/linuxStudying/tree/master/file)
-
-+ [file system, 文件系统](https://github.com/HudsonWu/linuxStudying/tree/master/file/fs)
-+ [误删除文件恢复](https://github.com/HudsonWu/linuxStudying/tree/master/file/delete_mistake)
-+ [tee, 读取标准输入, 输出到标准输出和文件](https://github.com/HudsonWu/linuxStudying/blob/master/file/tee.md)
-+ [大文件分卷压缩](https://github.com/HudsonWu/linuxStudying/blob/master/file/sub_volume.md)
-+ [reflink, copy on write](https://github.com/HudsonWu/linuxStudying/blob/master/file/reflink.md)
-+ [fallocate, 预分配或重新分配空间给文件](https://github.com/HudsonWu/linuxStudying/blob/master/file/fallocate.md)
-+ [find, locate, whereis, which](https://github.com/HudsonWu/linuxStudying/blob/master/file/file_search/commands.md)
-+ [find命令的深入学习](https://github.com/HudsonWu/linuxStudying/blob/master/file/file_search/find.md)
-+ [grep, 强大的文本搜索工具](https://github.com/HudsonWu/linuxStudying/blob/master/file/grep.md)
-+ [sed, 流编辑器](https://github.com/HudsonWu/linuxStudying/blob/master/file/sed.md)
-+ [awk, 文本文件处理语言](https://github.com/HudsonWu/linuxStudying/blob/master/file/awk.md)
-+ [touch命令](https://github.com/HudsonWu/linuxStudying/blob/master/file/touch.md)
-+ [文件时间戳的修改](https://github.com/HudsonWu/linuxStudying/blob/master/file/timestamps.md)
-+ [rename, 批量重命名](https://github.com/HudsonWu/linuxStudying/blob/master/file/rename.md)
-+ [dos2unix和unix2dos, 文本格式转换](https://github.com/HudsonWu/linuxStudying/blob/master/file/dos2unix.md)
-
 ### [网络管理](https://github.com/HudsonWu/linuxStudying/tree/master/network)
 
 + [netcat, 网络工具中的瑞士军刀](https://github.com/HudsonWu/linuxStudying/blob/master/network/netcat.md)
@@ -153,10 +138,32 @@
     + [firewalld, iptables的前端控制器](https://github.com/HudsonWu/linuxStudying/tree/master/network/iptables/firewalld)
         + [firewalld原理分析](https://github.com/HudsonWu/linuxStudying/blob/master/network/iptables/firewalld/theory.md)
         + [firewall-cmd命令使用](https://github.com/HudsonWu/linuxStudying/blob/master/network/iptables/firewalld/use.md)
++ [snmp, 简单网络管理协议](https://github.com/HudsonWu/linuxStudying/tree/master/network/snmp)
+    + [snmp协议介绍](https://github.com/HudsonWu/linuxStudying/blob/master/network/snmp/overview.md)
+    + [net-snmp工具](https://github.com/HudsonWu/linuxStudying/blob/master/network/snmp/net-snmp.md)
+    + [安装与使用](https://github.com/HudsonWu/linuxStudying/blob/master/network/snmp/use.md)
 + [无线网络](https://github.com/HudsonWu/linuxStudying/tree/master/network/wireless)
     + [连接到wireless network](https://github.com/HudsonWu/linuxStudying/blob/master/network/wireless/wireless.md)
     + [wpa_supplicant, 无线网络管理和配置工具](https://github.com/HudsonWu/linuxStudying/blob/master/network/wireless/wpa_supplicant)
     + [配置文件](https://github.com/HudsonWu/linuxStudying/tree/master/network/wireless/conf)
+
+### [Linux系统下的文件管理](https://github.com/HudsonWu/linuxStudying/tree/master/file)
+
++ [file system, 文件系统](https://github.com/HudsonWu/linuxStudying/tree/master/file/fs)
++ [误删除文件恢复](https://github.com/HudsonWu/linuxStudying/tree/master/file/delete_mistake)
++ [tee, 读取标准输入, 输出到标准输出和文件](https://github.com/HudsonWu/linuxStudying/blob/master/file/tee.md)
++ [大文件分卷压缩](https://github.com/HudsonWu/linuxStudying/blob/master/file/sub_volume.md)
++ [reflink, copy on write](https://github.com/HudsonWu/linuxStudying/blob/master/file/reflink.md)
++ [fallocate, 预分配或重新分配空间给文件](https://github.com/HudsonWu/linuxStudying/blob/master/file/fallocate.md)
++ [find, locate, whereis, which](https://github.com/HudsonWu/linuxStudying/blob/master/file/file_search/commands.md)
++ [find命令的深入学习](https://github.com/HudsonWu/linuxStudying/blob/master/file/file_search/find.md)
++ [grep, 强大的文本搜索工具](https://github.com/HudsonWu/linuxStudying/blob/master/file/grep.md)
++ [sed, 流编辑器](https://github.com/HudsonWu/linuxStudying/blob/master/file/sed.md)
++ [awk, 文本文件处理语言](https://github.com/HudsonWu/linuxStudying/blob/master/file/awk.md)
++ [touch命令](https://github.com/HudsonWu/linuxStudying/blob/master/file/touch.md)
++ [文件时间戳的修改](https://github.com/HudsonWu/linuxStudying/blob/master/file/timestamps.md)
++ [rename, 批量重命名](https://github.com/HudsonWu/linuxStudying/blob/master/file/rename.md)
++ [dos2unix和unix2dos, 文本格式转换](https://github.com/HudsonWu/linuxStudying/blob/master/file/dos2unix.md)
 
 ### [web技术](https://github.com/HudsonWu/linuxStudying/tree/master/web)
 
