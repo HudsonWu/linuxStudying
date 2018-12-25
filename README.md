@@ -13,13 +13,13 @@
 ## Table of Contents
 
 + [Linux下高效工作](#Linux下高效工作)
-+ [bash脚本, linux系统维护利器](#bash脚本, linux系统维护利器)
-+ [container, A standardized unit of software](#container, A standardized unit of software)
++ [bash脚本, linux系统维护利器](#bash脚本)
++ [container, A standardized unit of software](#container)
 + [linux性能分析和工具](#linux性能分析和工具)
 + [linux系统下的文件管理](#linux系统下的文件管理)
 + [网络管理](#网络管理)
 + [web技术](#web技术)
-+ [基础命令, 开启linux之旅](#基础命令, 开启linux之旅)
++ [基础命令, 开启linux之旅](#基础命令)
 + [其他深入的学习](#其他深入的学习)
 
 
