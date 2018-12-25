@@ -1,4 +1,4 @@
-# The journey of linux
+# The Journey of Linux
 
 ```
            I think Linux is a great thing,
@@ -10,16 +10,17 @@
 
 **There are various commands which funny and useful**
 
+
 ## Table of Contents
 
 + [Linux下高效工作](#Linux下高效工作)
-+ [bash脚本, linux系统维护利器](#bash脚本,%20linux系统维护利器)
-+ [container, A standardized unit of software](#container,%20A standardized unit of software)
-+ [linux性能分析和工具](#linux性能分析和工具)
-+ [linux系统下的文件管理](#linux系统下的文件管理)
-+ [网络管理](#网络管理)
++ [Bash脚本, Linux系统维护利器](#Bash脚本-Linux系统维护利器)
++ [Container, A standardized unit of software](#Container)
++ [Linux性能分析和工具](#Linux性能分析和工具)
++ [Linux系统下的文件管理](#Linux系统下的文件管理)
++ [Network](#网络管理)
 + [web技术](#web技术)
-+ [基础命令, 开启linux之旅](#基础命令,%20开启linux之旅)
++ [基础命令, 开启Linux之旅](#基础命令-开启Linux之旅)
 + [其他深入的学习](#其他深入的学习)
 
 
@@ -51,13 +52,13 @@
     + [插件管理](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/vim/plugins.md)
     + [vimrc配置文件(不使用插件)](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/vim/vimrc)
     + [vimrc配置文件(使用插件)](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/vim/init.vim)
-+ [linux命令使用技巧](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/tricks.md)
++ [Linux命令使用技巧](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/tricks.md)
 + [使用screen管理你的远程会话](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/screen.md)
 + [Markdown, 轻量级标记语言](https://github.com/HudsonWu/linuxStudying/tree/master/efficiency/vim)
     + [基本语法](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/markdown/syntax.md)
     + [实际使用](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/markdown/solve.md)
 
-### [bash脚本, linux系统维护利器](https://github.com/HudsonWu/linuxStudying/tree/master/bash)
+### [Bash脚本-Linux系统维护利器](https://github.com/HudsonWu/linuxStudying/tree/master/bash)
 
 + [我写的一些脚本](https://github.com/HudsonWu/linuxStudying/tree/master/bash/my)
     + [实践中的一些脚本](https://github.com/HudsonWu/linuxStudying/tree/master/bash/my/practical)
@@ -77,9 +78,9 @@
 + [shell中各种括号的运用](https://github.com/HudsonWu/linuxStudying/blob/master/bash/brackets.md)
 + [set, env, export的区分](https://github.com/HudsonWu/linuxStudying/blob/master/bash/env_vars.md)
 + [一些bash脚本例子](https://github.com/HudsonWu/linuxStudying/tree/master/bash/examples)
-+ [linux中的shell](https://github.com/HudsonWu/linuxStudying/blob/master/bash/shell.md)
++ [Linux中的shell](https://github.com/HudsonWu/linuxStudying/blob/master/bash/shell.md)
 
-### [container, A standardized unit of software](https://github.com/HudsonWu/linuxStudying/tree/master/container)
+### [Container](https://github.com/HudsonWu/linuxStudying/tree/master/container)
 
 + [docker, 开源容器解决方案](https://github.com/HudsonWu/linuxStudying/tree/master/container/docker)
     + [docker-compose环境搭建](https://github.com/HudsonWu/linuxStudying/tree/master/container/docker/docker-compose)
@@ -105,7 +106,7 @@
     + [kubernetes简单示例](https://github.com/HudsonWu/linuxStudying/tree/master/container/laravel_k8s)
 + [Alpine Linux, 轻型Linux发行版](https://github.com/HudsonWu/linuxStudying/tree/master/container/alpine)
 
-### [linux性能分析和工具](https://github.com/HudsonWu/linuxStudying/tree/master/performance)
+### [Linux性能分析和工具](https://github.com/HudsonWu/linuxStudying/tree/master/performance)
 
 + [进程监控和管理](https://github.com/HudsonWu/linuxStudying/tree/master/performance/process)
     + [ps, 进程查看器](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/ps.md)
@@ -116,7 +117,7 @@
     + [IPC, 进程间通信](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/ipc.md)
     + [supervisor, 进程管理工具](https://github.com/HudsonWu/linuxStudying/tree/master/performance/process/supervisor)
 
-### [linux系统下的文件管理](https://github.com/HudsonWu/linuxStudying/tree/master/file)
+### [Linux系统下的文件管理](https://github.com/HudsonWu/linuxStudying/tree/master/file)
 
 + [file system, 文件系统](https://github.com/HudsonWu/linuxStudying/tree/master/file/fs)
 + [误删除文件恢复](https://github.com/HudsonWu/linuxStudying/tree/master/file/delete_mistake)
@@ -176,7 +177,7 @@
     + [urlencode编码与解码](https://github.com/HudsonWu/linuxStudying/blob/master/web/client/urlencode.md)
 + [web缓存, HTTP代理, 代理服务器](https://github.com/HudsonWu/linuxStudying/tree/master/web/caching)
 
-### [基础命令, 开启linux之旅](https://github.com/HudsonWu/linuxStudying/tree/master/common)
+### [基础命令-开启Linux之旅](https://github.com/HudsonWu/linuxStudying/tree/master/common)
 
 + [一些基础命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/some_commands.md)
 + [用户管理](https://github.com/HudsonWu/linuxStudying/blob/master/common/user_group.md)
@@ -195,7 +196,7 @@
 + [日期、时区、字符](https://github.com/HudsonWu/linuxStudying/tree/master/common/time)
     + [epoch, unix timestamp](https://github.com/HudsonWu/linuxStudying/blob/master/common/time/epoch.md)
     + [time命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/time/time.md)
-    + [linux时间](https://github.com/HudsonWu/linuxStudying/blob/master/common/time/time.md)
+    + [Linux时间](https://github.com/HudsonWu/linuxStudying/blob/master/common/time/time.md)
     + [字符和时区](https://github.com/HudsonWu/linuxStudying/blob/master/common/time/lang_timezone.md)
     + [ntp, 网络时间协议](https://github.com/HudsonWu/linuxStudying/blob/master/common/time/ntp.md)
 + [数学计算](https://github.com/HudsonWu/linuxStudying/tree/master/common/calc)
@@ -205,8 +206,8 @@
     + [Debian中的软件包密钥](https://github.com/HudsonWu/linuxStudying/blob/master/common/aboutkeys/apt-key.md)
     + [GnuPG加密工具](https://github.com/HudsonWu/linuxStudying/blob/master/common/aboutkeys/gpg.md)
     + [openssl加密工具](https://github.com/HudsonWu/linuxStudying/blob/master/common/aboutkeys/openssl.md)
-+ [linux邮件功能](https://github.com/HudsonWu/linuxStudying/tree/master/common/mail)
-    + [linux下的邮件配置](https://github.com/HudsonWu/linuxStudying/blob/master/common/schedule/mail/config.md)
++ [Linux邮件功能](https://github.com/HudsonWu/linuxStudying/tree/master/common/mail)
+    + [Linux下的邮件配置](https://github.com/HudsonWu/linuxStudying/blob/master/common/schedule/mail/config.md)
     + [mail命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/schedule/mail/mail.md)
     + [postfix](https://github.com/HudsonWu/linuxStudying/blob/master/common/schedule/mail/postfix.md)
 + [ssh和ftp](https://github.com/HudsonWu/linuxStudying/tree/master/common/mail)
@@ -221,17 +222,16 @@
 + [windows的一些便利用法](https://github.com/HudsonWu/linuxStudying/tree/master/less-is-more/windows)
     + [批处理文件](https://github.com/HudsonWu/linuxStudying/tree/master/less-is-more/windows/bat)
 
-### [回到目录](#Table%20of%20Contents)
 
 ## About
 
-这里展示的, 是我在Linux学习过程中的简要笔记, 对于我的帮助有三, 一是学习过程中能加深印象, 二是能时时回来温习下, 三是让我对linux知识有一个系统性的梳理
+这里展示的, 是我在Linux学习过程中的简要笔记, 对于我的帮助有三, 一是学习过程中能加深印象, 二是能时时回来温习下, 三是让我对Linux知识有一个系统性的梳理
 
 ### About me
 
 我是一位Linux爱好者, 喜欢在命令行下工作, 因为其便捷、功能强大. 在Linux生态圈遨游的过程中, 总会有各种各样奇妙、高级的思想让我惊叹, 让我兴奋, 让我知道学无止境. Linux的学习就是不断地实践, 然后遇到各种错误, 首先尝试独立去解决问题, 然后再看看其他人是怎样应对的, 在解决问题中熟悉各种概念, 知道解决问题的不同方案, 当你有了一定的积累后, 就能熟练地使用这些掌握到的知识去应对出现的各种情况, 满足各种不同的需求. 初级阶段熟练地使用各种强大的工具, 到一定程度就需要独立开发出更加个性化的工具, 满足特定需求, 学习过程是漫长的, 知识的海洋是无穷的
 
-a linux lover, a dreaming man, 
+a Linux lover, a dreaming man, 
 
 > Before you can run, you need to be able to walk
 
