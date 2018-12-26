@@ -1,5 +1,7 @@
 # dmidecode, 查看硬件信息
 
+dmidecode命令可以让你获取有关硬件方面的信息, 作用是将DMI数据库中的信息解码, 以可读的文本方式显示(由于DMI信息可以人为修改, 因此里面的信息不一定是系统准确的信息), dmidecode遵循SMBIOS/DMI标准, 其输出的信息包括BIOS、系统、主板、处理器、内存、缓存等, 既可以得到当前的配置, 也可以得到系统支持的最大配置
+
 + DMI, Desktop Management Interface
     + DMI就是帮助收集电脑系统信息的管理系统, DMI信息的收集必须在严格遵照SMBIOS规范的前提下进行
 + SMBIOS, System Management BIOS
@@ -18,6 +20,7 @@ dmidecode [options]
 -s, string, 只显示指定DMI字符串的信息
 -t, type, 只显示指定条目的信息
 -u, 显示未解码的原始条目内容
+-q, 只显示必要的信息
 --dump-bin file, 将DMI数据存储到一个二进制文件中
 --from-dump FILE, 从一个二进制文件读取DMI数据
 -V, 显示版本信息
@@ -119,7 +122,17 @@ dmidecode | grep 'Serial Number'  //主板序列号
 dmidecode -s system-serial-number  //系统序列号
 dmidecode -t memory  //内存信息
 dmidecode -t processor  //处理器信息
+dmidecode -t 0,4  //显示多种类型的信息
 dmidecode -t 11  //OEM信息
+
+//查看内存槽数、那个槽位插了内存，大小是多少
+dmidecode|grep -P -A5 "Memory\s+Device"|grep Size|grep -v Range
+
+//查看最大支持内存数
+dmidecode|grep -P 'Maximum\s+Capacity'
+
+//查看槽位上内存的速率，没插就是unknown
+dmidecode|grep -A16 "Memory Device"|grep 'Speed'
 ```
 不带选项执行dmidecode命令通常会输出所有的硬件信息, -t选项可以按指定类型输出相关信息
 
