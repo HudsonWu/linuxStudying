@@ -9,3 +9,4 @@ RHEL自带的性能调优工具, 通过针对特定应用场景提供配置(prof
 
 
 
+<https://www.tecmint.com/tuned-automatic-performance-tuning-of-centos-rhel-servers>

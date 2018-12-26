@@ -1,24 +1,23 @@
 # Grafana
 
-## 安装-启动 
+## 安装和配置 
 
-+ 安装文档: http://docs.grafana.org/installation/rpm/
++ 安装文档: <http://docs.grafana.org/installation/rpm>
 
-+ 开启命令: systemctl start grafana-server.service
-
++ 开启命令: `systemctl start grafana-server.service`
 
 ### 配置
 
 配置文件: /etc/grafana/grafana.ini
 
-+ 编辑grafana.ini文件
+1. 编辑grafana.ini文件
 ```
 [dashboards.json]
 enabled = true
 path = /var/lib/grafana/dashboards
 ```
 
-+ 安装仪表盘
+2. 安装仪表盘
 ```
 // mysql图表模板(Percona提供的模板)
 git clone https://github.com/percona/grafana-dashboards.git
