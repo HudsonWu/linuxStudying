@@ -1,9 +1,10 @@
-# 
-
-+ [top, linux下的任务管理器](https://github.com/HudsonWu/linuxStudying/blob/master/performance/real-time/top.md)
-+ [类top进程监控工具](https://github.com/HudsonWu/linuxStudying/blob/master/performance/real-time/top-like.md)
+# Linux平台的开源监控工具 
 
 
-## References
+Linux 平台下的监控方法基本上可以分为两种:
++ 通过外部检测命令或者代理程序获得被监控主机的相关状态
+    + 代表工具: `Nagios`、`Munin`、`Ganglia`
++ 通过 SNMP 协议来实现对服务器和网络设备的监控工作
+    + 代表工具: `Cacti`
 
-<https://www.tecmint.com/command-line-tools-to-monitor-linux-performance>
+其中 `Nagios`可以使用 `check_snmp`命令, 或者自己写脚本来使用SNMP协议获取数据
