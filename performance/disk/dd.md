@@ -151,35 +151,12 @@ dd if=/dev/sda of=/dev/sda
 + --version, 显示版本信息
 
 块大小可以使用的计量单位表: <br/>
-<table>
-<thead><tr>
-    <th align="center">单元大小</th>
-    <th aligh="center">代码</th>
-</tr></thead>
-<tbody>
-<tr>
-    <td align="center">字节(1B)</td>
-    <td align="center">c</td>
-</tr>
-<tr>
-    <td align="center">字节(2B)</td>
-    <td align="center">w</td>
-</tr>
-<tr>
-    <td align="center">块(512B)</td>
-    <td align="center">b</td>
-</tr>
-<tr>
-    <td align="center">千字节(1024B)</td>
-    <td align="center">K</td>
-</tr>
-<tr>
-    <td align="center">兆字节(1024KB)</td>
-    <td align="center">M</td>
-</tr>
-<tr>
-    <td align="center">吉字节(1024MB)</td>
-    <td align="center">G</td>
-</tr>
-</tbody>
-</table>
+|    :单元大小:   | :代码: |
+|    ----------   | ------ |
+|    字节(1B)     |    c   |
+|    字节(2B)     |    w   |
+|    块(512B)     |    b   |
+| 千字节(1024B)   |    K   |
+| 兆字节(1024KB)  |    M   |
+| 吉字节(1024MB)  |    G   |
+
