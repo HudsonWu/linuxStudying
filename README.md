@@ -232,7 +232,7 @@
 
 <p align="center">
     <br><strong>[回到主目录](#Table-of-Contents)</strong><br><br>
-    <strong>[回到顶部](#readme)<br>
+    <strong>[回到顶部](#readme)</strong><br>
 </p>
 
 ## About
