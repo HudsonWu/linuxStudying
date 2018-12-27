@@ -230,10 +230,11 @@
 + [windows的一些便利用法](./less-is-more/windows)
     + [批处理文件](./less-is-more/windows/bat)
 
-<p align="center">
-    <br><strong>[回到主目录](#Table-of-Contents)</strong><br><br>
-    <strong>[回到顶部](#readme)</strong><br>
-</p>
+<br/>
+__[回到主目录](#Table-of-Contents)__
+<br/><br/>
+__[回到顶部](#readme)__
+<br/>
 
 ## About
 
