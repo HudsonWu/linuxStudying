@@ -16,9 +16,9 @@
 ---
 > + [Linux下高效工作](#Linux下高效工作)
 > + [Bash脚本, Linux系统维护利器](#Bash脚本-Linux系统维护利器)
-> + [Container, A standardized unit of software](#Container)
+> + [Container, A standardized unit of software](#Container-A-standardized-unit-of-software)
 > + [Linux性能分析和工具](#Linux性能分析和工具)
-> + [网络的学习和相关命令](#网络管理)
+> + [网络的学习和相关命令](#强大的网络)
 > + [文件的查找和操作](#Linux系统下的文件管理)
 > + [web服务, 服务器, 容器, 中间件](#web技术)
 > + [基础命令, 开启Linux之旅](#基础命令-开启Linux之旅)
@@ -62,7 +62,7 @@
     + [progress, 监控命令执行进度](/efficiency/progress/progress.md)
     + [pv, 显示当前命令执行进度](/efficiency/progress/pv.md)
 
-### [Bash脚本-Linux系统维护利器](./bash)
+### [Bash脚本, Linux系统维护利器](./bash)
 
 + [我写的一些脚本](./bash/my)
     + [实践中的一些脚本](./bash/my/practical)
@@ -84,7 +84,7 @@
 + [一些bash脚本例子](./bash/examples)
 + [Linux中的shell](/bash/shell.md)
 
-### [Container](./container)
+### [Container, A standardized unit of software](./container)
 
 + [docker, 开源容器解决方案](./container/docker)
     + [docker-compose环境搭建](./container/docker/docker-compose)
@@ -121,7 +121,7 @@
     + [IPC, 进程间通信](/performance/process/ipc.md)
     + [supervisor, 进程管理工具](./performance/process/supervisor)
 
-### [网络管理](./network)
+### [强大的网络](./network)
 
 + [netcat, 网络工具中的瑞士军刀](/network/netcat.md)
 + [iproute2工具包, 管理网络和流量统计](./network/iproute2)
@@ -185,7 +185,7 @@
     + [urlencode编码与解码](/web/client/urlencode.md)
 + [web缓存, HTTP代理, 代理服务器](./web/caching)
 
-### [基础命令-开启Linux之旅](./common)
+### [基础命令, 开启Linux之旅](./common)
 
 + [一些基础命令](/common/some_commands.md)
 + [用户管理](/common/user_group.md)
