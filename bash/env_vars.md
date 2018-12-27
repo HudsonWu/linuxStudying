@@ -20,7 +20,7 @@ exec, 运行脚本或命令的时候, 不会启用一个新的shell进程,
 
 1.sh:
 ```sh
-#!/bin/bash
+#!/usr/bin/env bash
 A=B
 echo "PID for 1.sh before exec/source/fork: $$"
 export A
@@ -42,7 +42,7 @@ echo "1.sh: \$A is $A"
 
 2.sh:
 ```sh
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo "PID for 2.sh: $$"
 echo "2.sh get \$A=$A from 1.sh"
