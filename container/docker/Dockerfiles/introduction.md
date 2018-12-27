@@ -31,5 +31,5 @@ the Docker daemon will automatically clean up the context you sent <br/>
 
 ## References
 
-<https://docs.docker.com/engine/reference/builder/#parser-directives>
-<https://blog.devzeng.com/blog/build-docker-image-with-dockerfile.html>
++ <https://docs.docker.com/engine/reference/builder/#parser-directives>
++ <https://blog.devzeng.com/blog/build-docker-image-with-dockerfile.html>
