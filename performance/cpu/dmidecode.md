@@ -138,5 +138,5 @@ dmidecode|grep -A16 "Memory Device"|grep 'Speed'
 
 ## References
 
-<http://man.linuxde.net/dmidecode>
-<http://www.ttlsa.com/linux/the-linux-dmidecode-command-to-get-the-hardware-information>
++ [dmidecode命令](http://man.linuxde.net/dmidecode)
++ [linux下dmidecode命令获取硬件信息](http://www.ttlsa.com/linux/the-linux-dmidecode-command-to-get-the-hardware-information)
