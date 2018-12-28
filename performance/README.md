@@ -1,4 +1,4 @@
-# Linux Performance Analysis and Tools (Linux性能分析和工具)
+# Linux Performance Analysis and Tools
 
 
 ## References
