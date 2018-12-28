@@ -56,6 +56,8 @@ lshw is a minimal tool for gathering in-depth information on the hardware config
 
 ```
 lshw -C CPU
+lshw -short  //print a summary of hardware information
+lshw -html > lshw.html
 ```
 
 ## hwinfo, shows present hardware info
