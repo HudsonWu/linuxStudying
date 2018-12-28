@@ -4,6 +4,6 @@
 
 ## References
 
-<https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/strace.html>
-<http://man.linuxde.net/strace>
++ <https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/strace.html>
++ <http://man.linuxde.net/strace>
 

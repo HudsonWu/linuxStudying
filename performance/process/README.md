@@ -16,4 +16,5 @@ linux上进程有5种状态: <br/>
 + [kill, 终止进程](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/kill.md)
 + [fg, bg, jobs](https://github.com/HudsonWu/linuxStudying/blob/master//performance/process/jobs.md)
 + [IPC, 进程间通信](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/ipc.md)
++ [proc文件系统, 访问系统内核信息的接口](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/procfs.md)
 + [supervisor, 进程管理工具](https://github.com/HudsonWu/linuxStudying/tree/master/performance/process/supervisor)
