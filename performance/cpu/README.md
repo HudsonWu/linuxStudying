@@ -1,9 +1,9 @@
 # cpu相关知识和信息获取命令
 
-+ [dmidecode, 查看硬件信息](/dmidecode.md)
-+ [Get CPU Information](/get_cpu_info.md)
-+ [浅析CPU中断技术](/interrupt.md)
-+ [lspci, 显示所有PCI总线信息以及PCI设备信息](/lspci.md)
++ [dmidecode, 查看硬件信息](https://github.com/HudsonWu/linuxStudying/blob/master/performance/cpu/dmidecode.md)
++ [Get CPU Information](https://github.com/HudsonWu/linuxStudying/blob/master/performance/cpu/get_cpu_info.md)
++ [浅析CPU中断技术](https://github.com/HudsonWu/linuxStudying/blob/master/performance/cpu/interrupt.md)
++ [lspci, 显示所有PCI总线信息以及PCI设备信息](https://github.com/HudsonWu/linuxStudying/blob/master/performance/cpu/lspci.md)
 
 
 ## References
