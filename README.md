@@ -16,7 +16,7 @@
 ### Summary
 
 ---
-> + [Linux性能分析和工具](#Linux性能分析和工具)
+> + [Linux性能分析和工具](./performance)
 >     + [cpu相关知识和信息获取命令](./performance/cpu)
 >     + [内存相关知识和查询命令](./performance/memory)
 >     + [磁盘管理](./performance/disk)
@@ -24,22 +24,22 @@
 >     + [进程管理](./performance/process)
 >     + [故障检测, 寻找系统瓶颈](./performance/troubleshoot)
 >     + [Linux平台的开源监控工具](./performance/real-time)
-> + [容器技术, 轻松打包应用程序代码、配置及其依赖关系](#Container-A-standardized-unit-of-software)
+> + [容器技术, 轻松打包应用程序代码、配置及其依赖关系](./container)
 >     + [docker, 开源容器解决方案](./container/docker)
 >     + [kubernetes, 容器化应用程序的自动部署、扩展和管理](./container/kubernetes)
-> + [Bash脚本, Linux系统维护利器](#Bash脚本-Linux系统维护利器)
+> + [Bash脚本, Linux系统维护利器](./bash)
 >     + [我写的一些脚本](./bash/my)
-> + [Linux下高效工作](#Linux下高效工作)
+> + [Linux下高效工作](./efficiency)
 >     + [正则表达式, 检索、替换符合某个模式的文本](./efficiency/regular_expression)
 >     + [Jenkins, 持续集成/持续交付工具](./efficiency/jenkins)
 >     + [git, 分布式代码版本管理工具](./efficiency/git)
 >     + [vim, 命令行下强大的文本编辑器](./efficiency/vim)
 >     + [Markdown, 轻量级标记语言](./efficiency/vim)
-> + [文件的查找和操作](#Linux系统下的文件管理)
-> + [web服务, 服务器, 容器, 中间件](#web技术)
-> + [基础命令, 开启Linux之旅](#基础命令-开启Linux之旅)
+> + [文件的查找和操作](./file)
+> + [web服务, 服务器, 容器, 中间件](./web)
+> + [基础命令, 开启Linux之旅](./common)
 >     + [计划任务](./common/schedule)
-> + [其他一些相关知识的学习](#其他深入的学习)
+> + [其他一些相关知识的学习](./less-is-more)
 ---
 
 ### [Linux下高效工作](./efficiency)
