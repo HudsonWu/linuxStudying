@@ -1,6 +1,7 @@
 ## Network
 
 + [netcat, 网络工具中的瑞士军刀](https://github.com/HudsonWu/linuxStudying/blob/master/performance/network/netcat.md)
++ [网络信息获取](https://github.com/HudsonWu/linuxStudying/blob/master/performance/network/get_infos.md)
 + [iproute2工具包, 管理网络和流量统计](https://github.com/HudsonWu/linuxStudying/tree/master/performance/network/iproute2)
     + [iproute2工具包介绍](https://github.com/HudsonWu/linuxStudying/blob/master/performance/network/iproute2/overview.md)
     + [理解一些概念](https://github.com/HudsonWu/linuxStudying/blob/master/performance/network/iproute2/concepts.md)
