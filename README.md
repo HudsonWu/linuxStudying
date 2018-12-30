@@ -183,6 +183,7 @@
     + [ps, 进程查看器](/performance/process/ps.md)
     + [pstree, 以树状图显示进程间关系](/performance/process/pstree.md)
     + [lsof, list open files](/performance/process/lsof.md)
+    + [pidstat, report statistics for tasks](/performance/process/pidstat.md)
     + [uptime, 查看系统平均负载](/performance/process/uptime.md)
     + [kill, 终止进程](/performance/process/kill.md)
     + [fg, bg, jobs](/performance/process/jobs.md)
