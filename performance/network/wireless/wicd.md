@@ -8,7 +8,7 @@
 
 ```
 1. 安装
-apt-get install wicd-gtk
+apt-get install wicd-gtk wicd-cli wicd-curses
 2. 设置
 关闭network、dhcpbd和networkmanager这些守护程序
 systemctl stop netcfg
