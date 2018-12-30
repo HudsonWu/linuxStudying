@@ -12,17 +12,27 @@
 
 1. 启用无线网卡
 ```
+iwconfig  //检查是哪一个接口支持无线连接
+
+//启动无线接口
 ifconfig wlan0 up
+//or
+ip link set wlan0 up
 ```
 
 2. 扫描可用的无线接入点
 ```
 iwlist wlan0 scan
+//or
+iw dev wlan0 scan
 ```
 
 3. 连接到指定网络
 ```
 iwconfig wlan0 essid Network_name key wireless_key
+//or
+iw dev wlan0 connect [网络SSID]  //没有加密
+iw dev wlan0 connect [网络SSID] key 0:[WEP密钥]  //WEP加密
 ```
 iwconfig命令指定的`wireless_key`默认是十六进制(HEX), 如果要使用ascii, 在前面加上s:, 如下
 ```
@@ -38,7 +48,7 @@ dhclient wlan0
 
 1. 使用`wpa_passphrase`命令生成配置文件
 ```
-wpa_passphrase "ssid" "password" /etc/wpa_supplicant/example.conf
+wpa_passphrase "ssid" "password" > /etc/wpa_supplicant/example.conf
 ```
 
 2. 使用`wpa_supplicant`命令
