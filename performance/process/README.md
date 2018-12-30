@@ -13,6 +13,7 @@ linux上进程有5种状态: <br/>
 + [ps, 进程查看器](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/ps.md)
 + [pstree, 以树状图显示进程间关系](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/pstree.md)
 + [lsof, list open files](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/lsof.md)
++ [pidstat, report statistics for tasks](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/pidstat.md)
 + [uptime, 查看系统平均负载](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/uptime.md)
 + [kill, 终止进程](https://github.com/HudsonWu/linuxStudying/blob/master/performance/process/kill.md)
 + [fg, bg, jobs](https://github.com/HudsonWu/linuxStudying/blob/master//performance/process/jobs.md)
