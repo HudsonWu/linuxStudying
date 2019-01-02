@@ -14,3 +14,4 @@ nginx, 异步框架的web服务器, 还可以用做反向代理, 负载平衡器
 
 + [nginx官方文档](https://docs.nginx.com/)
 + [nginx中文文档](https://github.com/DocsHome/nginx-docs/blob/master/SUMMARY.md)
++ [nginx开发从入门到精通](http://tengine.taobao.org/book/index.html#id3)
