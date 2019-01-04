@@ -9,5 +9,6 @@
 + [标签的使用](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/git/tag.md)
 + [plumbing, 底层命令](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/git/plumbing_commands.md)
 + [版本, 引用](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/git/revision.md)
-+ [解决实际问题](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/git/attention.md)
++ [需要注意的地方](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/git/attention.md)
++ [实用技巧](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/git/tricks.md)
 + [一些命令集合](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/git/some_commands.md)
