@@ -266,6 +266,7 @@
     + [Debian中的软件包密钥](/common/aboutkeys/apt-key.md)
     + [GnuPG加密工具](/common/aboutkeys/gpg.md)
     + [openssl加密工具](/common/aboutkeys/openssl.md)
+    + [mcrypt加密工具](/common/aboutkeys/mcrypt.md)
 + [Linux邮件功能](./common/mail)
     + [Linux下的邮件配置](/common/schedule/mail/config.md)
     + [mail命令](/common/schedule/mail/mail.md)
@@ -281,6 +282,9 @@
 + [关系型数据库, 结构化查询语言](./less-is-more/rdbms)
 + [windows的一些便利用法](./less-is-more/windows)
     + [批处理文件](./less-is-more/windows/bat)
+    + [win7镜像](/less-is-more/windows/win7_images.md)
++ [安全相关](./less-is-more/security)
++ [折腾过程中的一些记录](./less-is-more/custom)
 
 
 **[返回主目录](#Table-of-Contents)**
@@ -298,3 +302,4 @@ a Linux lover, a dreaming man,
 > Before you can run, you need to be able to walk
 
 **[返回顶部](#readme)**
+
