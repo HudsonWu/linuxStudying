@@ -46,3 +46,54 @@ git push -u origin master
 .gitignore文件, 用于设置公共需要排除的文件
 .git/info/exclude文件, 用于设置本地需要忽略的文件
 ```
+
+## 清理无效的远程追踪分支
+
+1. 在本地创建远程追踪分支
+
+在使用git进行版本控制时, 经常会创建一些特性分支方便产品功能的开发和迭代, 在远程版本库创建了一个分支后, 在本地执行以下命令
+```console
+$ git remote update
+Fetching origin
+remote: Counting objects: 38, done.
+remote: Compressing objects: 100% (26/26), done.
+remote: Total 38 (delta 15), reused 25 (delta 12)
+Unpacking objects: 100% (38/38), done.
+From http://github.com/someone/myproject
+   4fc7cf1..27c08df  EHS_System -> origin/EHS_System
+   f849d0d..e7fa24a  dev        -> origin/dev
+ * [new branch]      test       -> origin/test
+```
+
+2. 查看哪些分支需要清理
+
+如果在远程版本库上删除了某一分支, 可以使用以下命令查看
+```console
+$ git remote prune origin --dry-run
+Pruning origin
+URL: http://github.com/someone/myproject.git
+ * [would prune] origin/20180808
+ * [would prune] origin/20180816
+ * [would prune] origin/20180827
+ * [would prune] origin/20180830
+```
+
+3. 删除本地版本库上失效的远程追踪分支
+
+```console
+$ git remote prune origin
+Pruning origin
+URL: http://github.com/someone/myproject.git
+ * [pruned] origin/20180808
+ * [pruned] origin/20180816
+ * [pruned] origin/20180827
+ * [pruned] origin/20180830
+```
+这里的远程追踪分支位于`.git/refs/remote/origin`下, 如果有本地分支作为下游存在的话, 还需要手动清理
+
+4. 查看本地分支中无效的远程追踪
+```
+$ git branch -vv
+```
+无效的远程追踪分支会以gone来标识
+

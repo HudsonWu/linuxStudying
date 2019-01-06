@@ -8,3 +8,10 @@ nginx, 异步框架的web服务器, 还可以用做反向代理, 负载平衡器
 + [理解Nginx配置文件里指令的继承关系](https://github.com/HudsonWu/linuxStudying/blob/master/web/web_server/nginx/inheritance.md)
 + [配置url重写](https://github.com/HudsonWu/linuxStudying/blob/master/web/web_server/nginx/rewrite.md)
 + [nginx配置文件实例](https://github.com/HudsonWu/linuxStudying/tree/master/web/web_server/nginx/conf_examples)
+
+
+## References
+
++ [nginx官方文档](https://docs.nginx.com/)
++ [nginx中文文档](https://github.com/DocsHome/nginx-docs/blob/master/SUMMARY.md)
++ [nginx开发从入门到精通](http://tengine.taobao.org/book/index.html#id3)

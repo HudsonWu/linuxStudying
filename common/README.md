@@ -8,11 +8,11 @@
 + [at, 在指定时间执行任务](https://github.com/HudsonWu/linuxStudying/blob/master/common/schedule/at.md)
 + [crontab, 周期性地执行任务](https://github.com/HudsonWu/linuxStudying/blob/master/common/schedule/crontab.md)
 
-## [服务管理](https://github.com/HudsonWu/linuxStudying/tree/master/common/service)
+## [服务管理](https://github.com/HudsonWu/linuxStudying/tree/master/common/systemd)
 
-+ [systemctl命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/service/systemctl.md)
-+ [journalctl命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/service/journalctl.md)
-+ [给程序设置systemd](https://github.com/HudsonWu/linuxStudying/tree/master/common/service/system)
++ [systemctl命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/systemd/systemctl.md)
++ [journalctl命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/systemd/journalctl.md)
++ [给程序设置systemd](https://github.com/HudsonWu/linuxStudying/tree/master/common/systemd/service)
 
 ## [日志管理](https://github.com/HudsonWu/linuxStudying/tree/master/common/log)
 

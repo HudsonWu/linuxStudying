@@ -96,6 +96,7 @@ count: 报告输出的次数, 默认没有限制, 一直输出直到ctrl+c
 ```
 dstat -glms --top-mem  //内存资源使用情况
 dstat -cyl --proc-count --top-cpu  //cpu资源使用情况
+dstat -tdD total,sde,sdh,sdc 60  //每分钟输出一次磁盘使用情况
 dstat --output ~/test.csv  //输出到文件
 ```
 
