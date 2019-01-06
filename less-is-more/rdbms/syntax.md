@@ -23,7 +23,7 @@ from 表1, 表2, ... // 表和表使用逗号分隔
 [order by 列1, 列2, ...]; // 对查询结果进行排序
 ```
 
-```
+```sql
 // 查询指定列
 select ename, job, sal, deptno from emp;
 // 查询所有列
@@ -58,7 +58,7 @@ select ename, job, sal, deptno from emp where sal>2000;
 select ename, job, sal from emp where job<>'MANAGER';
 ```
 2. 特殊比较运算符
-```
+```sql
 // between x and y, [x, y]
 select ename, sal from emp where sal between 1500 and 3000;
 
@@ -246,7 +246,7 @@ select avg(sal) from emp group by deptno, job;
 select deptno, job, avg(sal) from emp group by deptno, job having avg(sal)>2000;
 ```
 
-```
+```sql
 // 查询每个职位的平均工资(保留2位小数), 查询结果按平均工资降序排列
 select job, to_char(avg(sal), '9999.99') avgsal from emp
 group by job
@@ -282,7 +282,7 @@ where job=(select job from emp where ename='ALLEN');
 
 2、多行子查询
 多行比较运算符: in、any、all
-```
+```sql
 // in
 select ename, job, deptno from emp
 where job in(select job from emp where ename='ALLEN' or ename='SMITH');
@@ -305,7 +305,7 @@ where (deptno, job) in(select deptno, job from emp where ename='ALLEN');
 ```
 
 4、分页查询, rownum
-```
+```sql
 // 查询工资, 去重, 降序排序
 select distinct sal from emp order by sal desc;
 
@@ -319,7 +319,7 @@ select sal from
 (select distinct sal from emp order by sal desc))where rn=2;
 ```
 
-```
+```sql
 // 查询薪金(工资+奖金)比“ALLEN”多的所有员工
 select ename, sal+nvl(comm, 0) from emp
 where sal+nvl(comm, 0)>(select sal+nvl(comm, 0) from emp where ename='ALLEN');
@@ -360,7 +360,7 @@ where rn<=3);
 提高查询效率
 
 1. union和union all, 返回两个集合的并集
-```
+```sql
 select ename, job, sal from emp
 where job='CLERK' or job='MANAGER';
 
@@ -370,7 +370,7 @@ select ename, job, sal from emp where job='MANAGER';
 ```
 
 2. intersect, 返回两个集合的交集
-```
+```sql
 select ename, sal from emp
 where sal>=1500 and sal<=3000;
 
@@ -380,7 +380,7 @@ select ename, sal from emp where sal<=3000;
 ```
 
 3. minus, 返回两个集合的差集
-```
+```sql
 select ename, job, sal from emp where sal>1500 and job<>'MANAGER';
 
 select ename, job, sal from emp where sal>1500 
