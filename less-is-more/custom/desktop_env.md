@@ -1,7 +1,7 @@
 ## XFCE Desktop
 
 + How to install XFCE Desktop Environment in Kali Linux:
-```
+```sh
 apt-get install kali-defaults kali-root-login desktop-base xfce4 xfce4-places-plugin xfce4-goodies
 ```
 
@@ -105,14 +105,14 @@ vi /etc/xdg/menus/mate-applications.menu
 In the file go down to the section named Internet and add the following line
 
 HTML Code:
-```
+```html
 <!-- Kali Linux Menu -->
 <MergeFile type="path">applications-merged/kali-applications.menu</MergeFile>
 ```
 So it should look something like this
 
 HTML Code:
-```
+```html
  <!-- Internet -->
   <Menu>
     <Name>Internet</Name>
