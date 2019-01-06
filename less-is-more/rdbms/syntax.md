@@ -3,18 +3,18 @@
 ## 注释
 
 单行注释
-```
+```sql
 -- select * from emp;
 ```
 多行注释
-```
+```sql
 /* select * from dept;
 select * from salgrade; */
 ```
 
 ## select语句
 
-```
+```sql
 select 列1, 列2, ... // 列与列之间使用逗号分隔, 如果查询所有列可以使用*
 from 表1, 表2, ... // 表和表使用逗号分隔
 [where 条件1 and/or 条件2...] // 限定查询返回的结果, 条件和条件之间使用逻辑运算符连接
@@ -53,7 +53,7 @@ select distinct deptno from emp;
 ### where子句, 限定查询返回的记录
 
 1. 普通比较运算符: >, >=, <, <=, =, <>
-```
+```sql
 select ename, job, sal, deptno from emp where sal>2000;
 select ename, job, sal from emp where job<>'MANAGER';
 ```
@@ -84,7 +84,7 @@ select ename, job, deptno from emp where ename not like '__L%';
 + 降序: desc
 + 可以使用列的别名排序, 可以使用多个列排序
 
-```
+```sql
 select ename, sal, sal*12 "年薪", deptno from emp order by deptno, "年薪" desc;
 ```
 
@@ -106,7 +106,7 @@ order by ename;
 
 ### 字符函数
 
-```
+```sql
 // upper(x), 将字符串x转换为大写
 select ename from emp where job=upper('manager');
 
@@ -123,7 +123,7 @@ select mod(8, 3), mod(3, 7) from dual;
 
 ### 转换函数
 
-```
+```sql
 // to_number, 将字符串转换为数字
 select ename, job, sal from emp where deptno=to_number('20');
 
@@ -164,7 +164,7 @@ where hiredate=last_day(hiredate)-2;
 + 在列名前添加表名作为前缀, 提高查询效率
 
 1、等值连接
-```
+```sql
 select emp.ename, emp.deptno, dept.dname from emp, dept
 where emp.deptno=dept.deptno;
 
@@ -174,13 +174,13 @@ where e.deptno=d.deptno;
 ```
 
 2、不等连接
-```
+```sql
 select e.ename, e.sal, s.* from emp e, salgrade s
 where e.sal between s.losal and s.hisal;
 ```
 
 3、自连接(同一实体内部的1:n联系)
-```
+```sql
 select w.ename, m.ename from emp w, emp m
 where w.mgr=m.empno;
 ```
@@ -190,7 +190,7 @@ where w.mgr=m.empno;
 + 左外连接: 左条件=右条件(+)   left outer join on
 + 右外连接: 左条件(+)=右条件   right outer join on
 
-```
+```sql
 select w.ename "员工姓名", m.ename "经理姓名" from emp w, emp m
 where w.mgr=m.empno(+);
 ```
@@ -210,7 +210,7 @@ where e.deptno(+)=d.deptno;
 
 组函数在使用时会自动的忽略空值
 
-```
+```sql
 // count(), 计数
 select count(empno) from emp;
 select count(nvl(comm, 0)) from emp;
@@ -228,7 +228,7 @@ select max(sal), min(sal) from emp;
 
 ## group by, 分组查询
 
-```
+```sql
 //如果在select后面有普通列和组函数, 必须使用group by子句
 select deptno, avg(sal) from emp group by deptno;
 
@@ -241,7 +241,7 @@ select avg(sal) from emp group by deptno, job;
 
 ### having, 限定分组查询结果
 
-```
+```sql
 // 不能使用where avg(sal)>2000
 select deptno, job, avg(sal) from emp group by deptno, job having avg(sal)>2000;
 ```
@@ -274,7 +274,7 @@ select sum(decode(deptno, 10, 1, 0)) "10号部门人数",
 
 1、单行子查询
 单行比较运算符: >, >=, <, <=, =, <>
-```
+```sql
 select ename, job, deptno from emp
 where job=(select job from emp where ename='ALLEN');
 ```
@@ -299,7 +299,7 @@ where sal>any(select avg(sal) from emp group by deptno);
 ```
 
 3、多列子查询, in
-```
+```sql
 select ename from emp
 where (deptno, job) in(select deptno, job from emp where ename='ALLEN');
 ```
