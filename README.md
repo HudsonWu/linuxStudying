@@ -282,6 +282,7 @@
 + [关系型数据库, 结构化查询语言](./less-is-more/rdbms)
 + [windows的一些便利用法](./less-is-more/windows)
     + [批处理文件](./less-is-more/windows/bat)
+    + [注册表](./less-is-more/windows/reg)
     + [win7镜像](/less-is-more/windows/win7_images.md)
 + [安全相关](./less-is-more/security)
 + [折腾过程中的一些记录](./less-is-more/custom)

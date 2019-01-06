@@ -1,4 +1,5 @@
 #!/bin/bash
+
 ### BEGIN INIT INFO
 # Provides:             ssr
 # Required-Start:    	$local_fs $remote_fs $network $syslog

@@ -150,6 +150,23 @@ CUDA是一种由NVIDIA推出的通用并行计算架构, 该架构使GPU能够�
 aptitude install nvidia-cuda-toolkit nvidia-opencl-icd
 ```
 
+## VirtualBox增强功能
+
+1. 在线安装
+```
+apt-get install -y virtualbox-guest-x11
+reboot
+```
+
+2. 自带包安装
+```
+apt-get update && apt-get install -y linux-header-$(uname -r)
+cp /media/cd-rom/VBoxLinuxAdditions.run /root/
+chmod 755 /root/VBoxLinuxAdditions.run
+cd /root
+./VBoxLinuxAdditions.run
+```
+
 ## Others
 
 + U镜像刻录工具: Netbootin 
@@ -157,3 +174,9 @@ aptitude install nvidia-cuda-toolkit nvidia-opencl-icd
 + tty支持中文: cce,zhcon或fbterm
 + 护眼模式: [redshift](https://github.com/jonls/redshift)
 
+### 开启系统的路由转发功能
+
+```
+vi /etc/sysctl.conf
+net.ipv4.ip_forward=1
+```

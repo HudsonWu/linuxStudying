@@ -3,7 +3,7 @@
 Consolas是一套等宽的字体, 属无衬线字体
 
 linux下安装
-```
+```sh
 sudo mkdir -p /usr/share/fonts/consolas
 sudo cp YaHei.Consolas.1.12.ttf /usr/share/fonts/consolas/
 sudo chmod 644 /usr/share/fonts/consolas/YaHei.Consolas.1.12.ttf
