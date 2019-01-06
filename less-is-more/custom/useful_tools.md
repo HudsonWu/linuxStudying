@@ -1,9 +1,3 @@
-```
-UNetbootin 镜像刻录工具
-监视网络流量 netspeed
-tty支持中文：cce,zhcon或fbterm
-```
-
 ## [aria2](https://aria2.github.io)
 
 lightweight multi-protocol multi-source command-line download utility
@@ -60,12 +54,6 @@ sudo apt-get install w3m
 w3m -dump askubuntu.com | less
 w3m -dump index.html | less
 w3m -dump -cols 200 file.html  (set the number of columns)
-```
-
-## redshift
-
-```
-https://github.com/jonls/redshift
 ```
 
 ## namebench, find the best DNS servers to use
@@ -161,3 +149,11 @@ CUDA是一种由NVIDIA推出的通用并行计算架构, 该架构使GPU能够�
 ```
 aptitude install nvidia-cuda-toolkit nvidia-opencl-icd
 ```
+
+## Others
+
++ U镜像刻录工具: Netbootin 
++ 监视网络流量: netspeed
++ tty支持中文: cce,zhcon或fbterm
++ 护眼模式: [redshift](https://github.com/jonls/redshift)
+
