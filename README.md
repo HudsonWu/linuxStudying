@@ -10,6 +10,9 @@
 
 **There are various commands which funny and useful**
 
+---
+[进入目录](table-of-contents.md)
+---
 
 ## Summary
 
@@ -39,8 +42,6 @@
 >     + [计划任务](./common/schedule)
 > + [其他一些相关知识的学习](./less-is-more)
 ---
-
-## [Table of Contents](table-of-contents.md)
 
 ## About
 
