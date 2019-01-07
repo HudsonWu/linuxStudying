@@ -205,8 +205,12 @@ function merge_master() {
 
 function step1() {    
     
+    if [ ! -d "$workspace" ]; then
+        echo -e "\e[33;40m 工作目录不存在, 将创建 $workspace 目录\e[0m"
+        mkdir -p $workspace
+    
     if [ -d "$vue_path" ]; then
-        echo -e "\e[35;40m 删除$vue_path目录\e[0m\e[0m"
+        echo -e "\e[35;40m 删除$vue_path目录\e[0m"
         rm -rf $vue_path
     fi
     
