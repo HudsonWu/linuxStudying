@@ -8,9 +8,9 @@
                                                                             Jamie Zawinski
 ```
 
+---
 **There are various commands which funny and useful**
 
----
 [进入目录](table-of-contents.md)
 ---
 
