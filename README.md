@@ -8,9 +8,6 @@
                                                                             Jamie Zawinski
 ```
 
----
-[进入目录](index.md)
----
 
 ## Summary
 
@@ -55,5 +52,9 @@ a Linux lover, a dreaming man,
 
 > Before you can run, you need to be able to walk
 
-**[返回顶部](#readme)**
+---
+[进入目录](index.md)
+
+[返回顶部](#readme)
+---
 
