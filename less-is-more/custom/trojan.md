@@ -1,39 +1,70 @@
-在ubuntu安装Trojan:
+# Trojan
+
+## 在ubuntu安装Trojan
+
+```sh
 sudo apt-get install python-software-properties 
 sudo add-apt-repository ppa:greaterfire/trojan
 sudo apt update
 sudo apt install trojan
+```
 
-创建CA证书:
-1. apt install gnutls-bin gnutls-doc  //安装所需工具
-2. 创建CA模板ca.tmpl, 内容为:
-(cn与organization可以随意填写, 但为了避免可能发生的问题, 服务器证书cn填vps的ip或域名)
-> cn = "ff"
-> organization = "ff"
-> serial = 1
-> expiration_days = 3650
-> ca
-> signing_key
-> cert_signing_key
-> crl_signing_key
+## 创建CA证书
+
+1. 安装所需工具
+```
+apt install gnutls-bin gnutls-doc
+```
+
+2. 创建CA模板ca.tmpl, 内容为
+```
+cn = "ff"
+organization = "ff"
+serial = 1
+expiration_days = 3650
+ca
+signing_key
+cert_signing_key
+crl_signing_key
+```
+cn与organization可以随意填写, 但为了避免可能发生的问题, 服务器证书cn填vps的ip或域名
+
 3. 生成CA密钥
+```sh
 certtool --generate-privkey --outfile ca-key.pem
+```
+
 4. 生成CA证书
+```sh
 certtool --generate-self-signed --load-privkey ca-key.pem --template ca.tmpl --outfile ca-cert.pem
+```
+
 5. 创建服务器证书模板
-创建文件server.tmpl, 内容为:
-> cn = "xxx.xxx.xxx.xxx"
-> organization = "ff"
-> expiration_days = 3650
-> signing_key
-> encryption_key
-> tls_www_server
+创建文件server.tmpl, 内容为
+```
+cn = "xxx.xxx.xxx.xxx"
+organization = "ff"
+expiration_days = 3650
+signing_key
+encryption_key
+tls_www_server
+```
+
 6. 生成服务器证书秘钥
+```sh
 certtool --generate-privkey --outfile server-key.pem
+```
+
 7. 生成服务器证书
+```sh
 certtool --generate-certificate --load-privkey server-key.pem --load-ca-certificate ca-cert.pem --load-ca-privkey ca-key.pem --template server.tmpl --outfile server-cert.pem
+```
+
+## 配置文件
 
 服务端配置文件
+
+```json
 {
     "run_type": "server",
     "local_addr": "0.0.0.0",
@@ -61,8 +92,11 @@ certtool --generate-certificate --load-privkey server-key.pem --load-ca-certific
         "dhparam": ""
     }
 }
+```
 
 客户端配置文件
+
+```json
 {
     "run_type": "client",
     "local_addr": "127.0.0.1",
@@ -87,3 +121,15 @@ certtool --generate-certificate --load-privkey server-key.pem --load-ca-certific
         "sigalgs": ""
     }
 }
+```
+
+开启
+```sh
+trojan config_file 2> log_file //服务端开启
+```
+
+## References
+
++ <https://trojan-gfw.github.io/trojan/>
++ <https://github.com/trojan-gfw/trojan>
+

@@ -39,6 +39,7 @@
 + [Debian中的软件包密钥](https://github.com/HudsonWu/linuxStudying/blob/master/common/aboutkeys/apt-key.md)
 + [GnuPG加密工具](https://github.com/HudsonWu/linuxStudying/blob/master/common/aboutkeys/gpg.md)
 + [openssl加密工具](https://github.com/HudsonWu/linuxStudying/blob/master/common/aboutkeys/openssl.md)
++ [mcrypt加密工具](https://github.com/HudsonWu/linuxStudying/blob/master/common/aboutkeys/mcrypt.md)
 
 ## [linux邮件功能](https://github.com/HudsonWu/linuxStudying/tree/master/common/mail)
 

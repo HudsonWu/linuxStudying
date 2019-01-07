@@ -1,4 +1,5 @@
 #!/bin/bash
+
 ### BEGIN INIT INFO
 # Provides:             ssr
 # Required-Start        $remote_fs
