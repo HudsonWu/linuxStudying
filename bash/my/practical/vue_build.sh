@@ -19,7 +19,7 @@
 
 set -u
 
-workspace="/tmp/online"
+workspace="/var/online"
 
 version_abbr="consult"
 
