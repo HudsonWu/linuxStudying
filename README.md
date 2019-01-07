@@ -8,12 +8,11 @@
                                                                             Jamie Zawinski
 ```
 
+Linux Command Tips and Tricks
 
 ## Summary
 
 ---
-Linux Command Tips and Tricks
-
 > + [Linux性能分析和工具](./performance)
 >     + [cpu相关知识和信息获取命令](./performance/cpu)
 >     + [内存相关知识和查询命令](./performance/memory)
@@ -40,6 +39,8 @@ Linux Command Tips and Tricks
 > + [其他一些相关知识的学习](./less-is-more)
 ---
 
+### [去命令目录看看](index.md)
+
 ## About
 
 这里记录的, 是我在Linux学习过程中的简要笔记. 于我而言, 有三个方面的助益: 一是在记录过程中对要学的点会有更好的理解; 二是将重要知识点记录下来, 时时可以温习; 三是在将众多繁杂的Linux学习内容归类、整理、记录的过程中会对知识框架整体有一个系统性的认识, 站在更高的角度看问题
@@ -52,9 +53,5 @@ a Linux lover, a dreaming man,
 
 > Before you can run, you need to be able to walk
 
----
-[进入目录](index.md)
-
-[返回顶部](#readme)
----
+### [返回顶部](#readme)
 
