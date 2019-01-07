@@ -9,14 +9,14 @@
 ```
 
 ---
-**There are various commands which funny and useful**
-
-[进入目录](table-of-contents.md)
+[进入目录](index.md)
 ---
 
 ## Summary
 
 ---
+Linux Command Tips and Tricks
+
 > + [Linux性能分析和工具](./performance)
 >     + [cpu相关知识和信息获取命令](./performance/cpu)
 >     + [内存相关知识和查询命令](./performance/memory)
