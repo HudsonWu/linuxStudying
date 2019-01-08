@@ -3,6 +3,7 @@
 + [file system, 文件系统](https://github.com/HudsonWu/linuxStudying/tree/master/file/fs)
 + [误删除文件恢复](https://github.com/HudsonWu/linuxStudying/tree/master/file/delete_mistake)
 + [tee, 读取标准输入, 输出到标准输出和文件](https://github.com/HudsonWu/linuxStudying/blob/master/file/tee.md)
++ [tr, 转换或删除字符](https://github.com/HudsonWu/linuxStudying/blob/master/file/tr.md)
 + [大文件分卷压缩](https://github.com/HudsonWu/linuxStudying/blob/master/file/sub_volume.md)
 + [reflink, copy on write](https://github.com/HudsonWu/linuxStudying/blob/master/file/reflink.md)
 + [fallocate, 预分配或重新分配空间给文件](https://github.com/HudsonWu/linuxStudying/blob/master/file/fallocate.md)
