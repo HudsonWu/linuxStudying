@@ -34,6 +34,11 @@ git rev-list master --max-count=10
 //depth用于指定克隆深度, 为1即表示只克隆最近一次commit
 git clone --depth 1 https:/github.com/someone/example.git
 
+//从--depth 1的限制恢复
+git fetch --unshallow
+//or
+git fetch --depth=2147483547
+
 //拉取指定分支
 git remote set-branches origin 'remote_branch_name'
 git fetch --depth 1 origin remote_branch_name
