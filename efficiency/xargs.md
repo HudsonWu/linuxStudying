@@ -13,15 +13,15 @@ somecommand | xargs -item command
 
 参数:
 ```
--0, 将\0作为定界符
+-0, 将\0, 即NULL字符作为定界符
 -a file, 从文件中读入作为stdin
 -e flag, 有时可能会是E, flag必须是一个以空格分隔的标志
          当xargs分析到含有flag这个标志的时候就停止
 -p, 每次执行一个argument时询问一次用户
--n num, 后面加次数, 表示命令在执行时一次用的argument的个数, 默认是用所有的
+-n num, 参数分组, 表示命令在执行时一次用的argument的个数, 默认是用所有的
 -t, 表示先打印命令, 然后再执行
--i replace-str, 或者-I replace-str, 这得看linux支持, 
-                指定一个替换字符串{}, 这个字符串在xargs扩展时会被替换掉
+-i replace-str, 或者-I replace-str, 参数替换 
+                指定一个替换字符串, 默认为{}, 这个字符串在xargs扩展时会被替换掉
                 当-I与xargs结合使用, 每一个参数命令都会被执行一次
 -r no-run-if-empty, 当xargs的输入为空的时候则停止xargs, 不用再去执行了
 -s num, 命令行的最大字符数, 指的是xargs后面那个命令的最大命令行字符数
@@ -65,12 +65,17 @@ name name
 ```
 cat arg.txt | xargs -I {} ./sk.sh -p {} -l
 
-//复制所有图片文件到/data/images目录下
-ls *.jpg | xargs -n1 -I cp {} /data/images
+//将所有的.js结尾的文件, 加上.backup后缀
+ls *.js | xargs -t -I '{}' mv {} {}.backup
 
 //将所有的.py文件移动到Python目录
 find . -name '*.py' | xargs -I {} mv {} ./Python
 
+//将7天前的日志备份到指定目录
+find . -mtime +7 | xargs -I '{}' mv {} /tmp/otc-svr-logs/
+
+//-print0, 告诉find命令, 在输出文件名后, 跟上NULL字符, 而不是换行符
+//-0， 告诉xargs, 以NULL作为参数分隔符
 find . -type f -name "*.log" -print0 | xargs -0 rm -f
 
 //统计一个源代码目录中所有php文件数量
