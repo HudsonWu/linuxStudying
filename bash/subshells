@@ -1,0 +1,28 @@
+# Subshells, 子shell
+
+运行一个shell脚本时会启动另一个命令解释器, 就好像你的命令是在命令行提示下被解释的一样, 类似于批处理文件里的一系列命令
+
+```
+cmd1 | ( cmd2; cmd3; cmd4 ) | cmd5
+```
+如果cmd2是 cd /, 那么就会改变子shell的工作目录, 这种改变只局限于子shell内部, cmd5则完全不知道工作目录发生的变化 (子shell是嵌在圆括号内的命令序列, 子shell内部定义的变量为局部变量)
+
+子shell可用于为一组命令设定临时的环境变量:
+```sh
+COMMAND1
+COMMAND2
+COMMAND3
+(
+  IFS=:
+  PATH=/bin
+  unset TERMINFO
+  set -C
+  shift 5
+  COMMAND4
+  COMMAND5
+  exit 3 # 只是从子shell退出
+)
+# 父shell不受影响, 变量值没有更改
+COMMAND6
+COMMAND7
+```
