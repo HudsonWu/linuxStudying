@@ -1,6 +1,6 @@
-# cut, Print selected parts of lines from each FILE to standard output
+# cut, 字符截取命令
 
-cut可以对file或stdin或pipe的每行抽取处希望抽取的部分
+cut, Print selected parts of lines from each FILE to standard output, cut可以对file或stdin或pipe的每行抽取处希望抽取的部分
 
 如果不指定file参数, cut命令将读取标准输入, 必须指定-b, -c, -f标志之一
 
