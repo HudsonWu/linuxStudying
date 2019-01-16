@@ -32,7 +32,7 @@ Linux Command Tips and Tricks
 >     + [git, 分布式代码版本管理工具](./efficiency/git)
 >     + [vim, 命令行下强大的文本编辑器](./efficiency/vim)
 >     + [Markdown, 轻量级标记语言](./efficiency/vim)
-> + [文件的查找和操作](./file)
+> + [文件的查找、展示和操作](./file)
 > + [web服务, 服务器, 容器, 中间件](./web)
 > + [基础命令, 开启Linux之旅](./common)
 >     + [计划任务](./common/schedule)

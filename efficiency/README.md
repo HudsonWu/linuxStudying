@@ -2,6 +2,7 @@
 
 + [linux命令使用技巧](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/tricks.md)
 + [使用screen管理你的远程会话](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/screen.md)
++ [xargs, 一个给其他命令传递参数的过滤器](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/xargs.md)
 
 ## [git, 分布式代码版本管理工具](https://github.com/HudsonWu/linuxStudying/tree/master/efficiency/git)
 

@@ -17,6 +17,9 @@
 
 ## [Linux下高效工作](./efficiency)
 
++ [Linux命令使用技巧](/efficiency/tricks.md)
++ [使用screen管理你的远程会话](/efficiency/screen.md)
++ [xargs, 一个给其他命令传递参数的过滤器](/efficiency/xargs.md)
 + [正则表达式, 检索、替换符合某个模式的文本](./efficiency/regular_expression)
     + [regular expression](/efficiency/regular_expression/overview.md)
 + [Jenkins, 持续集成/持续交付工具](./efficiency/jenkins)
@@ -44,8 +47,6 @@
     + [插件管理](/efficiency/vim/plugins.md)
     + [vimrc配置文件(不使用插件)](/efficiency/vim/vimrc)
     + [vimrc配置文件(使用插件)](/efficiency/vim/init.vim)
-+ [Linux命令使用技巧](/efficiency/tricks.md)
-+ [使用screen管理你的远程会话](/efficiency/screen.md)
 + [Markdown, 轻量级标记语言](./efficiency/vim)
     + [基本语法](/efficiency/markdown/syntax.md)
     + [实际使用](/efficiency/markdown/solve.md)
@@ -176,12 +177,13 @@
 ## [Linux系统下的文件管理](./file)
 
 + [file system, 文件系统](./file/fs)
++ [fd, file descriptor, 文件描述符](/file/fd.md)
 + [误删除文件恢复](./file/delete_mistake)
-+ [tee, 读取标准输入, 输出到标准输出和文件](/file/tee.md)
++ [cut, 字符截取命令](/file/cut.md)
++ [paste, 将多个文件的内容合并](/file/paste.md)
++ [sort, 对文本文件内容进行排序](/file/sort.md)
 + [tr, 转换或删除字符](/file/tr.md)
-+ [大文件分卷压缩](/file/sub_volume.md)
-+ [reflink, copy on write](/file/reflink.md)
-+ [fallocate, 预分配或重新分配空间给文件](/file/fallocate.md)
++ [tee, 读取标准输入, 输出到标准输出和文件](/file/tee.md)
 + [find, locate, whereis, which](/file/file_search/commands.md)
 + [find命令的深入学习](/file/file_search/find.md)
 + [grep, 强大的文本搜索工具](/file/grep.md)
@@ -190,7 +192,10 @@
 + [touch命令](/file/touch.md)
 + [文件时间戳的修改](/file/timestamps.md)
 + [rename, 批量重命名](/file/rename.md)
++ [大文件分卷压缩](/file/sub_volume.md)
 + [dos2unix和unix2dos, 文本格式转换](/file/dos2unix.md)
++ [reflink, copy on write](/file/reflink.md)
++ [fallocate, 预分配或重新分配空间给文件](/file/fallocate.md)
 
 ## [web技术](./web)
 
