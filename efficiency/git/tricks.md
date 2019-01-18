@@ -13,7 +13,7 @@
 !.gitignore
 ```
 
-## 使用vim查看指定分支的某个文件内容
+## 查看指定分支的某个文件内容
 
 ```
 git show branch_name:/path/to/file.txt | vim -

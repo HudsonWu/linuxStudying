@@ -1,4 +1,4 @@
-# 一些需要注意的地方
+# tips
 
 ## git rm
 
@@ -39,3 +39,22 @@ false  -->  line-endings不做转换操作, 文本文件保持原样
 input  -->  添加文件到仓库时将crlf变成lf, check代码时也是lf, 在windows系统下不使用这个设置
 ```
 
+## 对于本地频繁更改但不需要每次都提交的文件
+
+1. 使用模板文件
+新建一个文件, 在文件名上加以区分然后用 Git 记住, 作为模板文件
+
+比如说实际的配置文件应该叫 database.conf, 在写好模版之后可以更名为 database.conf.example (如果适用于生产环境可以保存为database.conf.prod)
+
+Git 记录 database.conf.example 但是忽略 database.conf
+
+2. 忽略修改
+```
+git update-index --assume-unchanged
+```
+这样git暂时不会理睬你对文件做的修改 
+当你的工作告一段落决定可以提交时, 执行下面的命令重置该标识
+```
+git update-index --no-assume-unchanged
+```
+这样可以让git在必要的时候提交该文件的更新
