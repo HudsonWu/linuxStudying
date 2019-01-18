@@ -1,5 +1,10 @@
 version: "3.1"
 
+networks:
+  frontend:
+    driver: "bridge"
+
+services:
   sails_example:
     image: "registry-vpc.cn-beijing.aliyuncs.com/yourproject/Sails_example:1.0"
     restart: always
@@ -43,6 +48,3 @@ version: "3.1"
       - PORT=${VUE_PORT}
     command: "pm2 start server.js --no-daemon"
 
-networks:
-  frontend:
-    driver: "bridge"
