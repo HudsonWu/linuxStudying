@@ -2,21 +2,11 @@
 
 ## 命令简介
 
-```
-apk search xxx  //支持正则
-apk info xxx  //查看包的详细信息
-apk show  //list local package
-apk del openssh openntp vim  //卸载并删除包
-```
+### search, 搜索软件包
 
-升级
-```
-apk update  //更新最新本地镜像源
-apk upgrade  //升级软件, 一般包括内核
-apk add --upgrade busybox  //通过-u或--upgrade选择指定部分软件包
-```
+search命令搜索可用软件包, -v参数输出描述内容, 支持通配符, 
+-d或--description参数指定通过软件包描述查询
 
-搜索
 ```
 apk search  //查找所有可用软件包
 apk search -v  //查找所有可用软件包及其描述内容
@@ -24,12 +14,58 @@ apk search -v 'acf*'  //通过软件包名称查找软件包
 apk search -v -d 'docker'  //通过描述文件查找特定的软件包
 ```
 
-查看包信息
+### info, 列出PACKAGES或镜像源的详细信息
+
 ```
 apk info  //列出所有已安装的软件包
 apk info -a zlib  //显示完整的软件包信息
 apk info --who-owns /sbin/lbu  //显示指定文件属于的包
 ```
+
+### add, 安装PACKAGES并自动解决依赖关系
+
+add命令从仓库中安装最新软件包, 并安装必须的依赖包, 也可以从第三方仓库添加软件包
+```
+apk add openssh openntp vim
+apk add --no-cache mysql-client
+apk add docker --update-cache --repository http://mirrors.ustc.edu.cn/alpine/v3.4/main/ --allow-untrusted
+```
+
+安装指定软件包:
+```
+apk add asterisk=1.6.0.21-r0
+apk add 'asterisk<1.6.1'
+apk add 'asterisk>1.6.1'
+```
+
+### update, 从远程镜像源中更新本地镜像源索引
+
+update命令会从各个镜像源列表下载APKINDEX.tar.gz并存储到本地缓存, 
+一般在/var/cache/apk/, /var/lib/apk/, /etc/apk/cache/ 下
+
+### upgrade, 升级当前已安装的软件包
+
+upgrade命令升级系统已安装的所有软件包(一般包括内核), 也可以使用-u或--upgrade指定仅升级部分软件包
+```
+apk update  //更新本地镜像源索引
+apk upgrade  //升级软件, 一般包括内核
+apk add --upgrade busybox  //通过-u或--upgrade选择指定部分软件包
+```
+
+### del, 卸载并删除PACKAGES
+```
+apk del openssh openntp vim
+```
+
+### 镜像源配置 (`/etc/apk/repositories`)
+
++ 官方镜像列表: <http://rsync.alpinelinux.org/alpine/MIRRORS.txt>
+    + MIRRORS.txt中是当前Alpine官方提供的镜像源(Alpine安装的时候系统自动选择最佳镜像源)
++ 国内镜像源
+    + 清华TUNA镜像源: https://mirror.tuna.tsinghua.edu.cn/alpine/
+    + 中科大镜像源: http://mirrors.ustc.edu.cn/alpine/
+    + 阿里云镜像源: http://mirrors.aliyun.com/alpine/
+
 
 ## 使用实例
 
