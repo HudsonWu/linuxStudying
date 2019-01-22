@@ -1,5 +1,7 @@
 # perf, Linux profiling with performance counters
 
+`perf`是Linux下的一款性能分析工具, 能够进行函数级与指令级的热点查找
+
 `perf`, also called `perf_events`. It can instrument CPU performance counters, tracepoints, kprobes, and uprobes(dynamic tracing). It is capable of lightweight profiling. It is also included in the Linux kernel, under tools/perf, and is frequently updated and enhanced.
 
 `perf` is a profiler tool for Linux 2.6+ based systems that abstracts away CPU hardware differences in Linux performance measurements and presents a simple commandline interface. `perf` is based on the `perf_events` interface exported by recent versions of the Linux kernel.

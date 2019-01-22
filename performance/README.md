@@ -4,6 +4,7 @@
 + [glances, glances an eye on your system](https://github.com/HudsonWu/linuxStudying/blob/master/performance/glances.md)
 + [htop, 交互式的进程查看器](https://github.com/HudsonWu/linuxStudying/blob/master/performance/htop.md)
 + [top, Linux Process Monitoring](https://github.com/HudsonWu/linuxStudying/blob/master/performance/top.md)
++ [perf, Linux下的系统性能调优工具](https://github.com/HudsonWu/linuxStudying/blob/master/performance/perf.md)
 
 ## [cpu相关知识和信息获取命令](https://github.com/HudsonWu/linuxStudying/tree/master/performance/cpu)
     
