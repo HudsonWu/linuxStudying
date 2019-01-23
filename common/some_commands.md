@@ -115,3 +115,25 @@ lsb_release -cs
 3. type -p grep
 相当于which命令
 ```
+
+## shutdown linux system
+
+shutdown -h time "message"
+
++ -h : Poweroff the system.
++ time : When to shutdown. You can poweroff immediately or after 2 minutes. It can be an absolute time in the format hh:mm, in which hh is the hour (1 or 2 digits) and mm is the minute of the hour (in wo digits). Second, it can be in the format +m, in which m is the number of minutes to wait. The word now is an alias for +0
++ message: Send warning message to send to all users.
+
+```sh
+shutdown -h now
+shutdown -h +0
+shutdown -h +10 "Development server is going down for maintenance. Please save your work ASAP."
+poweroff
+```
+
+See log of system shutdown
+```sh
+last reboot
+last shutdown
+last -x shutdown
+```
