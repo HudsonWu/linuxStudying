@@ -70,7 +70,7 @@ git commit --amend
 git rebase -i HEAD~n  //表示要修改前n次所有的提交, -i, interactive, 交互
 //将需要修改的提交的pick改成edit或e
 
-git commit --amend --author --author "someone <someone@gmail.com>"
+git commit --amend --author "someone <someone@gmail.com>"
 
 git rebase --continue
 ```
