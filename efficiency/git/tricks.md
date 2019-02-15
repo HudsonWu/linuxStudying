@@ -80,3 +80,43 @@ git rebase --continue
 ```
 ssh -vT git@github.com
 ```
+
+## git add未commit, reset恢复文件
+
+git add 且未 commit 的文件, 在执行reset --hard后的恢复操作
+
+1. 获取所有悬挂文件
+```
+//将悬挂的文件存入filex.txt中
+git fsck > files.txt
+//或者使用下面的命令查看最近60次add的文件
+find .git/objects -type f | xargs ls -lt | sed 60q
+```
+filex.txt文件内容如下:
+```
+dangling blob 909393bd05bd101c024135d7eb32229104cadc10
+dangling blob ceac90d3363acf317e9d063e5fd1604831f0f3e8
+dangling blob 9215bdb8098d2a11cc8fb266fb114a430772cd87
+```
+
+2. 去掉dangling blob关键字
+使用vim处理:
+```
+:1,$s/dangling blob //g
+```
+
+3. 将blob字节文件还原为原文, 这里注意, 文件名称已经丢失, 最终只能通过手动更新文件名称
+通过git show 将blob文件还原为对应文件
+```sh
+#!/bin/bash
+for line in `cat files.txt`
+do
+    echo "File:${line}"
+    git show ${line} > files/${line}.txt
+done
+```
+
+4. 从还原的所有文件中查找需要找回的文件
+```
+grep "关键字" *.txt
+```
