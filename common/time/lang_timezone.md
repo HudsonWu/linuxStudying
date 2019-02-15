@@ -59,3 +59,17 @@ cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 OR
 tzselect  //互动式命令
 ```
+
+## 解决中文乱码问题
+
+1. 修改/etc/locale.conf
+```
+LANG="en_US.UTF-8"
+SUPPORTED="zh_CN.UTF-8:zh_CN:zh:en_US.UTF-8:en_US:en"
+SYSFONT="lat0-sun16"
+```
+
+2. 修改~/.bashrc
+```
+export LANG='UTF-8' export LC_ALL='en_US.UTF-8'
+```
