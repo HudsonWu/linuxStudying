@@ -5,8 +5,10 @@ cat /etc/passwd
 cat /etc/group
 id user1  查看用户user1的UID和GID
 finger user1  查看用户user1的主目录、启动shell、用户名、地址、电话等信息
+usermod -a -G groupA user1  将user1添加到用户组groupA中
+```
 
-2. 建立用户
+2. 新建用户
 
 ```
 adduser hudson  会在home目录下添加一个帐号
@@ -28,6 +30,7 @@ usermod -a -G adm user1
 usermod -a -G sudo user1   为user1添加sudo权限
 userdel user2  删除用户user2
 userdel -r user2  删除用户user2，同时删除工作目录
+```
 
 3. 增加用户组
 
@@ -44,6 +47,7 @@ groupmod 修改组
 groupmod -n user users  修改组名user为users
 groupdel  删除组
 groupdel users  删除组users
+```
 
 4. 相关系统文件
 
@@ -54,5 +58,11 @@ groupdel users  删除组users
 登录shell：用户登录后，要启动一个进程，负责将用户的操作传给内核，这个进程是用户登录到系统后运行的命令解释器或某个特定的程序，即shell
 shell是用户与linux系统之间的接口，linux的shell有很多种，常见的有sh(Bourne Shell),csh(C Shell),ksh(Korn Shell),bash(Bourne Again Shell)等
 系统管理员可以根据系统情况和用户习惯为用户指定某个Shell，若不指定，系统使用sh为默认的登录shell
+```
 
-usermod -a -G groupA user1  将user1添加到用户组groupA中
+5. visudo
+
+```
+user1 ALL=(ALL) ALL
+user1 ALL = NOPASSWD: /usr/bin/docker, /usr/local/bin/docker-compose
+```
