@@ -24,3 +24,8 @@ show create table tablename;  //查看tablename创建时用到的一些参数
 show grants for username;     //查看username的权限
 ```
 
+4. 创建数据库
+```sql
+CREATE DATABASE mydatabase CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE mydatabase CHARACTER SET utf8 COLLATE utf8_general_ci;
+```
