@@ -20,6 +20,10 @@ update user set password=PASSWORD("newpass") where User='username';
 flush privileges;
 ```
 
+```
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass4!';
+```
+
 3. recover mysql root password
 
 ```sh

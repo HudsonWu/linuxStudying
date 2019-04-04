@@ -1,0 +1,1 @@
+rsync -av --progress FanYuanWangAdmin/Areas/ $2/FanYuanWangAdmin/Areas --exclude Controllers
