@@ -57,3 +57,20 @@ quit
 systemctl restart mysql
 mysql -u root -p
 ```
+
+## 允许mysql远程访问
+
+### 改表
+
+```sql
+use mysql;
+update user set host='%' where user = 'root';
+select host, user from user;
+```
+
+### 授权
+
+```sql
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '123456' WITH GRANT OPTION;
+flush privileges
+```
