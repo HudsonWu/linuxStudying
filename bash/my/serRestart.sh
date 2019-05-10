@@ -1,6 +1,6 @@
 #!/bin/bash
 
-appName=('hc-dev' 'nshc-dev' 'ss-dev' 'hc-qa' 'nshc-qa' 'ss-qa')
+appName=('app1' 'app2' 'app3' 'app4' 'app5' 'app6')
 
 
 function for_help() {
