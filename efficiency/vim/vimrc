@@ -10,7 +10,7 @@ set cursorline
 highlight CursorLine cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
   "highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 " 不使用代码折叠功能
-set nofoldenable
+  "set nofoldenable
 " 不使用swapfile
 set noswapfile
 " 设置编码格式
