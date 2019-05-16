@@ -73,6 +73,12 @@ dpkg -P
 2. Linux预设了六个命令窗口终端机tty1 ~ tty6 (ctrl+alt+F1~F6)
 ctrl+alt+F7 为图形界面
 ```
+## yum, 软件安装工具(redhat)
+
+```
+# 列出已经安装的软件
+yum list installed
+```
 
 ## apt-get, 软件安装工具(debian)
 
