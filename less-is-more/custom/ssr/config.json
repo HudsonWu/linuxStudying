@@ -5,6 +5,6 @@
     "password":"StrongPasswd",
     "timeout":120,
     "method":"chacha20-ietf",
-	"protocol":"auth_sha1_v4",
-	"obfs":"tls1.2_ticket_auth"
+    "protocol":"auth_sha1_v4",
+    "obfs":"tls1.2_ticket_auth"
 }
