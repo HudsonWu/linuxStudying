@@ -26,7 +26,8 @@ swapoff -a
 
 ```
 # 创建文件
-dd if=/dev/zero of=/var/swapfile bs=1M count=10240
+dd if=/dev/zero of=/var/swapfile bs=1M count=10240  (8G)
+dd if=/dev/zero of=/var/swapfile bs=1M count=18432  (16G)
 # 格式化
 mkswap /var/swapfile
 # 更改权限
