@@ -10,7 +10,11 @@ swap大小建议:
 
 vi /etc/sysctl.conf
 ```
+# 文件内容修改
 vm.swappiness = 15
+
+# 执行命令使其生效
+sysctl -p
 ```
 
 2. 停止所有swap

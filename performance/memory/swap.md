@@ -10,8 +10,15 @@ linux系统比较智能, 会把那些不怎么频繁使用的内存放到swap <b
 
 ## swap设置
 
-可以在/etc/sysctl.conf里设置vm.swappiness参数<br/>
-设置成vm.swappiness=10, 就是说当内存使用90%以上才会使用swap空间<br/>
+```
+# 临时配置
+echo 10 >/proc/sys/vm/swappiness
+
+# 永久修改
+在/etc/sysctl.conf里设置vm.swappiness参数
+设置成vm.swappiness=10, 就是说当内存使用90%以上才会使用swap空间
+然后执行`sysctl -p`命令使其生效
+```
 
 ## 释放linux的swap内存
 
