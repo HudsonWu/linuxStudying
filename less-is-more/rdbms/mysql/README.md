@@ -1,5 +1,19 @@
 # mysql
 
+## mycli, a terminal client for mysql
+
++ <https://www.mycli.net/>
++ <https://github.com/dbcli/mycli>
++ <https://www.mycli.net/docs>
+
+### Usage
+
+```
+# install
+pip install -U mycli
+```
+
+
 ## 调整MySQL参数提高写入速度
 
 + <https://blog.csdn.net/u014595019/article/details/50526539>
