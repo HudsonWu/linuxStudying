@@ -24,6 +24,17 @@ curl -I http://www.sina.com.cn/ -H Accept-Encoding:gzip,defalte
 # 监控网页的响应时间
 curl -o /dev/null -s -w "time_connect: %{time_connect}\ntime_starttransfer: %{time_starttransfer}\ntime_total: %{time_total}\n" "http://www.kklinux.com"
 
+curl www.baidu.com -s -o /dev/null -w \
+    "response_code: %{http_code}\n
+    dns_time: %{time_namelookup}
+    connect_time: %{time_connect}
+    pretransfer_time: %{time_pretransfer}
+    starttransfer_time: %{time_starttransfer}
+    total_time: %{time_total}"
+
 # 监控站点可用性
 curl -o /dev/null -s -w %{http_code} "http://www.kklinux.com"
+
+# 获取详细信息
+curl -vv http://www.sina.com
 ```
