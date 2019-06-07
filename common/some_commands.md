@@ -94,6 +94,15 @@ sudo apt-get source audacity
 sudo dpkg-buildpackage -b -uc -us
 ```
 
+## 安装开发工具包
+
+```
+yum group install 'Development Tools' && \
+yum install perl-core libtemplate-perl zlib-deve
+
+apt install build-essential checkinstall zlib1g-dev libtemplate-perl
+```
+
 ## vesion, linux内核版本, linux发行版本
 
 ```
