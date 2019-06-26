@@ -20,4 +20,8 @@ extundelete /dev/sdc1 --restore-all
 
 # 恢复某个时间段的数据
 extundelete --after 1379156944 --restore-all /dev/sdc1
+
+# 根据inode恢复文件
+extundelete --restore-inode 224455 /dev/sda1
 ```
+
