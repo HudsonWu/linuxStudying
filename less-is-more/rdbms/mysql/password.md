@@ -16,7 +16,7 @@ mysql stores usernames and passwords in the user table inside the MYSQL database
 
 ```sql
 use mysql;
-update user set password=PASSWORD("newpass") where User='username';
+update user set authentication_string=PASSWORD("newpass") where User='username';
 flush privileges;
 ```
 
