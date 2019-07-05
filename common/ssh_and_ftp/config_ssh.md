@@ -1,5 +1,9 @@
 # 配置文件
 
+```
+man sshd_config
+```
+
 ## /etc/ssh/sshd_config
 ```
 > chmod 700 .ssh

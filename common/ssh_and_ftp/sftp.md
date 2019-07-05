@@ -59,3 +59,12 @@ ssh test@localhost
 sftp test@localhost
 ```
 
+7. 记录日志
+
+```
+# /etc/ssh/sshd_config
+Subsystem sftp internal-sftp -l INFO
+
+# 日志记录级别
+QUIET, FATAL, ERROR, INFO, VERBOSE, DEBUG, DEBUG1, DEBUG2, DEBUG3
+```
