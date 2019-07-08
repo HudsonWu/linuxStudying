@@ -21,6 +21,7 @@ useradd 选项 用户名
 -s  指定用户的登录shell
 -u  指定用户的用户号（uid）
 useradd user1 -g 1002 -u 1003 -m
+useradd -m -U -d /opt/tomcat -s /bin/false tomcat
 passwd 选项 用户名
 -l  锁定口令，即禁用账号
 -u  口令解锁
