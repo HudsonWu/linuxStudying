@@ -1,0 +1,26 @@
+" https://github.com/junegunn/vim-plug
+
+call plug#begin('~/.vim/plugged')
+
+" ansible-vim
+Plug 'pearofducks/ansible-vim'
+
+" Syntastic
+Plug 'scrooloose/syntastic'
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" ignore files of Ansible Roles.
+let g:syntastic_ignore_files = [ '\m^roles/' ]
+
+" only syntax error, not style
+let g:syntastic_quiet_messages = { "type": "style" }
+
+call plug#end()

@@ -1,0 +1,25 @@
+#!/usr/bin/env ansible-playbook
+
+---
+- name: cluster status
+  hosts: cluster1
+  max_fail_percentage: 0
+  gather_facts: false
+  tasks:
+    - name: uptime
+      raw: uptime
+      register: out
+    - debug: var=out.stdout_lines
+    
+    - name: check services status
+      shell: /usr/share/tuna/script/control_all_services.sh --action=status --group=role
+      register: out
+      async: 300
+      poll: 2
+    - debug: var=out.stdout_lines
+
+    - name: memory status
+      raw: free -h
+      register: out
+    - debug: var=out.stdout_lines
+
