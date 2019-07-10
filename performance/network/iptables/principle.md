@@ -11,18 +11,18 @@ iptables is a command-line firewall utility that policy chains to allow or block
 
 iptables has the following 4 built-in tables:
 
-1. Filter table
+1. Filter table, 包过滤
 
 Filter is default table for iptables. <br/>
-So, if you don't define you own table, you'll be using filter table. <br/>
-Iptables's filter table has the following built-in chains:
+So, if you dont define you own table, you will be using filter table. <br/>
+filter table has the following built-in chains:
   + `INPUT chain`
   + `OUTPUT chain`
   + `FORWARD chain`
 
-2. NAT table
+2. NAT table, 网络地址转换
 
-Iptables's NAT table has the following built-in chains:
+NAT table has the following built-in chains:
   + `PREROUTING chain`: Alters packets before routing
     + Packet translation happens immediately after the packet comes to the system(and before routing).
     + This helps to translate the destination ip address of the packets to something that matches the routing on the local server.
@@ -33,9 +33,9 @@ Iptables's NAT table has the following built-in chains:
     + This is used for SNAT(source NAT)
   + `OUTPUT chain`: NAT for locally generated packets on the firewall
 
-3. Mangle table
+3. Mangle table, 包重构(修改)
 
-Iptables's Mangle table is for specialized packet alteration. <br/>
+Mangle table is for specialized packet alteration. <br/>
 This alters QOS bits in the TCP header. <br/>
 Mangle table has the following built-in chains:
   + `PREROUTING chain`
@@ -44,7 +44,7 @@ Mangle table has the following built-in chains:
   + `INPUT chain`
   + `POSTROUTING chain`
 
-4. Raw table
+4. Raw table, 数据跟踪处理
 
 Raw table has the following built-in chains:
   + `PREROUTING chain`
@@ -54,7 +54,7 @@ Raw table has the following built-in chains:
 
 ```
 Input    This chain is used to control the behavior for incoming connections
-Forward    This chain is used for incoming connections that aren't actually being delivered locally
+Forward    This chain is used for incoming connections that arent actually being delivered locally
 Output    This chain is used for outgoing connections
 
 -L, --list [chain]
@@ -82,8 +82,8 @@ Output    This chain is used for outgoing connections
   
 
 ```
-# If you do 'iptables -t [table] --list', you'll see all the avaliable firewall rules of the table
-# if you don't specify the -t option, it will display the default filter table
+# If you do 'iptables -t [table] --list', you will see all the avaliable firewall rules of the table
+# if you dont specify the -t option, it will display the default filter table
 iptables -t nat --list
 
 # The rules in the 'iptables --list' command output contains the following fields:
@@ -105,7 +105,7 @@ destination: Destination ip
 
 ## Policy Chain Default Behavior
 
-### what do you want iptables to do if the connection doesn't match any existing rules?
+### what do you want iptables to do if the connection doesnt match any existing rules?
 
 + To see what your policy chains are currently configured to do with unmatched traffic
   + run the 'iptables -L | grep policy' command
@@ -122,7 +122,7 @@ destination: Destination ip
 
 1. Accept, allow the connection
 2. Drop, drop the connection, act like it never happened
-3. Reject, don't allow the connection, but send back an error
+3. Reject, dont allow the connection, but send back an error
 
 ## Allowing or Blocking Specific Connections
 
@@ -145,8 +145,8 @@ iptables -A INPUT -p tcp --dport ssh -j DROP
 ## Connection States
 
 What is you only want SSH coming into your system to be allowed, <br/>
-won't adding a rule to the output chain also allow outgoing SSH attempts? <br/>
-That's where connection states come in, which give you the capability you'd need to <br/>
+wont adding a rule to the output chain also allow outgoing SSH attempts? <br/>
+That is where connection states come in, which give you the capability you need to <br/>
 allow two way communication but only allow one way connections to be established. <br/>
 
 ```
