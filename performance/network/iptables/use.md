@@ -3,6 +3,19 @@
 ## tips and tricks
 
 ```
+# 开启80端口
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+# 屏蔽单个ip
+iptables -I INPUT -s 123.45.6.7 -j DROP
+# 封整个段
+iptables -I INPUT -s 123.0.0.0/8 -j DROP
+# 允许对外访问
+iptables -A OUTPUT -j ACCEPT
+# 禁止其他未允许的规则访问
+iptables -A INPUT -j reject
+# 只允许指定ip进行ssh连接
+iptables -A INPUT -s 192.168.0.3 -p tcp --dport 22 -j ACCEPT
+# 只允许从外部建立ssh连接
 iptables -A INPUT -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
 iptables -A OUTPUT -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
 ```

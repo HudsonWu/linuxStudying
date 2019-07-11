@@ -1,5 +1,14 @@
 # 命令模式
 
+## tips and tricks
+
+```
+# 进入paste模式
+:set paste
+# 退出paste模式
+:set nopaste
+```
+
 ## vim 全局命令 g
 
 当想要在整个文件中对于匹配的行或者不匹配的行进行一些操作时, 应该第一时间想到`:g`命令
