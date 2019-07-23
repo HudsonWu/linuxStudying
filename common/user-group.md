@@ -67,3 +67,21 @@ shell是用户与linux系统之间的接口，linux的shell有很多种，常见
 user1 ALL=(ALL) ALL
 user1 ALL = NOPASSWD: /usr/bin/docker, /usr/local/bin/docker-compose
 ```
+
+## tricks
+
+```
+# 列出自己的用户组
+groups
+
+# 添加用户组
+groupadd docker
+
+# 添加用户到组
+gpasswd -a ${USER} docker
+
+# 切换一下用户组(刷新缓存)
+newgrp - docker;
+newgrp - `groups %{USER} | cut -d' ' -f1`;
+pkill X
+```
