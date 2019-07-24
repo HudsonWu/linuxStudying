@@ -79,3 +79,27 @@
 //指定日志保存多久
 > journalctl --vacuum-time=1years
 ```
+
+## 日志
+
+```
+# 检查当前journal使用磁盘量
+journalctl --disk-usage
+
+# 按照时间清理
+journalctl --vacuum-time=2d
+
+# 按照容量清理
+journalctl --vacuum-size=500M
+
+# 如果要手工删除日志文件, 删除前需要先轮转一次journal日志
+systemctl kill --kill-who=main --signal=SIGUSR2 systemd-journald.service
+
+# 启用日志限制持久化配置, 修改/etc/systemd/journald.conf
+# 然后重启systemctl restart systemd-journald.service
+SystemMaxUse=16M
+ForwardToSyslog=no
+
+# 检查journal是否运行正常以及日志文件是否完整无损坏
+journalctl --verify
+```
