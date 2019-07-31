@@ -1,6 +1,7 @@
 # git 远程仓库
 
 ## git remote
+
 ```
 1. 添加上游仓库
 git remote add <name> <url>
@@ -20,9 +21,20 @@ git fetch --all  //更新所有
 
 5. 推送本地更改到上游
 git push -u <name> <branch>
+
+6. git push 推送到两个远程仓库
+# 修改.git/config文件
+[remote "origin"]
+  url = git@github.com:someone/someproject.git
+  url = git@git.oschina.net:someone/someproject.git
+  fetch = +refs/heads/*:refs/remotes/origin/*
+> git push origin master
+# 使用git remote set-url命令
+> git remote set-url --add origin git@git.oschina.net:someone/someproject.git
 ```
 
 ## git fetch 和 git pull
+
 ```
 1. git fetch 从远程获取最新版本到本地，但不会自动merge
 git fetch origin
@@ -32,6 +44,7 @@ git pull origin dev
 ```
 
 ## git初始提交
+
 ```
 echo "# ui_automated_testing" >> README.md
 git init
@@ -42,6 +55,7 @@ git push -u origin master
 ```
 
 ## 推送到远程时文件忽略
+
 ```
 .gitignore文件, 用于设置公共需要排除的文件
 .git/info/exclude文件, 用于设置本地需要忽略的文件
@@ -96,4 +110,3 @@ URL: http://github.com/someone/myproject.git
 $ git branch -vv
 ```
 无效的远程追踪分支会以gone来标识
-
