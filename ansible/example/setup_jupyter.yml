@@ -1,0 +1,206 @@
+---
+
+- name: "Setup Ansible-Jupyter"
+  hosts: localhost
+
+  vars:
+
+    # General package on GNU/Linux.
+    general_packages:
+      - bash
+      - bash-completion
+      - ca-certificates
+      - curl
+      - git
+      - openssl
+      - sshpass
+
+    # Alpine Linux.
+    apk_packages:
+      - openssh-client
+      - vim
+
+    # Debian, Ubuntu.
+    apt_packages: "{{ apk_packages }}"
+
+    # Arch Linux.
+    pacman_packages:
+      - openssh
+      - vim
+
+    # Gentoo Linux.
+    portage_packages:
+      - bash
+      - bash-completion
+      - ca-certificates
+      - dev-vcs/git
+      - net-misc/curl
+      - openssh
+      - openssl
+      - sqlite
+      - vim
+
+    # CentOS.
+    yum_packages:
+      - openssh-clients
+      - vim-minimal
+
+    # openSUSE.
+    zypper_packages: "{{ pacman_packages }}"
+
+    # Python.
+    pip_packages:
+      - docker-py
+      - docker-compose
+
+    jupyter_notebook_config_py_url: "https://raw.githubusercontent.com/chusiang/ansible-jupyter.dockerfile/master/files/jupyter_notebook_config.py"
+    ssh_private_key_url: "https://raw.githubusercontent.com/chusiang/ansible-jupyter.dockerfile/master/files/ssh/id_rsa"
+    ansible_cfg_url: "https://raw.githubusercontent.com/chusiang/ansible-jupyter.dockerfile/master/ansible.cfg"
+    inventory_url: "https://raw.githubusercontent.com/chusiang/ansible-jupyter.dockerfile/master/inventory"
+
+  tasks:
+
+    - name: Install necessary packages of Linux
+      block:
+
+        - name: Install general linux packages
+          package:
+            name: "{{ item }}"
+            state: present
+          with_items: "{{ general_packages }}"
+          when:
+            - general_packages is defined
+            - ansible_pkg_mgr != "portage"
+
+        - name: Install apk packages on Alpine Linux
+          apk:
+            name: "{{ item }}"
+            state: present
+          with_items: "{{ apk_packages }}"
+          when:
+            - apk_packages is defined
+            - ansible_pkg_mgr == "apk"
+
+        - name: Install apt packages on Debian and Ubuntu
+          apt:
+            name: "{{ item }}"
+            state: present
+          with_items: "{{ apt_packages }}"
+          when:
+            - apt_packages is defined
+            - ansible_pkg_mgr == "apt"
+
+        - name: Install pacman packages on Arch Linux
+          pacman:
+            name: "{{ item }}"
+            state: present
+          with_items: "{{ pacman_packages }}"
+          when:
+            - pacman_packages is defined
+            - ansible_pkg_mgr == "pacman"
+
+        - name: Install portage packages on Gentoo Linux
+          portage:
+            package: "{{ item }}"
+            state: present
+          with_items:
+           - "{{ portage_packages }}"
+          when:
+            - portage_packages is defined
+            - ansible_pkg_mgr == "portage"
+
+        - name: Install yum packages on CentOS
+          yum:
+            name: "{{ item }}"
+            state: present
+          with_items: "{{ yum_packages }}"
+          when:
+            - yum_packages is defined
+            - ansible_pkg_mgr == "yum"
+
+        - name: Install zypper packages on openSUSE
+          zypper:
+            name: "{{ item }}"
+            state: present
+          with_items: "{{ zypper_packages }}"
+          when:
+            - zypper_packages is defined
+            - ansible_pkg_mgr == "zypper"
+
+    - name: Install necessary packages of Python
+      block:
+
+        - name: Install general pip packages
+          pip:
+            name: "{{ item }}"
+            state: present
+          with_items: "{{ pip_packages }}"
+          when: pip_packages is defined
+
+        - name: Install pysqlite on gentoo
+          pip:
+            name: pysqlite
+            state: present
+          when:
+            - ansible_pkg_mgr == "portage"
+
+        - name: Upgrade six
+          pip:
+            name: six
+            state: latest
+          tags: skip_ansible_lint
+
+    - name: Install and configuration Jupyter (application)
+      block:
+
+        - name: Install jupyter
+          pip:
+            name: jupyter
+            version: 1.0.0
+            state: present
+
+        # Disable jupyter authentication token. (1/2)
+        - name: Create `/root/.jupyter` directory
+          file:
+            path: /root/.jupyter
+            state: directory
+            mode: 0700
+
+        # Disable jupyter authentication token. (2/2)
+        - name: Get jupyter_notebook_config.py
+          get_url:
+            url: "{{ jupyter_notebook_config_py_url }}"
+            dest: /root/.jupyter/jupyter_notebook_config.py
+            mode: 0644
+            checksum: md5:c663914a24281ddf10df6bc9e7238b07
+
+    - name: Integrate Ansible and Jupyter
+      block:
+
+        - name: Create `/root/.ssh` directory
+          file:
+            path: /root/.ssh
+            state: directory
+            mode: 0700
+
+        - name: Get ssh private key
+          get_url:
+            url: "{{ ssh_private_key_url }}"
+            dest: /root/.ssh/id_rsa
+            mode: 0600
+            checksum: md5:6cc26e77bf23a9d72a51b22387bea61f
+
+        - name: Get ansible.cfg file
+          get_url:
+            url: "{{ ansible_cfg_url }}"
+            dest: /home/
+            mode: 0644
+
+        - name: Get inventory file
+          get_url:
+            url: "{{ inventory_url }}"
+            dest: /home/
+            mode: 0644
+
+# vim: ft=yaml.ansible :
+
