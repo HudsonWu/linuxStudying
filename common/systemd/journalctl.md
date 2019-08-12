@@ -41,6 +41,9 @@
 //--output 或-o, 改变输出的格式 
 > journalctl -r -u docker.service -o json-pretty
 
+//查看指定服务的日志
+journalctl /usr/lib/systemd/systemd
+
 //查看指定进程的日志
 > journalctl _PID=1
 
