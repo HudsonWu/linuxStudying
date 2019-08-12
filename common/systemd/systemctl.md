@@ -56,6 +56,8 @@ systemctl kill apache.service
 systemctl reload apache.service
 //重新加载所有修改过的配置文件
 systemctl daemon-reload
+//查看unit的配置文件
+systemctl cat httpd.service
 //显示某个unit的所有底层参数
 systemctl show httpd.service
 //显示某个unit指定属性的值
