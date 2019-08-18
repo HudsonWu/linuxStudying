@@ -26,6 +26,9 @@ mkdir /data
 chmod 755 /data
 
 # /etc/exports
+## sync, 同步共享目录
+## no_root_squash, 可以使用root授权
+## no_all_squash, 可以使用普通用户授权
 /data/ 192.168.0.0/24(rw,sync,no_root_squash,no_all_squash)
 
 # 重启nfs
