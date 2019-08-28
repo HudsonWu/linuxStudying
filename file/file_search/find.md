@@ -25,6 +25,10 @@ find . -name "*.txt"
 
 2. 不递归查找
 find . -name "*.txt" -maxdepth 1
+
+3. 排除某个目录
+D="some_path"
+find "$D" ! -path "$D" -type d
 ```
 
 ## find命令之exec
