@@ -10,7 +10,7 @@ firewall-cmd --get-active-zones
 //设置当前区域的接口
 firewall-cmd --get-zone-of-interface=enp0s3
 //显示公共区域(public)所有项
-firewall-cmd --zone-public --list-all
+firewall-cmd --zone=public --list-all
 //临时修改网络接口enp0s3为内部区域
 firewall-cmd --zone=internal --change-interface=enp0s3
 //永久修改网络接口enp0s3为内部区域
