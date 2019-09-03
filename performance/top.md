@@ -4,6 +4,11 @@ The linux top command is used to show all the running processes within your linu
 
 top命令是linux下常用的性能分析工具, 能够实时显示系统中各个进程的资源占用状况 <br/>
 
+```
+# 查看指定进程的线程资源占用状况
+top -H -p 15303
+```
+
 
 ## What information is shown
 
