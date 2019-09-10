@@ -312,6 +312,8 @@ perf record ls -g
 
 //记录执行ls时的系统调用, 可以知道哪些系统调用最频繁: 
 perf record -e syscalls:sys_enter ls
+
+perf record -e cycles -g -p <my_pid>
 ```
  
 ## `perf-report`
