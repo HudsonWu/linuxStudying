@@ -59,15 +59,15 @@ P, 将当前信息保存到perf.hist.N中
 -U: 不显示属于用户态程序的符号. 
 -d <n>: 界面的刷新周期, 默认为2s, 
         因为perf top默认每2s从mmap的内存区域读取一次性能数据. 
--G: 得到函数的调用关系图. 
-perf top -G [fractal], 路径概率为相对值, 加起来为100%, 调用顺序为从下往上. 
-perf top -G graph, 路径概率为绝对值, 加起来为该函数的热度
+-g: 得到函数的调用关系图. 
+perf top -g [fractal], 路径概率为相对值, 加起来为100%, 调用顺序为从下往上. 
+perf top -g graph, 路径概率为绝对值, 加起来为该函数的热度
 ```
 
 例子:
 ```
 perf top  // 默认配置
-perf top -G  // 得到调用关系图
+perf top -g  // 得到调用关系图
 perf top -e cycles  // 指定性能事件
 perf top -p 23015,32476  // 查看这两个进程的cpu cycles使用情况
 perf top -s comm,pid,symbol  // 显示调用symbol的进程名和进程号
