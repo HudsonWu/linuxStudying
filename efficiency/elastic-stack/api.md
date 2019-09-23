@@ -4,16 +4,14 @@
 
 ```
 # 查看索引相关信息
-GET index_sample
+GET my_index
 
 # 查看索引的文档总数
-GET index_sample/_count
+GET my_index/_count
 
 # 查看前10条文档
-POST index_sample/_search
-{
-
-}
+POST my_index/_search
+{}
 
 # _cat indices API
 ## 查看indices
