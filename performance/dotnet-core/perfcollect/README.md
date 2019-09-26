@@ -45,7 +45,7 @@ RUN curl -OL http://aka.ms/perfcollect \
     && chmod +x perfcollect
 
 # perfcollect expects to find crossgen along side libcoreclr.so
-RUN cp /app/crossgen $(dirname `find /usr/share/dotnet/ -name libcoreclr.so`
+RUN cp /app/crossgen $(dirname `find /usr/share/dotnet/ -name libcoreclr.so`)
 
 ENTRYPOINT ["/bin/bash"]
 ```
