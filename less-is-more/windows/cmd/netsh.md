@@ -46,4 +46,7 @@ netsh exec mycfg.dat
 
 # 远程系统
 netsh set machine remotecomputer
+
+# 查看网卡的MTU
+netsh interface ipv4 show subinterfaces
 ```
