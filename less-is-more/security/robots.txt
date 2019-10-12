@@ -1,0 +1,6 @@
+# robots.txt
+
+```
+# 抓取延迟
+Crawl-delay: 100
+```
