@@ -1,5 +1,23 @@
 # strace, 跟踪进程中的系统调用
 
+```
+# 查看系统调用
+strace -p 202
+
+# 按调用时间汇总
+# 找出耗CPU的操作
+strace -cp 202
+
+# 单独跟踪write的调用情况
+strace -p 202 -Te write
+
+# 过滤write操作
+strace -Tf -p 202 2>&1 | grep -v write
+
+# 跟踪多个pid
+strace -f $(pidof php-fpm | sed 's/\([0-9]*\)/\-p \1/g')
+```
+
 strace命令是一个集诊断、调试、统计于一体的工具, 
 我们可以使用strace对应用的系统调用和信号传递的跟踪结果来对应用进行分析, 
 以达到解决问题或者是了解应用工作过程的目的
