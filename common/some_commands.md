@@ -78,6 +78,12 @@ ctrl+alt+F7 为图形界面
 ```
 # 列出已经安装的软件
 yum list installed
+
+# 模糊搜索包含xxx关键字的软件包
+yum search xxx
+
+# 通过软件包提供的某个可执行命令搜索
+yum provides "*jstack"
 ```
 
 ## apt-get, 软件安装工具(debian)

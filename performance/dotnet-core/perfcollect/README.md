@@ -1,5 +1,7 @@
 # Collecting .NET Core Linux Container CPU Traces
 
++ [Traces](https://devblogs.microsoft.com/dotnet/collecting-net-core-linux-container-cpu-traces-from-a-sidecar-container/)
+
 ## Building Container Images
 
 ```Dockerfile
