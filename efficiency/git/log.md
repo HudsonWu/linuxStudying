@@ -1,12 +1,17 @@
 # git log
 
+```
+# 查看各分支关系
+git log --all --graph --decorate --oneline --simplify-by-decoration
+```
+
 ## 输出格式
 
 ### 格式化log输出
 ```
 1. --oneline
 把每一个提交显示在一行中, 默认只显示提交ID和提交信息的第一行
-2. --decorat
+2. --decorate
 显示指向提交的所有引用(比如说分支、标签等)
 3. Diff
 git log 提供了很多选项来显示两个提交之间的差异, 最常用的是 --stat 和 -p
