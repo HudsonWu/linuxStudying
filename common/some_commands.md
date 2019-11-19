@@ -76,14 +76,30 @@ ctrl+alt+F7 为图形界面
 ## yum, 软件安装工具(redhat)
 
 ```
+# 列出所有可安装的软件包
+yum list
+
 # 列出已经安装的软件
 yum list installed
+
+# 列出所有可更新的软件包
+yum list updates
+
+# 列出所有已安装但不在yum repository软件包资源库内的软件包
+yum list extras
+
+# 列出指定的软件包安装信息
+yum list package_name
+
+# 查看软件包说明信息
+yum info package_name
 
 # 模糊搜索包含xxx关键字的软件包
 yum search xxx
 
 # 通过软件包提供的某个可执行命令搜索
 yum provides "*jstack"
+
 ```
 
 ## apt-get, 软件安装工具(debian)
