@@ -36,23 +36,23 @@ git reset --hard origin/master
 
 ```
 git rev-list master
-//显示前10个
+# 显示前10个
 git rev-list master --max-count=10
 ```
 
 ## 只克隆最近一次提交的代码
 
 ```
-//--depth, 解决内容过多时git clone花费时间长的问题
-//depth用于指定克隆深度, 为1即表示只克隆最近一次commit
+# --depth, 解决内容过多时git clone花费时间长的问题
+# depth用于指定克隆深度, 为1即表示只克隆最近一次commit
 git clone --depth 1 https:/github.com/someone/example.git
 
-//从--depth 1的限制恢复
+# 从--depth 1的限制恢复
 git fetch --unshallow
-//or
+# or
 git fetch --depth=2147483547
 
-//拉取指定分支
+# 拉取指定分支
 git remote set-branches origin 'remote_branch_name'
 git fetch --depth 1 origin remote_branch_name
 git checkout remote_branch_name
@@ -67,11 +67,16 @@ git commit --amend
 ## 修改git repo历史提交的author
 
 ```
-git rebase -i HEAD~n  //表示要修改前n次所有的提交, -i, interactive, 交互
-//将需要修改的提交的pick改成edit或e
+# -i, interactive, 交互
+git rebase -i commitid
+# git rebase -i HEAD~n  //表示要修改前n次所有的提交
+# git rebase -i --root  //修改最初的提交
+# 将需要修改的提交的pick改成edit或e
 
+# 修改提交的author信息
 git commit --amend --author "someone <someone@gmail.com>"
 
+# 继续下一次修改
 git rebase --continue
 ```
 
@@ -87,9 +92,9 @@ git add 且未 commit 的文件, 在执行reset --hard后的恢复操作
 
 1. 获取所有悬挂文件
 ```
-//将悬挂的文件存入filex.txt中
+# 将悬挂的文件存入filex.txt中
 git fsck > files.txt
-//或者使用下面的命令查看最近60次add的文件
+# 或者使用下面的命令查看最近60次add的文件
 find .git/objects -type f | xargs ls -lt | sed 60q
 ```
 filex.txt文件内容如下:
