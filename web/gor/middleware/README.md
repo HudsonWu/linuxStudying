@@ -1,10 +1,12 @@
 # GoReplay middleware, 中间件
 
-GoReplay提供了NodeJS编写的基础框架，它隐藏了协议实现的细节并提供了中间件编写的基础语句。不过协议本身十分简单，可以使用任何语言编写。
-
 中间件是一个从标准输入接收请求和响应并输出更改后的请求到标准输出的程序，你可以实现任何自定义逻辑，比如分离隐私数据、高级重写、oAuth认证等。
 
 ![中间件](process.png)
+
+中间件协议很简单，可以使用任何语言编写，可以参考[不同语言中间件编写实例](https://github.com/buger/goreplay/tree/master/examples/middleware)。
+
+GoReplay官方提供了NodeJS编写中间件的框架，它隐藏了协议实现的细节并提供了中间件编写的基础语句。可以查看[NodeJS编写中间件](https://github.com/buger/goreplay/tree/master/middleware)具体了解。
 
 中间件程序与Gor的所有通信都是异步的，不能保证原始请求和响应消息一个接一个的到来，如果处理的逻辑依赖原始响应(original response)和复制的响应(replayed response)，中间件要增加状态的处理。
 
@@ -13,7 +15,7 @@ GoReplay提供了NodeJS编写的基础框架，它隐藏了协议实现的细节
 gor --input-raw :80 --middleware "/opt/middleware_executable" --output-http "http://staging.server"
 ```
 
-## 交流协议
+## 中间件通信协议
 
 所有的消息都应该是十六进制编码的，新的行字符指定消息的结尾。解码的有效载荷有两部分组成：header和HTTP载荷
 
