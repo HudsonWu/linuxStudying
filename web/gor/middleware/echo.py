@@ -2,6 +2,8 @@
 
 # -*- coding: utf-8 -*-
 
+# https://github.com/amyangfei/GorMW
+
 from gor.middleware import TornadoGor
 import requests
 import time
