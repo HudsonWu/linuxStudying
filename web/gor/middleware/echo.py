@@ -9,7 +9,7 @@ import requests
 import time
 
 def back_result(my_data):
-    url = "http://social.staging.fanyuanwang.cn/http_request_analysis/fywapi"
+    url = "http://staging.server/example/api/path"
     r = requests.post(url, data = my_data)
     print(r.content)
 
@@ -25,13 +25,13 @@ def on_replay(proxy, msg, **kwargs):
     replay_body = proxy.http_body(msg.http)
     resp_body = proxy.http_body(kwargw['resp'].http)
     my_data = {
-        'Method' : proxy.http_method(kwargs['req'].http)
-        'Path' : proxy.http_path(kwargs['req'].http)
-        'Body' : proxy.http_body(kwargs['req'].http)
-        'Time' : time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        'MasterStatusCode': resp_status
-        'MasterResponseBody': resp_body[0:200]
-        'SlaveStatusCode': replay_status
+        'Method': proxy.http_method(kwargs['req'].http),
+        'Path': proxy.http_path(kwargs['req'].http),
+        'Body': proxy.http_body(kwargs['req'].http),
+        'Time': time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
+        'MasterStatusCode': resp_status,
+        'MasterResponseBody': resp_body[0:200],
+        'SlaveStatusCode': replay_status,
         'SlaveResponseBody': replay_body[0:200]
     }
     if replay_status != resp_status:
