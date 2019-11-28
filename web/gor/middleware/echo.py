@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 # -*- coding: utf-8 -*-
 
@@ -7,11 +7,13 @@
 from gor.middleware import TornadoGor
 import requests
 import time
+import sys
 
 def back_result(my_data):
     url = "http://staging.server/example/api/path"
     r = requests.post(url, data = my_data)
-    print(r.content)
+    sys.stderr.write(r.content)
+    sys.stderr.flush()
 
 def on_request(proxy, msg, **kwargs):
     proxy.on('response', on_response, idx=msg.id, req=msg)
@@ -35,18 +37,19 @@ def on_replay(proxy, msg, **kwargs):
         'SlaveResponseBody': replay_body[0:200]
     }
     if replay_status != resp_status:
-        print('Error: replay status [%s] diffs from response status [%s]' % (replay_status, resp_status))
+        sys.stderr.write('Error: replay status [%s] diffs from response status [%s]' % (replay_status, resp_status))
         back_result(my_data)
     else:
-        print('replay status is same as response status\n')
+        sys.stderr.write('replay status is same as response status\n')
         if replay_body != resp_body:
-            print('Error: replay body diffs from response body')
+            sys.stderr.write('Error: replay body diffs from response body')
             back_result(my_data)
         else:
-            print('replay body is same as response body\n')
+            sys.stderr.write('replay body is same as response body\n')
+        sys.stderr.flush()
             
 
-if __name == '__main__':
+if __name__ == '__main__':
     proxy = TornadoGor()
     proxy.on('request', on_request)
     proxy.run()
