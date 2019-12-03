@@ -1,15 +1,23 @@
-#!/bin/bash
+#!/bin/sh
 
 # 定期监控服务运行状况
+# 执行nohup sh monitor.sh &启动守护进程
+
+# 获取脚本目录
+shell_folder=$(cd `dirname $0`; pwd)
+
 while true
 do
-    header=`curl -I http://example:4873`
+    header=`curl -X GET -I http://example:4873`
+
     if [[ $header =~ 'HTTP/1.1 200 OK' ]]; then
         echo 'ok';
     else
-        # 重启服务
+        # 重启服务并记录日志
         nohup verdaccio &
+        echo `date +%Y-%m-%d\ %H:%M:%S` "restart" >> $shell_folder/verdaccio.restart.log
     fi
-    # 每个10秒检查一次
+
+    # 每隔10秒检查一次
     sleep 10s
 done
