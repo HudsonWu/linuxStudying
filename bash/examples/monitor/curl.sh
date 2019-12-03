@@ -8,9 +8,9 @@ shell_folder=$(cd `dirname $0`; pwd)
 
 while true
 do
-    header=`curl -X GET -I http://example:4873`
+    header=`curl --connect-timeout 5 -X GET -I http://example:4873`
 
-    if [[ $header =~ 'HTTP/1.1 200 OK' ]]; then
+    if [ $? -ne 0 ] && [[ $header =~ 'HTTP/1.1 200 OK' ]]; then
         echo 'ok';
     else
         # 重启服务并记录日志
