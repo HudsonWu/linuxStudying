@@ -27,4 +27,5 @@ pstree <pid>, 以树状图显示进程PID为<pid>的进程以及子孙进程,
               如果有-p参数则同时显示每个进程的PID
 pstree -a, 以树状图显示进程, 相同名称的进程不合并显示, 并且会显示命令行参数
 pstree -apnh, 显示进程间的关系
+pstree -ap | grep 'exam_prog_name', 查找指定程序的进程树
 ```
