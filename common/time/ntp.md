@@ -51,3 +51,5 @@ nomodify notrap语句意味着不允许你的客户端配置服务器或者作�
 > ntpdate -d 192.168.8.100  //查看时间同步过程
 
 > ntpstat  //查看时间同步状态
+
+> 5 * * * * /usr/sbin/ntpdate 0.cn.pool.ntp.org 1.cn.pool.ntp.org >> /var/debug/ntpdate.log 2>&1
