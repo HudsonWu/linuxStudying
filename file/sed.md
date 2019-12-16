@@ -1,7 +1,9 @@
 # sed, stream editor, 流编辑器
-用程序的方式来编辑文本, 基本上就是使用正则模式匹配
+
+用程序的方式来编辑文本，基本上就是使用正则模式匹配。
 
 ## 语法
+
 ```
 sed [-hnV] [-e<script>] [-f<script文件>] [文本文件]
 
@@ -35,6 +37,7 @@ nl /etc/passwd | sed -n '/root/{s/bash/blueshell/;p;q}'
 ```
 
 ## Usage
+
 ```
 1. 用s命令替换
 sed "s/my/Hao Chen's/g" pets.txt
@@ -66,7 +69,8 @@ sed 's/This is my \([^,]*\),.*is \(.*\)/\1:\2/g' my.txt
 This is my cat, my cat's name is betty  ->  cat:betty
 ```
 
-#### 正则表达式:
+#### 正则表达式
+
 ```
 ^ 表示一行的开头, 如: /^#/ 以#开头的匹配 
 $ 表示一行的结尾, 如: /}$/ 以}结尾的匹配 
@@ -78,6 +82,7 @@ $ 表示一行的结尾, 如: /}$/ 以}结尾的匹配
 ```
 
 #### 例子: html.txt
+
 ```
 <b>This</b> is what <span style="text-decoration: underline;">I</span> meant. Understand?
 sed 's/<.*>//g' html.txt
@@ -87,6 +92,7 @@ This is what I meant. Understand?
 ```
 
 ## 一些有用的命令
+
 ```
 1. 在指定行前面或后面插入新行
 sed '/test/i\ add a new line' -i a.txt
