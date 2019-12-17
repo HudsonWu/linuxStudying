@@ -9,4 +9,8 @@ nginx.ingress.kubernetes.io/rewrite-target: /$2
 
 # 取消ssl重定向
 nginx.ingress.kubernetes.io/ssl-redirect: "false"
+
+# 请求限制
+nginx.ingress.kubernetes.io/limit-rps: "50"
+nginx.ingress.kubernetes.io/limit-whitelist: "192.168.11.20/24,8.8.8.8"
 ```
