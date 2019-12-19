@@ -187,3 +187,40 @@ http {
   }
 }
 ```
+
+## 白名单设置
+
+使用map和geo模块创建一个ip白名单：
+
+```
+http {
+  geo $whitelist {
+    default 0;
+
+    # 下面的ip或cidr不被限制
+    192.168.0.0/24 1;
+    10.2.0.0/32 1;
+    8.8.8.8 1;
+  }
+
+  map $whitelist $limit {
+    0 $binary_remote_addr;
+    1 "";
+  }
+
+  # 下面的指令都是对非白名单ip的限制
+  
+  # 限制每个ip并发连接数最大为5
+  limit_conn_zone $limit zone=connlimit:10m;
+  limit_conn connlimit 5;
+  limit_conn_log_level warn;
+  limit_conn_status 503;
+
+  # 限制每个ip每两秒最多两个请求，最多有3个请求被延迟
+  # 更多的请求将返回503
+  limit_req_zone $limit zone=one:10m rate=30r/m;
+  limit_req zone=one burst=3;
+  limit_req_log_level warn;
+  limit_req_status 503;
+}
+```
