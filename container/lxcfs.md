@@ -2,6 +2,8 @@
 
 lxcfs是LXC和LXD的一个附属项目，它基本上是作为一个小的FUSE文件系统挂载到容器中以实现容器内部的proc系统。
 
+社区中常用的做法是利用lxcfs来提供容器中资源的可见性，lxcfs是一个开源的FUSE（用户态文件系统）实现来支持LXC容器，也支持Docker容器。
+
 支持下面的文件：
   + /proc/cpuinfo
   + /proc/diskstats
@@ -21,6 +23,8 @@ modprobe fuse
 ```
 
 ### 构建并运行lxcfs
+
+#### 源代码安装
 
 ```
 git clone git://github.com/lxc/lxcfs
@@ -50,6 +54,17 @@ if [ $a -eq 0 ];then
     cd /home/username/lxcfs/lxcfs
     nohup  ./lxcfs -s -f -o allow_other /var/lib/lxcfs/ > /root/lxcfs_startup.log  2>&1 &
 fi
+```
+
+#### rpm包安装
+
+```
+# 安装lxcfs的rpm包
+wget https://copr-be.cloud.fedoraproject.org/results/ganto/lxd/epel-7-x86_64/00486278-lxcfs/lxcfs-2.0.5-3.el7.centos.x86_64.rpm
+yum install lxcfs-2.0.5-3.el7.centos.x86_64.rpm
+
+# 启动lxcfs
+lxcfs /var/lib/lxcfs &
 ```
 
 ## 测试lxcfs
