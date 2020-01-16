@@ -60,8 +60,8 @@ fi
 
 ```
 # 安装lxcfs的rpm包
-wget https://copr-be.cloud.fedoraproject.org/results/ganto/lxd/epel-7-x86_64/00486278-lxcfs/lxcfs-2.0.5-3.el7.centos.x86_64.rpm
-yum install lxcfs-2.0.5-3.el7.centos.x86_64.rpm
+wget https://copr-be.cloud.fedoraproject.org/results/ganto/lxc3/epel-7-x86_64/01041891-lxcfs/lxcfs-3.1.2-0.2.el7.x86_64.rpm
+yum install lxcfs-3.1.2-0.2.el7.x86_64.rpm
 
 # 启动lxcfs
 lxcfs /var/lib/lxcfs &
