@@ -12,7 +12,7 @@ lxcfs是LXC和LXD的一个附属项目，它基本上是作为一个小的FUSE�
 
 ## 开始使用lxcfs
 
-### Centos系统yum命令安装
+### 安装fuse
 
 ```
 yum install fuse fuse-devel
@@ -20,7 +20,7 @@ yum install pam-devel
 modprobe fuse
 ```
 
-### 源代码安装
+### 构建并运行lxcfs
 
 ```
 git clone git://github.com/lxc/lxcfs
