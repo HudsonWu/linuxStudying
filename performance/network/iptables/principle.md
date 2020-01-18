@@ -11,7 +11,7 @@ iptables is a command-line firewall utility that policy chains to allow or block
 
 iptables has the following 4 built-in tables:
 
-1. Filter table, 包过滤
+1. Filter table
 
 Filter is default table for iptables. <br/>
 So, if you dont define you own table, you will be using filter table. <br/>
@@ -20,7 +20,7 @@ filter table has the following built-in chains:
   + `OUTPUT chain`
   + `FORWARD chain`
 
-2. NAT table, 网络地址转换
+2. NAT table
 
 NAT table has the following built-in chains:
   + `PREROUTING chain`: Alters packets before routing
@@ -71,7 +71,7 @@ Output    This chain is used for outgoing connections
 
 ## Iptables Rules
 
-1. Rules contain a criteria and a target
+1. Rules contain a criteria(标准, 条件) and a target
 
 2. If the criteria is matched:
   + it goes to the rules specified in the target
