@@ -1,11 +1,11 @@
 # The Journey of Linux
 
 ```
-           I think Linux is a great thing,
-                     in the big picture. It's a great hacker's tool,
-                             and it has a lot of potential to become something more.
-                             
-                                                                            Jamie Zawinski
+    I think Linux is a great thing,
+      in the big picture. It's a great hacker's tool,
+        and it has a lot of potential to become something more.
+                            
+                                                     Jamie Zawinski
 ```
 
 Linux Command Tips and Tricks
@@ -43,11 +43,9 @@ Linux Command Tips and Tricks
 
 ## About
 
-这里记录的, 是我在Linux学习过程中的简要笔记. 于我而言, 有三个方面的助益: 一是在记录过程中对要学的点会有更好的理解; 二是将重要知识点记录下来, 时时可以温习; 三是在将众多繁杂的Linux学习内容归类、整理、记录的过程中会对知识框架整体有一个系统性的认识, 站在更高的角度看问题
+我的职业是运维工程师，这里的内容也都是运维相关的（没错，我很喜欢这个岗位）。主要内容是Linux生态圈中的相关知识，有轻量且强大的命令行工具，如grep、nc、git；有计算机技术解决方案类的，如docker、nginx、ansible；有提高效率、提升逼格类的命令行工具，如tmux、vim、cowsay；有性能分析、优化类的，如vmstat、tcpdump、perf、strace；还有其他一些工具使用以及知识介绍的笔记。这里见证了我从菜鸟逐步成长的过程，有遗忘的知识时可以随时过来复习下；也可以从这里看到我学习的一些特点、对知识理解的程度。
 
-### Something to say
-
-我是一位Linux爱好者, 喜欢在命令行下工作, 因为其便捷、功能强大. 在Linux生态圈遨游的过程中, 总会有各种各样奇妙、有趣的想法让我惊叹, 让我兴奋, 让我知道思考方式的多样性, 让我知道学无止境
+我是一位Linux爱好者，喜欢在命令行下工作，因为其便捷、功能强大。在开源生态圈厮混的过程中，总会有各种各样奇妙、有趣的想法让我惊叹，让我兴奋，让我了解到思维的多样性、理论到实践的复杂性、多学科借鉴的创造性，让我知道学无止境，爬过了这座山，还有更高更多的山等待着你。
 
 a Linux lover, a dreaming man, 
 
