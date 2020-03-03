@@ -1,23 +1,32 @@
 # 权限管理
 
-授予用户的权限分全局层级权限、数据库层级权限、表层级别权限、列层级别权限、子程序层级权限
+授予用户的权限分全局层级权限、数据库层级权限、表层级别权限、列层级别权限、子程序层级权限：
 
 + 全局层级, 适用于给定服务器中的所有数据库, 存储在mysql.user表中
-    + grant all on *.*
-    + revoke all on *.*
+    + `grant all on *.*`
+    + `revoke all on *.*`
 + 数据库层级, 适用于给定数据库中的所有目标, 存储在mysql.db和mysql.host表中
-    + grant all on db_name.*
-    + revoke all on db_name.*
-+ 表层级, 适用于给定表中的所有列, 存储在mysql.tables_priv表中
-    + grant all on db_name.tbl_name
-    + revoke all on db_name.tbl_name
-+ 列层级, 适用于给定表中的单一列, 存储在mysql.columns_priv表中
-    + grant select(id, col1) on db_name.tbl_name
+    + `grant all on db_name.*`
+    + `revoke all on db_name.*`
++ 表层级, 适用于给定表中的所有列, 存储在`mysql.tables_priv`表中
+    + `grant all on db_name.tbl_name`
+    + `revoke all on db_name.tbl_name`
++ 列层级, 适用于给定表中的单一列, 存储在`mysql.columns_priv`表中
+    + `grant select(id, col1) on db_name.tbl_name`
 + 子程序层级
     + CREATE ROUTINE, ALTER ROUTINE, EXECUTE和GRANT权限适用于已存储的子程序
     + 这些权限可以被授予为全局层级和数据库层级
-    + 除了CREATE ROUTINE外, 这些权限可以被授予为子程序层级, 并存储在mysql.procs_priv表中
-    + grant execute on procedure db_name.tbl_name
+    + 除了CREATE ROUTINE外, 这些权限可以被授予为子程序层级, 并存储在`mysql.procs_priv`表中
+    + `grant execute on procedure db_name.tbl_name`
+
+一般用到的权限类型如下：
+  + ALL PRIVILEGES, 所有权限
+  + CREATE, 允许用户创建数据库和表
+  + DROP, 允许用户删除数据库和表
+  + DELETE, 允许用户从指定表中删除行
+  + INSERT, 允许用户向指定表插入数据
+  + SELECT, 允许用户读取数据库
+  + UPDATE, 允许用户更新表数据
 
 1. mysql查看用户权限的命令
 ```sql
