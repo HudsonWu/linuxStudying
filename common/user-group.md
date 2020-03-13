@@ -84,4 +84,15 @@ gpasswd -a ${USER} docker
 newgrp - docker;
 newgrp - `groups %{USER} | cut -d' ' -f1`;
 pkill X
+
+# 添加用户
+useradd -d /user/home/path -g group1 -m user1
+
+# 修改用户名和组名
+# 旧: test  新: love
+usermod -l love -d /home/love -m test
+groupmod -n love test
+
+# 删除用户
+userdel -r test
 ```
