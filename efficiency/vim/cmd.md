@@ -276,3 +276,4 @@ This makes the backspace key treat the four spaces like a tab
 
 + [vim全局命令g](https://blog.einverne.info/post/2017/10/vim-global.html)
 + [Power of g](http://vim.wikia.com/wiki/Power_of_g)
++ [大小写](https://vim.fandom.com/wiki/Switching_case_of_characters)
