@@ -1,5 +1,12 @@
 # Learn to use help
 
+```
+# 查找替换命令中\u的用法
+:help s/\u
+# 大小写处理
+:help case
+```
+
 + Enter `:help` or `:h` to browse help
 + Enter `:help pattern` or `:h pattern` for help on the topic pattern
 

@@ -257,6 +257,21 @@ set softtabstop=4
 ```
 This makes the backspace key treat the four spaces like a tab
 
+### 大小写切换
+
+```
+# 首字母大写，其他小写
+## \< 代表单词的开始    \> 代表单词的结束
+## \u 转换为大写    \L 转换为小写
+:s/\<\(\w\)\(\w*\)\>/\u\1\L\2/g
+
+# \S，非空白字符
+:s/\<\(\w\)\(\S*\)/\u\1\L\2/g
+
+# \v，启用符号的特殊含义
+:s#\v(\w)(\S*)/\u\1\L\2#g
+```
+
 ## References
 
 + [vim全局命令g](https://blog.einverne.info/post/2017/10/vim-global.html)
