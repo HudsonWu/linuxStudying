@@ -15,7 +15,10 @@ git checkout cb71df2 file1
 
 3. 让单个文件回退到指定版本
 ```
-git reset a43215 file1  //暂缓区回退到指定commit, 工作区不变
+//暂缓区回退到指定commit, 工作区不变
+//可用来撤销git add操作
+git reset a43215 file1
+
 git commit -m "revert old file because a error"  //提交到本地
 git checkout file1  //更新到工作目录
 git push origin master  //提交到远程仓库
