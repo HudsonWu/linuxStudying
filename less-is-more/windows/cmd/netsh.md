@@ -50,3 +50,19 @@ netsh set machine remotecomputer
 # 查看网卡的MTU
 netsh interface ipv4 show subinterfaces
 ```
+
+## 修改动态端口
+
+```
+# 查看
+netsh int ipv4 show dynamicport tcp
+netsh int ipv4 show dynamicport udp
+netsh int ipv6 show dynamicport tcp
+netsh int ipv6 show dynamicport udp
+
+# 设置
+netsh int ipv4 set dynamicport tcp start=10000 num=1000
+netsh int ipv4 set dynamicport udp start=10000 num=1000
+netsh int ipv6 set dynamicport tcp start=10000 num=1000
+netsh int ipv6 set dynamicport udp start=10000 num=1000
+```
