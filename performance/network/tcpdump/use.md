@@ -1,5 +1,13 @@
 # tcpdump基本使用
 
+## 常用命令
+
+```
+tcpdump -i eth0 port 80 -A -s 0
+```
+
+## 用法介绍
+
 ```
 tcpdump -D  # 列出可用的网卡列表
 
