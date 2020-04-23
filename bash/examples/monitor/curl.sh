@@ -21,3 +21,6 @@ do
     # 每隔10秒检查一次
     sleep 10s
 done
+
+# 直接获取状态码
+curl -sL -w "%{http_code}" --connect-timeout 10 -I -X GET http://example:4873 -o /dev/null
