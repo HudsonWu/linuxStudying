@@ -7,6 +7,11 @@
 :set paste
 # 退出paste模式
 :set nopaste
+
+# 用空格替换tab
+:set expandtab
+# 取消空格替换tab
+:set expandtab!
 ```
 
 ## vim 全局命令 g
