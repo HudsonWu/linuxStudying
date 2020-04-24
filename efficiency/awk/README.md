@@ -21,6 +21,15 @@ awk脚本，如下示例，文件名为advice.awk：
 BEGIN { print "Don't Panic!" }
 ```
 
+## 语法规则
+
+```
+pattern { action }
+pattern { action }
+...
+```
+awk程序规则中，pattern或者action可以不必同时存在，但必须有一个，如果省略pattern，则action对每一个输入行都执行操作；如果省略action，默认操作是打印输出所有匹配行。
+
 ## 参考
 
 + [The GNU Awk User's Guide](https://www.gnu.org/software/gawk/manual/gawk.html)
