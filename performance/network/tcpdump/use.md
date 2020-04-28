@@ -4,6 +4,7 @@
 
 ```
 tcpdump -i eth0 port 80 -A -s 0
+tcpdump -i eth0 icmp
 ```
 
 ## 用法介绍
