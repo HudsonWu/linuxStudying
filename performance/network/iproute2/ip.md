@@ -164,6 +164,9 @@ ip route list  //查看路由信息
 
 ```
 ip route add 192.168.2.0/24 via 192.168.0.2
+
+ip route add 192.168.2.0/24 dev eth0  # dev, device
+ip route add 192.168.2.0/24 via 192.168.0.2 dev eth0
 ```
 
 3. To delete a route
