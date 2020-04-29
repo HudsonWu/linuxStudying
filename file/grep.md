@@ -77,3 +77,10 @@ grep "aaa" file* -lZ | xargs -0 rm
 //grep输出用-Z选项来指定以0值字节作为文件名的终结符(\0)
 //xargs -0读取输入并用0值字节终结符分隔文件名, 然后删除匹配文件
 ```
+
+### tricks
+
+```
+# 输出结果时同时输出字段
+ps -ef | egrep "field_str|search_str"
+```
