@@ -1,7 +1,7 @@
 # systemd, linux服务管理器
 
-+ [systemctl命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/systemd/systemctl.md)
-+ [journalctl命令](https://github.com/HudsonWu/linuxStudying/blob/master/common/systemd/journalctl.md)
++ [systemctl命令](/common/systemd/systemctl.md)
++ [journalctl命令](/common/systemd/journalctl.md)
 + [给程序设置systemd](https://github.com/HudsonWu/linuxStudying/tree/master/common/systemd/service)
 
 ## systemd介绍

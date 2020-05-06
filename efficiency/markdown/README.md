@@ -9,5 +9,5 @@ Markdown增强版中有名的有Markdown Extra, MultiMarkdown, Maruku等
 这些衍生版本要么基于工具, 如Pandoc; 要么基于网站, 如GitHub, Wikipedia
 ```
 
-+ [基本语法](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/markdown/syntax.md)
-+ [实际使用](https://github.com/HudsonWu/linuxStudying/blob/master/efficiency/markdown/solve.md)
++ [基本语法](/efficiency/markdown/syntax.md)
++ [实际使用](/efficiency/markdown/solve.md)

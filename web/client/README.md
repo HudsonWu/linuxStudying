@@ -3,8 +3,8 @@
 + [curl, 数据传输工具](https://github.com/HudsonWu/linuxStudying/tree/master/web/client/curl)
     + [基本用法](https://github.com/HudsonWu/linuxStudying/tree/master/web/client/curl/basic.md)
     + [实用技巧](https://github.com/HudsonWu/linuxStudying/tree/master/web/client/curl/tricks.md)
-+ [httpie, http命令行客户端](https://github.com/HudsonWu/linuxStudying/blob/master/web/client/httpie.md)
-+ [urlencode编码与解码](https://github.com/HudsonWu/linuxStudying/blob/master/web/client/urlencode.md)
++ [httpie, http命令行客户端](/web/client/httpie.md)
++ [urlencode编码与解码](/web/client/urlencode.md)
 
 ## 其他工具
 
