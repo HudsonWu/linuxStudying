@@ -47,5 +47,4 @@ pidstat -r -p 1846  //页面失败和内存使用, -r标记你能够得到内存
 pidstat -r 2 5  //监测内存使用
 pidstat -T CHILD -C mysql  //显示所有mysql服务器的子进程
 pidstat -urd -h  //将所有统计数据结合到一个便于阅读的单一报告中
-
 ```
