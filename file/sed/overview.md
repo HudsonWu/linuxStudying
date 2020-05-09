@@ -1,5 +1,7 @@
 # sed, stream editor, 流编辑器
 
++ [gnu.org manual](https://www.gnu.org/software/sed/manual/sed.html)
+
 用程序的方式来编辑文本，基本上就是使用正则模式匹配。
 
 ## 语法

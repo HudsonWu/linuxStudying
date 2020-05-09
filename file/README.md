@@ -19,7 +19,7 @@ sed, 适合编辑匹配到的文本<br/>
 awk, 适合格式化文本, 对文本进行较复杂格式的处理
 
 + [grep, 强大的文本搜索工具](/file/grep.md)
-+ [sed, 流编辑器](/file/sed.md)
++ [sed, 流编辑器](/file/sed)
 + [awk, 文本文件处理语言](/file/awk.md)
 + [cut, 字符截取命令](/file/cut.md)
 + [paste, 将多个文件的内容合并](/file/paste.md)
