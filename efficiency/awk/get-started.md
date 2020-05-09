@@ -40,5 +40,8 @@ awk 'NR % 2 == 0' data
 # 根据最后修改时间统计文件
 ls -l | awk '$6 == "Nov" { sum += $5 }
              END { print sum }'
+
+# 统计连接数
+ss -n | awk '/^tcp/ { ++S[$NF] } END { for (a in S) print a, S[a] }'
 ```
 
