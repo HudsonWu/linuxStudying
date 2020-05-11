@@ -7,10 +7,10 @@ HTTP服务代理缓存加速 (varnish, nginx缓存系统, CDN)
 运维自动化 (ansible, puppet, cobbler)  
   
 大数据 (hadoop, storm 开源大数据系统)  
-云计算 (openstack, kvm, docker)  
-运维开发  
-自动化运维  
 运维架构师  
 
 深入Linux内核架构
 linux内核研究
+
+https://bootlin.com/
+https://www.kernel.org/
