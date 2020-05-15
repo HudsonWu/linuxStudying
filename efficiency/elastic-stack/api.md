@@ -29,8 +29,13 @@ GET /_cat/indices/kibana*?pri&v&h=health,index,pri,rep,docs,count,mt
 ```
 # 查看集群健康状况
 GET _cluster/health
+
 # 查看节点信息
 GET _cat/nodes
+
 # 查看分片信息
 GET _cat/shards
+
+# 查看已安装插件
+GET _cat/plugins
 ```
