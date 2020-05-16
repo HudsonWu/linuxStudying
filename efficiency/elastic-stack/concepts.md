@@ -1,13 +1,35 @@
-# elasticsearch
+# Elasticsearch
 
-## 文档
+## 文档 (Document)
 
-+ elasticsearch是面向文档的, 文档是所有可搜索数据的最小单位
-+ 文档会被序列化成JSON格式, 保存在elasticsearch中
++ Elasticsearch是面向文档的, 文档是所有可搜索数据的最小单位
++ 文档会被序列化成JSON格式, 保存在Elasticsearch中
 + 每个文档都有一个Unique ID
 + 一篇文档包含了一系列的字段, 类似数据库表中的一条记录
 
 ### 文档的元数据
+
+```json
+{
+  "_index": "movies",
+  "_type": "_doc",
+  "_id": "1",
+  "_score": 14.69302,
+  "_source": {
+    "year": 1995,
+    "@version": "1",
+    "genre": [
+      "Adventure",
+      "Animation",
+      "Children",
+      "Comedy",
+      "Fantasy"    
+    ],
+    "id": 1,
+    "title": "Toy Story"
+}
+}
+```
 
 元数据, 用于标注文档的相关信息
   + _index, 文档所属的索引名
@@ -19,6 +41,18 @@
   + _score, 相关性打分
 
 ## 索引
+
+```json
+{
+  "movies": {
+    "settings": {
+      "index": {
+        "creation_date": ""
+      }
+    }  
+  }
+}
+```
 
 索引是文档的容器, 是一类文档的结合
   + Index体现了逻辑空间的概念, 
