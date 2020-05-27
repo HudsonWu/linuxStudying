@@ -4,6 +4,10 @@
 
 One of the main reason for using this command is when a disk cannot be unmounted and displays the error that files are being used or opend. With this command you can easily identify which files are in use.
 
+```
+lsof -Pnl +M -i4
+```
+
 ## 选项
 
 ```
