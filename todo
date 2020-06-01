@@ -17,3 +17,12 @@ https://www.kernel.org/
 
 extundelete
 https://blog.0x74696d.com/posts/debugging-python-containers-in-production/
+
+tshark
+
+tc qdisc change dev eth0 root netem loss 0%
+time cp test paddytest/ -r
+
+tc qdisc change dev eth0 root netem loss 2%
+time cp test paddytest/ -r
+

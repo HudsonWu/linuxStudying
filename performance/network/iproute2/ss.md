@@ -38,6 +38,18 @@ ss [参数] [过滤]
     FILTER := [ state TCP-STATE ] [ EXPRESSION ]
 ```
 
+## recv-q, send-q
+
+```
+Recv-Q:
+Established: The count of bytes not copied by the user program connected to this socket.
+Listening: Since Kernel 2.6.18 this column contains the current syn backlog.
+
+Send-Q:
+Established: The count of bytes not acknowledged by the remote host.
+Listening: Since Kernel 2.6.18 this column contains the maximum size of the syn backlog.
+```
+
 ## Usage
 
 ```
