@@ -1,41 +1,21 @@
-# Funny Commands
+# 一些常用命令集
 
-## watch start wars via telnet
+## du与df统计不一致的查找方案
 
-```sh
-telnet towel.blinkenlights.nl
 ```
-To stop the animation, press `ctrl + ]`. after that, type `quit` to come out of telnet command
+# df命令查看
+df -h
 
-## lrzsz, xshell上传下载工具包
+# du命令查看
+du -h --max-depth=1 /var/sdb1/dir | sort -n -k1
+```
 
-安装的工具包名为`lrzsz`, 包括rz命令和sz命令 (receive和send)
+硬盘空间不一致的原因一般是因为删除的文件被其他程序引用，导致空间无法回收，解决方法就是找到引用文件的相关进程，然后停掉进程让空间回收即可。
+```
+# 查找引用已删除文件的进程
+lsof -s | grep deleted | sort -nr -k7 | less
 
-## autojump 
+# 结束相关进程
+kill 11566
+```
 
-命令行跳转工具, 帮助快速从目录访问历史中的各个目录中迅速跳转 
-
-## thefuck 
-
-命令纠错 
-
-## tig 
-
-命令行下查看git历史提交记录的工具 
-
-## git summary 
-
-大致了解每个人对这个项目提交的commit数量和贡献度
-
-## [ydict](https://github.com/TimothyYe/ydict) 
-
-命令行方式的有道词典
-
-## [er](https://github.com/TimothyYe/exchangerate)  
-
-命令行下查询和换算货币汇率 
-
-## Display Linux Distribution Logo in ASCII Art in Terminal
-
-+ [Neofetch](https://github.com/dylanaraps/neofetch/wiki/Installation)
-+ [Screenfetch](https://github.com/KittyKatt/screenFetch)
