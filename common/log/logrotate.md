@@ -1,14 +1,17 @@
 ## logrotate
 
-可以自动对日志进行截断（或轮循）、压缩以及删除旧的日志文件
+可以自动对日志进行截断（或轮循）、压缩以及删除旧的日志文件。
 
+安装命令：
 ```
 apt-get install logrotate cron
 yum install logrotate crontabs
+```
 
-logrotate的配置文件是/etc/logrotate.conf，通常不需要进行更改
-日志文件的轮循设置在独立的配置文件/etc/logrotate.d/目录下
+logrotate的配置文件是/etc/logrotate.conf，通常不需要进行更改，日志文件的轮循设置在独立的配置文件/etc/logrotate.d/目录下。
 
+操作示例：
+```
 1. 创建一个日志文件，填入10MB的随机比特流数据
   touch /var/log/log-file
   head -c 10M < /dev/urandom > /var/log/log-file
@@ -55,7 +58,7 @@ logrotate -vf -s /var/log/logrotate-status /etc/logrotate.d/log-file
 设置logrotate记录指定的文件
 
 5. logrotate定时任务
-logrotate需要的cron任务在安装是就自动创建了
+logrotate需要的cron任务在安装时就自动创建了
 cat /etc/cron.daily/logrotate
 #!/bin/sh
 # Clean non existent log file entries from status file
@@ -69,3 +72,4 @@ done >> status.clean
 mv status.clean status
  test -x /usr/sbin/logrotate || exit 0
  /usr/sbin/logrotate /etc/logrotate.conf
+```
