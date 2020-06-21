@@ -1,0 +1,3 @@
+primary_interface: {{ ipaddress }}
+node_name: {{ hostname }}
+

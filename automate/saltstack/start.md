@@ -27,6 +27,9 @@ salt '*' pkg.install cowsay
 # 运行shell命令
 salt '*' cmd.run 'ls -l /etc'
 
+# 查看salt版本
+salt 'minion1' test.versions_report
+
 # 安装包
 salt '*' pkg.install cowsay
 
@@ -35,4 +38,25 @@ salt '*' network.interfaces
 
 # 列出grains
 salt 'minion*' grains.ls
+
+# state
+# state.apply was added in 2015.5
+salt 'minion2' state.apply nettools
+# if you are using an earlier version
+# nettools.sls or nettools/(with init.sls and other sls files)
+salt 'minion2' state.sls nettools
+
+# highstate
+# calling state.apply with no arguments starts a highstate
+salt '*' state.apply
+# limit how many systems are updated at once
+salt --batch-size 10 '*' state.apply
+
+# refresh salt pillar
+salt '*' saltutil.refresh_pillar
+
+# salt pillar on the command line
+# override any value that might be set in a salt pillar file
+salt '*' state.apply ftpsync pillar='{"ftpusername": "test", "ftppassword": "0ydyfww3giq8"}'
+
 ```
