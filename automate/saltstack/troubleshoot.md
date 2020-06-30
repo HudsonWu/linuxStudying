@@ -21,3 +21,8 @@ salt 'minion01' pillar.items
 # 如果minions没有更改pillar数据的话，手动刷新
 salt 'minion01' saltutil.refresh_pillar
 ```
+
+```
+# 监听事件
+salt-run state.event pretty=True
+```
