@@ -95,4 +95,11 @@ groupmod -n love test
 
 # 删除用户
 userdel -r test
+
+
+# 查看用户组所有成员
+## 找出用户组的gid
+grep 'user1' /etc/group 
+## 列出user1组的所有成员
+awk -F":" '{print $1"\t"$4}' /etc/passwd |grep '1004'
 ```
