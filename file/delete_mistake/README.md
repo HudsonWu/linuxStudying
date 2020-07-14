@@ -16,4 +16,4 @@
 
 ## 误删除的文件进程已经不存在, 借助于工具还原
 
-+ [extundelete] (/common/file/delete_mistake/extundelete.md)
++ [extundelete](extundelete.md)
