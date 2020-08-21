@@ -10,4 +10,10 @@ ps -eo ruser,pid,ppid,lwp,psr,args -L
 pstack 34422
 strace -f -p 34422
 strace -f -F -T -tt -p 34422
+
+# 查看机器重启时间
+last -5 reboot shutdown root
+
+# 查看命令执行时进行的操作和报错
+strace -e trace=file tmux
 ```
