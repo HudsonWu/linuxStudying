@@ -100,6 +100,8 @@ yum search xxx
 # 通过软件包提供的某个可执行命令搜索
 yum provides "*jstack"
 
+# 查看可以提供的来源
+yum whatprovides MySQL-python
 ```
 
 ## apt-get, 软件安装工具(debian)
