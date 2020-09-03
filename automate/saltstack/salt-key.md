@@ -3,6 +3,10 @@
 ```
 # 列出所有key
 salt-key -L
+# 列出特定的key
+salt-key -l un  # 未接受
+salt-key -l acc  # 已接受
+salt-key -l rej  # 已拒绝
 # 显示key内容
 salt-key -P
 # 显示key指纹
