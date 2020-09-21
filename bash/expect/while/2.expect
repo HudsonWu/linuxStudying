@@ -1,0 +1,7 @@
+#!/usr/bin/env expect
+
+set arg1 [lindex $argv 0]
+
+spawn ./example.sh $arg1
+expect "\[N/y\]"
+send "y\r"

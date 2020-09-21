@@ -36,6 +36,34 @@ ab -n 100 -c 10 http://127.0.0.1:8300/test.php > test1.txt &
 ab -n 100 -c 10 http://127.0.0.1:8300/tes2t.php > test2.txt &
 ```
 
+### post
+
+```
+-p means to POST it
+-H adds an Auth header (could be Basic or Token)
+-T sets the Content-Type
+-c is concurrent clients
+-n is the number of requests to run in the test
+```
+
+#### x-www-form-urlencoded
+
+```
+# post_loc.txt
+name=chang&password=11111ok
+
+ab -p post_loc.txt -T application/x-www-form-urlencoded -c 10 -n 2000 http://example.com/test
+```
+
+#### json
+
+```
+# test.json
+{"timestamp" : 1484825894873, "test" : "test"}
+
+ab -c 10 -n 1000 -p  test.json -T application/json https://example.com/test
+```
+
 ## 报错处理
 
 ```
