@@ -1,0 +1,27 @@
+proc login {user pass} {
+    expect "login:"
+    send "$user\r"
+    expect "password:"
+    send "$pass\r"
+}
+
+set username spongebob 
+set passwords {squarepants rhombuspants}
+set index 0
+
+spawn telnet 192.168.40.100
+login $username [lindex $passwords $index]
+expect {
+    "login incorrect" {
+        send_user "failed with $username:[lindex $passwords $index]\n"
+        incr index
+        if {$index == [llength $passwords]} {
+            error "ran out of possible passwords"
+        }
+        login $username [lindex $passwords $index]
+        exp_continue
+    }
+    "prompt>" 
+}
+send_user "success!\n"
+# ...
