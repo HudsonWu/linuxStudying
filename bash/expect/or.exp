@@ -1,0 +1,25 @@
+expect {
+    "A" or "B" {
+        send "123"
+    }
+    "C" {
+        send "567"
+    }
+}
+
+expect {
+    "\[AB]" {
+        send "123"
+    }
+    "C" {
+        send "567"
+    }
+}
+
+
+spawn su
+expect "Password:" or "密码："
+send "123456\n"
+expect "]# "
+send "/bin/bash /tmp/1.sh \n"
+expect eof
