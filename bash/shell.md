@@ -19,3 +19,8 @@ chsh -s /usr/bin/fish
 chsh -s /usr/bin/fish user_2
 ```
 
+## ssh
+
+```
+ssh -o StrictHostKeyChecking=no yourHardenedHost.com
+```
