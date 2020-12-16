@@ -25,7 +25,7 @@
 # expect eof
 
 set arg1 [lindex $argv 0]
-spawn ssh -o StrictHostKeyChecking=no user1@$arg1 "./command arg1 arg2"
+spawn ssh -o StrictHostKeyChecking=no -o "CheckHostIP=no" user1@$arg1 "./command arg1 arg2"
 expect {
     "*assword:" {
         send "password\n"

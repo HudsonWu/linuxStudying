@@ -1,0 +1,20 @@
+#!/usr/bin/expect
+# set timeout -1
+
+set arg1 [lindex $argv 0]
+
+spawn ssh -p 32000 -o StrictHostKeyChecking=no -o CheckHostIP=no user@$arg1
+expect {
+    "*?assword*" {send "userpassword\r"}
+    "*?密码*" {send "userpassword\r"}
+}
+expect "*\$*"
+send "su\r"
+expect {
+    "*?assword*" {send "rootpassword\r"}
+    "*?密码*" {send "rootpassword\r"}
+}
+expect "*#*"
+send "ip a\r"
+expect eof
+
