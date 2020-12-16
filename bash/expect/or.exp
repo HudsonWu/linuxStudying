@@ -27,10 +27,10 @@
 set arg1 [lindex $argv 0]
 spawn ssh -o StrictHostKeyChecking=no user1@$arg1 "./command arg1 arg2"
 expect {
-    "assword:" {
+    "*assword:" {
         send "password\n"
     }
-    "密码" {
+    "密码*" {
         send "password\n"
     }
 }

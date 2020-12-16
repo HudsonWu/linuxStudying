@@ -3,7 +3,8 @@
 at命令用于在指定时间执行命令
 
 ## 语法
-<pre>
+
+```
 at <选项> <参数>
 
 选项
@@ -16,7 +17,7 @@ at <选项> <参数>
 
 参数
 日期时间, 指定任务执行的日期时间
-</pre>
+```
 
 ## 计时方法
 
@@ -31,7 +32,8 @@ at <选项> <参数>
 > * time-units, 时间单位(minutes, hours, days, weeks)
 
 ## Usage
-<pre>
+
+```
 at 5pm+3 days  //三天后的下午5点
 at 17:00 tomorrow  //明天17:00
 echo "sh backup.sh" | at 9:00 AM
@@ -47,4 +49,4 @@ at now + 30 minutes
 at now + 1 year
 at midnight
 at now + 2 weeks
-</pre>
+```

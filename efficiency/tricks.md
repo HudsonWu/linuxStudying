@@ -19,3 +19,11 @@ lsof -s | grep deleted | sort -nr -k7 | less
 kill 11566
 ```
 
+## 实用小命令
+
+```
+# ls排序
+ls -S -l
+ls --sort=size *.avi
+ls -l -S | sort -k 5 -n
+```
