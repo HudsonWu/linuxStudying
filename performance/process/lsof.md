@@ -104,7 +104,11 @@ head -n 10 /proc/1283/fd/2
 
 3. 恢复
 ```
+# 恢复文件
 cat /proc/1283/fd/2 > /var/log/messages
+
+# 如果想要清理删除的文件，释放磁盘空间，可以执行下面的命令
+echo > /proc/1283/fd/2
 ```
 
 ### Examples
