@@ -85,7 +85,7 @@ u for read and write access
 
 ## 常用情景
 
-### 恢复删除的文件
+### 处理被删除的文件
 
 如文件/var/log/messages被删除了
 
@@ -102,7 +102,7 @@ head -n 10 /proc/1283/fd/2
 ```
 通过这条命令查看文件是否还在
 
-3. 恢复
+3. 恢复或清理
 ```
 # 恢复文件
 cat /proc/1283/fd/2 > /var/log/messages
@@ -139,4 +139,7 @@ lsof +D /home/
 
 //杀死所有属于某个用户的进程
 kill -9 `lsof -t -u lakshmannan`
+
+//统计被删除的文件占用空间大小
+lsof -Fn -Fs |grep -B1 -i deleted | grep ^s  | cut -c 2- | awk '{s+=$1} END {print s}'
 ```
